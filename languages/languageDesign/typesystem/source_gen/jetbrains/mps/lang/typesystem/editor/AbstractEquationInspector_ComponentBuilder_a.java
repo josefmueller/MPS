@@ -40,6 +40,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 
 /*package*/ class AbstractEquationInspector_ComponentBuilder_a extends AbstractEditorBuilder {
@@ -287,7 +288,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   private EditorCell createRefNodeList_gj4y2c_g0() {
-    AbstractCellListHandler handler = new AbstractEquationInspector_ComponentBuilder_a.helginsIntentionListHandler_gj4y2c_g0(myNode, "helginsIntention", getEditorContext());
+    AbstractCellListHandler handler = new AbstractEquationInspector_ComponentBuilder_a.helginsIntentionListHandler_gj4y2c_g0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("AEI_refNodeList_helginsIntention");
     editorCell.setRole(handler.getElementRole());
@@ -297,17 +298,21 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     @NotNull
     private SNode myNode;
 
-    public helginsIntentionListHandler_gj4y2c_g0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public helginsIntentionListHandler_gj4y2c_g0(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x11b2b6fabb9L, "helginsIntention");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, "jetbrains.mps.lang.typesystem.structure.TypesystemIntention");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, "jetbrains.mps.lang.typesystem.structure.TypesystemIntention"), null, getNode(), getNode().getModel());
     }

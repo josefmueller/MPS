@@ -39,6 +39,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -266,7 +267,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     return editorCell;
   }
   private EditorCell createRefNodeList_590xoz_h0() {
-    AbstractCellListHandler handler = new Analyzer_EditorBuilder_a.usedContainersListHandler_590xoz_h0(myNode, "usedContainers", getEditorContext());
+    AbstractCellListHandler handler = new Analyzer_EditorBuilder_a.usedContainersListHandler_590xoz_h0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_usedContainers");
     Style style = new StyleImpl();
@@ -279,17 +280,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     @NotNull
     private SNode myNode;
 
-    public usedContainersListHandler_590xoz_h0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public usedContainersListHandler_590xoz_h0(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x73e1fea9c173f804L, "usedContainers");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, "jetbrains.mps.lang.dataFlow.analyzers.structure.CustomInstructionsContainerReference");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, "jetbrains.mps.lang.dataFlow.analyzers.structure.CustomInstructionsContainerReference"), null, getNode(), getNode().getModel());
     }
@@ -348,7 +353,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     return editorCell;
   }
   private EditorCell createRefNodeList_590xoz_b9a() {
-    AbstractCellListHandler handler = new Analyzer_EditorBuilder_a.constructorParametersListHandler_590xoz_b9a(myNode, "constructorParameters", getEditorContext());
+    AbstractCellListHandler handler = new Analyzer_EditorBuilder_a.constructorParametersListHandler_590xoz_b9a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_constructorParameters");
     editorCell.setRole(handler.getElementRole());
@@ -358,17 +363,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     @NotNull
     private SNode myNode;
 
-    public constructorParametersListHandler_590xoz_b9a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public constructorParametersListHandler_590xoz_b9a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x376a4d52f8c2e303L, "constructorParameters");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter"), null, getNode(), getNode().getModel());
     }
@@ -782,7 +791,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     return editorCell;
   }
   private EditorCell createRefNodeList_590xoz_v0() {
-    AbstractCellListHandler handler = new Analyzer_EditorBuilder_a.instructionListHandler_590xoz_v0(myNode, "instruction", getEditorContext());
+    AbstractCellListHandler handler = new Analyzer_EditorBuilder_a.instructionListHandler_590xoz_v0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_instruction");
     Style style = new StyleImpl();
@@ -795,17 +804,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     @NotNull
     private SNode myNode;
 
-    public instructionListHandler_590xoz_v0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public instructionListHandler_590xoz_v0(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x2e25b6b7919ac138L, "instruction");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL, "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL, "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction"), null, getNode(), getNode().getModel());
     }

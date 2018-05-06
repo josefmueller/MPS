@@ -41,6 +41,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -275,7 +277,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       return editorCell;
     }
     private EditorCell createRefNodeList_ulpguu_a0a1b0() {
-      AbstractCellListHandler handler = new NamedTupleLiteral_InspectorBuilder_a.Inline_Builder_ulpguu_a1b0.componentListHandler_ulpguu_a0a1b0(myNode, "component", getEditorContext());
+      AbstractCellListHandler handler = new NamedTupleLiteral_InspectorBuilder_a.Inline_Builder_ulpguu_a1b0.componentListHandler_ulpguu_a0a1b0(myNode, getEditorContext());
       EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
       editorCell.setCellId("refNodeList_component");
       Style style = new StyleImpl();
@@ -288,17 +290,21 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       @NotNull
       private SNode myNode;
 
-      public componentListHandler_ulpguu_a0a1b0(SNode ownerNode, String childRole, EditorContext context) {
-        super(ownerNode, childRole, context, false);
+      public componentListHandler_ulpguu_a0a1b0(SNode ownerNode, EditorContext context) {
+        super(context, false);
         myNode = ownerNode;
       }
 
-      @Override
       @NotNull
       public SNode getNode() {
         return myNode;
       }
-
+      public SContainmentLink getSLink() {
+        return MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x12099b7fca9L, "component");
+      }
+      public SAbstractConcept getChildSConcept() {
+        return MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration");
+      }
       public SNode createNodeToInsert(EditorContext editorContext) {
         return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), null, getNode(), getNode().getModel());
       }

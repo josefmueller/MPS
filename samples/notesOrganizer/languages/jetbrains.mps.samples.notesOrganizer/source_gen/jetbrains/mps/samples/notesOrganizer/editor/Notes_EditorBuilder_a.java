@@ -49,6 +49,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
@@ -266,7 +268,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     return editorCell;
   }
   private EditorCell createRefNodeList_uvqhkl_i0() {
-    AbstractCellListHandler handler = new Notes_EditorBuilder_a.notesListHandler_uvqhkl_i0(myNode, "notes", getEditorContext());
+    AbstractCellListHandler handler = new Notes_EditorBuilder_a.notesListHandler_uvqhkl_i0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_notes");
     Style style = new StyleImpl();
@@ -280,17 +282,21 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     @NotNull
     private SNode myNode;
 
-    public notesListHandler_uvqhkl_i0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public notesListHandler_uvqhkl_i0(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b163e1e47L, "notes");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note"), null, getNode(), getNode().getModel());
     }

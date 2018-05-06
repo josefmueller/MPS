@@ -311,7 +311,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   private EditorCell createRefNodeList_pa0pfb_b4a() {
-    AbstractCellListHandler handler = new BuildMps_DevKit_EditorBuilder_a.extendsListHandler_pa0pfb_b4a(myNode, "extends", getEditorContext());
+    AbstractCellListHandler handler = new BuildMps_DevKit_EditorBuilder_a.extendsListHandler_pa0pfb_b4a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_extends");
     Style style = new StyleImpl();
@@ -326,17 +326,21 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     @NotNull
     private SNode myNode;
 
-    public extendsListHandler_pa0pfb_b4a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public extendsListHandler_pa0pfb_b4a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, 0x4780308f5d23142L, "extends");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2313aL, "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2313aL, "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef"), null, getNode(), getNode().getModel());
     }
@@ -391,7 +395,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   private EditorCell createRefNodeList_pa0pfb_d4a() {
-    AbstractCellListHandler handler = new BuildMps_DevKit_EditorBuilder_a.exportsListHandler_pa0pfb_d4a(myNode, "exports", getEditorContext());
+    AbstractCellListHandler handler = new BuildMps_DevKit_EditorBuilder_a.exportsListHandler_pa0pfb_d4a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_exports");
     Style style = new StyleImpl();
@@ -405,17 +409,21 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     @NotNull
     private SNode myNode;
 
-    public exportsListHandler_pa0pfb_d4a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public exportsListHandler_pa0pfb_d4a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, 0x4780308f5d29d82L, "exports");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d23143L, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d23143L, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport"), null, getNode(), getNode().getModel());
     }

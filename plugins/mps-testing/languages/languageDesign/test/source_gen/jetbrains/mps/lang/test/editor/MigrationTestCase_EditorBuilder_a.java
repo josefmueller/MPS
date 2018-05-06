@@ -43,6 +43,8 @@ import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -286,7 +288,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
     return editorCell;
   }
   private EditorCell createRefNodeList_w3rzlq_c2a() {
-    AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.migrationListHandler_w3rzlq_c2a(myNode, "migration", getEditorContext());
+    AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.migrationListHandler_w3rzlq_c2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_migration");
     editorCell.setRole(handler.getElementRole());
@@ -296,17 +298,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
     @NotNull
     private SNode myNode;
 
-    public migrationListHandler_w3rzlq_c2a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public migrationListHandler_w3rzlq_c2a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x5bf7864595df8b02L, "migration");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5bf7864595dddf89L, "jetbrains.mps.lang.test.structure.MigrationReference");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x5bf7864595dddf89L, "jetbrains.mps.lang.test.structure.MigrationReference"), null, getNode(), getNode().getModel());
     }
@@ -405,7 +411,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
     return editorCell;
   }
   private EditorCell createRefNodeList_w3rzlq_b4a() {
-    AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.inputNodesListHandler_w3rzlq_b4a(myNode, "inputNodes", getEditorContext());
+    AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.inputNodesListHandler_w3rzlq_b4a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_inputNodes");
     editorCell.setRole(handler.getElementRole());
@@ -415,17 +421,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
     @NotNull
     private SNode myNode;
 
-    public inputNodesListHandler_w3rzlq_b4a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public inputNodesListHandler_w3rzlq_b4a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be4be8L, "inputNodes");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), null, getNode(), getNode().getModel());
     }
@@ -489,7 +499,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
     return editorCell;
   }
   private EditorCell createRefNodeList_w3rzlq_b6a() {
-    AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.outputNodesListHandler_w3rzlq_b6a(myNode, "outputNodes", getEditorContext());
+    AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.outputNodesListHandler_w3rzlq_b6a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_outputNodes");
     editorCell.setRole(handler.getElementRole());
@@ -499,17 +509,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
     @NotNull
     private SNode myNode;
 
-    public outputNodesListHandler_w3rzlq_b6a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public outputNodesListHandler_w3rzlq_b6a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be5494L, "outputNodes");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), null, getNode(), getNode().getModel());
     }

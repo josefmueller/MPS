@@ -343,7 +343,7 @@ import jetbrains.mps.smodel.IOperationContext;
     return editorCell;
   }
   private EditorCell createRefNodeList_eb7h0d_f0() {
-    AbstractCellListHandler handler = new IfStatement_EditorBuilder_a.elsifClausesListHandler_eb7h0d_f0(myNode, "elsifClauses", getEditorContext());
+    AbstractCellListHandler handler = new IfStatement_EditorBuilder_a.elsifClausesListHandler_eb7h0d_f0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_elsifClauses");
     editorCell.setRole(handler.getElementRole());
@@ -353,17 +353,21 @@ import jetbrains.mps.smodel.IOperationContext;
     @NotNull
     private SNode myNode;
 
-    public elsifClausesListHandler_eb7h0d_f0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public elsifClausesListHandler_eb7h0d_f0(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x118cecf1287L, "elsifClauses");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), null, getNode(), getNode().getModel());
     }

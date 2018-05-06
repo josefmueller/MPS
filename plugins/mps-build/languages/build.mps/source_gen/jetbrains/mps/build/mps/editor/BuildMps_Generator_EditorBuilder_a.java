@@ -57,6 +57,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -362,7 +363,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     return editorCell;
   }
   private EditorCell createRefNodeList_leuqor_c4a() {
-    AbstractCellListHandler handler = new BuildMps_Generator_EditorBuilder_a.sourcesListHandler_leuqor_c4a(myNode, "sources", getEditorContext());
+    AbstractCellListHandler handler = new BuildMps_Generator_EditorBuilder_a.sourcesListHandler_leuqor_c4a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_sources");
     Style style = new StyleImpl();
@@ -378,17 +379,21 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     @NotNull
     private SNode myNode;
 
-    public sourcesListHandler_leuqor_c4a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public sourcesListHandler_leuqor_c4a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341d31L, "sources");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource"), null, getNode(), getNode().getModel());
     }
@@ -443,7 +448,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     return editorCell;
   }
   private EditorCell createRefNodeList_leuqor_e4a() {
-    AbstractCellListHandler handler = new BuildMps_Generator_EditorBuilder_a.dependenciesListHandler_leuqor_e4a(myNode, "dependencies", getEditorContext());
+    AbstractCellListHandler handler = new BuildMps_Generator_EditorBuilder_a.dependenciesListHandler_leuqor_e4a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies");
     Style style = new StyleImpl();
@@ -457,17 +462,21 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     @NotNull
     private SNode myNode;
 
-    public dependenciesListHandler_leuqor_e4a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public dependenciesListHandler_leuqor_e4a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341cb7L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341cb7L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"), null, getNode(), getNode().getModel());
     }

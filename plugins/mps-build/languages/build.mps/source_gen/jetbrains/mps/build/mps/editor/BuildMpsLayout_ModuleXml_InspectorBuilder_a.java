@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet.hintStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
@@ -264,7 +265,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     return editorCell;
   }
   private EditorCell createRefNodeList_o7xb22_c0() {
-    AbstractCellListHandler handler = new BuildMpsLayout_ModuleXml_InspectorBuilder_a.jarLocationsListHandler_o7xb22_c0(myNode, "jarLocations", getEditorContext());
+    AbstractCellListHandler handler = new BuildMpsLayout_ModuleXml_InspectorBuilder_a.jarLocationsListHandler_o7xb22_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_jarLocations");
     Style style = new StyleImpl();
@@ -278,17 +279,21 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     @NotNull
     private SNode myNode;
 
-    public jarLocationsListHandler_o7xb22_c0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public jarLocationsListHandler_o7xb22_c0(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x3c765492deb1ce79L, "jarLocations");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation"), null, getNode(), getNode().getModel());
     }
@@ -362,7 +367,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     return editorCell;
   }
   private EditorCell createRefNodeList_o7xb22_e0() {
-    AbstractCellListHandler handler = new BuildMpsLayout_ModuleXml_InspectorBuilder_a.classpathEntriesListHandler_o7xb22_e0(myNode, "classpathEntries", getEditorContext());
+    AbstractCellListHandler handler = new BuildMpsLayout_ModuleXml_InspectorBuilder_a.classpathEntriesListHandler_o7xb22_e0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_classpathEntries");
     Style style = new StyleImpl();
@@ -376,17 +381,21 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     @NotNull
     private SNode myNode;
 
-    public classpathEntriesListHandler_o7xb22_e0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public classpathEntriesListHandler_o7xb22_e0(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x75cd89729fd8ef2bL, "classpathEntries");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, "jetbrains.mps.build.mps.structure.GeneratorInternal_String");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, "jetbrains.mps.build.mps.structure.GeneratorInternal_String"), null, getNode(), getNode().getModel());
     }

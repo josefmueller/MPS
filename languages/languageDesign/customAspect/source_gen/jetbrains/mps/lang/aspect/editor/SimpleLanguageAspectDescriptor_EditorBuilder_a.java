@@ -39,13 +39,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
@@ -214,7 +215,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     return editorCell;
   }
   private EditorCell createRefNodeList_rpszz1_b0b1a() {
-    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.oldMainLanguagesListHandler_rpszz1_b0b1a(myNode, "oldMainLanguages", getEditorContext());
+    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.oldMainLanguagesListHandler_rpszz1_b0b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_oldMainLanguages");
     editorCell.setRole(handler.getElementRole());
@@ -224,17 +225,21 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     @NotNull
     private SNode myNode;
 
-    public oldMainLanguagesListHandler_rpszz1_b0b1a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public oldMainLanguagesListHandler_rpszz1_b0b1a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b094L, "oldMainLanguages");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL, "jetbrains.mps.lang.aspect.structure.LanguageReference");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL, "jetbrains.mps.lang.aspect.structure.LanguageReference"), null, getNode(), getNode().getModel());
     }
@@ -292,7 +297,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     return editorCell;
   }
   private EditorCell createRefNodeList_rpszz1_b1b1a() {
-    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.oldAdditionalLanguagesListHandler_rpszz1_b1b1a(myNode, "oldAdditionalLanguages", getEditorContext());
+    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.oldAdditionalLanguagesListHandler_rpszz1_b1b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_oldAdditionalLanguages");
     editorCell.setRole(handler.getElementRole());
@@ -302,17 +307,21 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     @NotNull
     private SNode myNode;
 
-    public oldAdditionalLanguagesListHandler_rpszz1_b1b1a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public oldAdditionalLanguagesListHandler_rpszz1_b1b1a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b096L, "oldAdditionalLanguages");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL, "jetbrains.mps.lang.aspect.structure.LanguageReference");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL, "jetbrains.mps.lang.aspect.structure.LanguageReference"), null, getNode(), getNode().getModel());
     }
@@ -515,7 +524,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     return editorCell;
   }
   private EditorCell createRefNodeList_rpszz1_b4b1a() {
-    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.mainLanguagesListHandler_rpszz1_b4b1a(myNode, "mainLanguages", getEditorContext());
+    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.mainLanguagesListHandler_rpszz1_b4b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mainLanguages");
     editorCell.setRole(handler.getElementRole());
@@ -525,17 +534,21 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     @NotNull
     private SNode myNode;
 
-    public mainLanguagesListHandler_rpszz1_b4b1a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public mainLanguagesListHandler_rpszz1_b4b1a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x54be5be5620c1b77L, "mainLanguages");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x500fe561b6da3df1L, "jetbrains.mps.lang.smodel.structure.AbstractLanguageIdentity");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x500fe561b6da3df1L, "jetbrains.mps.lang.smodel.structure.AbstractLanguageIdentity"), null, getNode(), getNode().getModel());
     }
@@ -602,7 +615,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     return editorCell;
   }
   private EditorCell createRefNodeList_rpszz1_b5b1a() {
-    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.additionalLanguagesListHandler_rpszz1_b5b1a(myNode, "additionalLanguages", getEditorContext());
+    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.additionalLanguagesListHandler_rpszz1_b5b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_additionalLanguages");
     editorCell.setRole(handler.getElementRole());
@@ -612,17 +625,21 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     @NotNull
     private SNode myNode;
 
-    public additionalLanguagesListHandler_rpszz1_b5b1a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public additionalLanguagesListHandler_rpszz1_b5b1a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x54be5be5620c1b7dL, "additionalLanguages");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x500fe561b6da3df1L, "jetbrains.mps.lang.smodel.structure.AbstractLanguageIdentity");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x500fe561b6da3df1L, "jetbrains.mps.lang.smodel.structure.AbstractLanguageIdentity"), null, getNode(), getNode().getModel());
     }

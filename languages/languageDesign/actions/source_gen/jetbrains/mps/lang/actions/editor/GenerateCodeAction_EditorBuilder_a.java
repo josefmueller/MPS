@@ -40,6 +40,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 
 /*package*/ class GenerateCodeAction_EditorBuilder_a extends AbstractEditorBuilder {
@@ -211,7 +212,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   private EditorCell createRefNodeList_imc6ai_g0() {
-    AbstractCellListHandler handler = new GenerateCodeAction_EditorBuilder_a.smartActionParameterListHandler_imc6ai_g0(myNode, "smartActionParameter", getEditorContext());
+    AbstractCellListHandler handler = new GenerateCodeAction_EditorBuilder_a.smartActionParameterListHandler_imc6ai_g0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_smartActionParameter");
     editorCell.setRole(handler.getElementRole());
@@ -221,17 +222,21 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     @NotNull
     private SNode myNode;
 
-    public smartActionParameterListHandler_imc6ai_g0(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public smartActionParameterListHandler_imc6ai_g0(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eca117bL, 0x11f8ef1f9f5L, "smartActionParameter");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eeedcb4L, "jetbrains.mps.lang.actions.structure.SmartActionParameter");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eeedcb4L, "jetbrains.mps.lang.actions.structure.SmartActionParameter"), null, getNode(), getNode().getModel());
     }

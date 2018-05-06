@@ -38,6 +38,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -129,7 +131,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     }
   }
   private EditorCell createRefNodeList_76r4mg_c0a() {
-    AbstractCellListHandler handler = new Element_EditorBuilder_a.attributeListHandler_76r4mg_c0a(myNode, "attribute", getEditorContext());
+    AbstractCellListHandler handler = new Element_EditorBuilder_a.attributeListHandler_76r4mg_c0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_attribute");
     editorCell.setRole(handler.getElementRole());
@@ -139,17 +141,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     @NotNull
     private SNode myNode;
 
-    public attributeListHandler_76r4mg_c0a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public attributeListHandler_76r4mg_c0a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8b9L, 0x11d45f8a8baL, "attribute");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8a1L, "jetbrains.mps.sampleXML.structure.Attribute");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8a1L, "jetbrains.mps.sampleXML.structure.Attribute"), null, getNode(), getNode().getModel());
     }
@@ -217,7 +223,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     return editorCell;
   }
   private EditorCell createRefNodeList_76r4mg_b1a() {
-    AbstractCellListHandler handler = new Element_EditorBuilder_a.contentListHandler_76r4mg_b1a(myNode, "content", getEditorContext());
+    AbstractCellListHandler handler = new Element_EditorBuilder_a.contentListHandler_76r4mg_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_content");
     editorCell.setRole(handler.getElementRole());
@@ -227,17 +233,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     @NotNull
     private SNode myNode;
 
-    public contentListHandler_76r4mg_b1a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
+    public contentListHandler_76r4mg_b1a(SNode ownerNode, EditorContext context) {
+      super(context, false);
       myNode = ownerNode;
     }
 
-    @Override
     @NotNull
     public SNode getNode() {
       return myNode;
     }
-
+    public SContainmentLink getSLink() {
+      return MetaAdapterFactory.getContainmentLink(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8b9L, 0x11d45f8a8bbL, "content");
+    }
+    public SAbstractConcept getChildSConcept() {
+      return MetaAdapterFactory.getConcept(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL, "jetbrains.mps.sampleXML.structure.ElementPart");
+    }
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x772f6dcd8c0d48f7L, 0x869c908e036f7c8eL, 0x11d45f8a8beL, "jetbrains.mps.sampleXML.structure.ElementPart"), null, getNode(), getNode().getModel());
     }
