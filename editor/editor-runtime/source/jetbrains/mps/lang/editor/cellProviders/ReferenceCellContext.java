@@ -16,6 +16,8 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -26,24 +28,26 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Date: Nov 29, 2006
  */
 public class ReferenceCellContext extends BasicCellContext {
-  public static final Object LINK_DECLARATION = new Object();
-  public static final Object CURRENT_REFERENT_NODE = new Object();
+  public static final EditorContextKey<SReferenceLink> LINK_DECLARATION = new EditorContextKey<>();
+  public static final EditorContextKey<SNode> CURRENT_REFERENT_NODE = new EditorContextKey<>();
+  public static final EditorContextKey<SAbstractConcept> LINK_TARGET = new EditorContextKey<>();
 
   @Deprecated
   @ToRemove(version = 2018.2)
   public ReferenceCellContext(SNode referenceNode, SNode currentReferent, SNode linkDeclaration) {
-    super(referenceNode);
-    put(LINK_DECLARATION, linkDeclaration);
-    put(CURRENT_REFERENT_NODE, currentReferent);
+    this(referenceNode, currentReferent, MetaAdapterByDeclaration.getReferenceLink(linkDeclaration), MetaAdapterByDeclaration.getConcept(SNodeUtil.getLinkTarget(linkDeclaration)));
   }
 
   @Deprecated
   @ToRemove(version = 2018.2)
   public ReferenceCellContext(SNode referenceNode, SNode currentReferent, SReferenceLink link) {
-    this(referenceNode, currentReferent, link.getDeclarationNode());
+    this(referenceNode, currentReferent, link, link.getTargetConcept());
   }
 
   public ReferenceCellContext(SNode referenceNode, SNode currentReferent, SReferenceLink link, SAbstractConcept targetConcept) {
-    this(referenceNode, currentReferent, link.getDeclarationNode());
+    super(referenceNode);
+    put(CURRENT_REFERENT_NODE, currentReferent);
+    put(LINK_DECLARATION, link);
+    put(LINK_TARGET, targetConcept);
   }
 }
