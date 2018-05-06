@@ -34,14 +34,26 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class RefCellCellProvider extends AbstractReferentCellProvider {
-
+  @Deprecated
+  @ToRemove(version = 2018.2)
   //it is important for descendants to have a unique constructor and with the same parameters as this one
   public RefCellCellProvider(@NotNull SNode node, EditorContext context) {
     super(node, context);
+  }
+
+  //it is important for descendants to have a unique constructor and with the same parameters as this one
+  public RefCellCellProvider(@NotNull SNode node, SAbstractLink link, SAbstractConcept targetConcept, String roleName,
+                             EditorContext context) {
+    super(node, link, targetConcept, roleName, context);
   }
 
   @Override
@@ -53,7 +65,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       inlineComponentProvider.setRefNode(node);
     }
     EditorCell editorCell;
-    if (myIsAggregation) {
+    if (isAggregation()) {
       editorCell = inlineComponent.createEditorCell(context);
     } else {
       editorCell = context.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
@@ -61,17 +73,17 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
         public EditorCell compute() {
           return inlineComponent.createEditorCell(context);
         }
-      }, effectiveNode, myGenuineRole);
+      }, effectiveNode, getRoleName());
       CellUtil.setupIDeprecatableStyles(effectiveNode, editorCell);
     }
-    if (!myIsAggregation) {
+    if (!isAggregation()) {
       setSemanticNodeToCells(editorCell, node);
     }
 
-    if (myIsCardinality1) {
+    if (!getLink().isOptional()) {
       installDeleteActions_atLeastOne(editorCell);
     } else {
-      if (myIsAggregation) {
+      if (isAggregation()) {
         installDeleteActions_nullable_aggregation(editorCell);
       } else {
         installDeleteActions_nullable_reference(editorCell);
@@ -104,8 +116,9 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   }
 
   protected void installDeleteActions_nullable_reference(EditorCell editorCell) {
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(getSNode(), myGenuineRole));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(getSNode(), myGenuineRole));
+    SReferenceLink rl = (SReferenceLink) getLink();
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(getSNode(), rl));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(getSNode(), rl));
   }
 
   // TODO: review the logic of reference cell lookup in editor. Proposal is: use external logic for reference cell
@@ -131,13 +144,14 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
 
   @Override
   public Iterable<SNode> getRoleAttributes() {
-    return AttributeOperations.getLinkAttributes(getSNode(), myGenuineRole);
+    return isAggregation() ? AttributeOperations.getChildAttributes(getSNode(), (SContainmentLink) getLink()) :
+           AttributeOperations.getLinkAttributes(getSNode(), (SReferenceLink) getLink());
   }
 
   @Override
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
-    if (myIsCardinality1) {
+    if (!getLink().isOptional()) {
       if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
         errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
         errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
@@ -145,8 +159,9 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       }
     }
 
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
+    SReferenceLink rl = (SReferenceLink) getLink();
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, rl));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(node, rl));
     return errorCell;
   }
 }

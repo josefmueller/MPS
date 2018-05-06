@@ -20,7 +20,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -157,7 +159,10 @@ public interface UpdateSession {
    * @param role   - reference role
    * @return result od update computable execution
    */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role);
+
 
   /**
    * Returning {@link EditorCellFactory} instance used inside current update session

@@ -54,6 +54,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -382,6 +383,8 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myCellId;
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   @Override
   public String getRole() {
     String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
@@ -391,6 +394,8 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myRole;
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   @Override
   public void setRole(String role) {
     myRole = role;

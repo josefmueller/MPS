@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -122,8 +123,12 @@ public interface EditorCell {
 
   String getCellId();
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   void setRole(String role);
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   String getRole();
 
   boolean isErrorState();
