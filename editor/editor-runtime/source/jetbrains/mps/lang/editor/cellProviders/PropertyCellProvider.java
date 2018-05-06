@@ -123,6 +123,13 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return myProperty != null ? new PropertyCellContext(getSNode(), myProperty) : super.getCellContext();
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  // can't remove before 2018.2 as it was used in mbeddr
+  public String getPropertyName() {
+    return myProperty.getName();
+  }
+
   protected SProperty getProperty() {
     return myProperty;
   }
