@@ -88,7 +88,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, 0x554b4e03d5950431L, "isOutOfScope"));
   }
   private EditorCell createRefCell_f5bzsg_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, 0x3f11b1341fa27fafL, "debuggedType"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), "debuggedType", getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
@@ -97,7 +97,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
         return cell;
       }
     };
-    provider.setRole("debuggedType");
     provider.setNoTargetText("<no debuggedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
@@ -242,7 +241,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   private EditorCell createRefCell_f5bzsg_b2a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, 0x3f11b1341fa27fafL, "debuggedType"), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), "debuggedType", getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
@@ -251,7 +250,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
         return cell;
       }
     };
-    provider.setRole("debuggedType");
     provider.setNoTargetText("<no debuggedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());

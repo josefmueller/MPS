@@ -423,7 +423,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_590xoz_l0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x41dd50940e1dd4ddL, "initialFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction"), "initialFunction", getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
@@ -432,7 +432,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
         return cell;
       }
     };
-    provider.setRole("initialFunction");
     provider.setNoTargetText("<no initialFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
@@ -543,7 +542,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_590xoz_o0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x41dd50940e1dcaccL, "mergeFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x58ba0a6689e9c309L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction"), "mergeFunction", getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
@@ -552,7 +551,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
         return cell;
       }
     };
-    provider.setRole("mergeFunction");
     provider.setNoTargetText("<no mergeFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
@@ -663,7 +661,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_590xoz_r0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, 0x41dd50940e1dd4deL, "funFunction"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction"), "funFunction", getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
@@ -672,7 +670,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
         return cell;
       }
     };
-    provider.setRole("funFunction");
     provider.setNoTargetText("<no funFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
