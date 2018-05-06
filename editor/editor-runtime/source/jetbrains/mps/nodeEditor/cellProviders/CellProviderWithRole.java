@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -54,6 +55,9 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   }
 
   //sets a role object for this provider
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  //use setProperty/setLink instead
   public abstract void setRole(Object role);
 
   //gets an attribute for this provider's node hanging on this provider's role

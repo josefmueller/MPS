@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -35,9 +37,26 @@ public class PropertyAccessor implements ModelAccessor, IPropertyAccessor {
   private final SNodeReference myPropertyDeclaration;
   private final SRepository myRepository;
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     myNode = node;
     myPropertyName = propertyName;
+    myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel()) || editorContext.getEditorComponent().isReadOnly();
+    myAllowEmptyText = allowEmptyText;
+    myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodeReference>() {
+      @Override
+      public SNodeReference compute() {
+        SNode propertyDeclaration = new SNodeLegacy(myNode).getPropertyDeclaration(myPropertyName);
+        return propertyDeclaration != null ? propertyDeclaration.getReference() : null;
+      }
+    });
+    myRepository = editorContext.getRepository();
+  }
+
+  public PropertyAccessor(SNode node, SProperty property, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
+    myNode = node;
+    myPropertyName = property.getName();
     myReadOnly = readOnly || SModelOperations.isReadOnly(node.getModel()) || editorContext.getEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
     myPropertyDeclaration = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNodeReference>() {

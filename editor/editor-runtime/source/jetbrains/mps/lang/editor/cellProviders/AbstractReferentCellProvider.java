@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -64,24 +65,23 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   @Override
   public void setRole(final Object role) {
-    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-      @Override
-      public void run() {
-        myLinkDeclaration = new SNodeLegacy(getSNode()).getLinkDeclaration(role.toString());
-        if (myLinkDeclaration == null) {
-          myErrorText = "?" + role.toString() + "?";
-          LOG.error("can't find a link declaration '" + role.toString() + "' in " + getSNode(), getSNode());
-          return;
-        }
-        myRole = role.toString();
-
-        myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
-        myGenuineRole = SModelUtil.getLinkDeclarationRole(myGenuineLinkDeclaration);
-        myIsAggregation = !SNodeUtil.getLinkDeclaration_IsReference(myGenuineLinkDeclaration);
-        myIsCardinality1 = SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(myGenuineLinkDeclaration);
+    NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
+      myLinkDeclaration = new SNodeLegacy(getSNode()).getLinkDeclaration(role.toString());
+      if (myLinkDeclaration == null) {
+        myErrorText = "?" + role.toString() + "?";
+        LOG.error("can't find a link declaration '" + role.toString() + "' in " + getSNode(), getSNode());
+        return;
       }
+      myRole = role.toString();
+
+      myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
+      myGenuineRole = SModelUtil.getLinkDeclarationRole(myGenuineLinkDeclaration);
+      myIsAggregation = !SNodeUtil.getLinkDeclaration_IsReference(myGenuineLinkDeclaration);
+      myIsCardinality1 = SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(myGenuineLinkDeclaration);
     });
   }
 
