@@ -28,6 +28,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
@@ -46,6 +47,8 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   @ToRemove(version = 2018.2)
   //use getLink/getReference instead
   public abstract String getElementRole();
+
+  public abstract SConceptFeature getElementSRole();
 
   protected abstract SNode getAnchorNode(EditorCell anchorCell);
 
@@ -103,7 +106,7 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     Iterator<? extends SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
       EditorCell emptyCell = createEmptyCell();
-      emptyCell.setRole(getElementRole());
+      emptyCell.setSRole(getElementSRole());
       myListEditorCell_Collection.addEditorCell(emptyCell);
     } else {
       SNode prevNode = null;

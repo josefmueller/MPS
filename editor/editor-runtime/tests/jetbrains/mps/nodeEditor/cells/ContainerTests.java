@@ -35,6 +35,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
 import org.junit.AfterClass;
@@ -93,7 +94,7 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
     }
   }
 
-  private static class DummyAPICell implements EditorCell {
+  private static class DummyAPICell implements EditorCell<SConceptFeature> {
     private Map<Object, Object> myUserObjects = new HashMap<>();
 
     @Override
@@ -245,6 +246,16 @@ public class ContainerTests<T> extends AbstractContainerParameterizedTest<T> {
     @ToRemove(version = 2018.2)
     @Override
     public String getRole() {
+      return null;
+    }
+
+    @Override
+    public void setSRole(SConceptFeature conceptFeature) {
+
+    }
+
+    @Override
+    public SConceptFeature getSRole() {
       return null;
     }
 

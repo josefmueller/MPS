@@ -168,7 +168,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   private void setRoleForCellWithNoTarget(EditorCell cell) {
     if (myLink != null) {
-      cell.setRole(myLink.getName());
+      cell.setSRole(myLink);
       if (!isAggregation()) {
         cell.setReferenceCell(true);
       }

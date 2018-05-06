@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;
@@ -26,7 +27,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 
-public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
+public interface EditorCell<Role extends SConceptFeature> extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell<Role> {
   void paint(Graphics g);
 
   void paintCell(Graphics g, ParentSettings parentSettings);
