@@ -47,6 +47,16 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   //use getLink/getReference instead
   public abstract String getElementRole();
 
+  /**
+   * Used in mbeddr in 2018.1
+   * @deprecated since MPS 3.5 use {@link #getNode()} method
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  public SNode getOwner() {
+    return getNode();
+  }
+
   protected abstract SNode getAnchorNode(EditorCell anchorCell);
 
   protected abstract void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore);
