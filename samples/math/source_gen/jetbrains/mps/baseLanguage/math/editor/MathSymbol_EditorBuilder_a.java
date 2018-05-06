@@ -139,8 +139,8 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("upperBound");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11feacc8f16L, "upperBound"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
@@ -225,8 +225,8 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("var");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae7f6L, "var"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
@@ -289,8 +289,8 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("precondition");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cd41a5L, "precondition"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
@@ -347,8 +347,8 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("expression");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae874L, "expression"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.BASE_LINE_CELL, true);

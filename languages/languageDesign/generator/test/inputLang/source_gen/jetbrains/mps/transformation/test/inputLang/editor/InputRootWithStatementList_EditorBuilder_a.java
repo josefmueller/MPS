@@ -230,8 +230,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("statementList");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11986ebf992L, 0x11986ec6379L, "statementList"));
       }
     }
     @Override

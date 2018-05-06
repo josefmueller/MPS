@@ -96,8 +96,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("instructionRef");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b3e894L, 0x3a887e9da0b4fd5bL, "instructionRef"));
       }
     }
     @Override
@@ -161,8 +161,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("position");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b3e894L, 0x5594ff2e14ba2cL, "position"));
       }
     }
     @Override
@@ -216,8 +216,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("target");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b3e894L, 0x47cfbf00eaa5802L, "target"));
       }
     }
     @Override

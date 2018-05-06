@@ -51,7 +51,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new StateTransitions_ComponentBuilder_a.transitionsListHandler_hbe0cm_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("ST_refNodeList_transitions");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class transitionsListHandler_hbe0cm_a0 extends RefNodeListHandler {

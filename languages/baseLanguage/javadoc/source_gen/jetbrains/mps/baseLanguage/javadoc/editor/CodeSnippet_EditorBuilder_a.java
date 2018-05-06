@@ -76,7 +76,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class statementListHandler_jmxmb2_b0 extends RefNodeListHandler {

@@ -84,8 +84,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("map");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116ea555a25L, 0x116ea576ac7L, "map"));
       }
     }
     @Override
@@ -159,8 +159,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("key");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116ea555a25L, 0x116ea57b648L, "key"));
       }
       MapElement_DELETE.setCellActions(editorCell, getNode(), getEditorContext());
     }

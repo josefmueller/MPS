@@ -103,9 +103,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     provider.setNoTargetText("<no cncpt>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("cncpt");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -179,7 +179,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     AbstractCellListHandler handler = new CustomMemberDescriptor_EditorBuilder_a.modifierListHandler_601f61_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_modifier");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class modifierListHandler_601f61_d0 extends RefNodeListHandler {

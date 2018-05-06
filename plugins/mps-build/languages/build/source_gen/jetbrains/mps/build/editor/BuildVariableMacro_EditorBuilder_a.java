@@ -171,8 +171,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("initialValue");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, 0x263c91972cd26288L, "initialValue"));
       }
     }
     @Override

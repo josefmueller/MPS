@@ -95,9 +95,9 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     provider.setNoTargetText("<no watchable>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("watchable");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL, 0x9a151404409225L, "watchable"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -200,8 +200,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("value");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL, 0x9a15140440937bL, "value"));
       }
     }
     @Override

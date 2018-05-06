@@ -138,7 +138,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class postProcessorListHandler_ffwobm_a2a extends RefNodeListHandler {
@@ -229,7 +229,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class preProcessorListHandler_ffwobm_a4a extends RefNodeListHandler {

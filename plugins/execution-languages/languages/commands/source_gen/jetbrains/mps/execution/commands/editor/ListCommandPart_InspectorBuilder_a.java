@@ -103,8 +103,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("separator");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x5f50ed14026999ccL, "separator"));
       }
     }
     @Override
@@ -174,8 +174,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("list");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x5f50ed14026999cbL, "list"));
       }
     }
     @Override
@@ -216,7 +216,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     AbstractCellListHandler handler = new ListCommandPart_InspectorBuilder_a.itemsListHandler_fty1bq_b2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_items_1");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class itemsListHandler_fty1bq_b2a extends RefNodeListHandler {

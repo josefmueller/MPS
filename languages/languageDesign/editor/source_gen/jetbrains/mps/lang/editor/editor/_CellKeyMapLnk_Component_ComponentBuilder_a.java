@@ -81,9 +81,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<default>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("keyMap");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

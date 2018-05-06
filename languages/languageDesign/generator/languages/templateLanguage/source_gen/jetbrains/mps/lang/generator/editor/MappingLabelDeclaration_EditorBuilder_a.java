@@ -139,9 +139,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
     provider.setNoTargetText("<no input concept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("sourceConcept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1179be47606L, 0x1179be4dc5eL, "sourceConcept"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -233,9 +233,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
     provider.setNoTargetText("<no output concept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("targetConcept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1179be47606L, 0x1179bfe3866L, "targetConcept"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

@@ -63,7 +63,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     AbstractCellListHandler handler = new Transformers_EditorBuilder_a.elementsListHandler_a7oxnt_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_elements");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class elementsListHandler_a7oxnt_b0 extends RefNodeListHandler {

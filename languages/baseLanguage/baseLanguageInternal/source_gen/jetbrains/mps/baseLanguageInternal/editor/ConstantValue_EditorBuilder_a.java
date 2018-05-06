@@ -148,9 +148,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     provider.setNoTargetText("<no constant>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("constant");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x16007da97856bd8aL, 0x16007da97856bd8bL, "constant"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

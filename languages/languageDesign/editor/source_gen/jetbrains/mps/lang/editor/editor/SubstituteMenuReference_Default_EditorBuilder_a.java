@@ -154,9 +154,9 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("concept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1eL, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Default"), "jetbrains.mps.lang.editor.editor.SubstituteMenuReference_Default_QueryMenu"));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new ReferenceCellContext(getNode(), getNode(), referenceLink), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_EditorBuilder_a.SubstituteMenuReference_Default_concept_cellMenu_h77kbg_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));

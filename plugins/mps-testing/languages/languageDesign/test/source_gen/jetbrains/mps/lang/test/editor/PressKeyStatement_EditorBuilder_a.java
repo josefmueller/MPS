@@ -68,7 +68,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     AbstractCellListHandler handler = new PressKeyStatement_EditorBuilder_a.keyStrokesListHandler_pkvqak_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_keyStrokes");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class keyStrokesListHandler_pkvqak_b0 extends RefNodeListHandler {

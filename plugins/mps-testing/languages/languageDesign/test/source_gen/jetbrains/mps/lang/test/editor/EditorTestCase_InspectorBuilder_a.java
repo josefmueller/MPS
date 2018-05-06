@@ -204,7 +204,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class logEventsListHandler_6iwt9a_b2a extends RefNodeListHandler {

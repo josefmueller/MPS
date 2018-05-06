@@ -118,7 +118,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new Calculator_EditorBuilder_a.inputFieldListHandler_uh00px_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_inputField");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class inputFieldListHandler_uh00px_b0 extends RefNodeListHandler {
@@ -184,7 +184,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new Calculator_EditorBuilder_a.outputFieldListHandler_uh00px_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_outputField");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class outputFieldListHandler_uh00px_d0 extends RefNodeListHandler {

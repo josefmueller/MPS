@@ -119,9 +119,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     provider.setNoTargetText("");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("concept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
     }
     Style style = new StyleImpl();
     new ReferenceOnConceptStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

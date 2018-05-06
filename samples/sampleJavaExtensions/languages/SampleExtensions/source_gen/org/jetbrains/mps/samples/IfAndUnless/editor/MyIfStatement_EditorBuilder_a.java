@@ -103,8 +103,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("condition");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad448ccdL, "condition"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(16119260)));
@@ -161,8 +161,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("body");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad448cceL, "body"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
@@ -242,8 +242,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("alternative");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, 0xd403d58ad457e4dL, "alternative"));
       }
     }
     @Override

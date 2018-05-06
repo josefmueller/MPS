@@ -101,9 +101,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     provider.setNoTargetText("<no property>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("property");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x746e600f0bda9e9bL, "property"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -192,9 +192,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     provider.setNoTargetText("<no mainNode>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("mainNode");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x7e881d31a4198f6fL, "mainNode"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

@@ -86,8 +86,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("checkpoint");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc11e5088a794d07L, 0x340cd07aedd21238L, "checkpoint"));
       }
     }
     @Override

@@ -135,7 +135,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class modulesListHandler_pilq2t_a2a extends RefNodeListHandler {

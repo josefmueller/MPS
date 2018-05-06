@@ -73,7 +73,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class entriesListHandler_dzagmw_b0 extends RefNodeListHandler {
@@ -168,8 +168,8 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("node");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf63919L, 0x1de1fbd5fbfc8785L, "node"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

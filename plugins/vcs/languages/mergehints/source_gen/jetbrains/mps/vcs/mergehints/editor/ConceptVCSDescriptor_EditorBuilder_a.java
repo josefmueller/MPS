@@ -138,9 +138,9 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     provider.setNoTargetText("<no cncpt>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("cncpt");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x39744cf955c649b5L, "cncpt"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -243,8 +243,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("strategy");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a5c741L, "strategy"));
       }
     }
     @Override
@@ -294,7 +294,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     AbstractCellListHandler handler = new ConceptVCSDescriptor_EditorBuilder_a.featuresListHandler_94pzwf_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_features");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class featuresListHandler_94pzwf_b1a extends RefNodeListHandler {

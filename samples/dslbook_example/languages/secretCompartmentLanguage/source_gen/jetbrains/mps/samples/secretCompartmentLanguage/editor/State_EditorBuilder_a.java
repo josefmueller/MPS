@@ -136,7 +136,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new State_EditorBuilder_a.transitionListHandler_sjqidp_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_transition");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class transitionListHandler_sjqidp_b1a extends RefNodeListHandler {

@@ -72,7 +72,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     editorCell.getStyle().putAll(style);
     editorCell.setFoldable(true);
     editorCell.setFoldedCell(createConstant_85xxz0_a0a());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class annotationListHandler_85xxz0_a0 extends RefNodeListHandler {

@@ -84,7 +84,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new CellModel_Diagram_InspectorBuilder_a.elementsCreationListHandler_7br2q0_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_elementsCreation");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class elementsCreationListHandler_7br2q0_d0 extends RefNodeListHandler {
@@ -153,7 +153,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new CellModel_Diagram_InspectorBuilder_a.connectorCreationListHandler_7br2q0_f0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_connectorCreation");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class connectorCreationListHandler_7br2q0_f0 extends RefNodeListHandler {

@@ -61,7 +61,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
     Classifier_Member_Actions.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class memberListHandler_eavk2k_a0 extends RefNodeListHandler {

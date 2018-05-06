@@ -192,7 +192,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new InputNode_B_EditorBuilder_a.inputChildListHandler_9tg0f2_b2a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_inputChild");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class inputChildListHandler_9tg0f2_b2a0 extends RefNodeListHandler {

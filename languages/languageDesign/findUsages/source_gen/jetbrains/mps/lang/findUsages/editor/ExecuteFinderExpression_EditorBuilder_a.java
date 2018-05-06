@@ -107,9 +107,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     provider.setNoTargetText("<no finder>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("finder");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, 0x118d6fce808L, "finder"));
     }
     Style style = new StyleImpl();
     new MethodNameStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -218,8 +218,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("queryNode");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, 0x118d6fce804L, "queryNode"));
       }
     }
     @Override
@@ -282,8 +282,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("queryScope");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, 0x118d6fce805L, "queryScope"));
       }
     }
     @Override
@@ -346,8 +346,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("monitor");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, 0x75272a849af7fedfL, "monitor"));
       }
     }
     @Override

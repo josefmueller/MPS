@@ -150,7 +150,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     AbstractCellListHandler handler = new OperationDeclaration_EditorBuilder_a.parameterListHandler_hqj93g_f0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parameterListHandler_hqj93g_f0 extends RefNodeListHandler {

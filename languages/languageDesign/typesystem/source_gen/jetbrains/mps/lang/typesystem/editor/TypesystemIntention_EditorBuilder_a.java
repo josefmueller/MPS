@@ -121,9 +121,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     provider.setNoTargetText("<no quickFix>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("quickFix");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL, 0x11b3667ec7bL, "quickFix"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -200,7 +200,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     AbstractCellListHandler handler = new TypesystemIntention_EditorBuilder_a.actualArgumentListHandler_il97sk_c0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_actualArgument");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class actualArgumentListHandler_il97sk_c0a extends RefNodeListHandler {

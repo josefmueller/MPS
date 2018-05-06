@@ -143,7 +143,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mapping");
     editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class mappingListHandler_vfprw_b2a extends RefNodeListHandler {

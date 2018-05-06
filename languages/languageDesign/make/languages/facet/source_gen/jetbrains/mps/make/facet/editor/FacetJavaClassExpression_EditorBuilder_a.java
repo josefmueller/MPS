@@ -90,9 +90,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     provider.setNoTargetText("<no facet>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("facet");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a4b910f856c1c94L, 0x1a4b910f856c1d9fL, "facet"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);

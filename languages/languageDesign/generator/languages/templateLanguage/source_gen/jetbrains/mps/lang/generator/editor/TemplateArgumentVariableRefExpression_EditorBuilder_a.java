@@ -97,9 +97,9 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     provider.setNoTargetText("<no varmacro>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("varmacro");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, 0x25c655ce6e80fddaL, "varmacro"));
     }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new ReferenceCellContext(getNode(), getNode(), referenceLink), new SubstituteInfoPartExt[]{new TemplateArgumentVariableRefExpression_EditorBuilder_a.TemplateArgumentVariableRefExpression_varmacro_cellMenu_ha31oa_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

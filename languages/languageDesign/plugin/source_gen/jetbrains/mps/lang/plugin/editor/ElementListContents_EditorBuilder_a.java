@@ -84,7 +84,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_reference");
     editorCell.setFoldable(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class referenceListHandler_xnbcto_b1a extends RefNodeListHandler {

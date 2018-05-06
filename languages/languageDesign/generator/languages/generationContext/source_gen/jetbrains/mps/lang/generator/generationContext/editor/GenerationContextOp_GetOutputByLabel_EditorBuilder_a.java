@@ -107,9 +107,9 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     provider.setNoTargetText("<choose mapping label>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("label");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d6L, 0x11b5282d0d7L, "label"));
     }
     Style style = new StyleImpl();
     new mappingLabelReferenceStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -215,8 +215,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("forModel");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d6L, 0x5f171e4376fc8e82L, "forModel"));
       }
     }
     @Override

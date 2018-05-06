@@ -147,7 +147,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_after");
     rt_SubTask_AfterOrBefore.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class afterListHandler_6puhak_b2a extends RefNodeListHandler {
@@ -240,7 +240,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_before");
     rt_SubTask_AfterOrBefore.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class beforeListHandler_6puhak_b3a extends RefNodeListHandler {
@@ -318,7 +318,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class statementsListHandler_6puhak_e0 extends RefNodeListHandler {

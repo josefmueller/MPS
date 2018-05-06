@@ -92,8 +92,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("whatToMove");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L, 0x1174ee44ac2L, "whatToMove"));
       }
     }
     @Override
@@ -156,8 +156,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("destination");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L, 0x1174ee44ac3L, "destination"));
       }
     }
     @Override

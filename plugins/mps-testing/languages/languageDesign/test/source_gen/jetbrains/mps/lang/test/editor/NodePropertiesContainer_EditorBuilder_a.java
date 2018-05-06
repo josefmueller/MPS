@@ -79,7 +79,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     AbstractCellListHandler handler = new NodePropertiesContainer_EditorBuilder_a.nodeCheckOperationsListHandler_ow7a4w_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_nodeCheckOperations");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class nodeCheckOperationsListHandler_ow7a4w_c0 extends RefNodeListHandler {

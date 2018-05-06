@@ -120,8 +120,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("nodeToCheck");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f58cf99L, "nodeToCheck"));
       }
     }
     @Override
@@ -188,8 +188,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("errorString");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x112d82366d0L, "errorString"));
       }
     }
     @Override
@@ -291,7 +291,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     AbstractCellListHandler handler = new AbstractEquationInspector_ComponentBuilder_a.helginsIntentionListHandler_gj4y2c_g0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("AEI_refNodeList_helginsIntention");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class helginsIntentionListHandler_gj4y2c_g0 extends RefNodeListHandler {

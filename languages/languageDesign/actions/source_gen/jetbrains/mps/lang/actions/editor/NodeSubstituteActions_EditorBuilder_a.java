@@ -144,7 +144,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class actionsBuilderListHandler_bsqfyd_a2a extends RefNodeListHandler {

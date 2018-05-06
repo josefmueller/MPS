@@ -55,7 +55,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     AbstractCellListHandler handler = new PersistentMethodsComponent_ComponentBuilder_a.methodsListHandler_55zktd_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("PMC_refNodeList_methods");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class methodsListHandler_55zktd_a0 extends RefNodeListHandler {

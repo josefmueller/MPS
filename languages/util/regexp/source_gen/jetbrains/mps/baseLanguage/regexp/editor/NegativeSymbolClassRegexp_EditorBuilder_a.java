@@ -105,7 +105,7 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
     AbstractCellListHandler handler = new NegativeSymbolClassRegexp_EditorBuilder_a.partListHandler_wznzt8_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class partListHandler_wznzt8_c0 extends RefNodeListHandler {

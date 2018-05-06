@@ -84,7 +84,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     RealObject2Placeholder.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class dependenciesListHandler_n7f8t_c0 extends RefNodeListHandler {

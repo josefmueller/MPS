@@ -64,7 +64,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class commandsListHandler_yxeg41_a0 extends RefNodeListHandler {

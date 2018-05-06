@@ -90,7 +90,7 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
     AbstractCellListHandler handler = new PositiveSymbolClassRegexp_EditorBuilder_a.partListHandler_4p4aum_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class partListHandler_4p4aum_b0 extends RefNodeListHandler {

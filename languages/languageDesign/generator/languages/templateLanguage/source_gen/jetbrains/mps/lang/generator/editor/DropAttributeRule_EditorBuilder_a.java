@@ -111,9 +111,9 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("applicableConcept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d943bL, 0x67b585b44f4d943eL, "applicableConcept"));
     }
     Style style = new StyleImpl();
     new ReferenceOnConceptStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -225,8 +225,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("condition");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d943bL, 0x67b585b44f4df327L, "condition"));
       }
     }
     @Override

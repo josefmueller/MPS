@@ -83,8 +83,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("left");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, 0x11c22e34d8eL, "left"));
       }
       IntersectionSymbolClassPart_Left_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -147,8 +147,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("right");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11c0ef7f429L, 0x11c22e2e56cL, "right"));
       }
       IntersectionSymbolClassPart_Right_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }

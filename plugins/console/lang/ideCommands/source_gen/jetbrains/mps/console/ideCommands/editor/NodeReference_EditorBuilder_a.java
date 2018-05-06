@@ -88,9 +88,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no referentNode>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("referentNode");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11be716563cL, 0x11be7172e8cL, "referentNode"));
     }
     NodeReference_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));

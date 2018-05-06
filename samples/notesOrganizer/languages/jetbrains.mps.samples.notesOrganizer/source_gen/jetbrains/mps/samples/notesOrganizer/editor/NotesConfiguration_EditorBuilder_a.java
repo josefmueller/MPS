@@ -142,7 +142,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new NotesConfiguration_EditorBuilder_a.categoriesListHandler_uldp7_b3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_categories");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class categoriesListHandler_uldp7_b3a extends RefNodeListHandler {
@@ -229,7 +229,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new NotesConfiguration_EditorBuilder_a.prioritiesListHandler_uldp7_b5a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_priorities");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class prioritiesListHandler_uldp7_b5a extends RefNodeListHandler {
@@ -316,7 +316,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_statuses");
     editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class statusesListHandler_uldp7_b7a extends RefNodeListHandler {

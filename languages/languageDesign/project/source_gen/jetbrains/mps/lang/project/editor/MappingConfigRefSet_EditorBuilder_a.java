@@ -84,7 +84,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class refsListHandler_3pyl5y_c0 extends RefNodeListHandler {

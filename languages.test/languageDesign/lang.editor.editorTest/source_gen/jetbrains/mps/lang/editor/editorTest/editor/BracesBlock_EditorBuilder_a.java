@@ -54,7 +54,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     AbstractCellListHandler handler = new BracesBlock_EditorBuilder_a.statementListHandler_nhnpdb_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_statement");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class statementListHandler_nhnpdb_a0 extends RefNodeListHandler {

@@ -118,8 +118,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("body");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f383e83d4L, "body"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -165,7 +165,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     style.set(StyleAttributes.POSITION, "next-line");
     editorCell.getStyle().putAll(style);
     UnwrapStatementListContainer.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class catchClauseListHandler_k2ibe6_e0 extends RefNodeListHandler {

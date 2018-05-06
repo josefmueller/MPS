@@ -155,7 +155,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     AbstractCellListHandler handler = new ConstructorDeclaration_EditorBuilder_a.parameterListHandler_1x071y_g0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parameterListHandler_1x071y_g0 extends RefNodeListHandler {

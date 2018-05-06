@@ -66,7 +66,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     AbstractCellListHandler handler = new CellMenuDescriptor_EditorBuilder_a.cellMenuPartListHandler_g1wmr2_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_cellMenuPart");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class cellMenuPartListHandler_g1wmr2_b0 extends RefNodeListHandler {

@@ -93,9 +93,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no queryParameter>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("queryParameter");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, 0x205f4376c5884e96L, "queryParameter"));
     }
     Style style = new StyleImpl();
     new FieldStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

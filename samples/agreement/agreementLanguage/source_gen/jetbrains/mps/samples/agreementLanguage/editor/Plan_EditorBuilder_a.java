@@ -157,7 +157,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class valueListHandler_ibbzj5_b2a extends RefNodeListHandler {
@@ -258,7 +258,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class eventListHandler_ibbzj5_b4a extends RefNodeListHandler {

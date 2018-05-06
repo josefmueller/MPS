@@ -191,8 +191,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("start");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb848396cL, 0x11fb848396dL, "start"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(0)));
@@ -258,8 +258,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("end");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb848396cL, 0x11fb848396eL, "end"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(0)));

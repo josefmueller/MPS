@@ -101,8 +101,8 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("fieldType");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70489eee8478e93eL, 0x70489eee8478e93fL, "fieldType"));
       }
     }
     @Override

@@ -122,7 +122,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     AbstractCellListHandler handler = new SimpleConceptDeclaration_EditorBuilder_a.propertiesListHandler_rbdmqs_d0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_properties");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class propertiesListHandler_rbdmqs_d0a extends RefNodeListHandler {

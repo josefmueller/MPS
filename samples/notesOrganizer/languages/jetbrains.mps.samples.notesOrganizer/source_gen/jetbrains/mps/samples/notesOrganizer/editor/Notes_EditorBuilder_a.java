@@ -275,7 +275,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class notesListHandler_uvqhkl_i0 extends RefNodeListHandler {

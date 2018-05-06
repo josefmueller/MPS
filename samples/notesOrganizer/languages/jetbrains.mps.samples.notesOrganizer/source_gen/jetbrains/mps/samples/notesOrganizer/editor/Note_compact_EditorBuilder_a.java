@@ -113,9 +113,9 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     provider.setNoTargetText("<no status>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("status");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, 0x7ba12f0b163df384L, "status"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
@@ -201,9 +201,9 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     provider.setNoTargetText("<no priority>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("priority");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, 0x7ba12f0b163df32eL, "priority"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
@@ -286,7 +286,7 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     Style style = new StyleImpl();
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class categoryListHandler_1qvl6j_d0 extends RefNodeListHandler {
@@ -358,7 +358,7 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class partsListHandler_1qvl6j_f0 extends RefNodeListHandler {

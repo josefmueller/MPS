@@ -116,9 +116,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     provider.setEmptyCellId("empty_" + "method");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("member");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -201,7 +201,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     if (nodeCondition_c9gv4j_a2a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class actualArgumentListHandler_c9gv4j_c0 extends RefNodeListHandler {

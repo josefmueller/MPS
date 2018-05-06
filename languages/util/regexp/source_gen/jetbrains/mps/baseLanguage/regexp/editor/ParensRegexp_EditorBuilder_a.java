@@ -152,8 +152,8 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("expr");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, 0x1117521177bL, "expr"));
       }
     }
     @Override

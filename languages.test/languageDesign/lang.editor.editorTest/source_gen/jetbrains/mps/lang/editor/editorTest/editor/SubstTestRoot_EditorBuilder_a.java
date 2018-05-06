@@ -126,8 +126,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("singleChild");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0xd4944c0b03c35efL, "singleChild"));
       }
     }
     @Override
@@ -199,8 +199,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("singleChildWithNonEmptyCell");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x281d4238bc38995bL, "singleChildWithNonEmptyCell"));
       }
     }
     @Override
@@ -269,7 +269,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class separatorChildListHandler_3mh94b_b3a extends RefNodeListHandler {
@@ -377,9 +377,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     provider.setNoTargetText("<no middlewareChild>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("middlewareChild");
+      editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x7ebf3747d08cabf9L, "middlewareChild"));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -420,7 +420,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
       AbstractCellListHandler handler = new SubstTestRoot_EditorBuilder_a.Inline_Builder_3mh94b_a1a4a.childListHandler_3mh94b_a0a1a4a(myNode, getEditorContext());
       EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
       editorCell.setCellId("refNodeList_child");
-      editorCell.setRole(handler.getElementRole());
+      editorCell.setSRole(handler.getElementSRole());
       return editorCell;
     }
     private static class childListHandler_3mh94b_a0a1a4a extends RefNodeListHandler {
@@ -520,7 +520,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class multiChildListHandler_3mh94b_b5a extends RefNodeListHandler {
@@ -630,8 +630,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childWithNextEditorAndMenu");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x818e8ddb10a612cL, "childWithNextEditorAndMenu"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

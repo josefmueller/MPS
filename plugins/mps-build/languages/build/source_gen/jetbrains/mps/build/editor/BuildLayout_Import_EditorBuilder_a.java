@@ -113,9 +113,9 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     provider.setNoTargetText("<no target>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("target");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target"));
     }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new ReferenceCellContext(getNode(), getNode(), referenceLink), new SubstituteInfoPartExt[]{new BuildLayout_Import_EditorBuilder_a.BuildLayout_Import_target_cellMenu_4dmy40_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

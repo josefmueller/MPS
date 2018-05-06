@@ -106,9 +106,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     provider.setNoTargetText("<no extensionPoint>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("extensionPoint");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x5bf74eafefe0e940L, 0x5bf74eafefe0eb55L, "extensionPoint"));
     }
     Style style = new StyleImpl();
     new ClassNameStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

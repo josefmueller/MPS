@@ -92,7 +92,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
     AbstractCellListHandler handler = new IndexedTupleType_EditorBuilder_a.componentTypeListHandler_kdtlb1_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_componentType");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class componentTypeListHandler_kdtlb1_b0 extends RefNodeListHandler {

@@ -65,7 +65,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     AbstractCellListHandler handler = new Composition_EditorBuilder_a.childrenListHandler_p8dkhd_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_children");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childrenListHandler_p8dkhd_b0 extends RefNodeListHandler {

@@ -99,9 +99,9 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
     provider.setNoTargetText("<no target>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("target");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, 0x5b7be37b4de9bbddL, "target"));
     }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new ReferenceCellContext(getNode(), getNode(), referenceLink), new SubstituteInfoPartExt[]{new BuildMps_IdeaPluginModule_EditorBuilder_a.BuildMps_IdeaPluginModule_target_cellMenu_37ht8c_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

@@ -88,7 +88,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class annotationListHandler_2sbeba_b0 extends RefNodeListHandler {

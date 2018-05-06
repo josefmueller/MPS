@@ -110,8 +110,8 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("reference");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252ca3abL, 0x1ec532ec252ca3baL, "reference"));
       }
       DeleteDocTag.setCellActions(editorCell, getNode(), getEditorContext());
     }

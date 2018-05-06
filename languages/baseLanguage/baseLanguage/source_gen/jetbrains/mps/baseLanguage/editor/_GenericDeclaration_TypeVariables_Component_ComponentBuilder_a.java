@@ -74,7 +74,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     AbstractCellListHandler handler = new _GenericDeclaration_TypeVariables_Component_ComponentBuilder_a.typeVariableDeclarationListHandler_k0lfun_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("_GDTVC_refNodeList_typeVariableDeclaration");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class typeVariableDeclarationListHandler_k0lfun_b0 extends RefNodeListHandler {

@@ -250,9 +250,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     provider.setNoTargetText("<default>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("extends");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -347,7 +347,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     Style style = new StyleImpl();
     new ConceptNameStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class implementsListHandler_ueqr71_b1e0a extends RefNodeListHandler {
@@ -670,7 +670,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class propertyDeclarationListHandler_ueqr71_j1c0 extends RefNodeListHandler {
@@ -768,7 +768,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     editorCell.getStyle().putAll(style);
     AbstractConceptDeclaration_Link_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class linkDeclarationListHandler_ueqr71_m1c0 extends RefNodeListHandler {
@@ -885,7 +885,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     editorCell.getStyle().putAll(style);
     AbstractConceptDeclaration_Link_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class linkDeclarationListHandler_ueqr71_p1c0 extends RefNodeListHandler {
@@ -1094,9 +1094,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     provider.setNoTargetText("<no sourceNode>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("sourceNode");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

@@ -137,9 +137,9 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
     provider.setNoTargetText("<no propertyDeclaration>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("propertyDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, 0x3e970bbc311db51fL, "propertyDeclaration"));
     }
     ConcreteCellSelector_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector"), "jetbrains.mps.lang.editor.editor.PropertyDeclarationCellSelector_Empty_SideTransformMenu"));

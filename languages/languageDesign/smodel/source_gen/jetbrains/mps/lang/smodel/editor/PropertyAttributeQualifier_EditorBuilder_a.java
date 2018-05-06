@@ -104,9 +104,9 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     provider.setNoTargetText("<no attributeConcept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("attributeConcept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045c9b9L, 0x58ea5217b045c9baL, "attributeConcept"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -210,8 +210,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("propertyQualifier");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045c9b9L, 0x58ea5217b045c9bbL, "propertyQualifier"));
       }
     }
     @Override

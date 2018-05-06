@@ -54,7 +54,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     AbstractCellListHandler handler = new History_EditorBuilder_a.itemListHandler_ff9cd8_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_item");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class itemListHandler_ff9cd8_a0 extends RefNodeListHandler {

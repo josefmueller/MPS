@@ -70,7 +70,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class availableTriggersListHandler_e22zgz_b0 extends RefNodeListHandler {
@@ -139,7 +139,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new StateChartContents_ComponentBuilder_a.statesListHandler_e22zgz_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("SCC_refNodeList_states");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class statesListHandler_e22zgz_d0 extends RefNodeListHandler {

@@ -165,9 +165,9 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("applicableConcept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -405,8 +405,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("precondition");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x10cd4e11b18L, "precondition"));
       }
     }
     @Override
@@ -469,7 +469,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     AbstractCellListHandler handler = new SideTransformHintSubstituteActionsBuilder_EditorBuilder_a.variableListHandler_185r4c_b4b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_variable");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class variableListHandler_185r4c_b4b1a extends RefNodeListHandler {
@@ -605,8 +605,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("commonInitializer");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x1182d38806cL, "commonInitializer"));
       }
     }
     @Override
@@ -669,7 +669,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     AbstractCellListHandler handler = new SideTransformHintSubstituteActionsBuilder_EditorBuilder_a.partListHandler_185r4c_b9b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_part");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class partListHandler_185r4c_b9b1a extends RefNodeListHandler {

@@ -93,9 +93,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no dataDependency>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("dataDependency");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L, 0x63476c2ad9bcd739L, "dataDependency"));
     }
     Style style = new StyleImpl();
     new VariableNameStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

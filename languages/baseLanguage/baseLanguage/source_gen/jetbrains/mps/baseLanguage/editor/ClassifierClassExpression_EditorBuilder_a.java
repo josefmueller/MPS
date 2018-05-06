@@ -106,9 +106,9 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, 0x103fb73a43eL, "classifier"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), "jetbrains.mps.baseLanguage.editor.ClassifierClassExpressionToArray"));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new ReferenceCellContext(getNode(), getNode(), referenceLink), new SubstituteInfoPartExt[]{new ClassifierClassExpression_EditorBuilder_a.ClassifierClassExpression_generic_cellMenu_ejwutq_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));

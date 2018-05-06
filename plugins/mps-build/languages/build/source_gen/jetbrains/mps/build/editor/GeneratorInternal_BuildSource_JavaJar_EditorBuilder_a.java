@@ -97,9 +97,9 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     provider.setNoTargetText("<no targetJar>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("targetJar");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0de4L, 0x44e5dd192e7c0de5L, "targetJar"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -174,8 +174,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
         if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
           editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
         }
-        if (editorCell.getRole() == null) {
-          editorCell.setRole("path");
+        if (editorCell.getSRole() == null) {
+          editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"));
         }
       }
       @Override

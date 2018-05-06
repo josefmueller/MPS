@@ -114,9 +114,9 @@ import jetbrains.mps.smodel.SNodePointer;
     provider.setNoTargetText("<no class>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("classConcept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"));
     }
     StaticMethodCall_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
@@ -231,9 +231,9 @@ import jetbrains.mps.smodel.SNodePointer;
     provider.setEmptyCellId("empty_" + "staticMethodDeclaration");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("baseMethodDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "jetbrains.mps.baseLanguage.editor.AddMethodCallTypeArgument"));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new ReferenceCellContext(getNode(), getNode(), referenceLink), new SubstituteInfoPartExt[]{new StaticMethodCall_EditorBuilder_a.StaticMethodCall_customReplace_cellMenu_a4wjjz_a0a3a(), new SChildSubstituteInfoPartEx(editorCell)}));

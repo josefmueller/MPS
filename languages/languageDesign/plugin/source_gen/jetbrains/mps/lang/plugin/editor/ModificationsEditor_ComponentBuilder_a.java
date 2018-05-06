@@ -84,7 +84,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new ModificationsEditor_ComponentBuilder_a.modifierListHandler_jfpqgy_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("ME_refNodeList_modifier");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class modifierListHandler_jfpqgy_b1a extends RefNodeListHandler {

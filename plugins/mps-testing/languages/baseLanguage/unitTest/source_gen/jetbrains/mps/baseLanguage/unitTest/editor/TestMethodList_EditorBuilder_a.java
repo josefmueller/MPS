@@ -61,7 +61,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class testMethodListHandler_bc5hcd_a0 extends RefNodeListHandler {

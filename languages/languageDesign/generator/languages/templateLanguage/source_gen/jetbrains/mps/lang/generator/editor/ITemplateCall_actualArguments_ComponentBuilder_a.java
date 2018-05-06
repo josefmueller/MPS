@@ -97,7 +97,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.RightParenStyleClas
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class actualArgumentListHandler_1xd1xh_b0a extends RefNodeListHandler {

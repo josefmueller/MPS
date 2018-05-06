@@ -144,8 +144,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("icon");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e4aL, 0x6e8fcf3625c61213L, "icon"));
       }
     }
     @Override

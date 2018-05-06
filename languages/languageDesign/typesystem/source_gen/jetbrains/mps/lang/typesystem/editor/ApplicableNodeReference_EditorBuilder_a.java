@@ -98,9 +98,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no applicableNode>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("applicableNode");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL, 0x1117e9f2a5aL, "applicableNode"));
     }
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

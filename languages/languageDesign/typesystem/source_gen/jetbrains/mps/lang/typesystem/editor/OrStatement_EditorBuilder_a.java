@@ -53,7 +53,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     AbstractCellListHandler handler = new OrStatement_EditorBuilder_a.orClauseListHandler_s3jzuo_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_orClause");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class orClauseListHandler_s3jzuo_a0 extends RefNodeListHandler {

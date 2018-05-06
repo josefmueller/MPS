@@ -123,9 +123,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     provider.setNoTargetText("<no controlMethod>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("controlMethod");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11e4ba658c8L, "controlMethod"));
     }
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -231,9 +231,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     provider.setNoTargetText("<no controlClosure>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("controlClosure");
+      editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11ef552e307L, "controlClosure"));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -274,7 +274,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
       AbstractCellListHandler handler = new ClosureControlStatement_EditorBuilder_a.Inline_Builder_2saq3j_a1b0.parameterListHandler_2saq3j_a0a1b0(myNode, getEditorContext());
       EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
       editorCell.setCellId("refNodeList_parameter");
-      editorCell.setRole(handler.getElementRole());
+      editorCell.setSRole(handler.getElementSRole());
       return editorCell;
     }
     private static class parameterListHandler_2saq3j_a0a1b0 extends RefNodeListHandler {
@@ -381,7 +381,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     AbstractCellListHandler handler = new ClosureControlStatement_EditorBuilder_a.actualParameterListHandler_2saq3j_b2b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_actualParameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class actualParameterListHandler_2saq3j_b2b0 extends RefNodeListHandler {
@@ -502,8 +502,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("controlClosure");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11ef552e307L, "controlClosure"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

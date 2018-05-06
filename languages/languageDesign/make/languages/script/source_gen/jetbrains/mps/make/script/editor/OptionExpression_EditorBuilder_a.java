@@ -93,9 +93,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no option>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("option");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b2L, 0x70276038dc4d7b3L, "option"));
     }
     Style style = new StyleImpl();
     new StaticFieldStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

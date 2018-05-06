@@ -101,8 +101,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("function");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L, 0x11fb842c1adL, "function"));
       }
     }
     @Override
@@ -140,7 +140,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     if (nodeCondition_1dey68_a2a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parameterListHandler_1dey68_c0 extends RefNodeListHandler {

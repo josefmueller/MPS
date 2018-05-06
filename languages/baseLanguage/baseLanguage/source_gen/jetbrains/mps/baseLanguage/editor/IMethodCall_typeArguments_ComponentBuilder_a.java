@@ -89,7 +89,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightAngle
     AbstractCellListHandler handler = new IMethodCall_typeArguments_ComponentBuilder_a.typeArgumentListHandler_q1hswy_b0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("IMCA_refNodeList_typeArgument");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class typeArgumentListHandler_q1hswy_b0a extends RefNodeListHandler {

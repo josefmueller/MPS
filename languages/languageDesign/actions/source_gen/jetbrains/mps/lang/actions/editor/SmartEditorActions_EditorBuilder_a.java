@@ -153,7 +153,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new SmartEditorActions_EditorBuilder_a.generateCodeListHandler_703hqq_b3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_generateCode");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class generateCodeListHandler_703hqq_b3a extends RefNodeListHandler {
@@ -243,7 +243,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new SmartEditorActions_EditorBuilder_a.surroundWithListHandler_703hqq_b6a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_surroundWith");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class surroundWithListHandler_703hqq_b6a extends RefNodeListHandler {

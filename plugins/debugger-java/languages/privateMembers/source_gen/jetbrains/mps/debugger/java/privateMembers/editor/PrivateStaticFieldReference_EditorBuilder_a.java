@@ -125,9 +125,9 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"));
     }
     StaticFieldReference_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new ReferenceCellContext(getNode(), getNode(), referenceLink), new SubstituteInfoPartExt[]{new PrivateStaticFieldReference_EditorBuilder_a.PrivateStaticFieldReference_classifier_cellMenu_62ivzp_a0a0a(), new SChildSubstituteInfoPartEx(editorCell)}));
@@ -242,9 +242,9 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     provider.setEmptyCellId("empty_" + "staticFieldDeclaration");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("variableDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"));
     }
     StaticFieldReference_DeleteDot.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setTransformationMenuLookup(new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference")));

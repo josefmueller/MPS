@@ -134,7 +134,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     AbstractCellListHandler handler = new Element_EditorBuilder_a.attributeListHandler_76r4mg_c0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_attribute");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class attributeListHandler_76r4mg_c0a extends RefNodeListHandler {
@@ -226,7 +226,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     AbstractCellListHandler handler = new Element_EditorBuilder_a.contentListHandler_76r4mg_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_content");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class contentListHandler_76r4mg_b1a extends RefNodeListHandler {

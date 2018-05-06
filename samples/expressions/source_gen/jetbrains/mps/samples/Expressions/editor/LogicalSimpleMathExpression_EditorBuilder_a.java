@@ -83,8 +83,8 @@ import jetbrains.mps.samples.Expressions.editor.SimpleMath_StyleSheet.KeyWordSty
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("left");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c52ccL, 0x1cc69153b81d5476L, "left"));
       }
     }
     @Override
@@ -145,8 +145,8 @@ import jetbrains.mps.samples.Expressions.editor.SimpleMath_StyleSheet.KeyWordSty
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("right");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b81c52ccL, 0x1cc69153b81d5478L, "right"));
       }
     }
     @Override

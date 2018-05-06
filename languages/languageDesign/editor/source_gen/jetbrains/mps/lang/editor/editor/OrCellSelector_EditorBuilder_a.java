@@ -85,8 +85,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("leftSelector");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b040L, "leftSelector"));
       }
       OrCellSelector_Left_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -150,8 +150,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("rightSelector");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"));
       }
       OrCellSelector_Right_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }

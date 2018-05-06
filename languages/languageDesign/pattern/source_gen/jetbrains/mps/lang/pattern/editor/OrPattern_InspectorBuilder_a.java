@@ -69,7 +69,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class variableListHandler_oeflkv_b0 extends RefNodeListHandler {

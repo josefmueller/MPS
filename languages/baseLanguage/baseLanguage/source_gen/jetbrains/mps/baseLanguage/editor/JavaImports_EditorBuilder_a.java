@@ -63,7 +63,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     AbstractCellListHandler handler = new JavaImports_EditorBuilder_a.entriesListHandler_1bs0fk_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entries");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class entriesListHandler_1bs0fk_a0 extends RefNodeListHandler {

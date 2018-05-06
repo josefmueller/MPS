@@ -89,7 +89,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     AbstractCellListHandler handler = new ClosureLiteralType_EditorBuilder_a.parameterTypeListHandler_577lj3_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameterType");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parameterTypeListHandler_577lj3_b0 extends RefNodeListHandler {
@@ -210,8 +210,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("resultType");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4d5371L, "resultType"));
       }
     }
     @Override
@@ -255,7 +255,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     AbstractCellListHandler handler = new ClosureLiteralType_EditorBuilder_a.throwsTypeListHandler_577lj3_b4a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_throwsType");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class throwsTypeListHandler_577lj3_b4a extends RefNodeListHandler {

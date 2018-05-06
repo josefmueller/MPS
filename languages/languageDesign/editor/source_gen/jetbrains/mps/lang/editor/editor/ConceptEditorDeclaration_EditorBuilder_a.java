@@ -105,7 +105,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     AbstractCellListHandler handler = new ConceptEditorDeclaration_EditorBuilder_a.contextHintsListHandler_cth9w3_a0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_contextHints");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class contextHintsListHandler_cth9w3_a0a extends RefNodeListHandler {
@@ -215,9 +215,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("conceptDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -367,8 +367,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("cellModel");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, 0xfba0ec5415L, "cellModel"));
       }
       editorCell.addKeyMap(new EditorCellModel_KeyMap());
     }
@@ -482,8 +482,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("inspectedCellModel");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, 0xfb06ef2f06L, "inspectedCellModel"));
       }
       editorCell.addKeyMap(new EditorCellModel_KeyMap());
     }

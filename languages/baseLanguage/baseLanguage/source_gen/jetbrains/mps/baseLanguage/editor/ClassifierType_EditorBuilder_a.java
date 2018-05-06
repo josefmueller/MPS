@@ -108,9 +108,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, false);
@@ -197,7 +197,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new ClassifierType_EditorBuilder_a.parameterListHandler_91bvrs_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parameterListHandler_91bvrs_b1a extends RefNodeListHandler {

@@ -60,7 +60,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
     forbid_Insert.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class partsListHandler_4qas4m_a0 extends RefNodeListHandler {

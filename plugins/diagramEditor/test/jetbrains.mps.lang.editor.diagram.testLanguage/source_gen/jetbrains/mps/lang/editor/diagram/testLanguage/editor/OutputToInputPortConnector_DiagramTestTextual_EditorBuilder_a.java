@@ -101,9 +101,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     provider.setNoTargetText("<no src>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("src");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL, 0x4ce40ecaf4106e5cL, "src"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -192,9 +192,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     provider.setNoTargetText("<no dst>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("dst");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL, 0x4ce40ecaf4106e6bL, "dst"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

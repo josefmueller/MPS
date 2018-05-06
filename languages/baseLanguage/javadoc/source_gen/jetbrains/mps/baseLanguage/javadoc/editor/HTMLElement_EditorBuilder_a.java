@@ -284,7 +284,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     HandleEnterInTheEnd_Actions.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class lineListHandler_h096ql_d0a extends RefNodeListHandler {

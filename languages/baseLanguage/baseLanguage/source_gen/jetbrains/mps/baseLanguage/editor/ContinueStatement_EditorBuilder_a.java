@@ -260,8 +260,8 @@ __switch__:
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("loopLabelReference");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, 0x7dae85d6eb43bbbdL, "loopLabelReference"));
       }
       Style style = new StyleImpl();
       new VariableNameStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

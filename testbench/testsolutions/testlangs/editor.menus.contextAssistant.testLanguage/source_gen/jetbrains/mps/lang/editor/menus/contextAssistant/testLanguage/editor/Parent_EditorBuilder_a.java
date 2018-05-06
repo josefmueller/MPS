@@ -145,7 +145,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     AbstractCellListHandler handler = new Parent_EditorBuilder_a.childrenListHandler_vx0ep_a1b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_children");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childrenListHandler_vx0ep_a1b0 extends RefNodeListHandler {

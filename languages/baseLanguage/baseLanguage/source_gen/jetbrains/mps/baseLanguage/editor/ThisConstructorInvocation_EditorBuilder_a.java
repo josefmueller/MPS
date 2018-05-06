@@ -90,7 +90,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class actualArgumentListHandler_g21mz4_c0 extends RefNodeListHandler {

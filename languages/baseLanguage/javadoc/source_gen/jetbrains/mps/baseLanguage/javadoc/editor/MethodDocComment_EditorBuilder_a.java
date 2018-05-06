@@ -123,7 +123,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     RemoveDocComment.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class bodyListHandler_ls0i5e_b0a extends RefNodeListHandler {
@@ -206,7 +206,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_ls0i5e_a0d0a());
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, _StyleParameter_QueryFunction_ls0i5e_a1d0a());
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class tagsListHandler_ls0i5e_d0a extends RefNodeListHandler {
@@ -356,7 +356,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class authorListHandler_ls0i5e_b4a0 extends RefNodeListHandler {
@@ -421,7 +421,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class sinceListHandler_ls0i5e_c4a0 extends RefNodeListHandler {
@@ -486,7 +486,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class versionListHandler_ls0i5e_d4a0 extends RefNodeListHandler {
@@ -551,7 +551,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class seeListHandler_ls0i5e_e4a0 extends RefNodeListHandler {
@@ -616,7 +616,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class paramListHandler_ls0i5e_f4a0 extends RefNodeListHandler {
@@ -681,7 +681,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class throwsTagListHandler_ls0i5e_g4a0 extends RefNodeListHandler {
@@ -770,8 +770,8 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("deprecated");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f96bL, "deprecated"));
       }
       Style style = new StyleImpl();
       new JavaDocStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -831,8 +831,8 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("return");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, 0x514c0f6870509198L, "return"));
       }
       Style style = new StyleImpl();
       new JavaDocStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

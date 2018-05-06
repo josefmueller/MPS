@@ -155,9 +155,9 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier"));
     }
     if (nodeCondition_msf9u8_a0a0()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -246,7 +246,7 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
     AbstractCellListHandler handler = new AnonymousClass_EditorBuilder_a.typeParameterListHandler_msf9u8_b1a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_typeParameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class typeParameterListHandler_msf9u8_b1a0 extends RefNodeListHandler {
@@ -338,7 +338,7 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
     AbstractCellListHandler handler = new AnonymousClass_EditorBuilder_a.parameterListHandler_msf9u8_d0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parameterListHandler_msf9u8_d0a extends RefNodeListHandler {
@@ -424,7 +424,7 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class constructorArgumentListHandler_msf9u8_e0a extends RefNodeListHandler {
@@ -653,8 +653,8 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("instanceInitializer");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x118f0bb6f38L, "instanceInitializer"));
       }
     }
     @Override
@@ -703,7 +703,7 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class fieldListHandler_msf9u8_a4c1a extends RefNodeListHandler {
@@ -797,7 +797,7 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class methodListHandler_msf9u8_a6c1a extends RefNodeListHandler {

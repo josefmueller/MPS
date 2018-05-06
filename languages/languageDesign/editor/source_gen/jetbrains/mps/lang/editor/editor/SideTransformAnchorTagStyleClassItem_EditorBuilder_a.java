@@ -220,7 +220,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_tags");
     editorCell.setUsesBraces(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class tagsListHandler_2l0gvl_d0 extends RefNodeListHandler {

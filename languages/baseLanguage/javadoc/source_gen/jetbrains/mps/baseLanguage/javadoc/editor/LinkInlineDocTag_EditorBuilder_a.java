@@ -116,8 +116,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("reference");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x235789022a5d3a2fL, 0x235789022a5d3a34L, "reference"));
       }
     }
     @Override
@@ -142,7 +142,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     AbstractCellListHandler handler = new LinkInlineDocTag_EditorBuilder_a.lineListHandler_bju3wr_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_line");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class lineListHandler_bju3wr_c0 extends RefNodeListHandler {

@@ -70,7 +70,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     AbstractCellListHandler handler = new AppendOperation_EditorBuilder_a.partListHandler_yuehr3_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class partListHandler_yuehr3_b0 extends RefNodeListHandler {

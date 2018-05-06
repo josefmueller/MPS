@@ -123,7 +123,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new CustomWatchablesContainer_EditorBuilder_a.watchableListHandler_8ahkcj_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_watchable");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class watchableListHandler_8ahkcj_c0 extends RefNodeListHandler {

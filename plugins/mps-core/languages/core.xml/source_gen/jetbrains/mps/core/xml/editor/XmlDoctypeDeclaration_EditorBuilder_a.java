@@ -207,8 +207,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, 0x1d9c27c394f60340L, "externalId"), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, "jetbrains.mps.core.xml.structure.XmlExternalId")), new SubstituteInfoPartExt[]{new XmlDoctypeDeclaration_EditorBuilder_a.externalIdSingleRoleHandler_kqvvq_c1a.XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a(), new XmlDoctypeDeclaration_EditorBuilder_a.externalIdSingleRoleHandler_kqvvq_c1a.XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("externalId");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, 0x1d9c27c394f60340L, "externalId"));
       }
     }
     @Override

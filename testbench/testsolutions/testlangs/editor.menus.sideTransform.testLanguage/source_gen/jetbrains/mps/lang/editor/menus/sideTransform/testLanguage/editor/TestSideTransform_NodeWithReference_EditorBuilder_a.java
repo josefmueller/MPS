@@ -144,9 +144,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     provider.setNoTargetText("<no reference>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("reference");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x38c885e4a7fcfbb8L, 0x38c885e4a7fcfbbaL, "reference"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x38c885e4a7fcfbb8L, "jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestSideTransform_NodeWithReference"), "jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.editor.TestSideTransform_NodeWithReference_CustomActions"));
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
@@ -240,9 +240,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     provider.setNoTargetText("<no reference>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("reference");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x38c885e4a7fcfbb8L, 0x38c885e4a7fcfbbaL, "reference"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

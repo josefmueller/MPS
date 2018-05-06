@@ -180,7 +180,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     AbstractCellListHandler handler = new ApplicationPluginDeclaration_EditorBuilder_a.fieldDeclarationListHandler_n7kiqy_a1b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_fieldDeclaration");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class fieldDeclarationListHandler_n7kiqy_a1b0 extends RefNodeListHandler {
@@ -278,8 +278,8 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("initBlock");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2058L, 0x6b059b0986f205aL, "initBlock"));
       }
     }
     @Override
@@ -342,8 +342,8 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("disposeBlock");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2058L, 0x6b059b0986f205bL, "disposeBlock"));
       }
     }
     @Override

@@ -111,9 +111,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     provider.setNoTargetText("<no unit>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("unit");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x3210b276d14435a8L, "unit"));
     }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

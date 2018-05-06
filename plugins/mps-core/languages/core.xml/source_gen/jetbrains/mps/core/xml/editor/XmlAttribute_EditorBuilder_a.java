@@ -164,7 +164,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     AbstractCellListHandler handler = new XmlAttribute_EditorBuilder_a.valueListHandler_1uorir_a3a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_value");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class valueListHandler_1uorir_a3a0 extends RefNodeListHandler {
@@ -311,7 +311,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     if (nodeCondition_1uorir_a3a0()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class valueListHandler_1uorir_d0a extends RefNodeListHandler {

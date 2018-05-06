@@ -150,7 +150,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     AbstractCellListHandler handler = new XmlElement_EditorBuilder_a.attributesListHandler_vc3gub_a2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_attributes");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class attributesListHandler_vc3gub_a2a extends RefNodeListHandler {
@@ -305,7 +305,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class contentListHandler_vc3gub_b0a0d0 extends RefNodeListHandler {
@@ -412,7 +412,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     AbstractCellListHandler handler = new XmlElement_EditorBuilder_a.contentListHandler_vc3gub_b0a0a3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_content_1");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class contentListHandler_vc3gub_b0a0a3a extends RefNodeListHandler {

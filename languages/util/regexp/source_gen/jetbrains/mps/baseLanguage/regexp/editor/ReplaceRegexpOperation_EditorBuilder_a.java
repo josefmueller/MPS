@@ -128,8 +128,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("search");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"));
       }
     }
     @Override
@@ -165,7 +165,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     AbstractCellListHandler handler = new ReplaceRegexpOperation_EditorBuilder_a.replacementListHandler_ldr481_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_replacement");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class replacementListHandler_ldr481_d0 extends RefNodeListHandler {

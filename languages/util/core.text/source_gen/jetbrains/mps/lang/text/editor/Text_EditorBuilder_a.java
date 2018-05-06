@@ -69,7 +69,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     AbstractCellListHandler handler = new Text_EditorBuilder_a.linesListHandler_wlph7j_a0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_lines");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class linesListHandler_wlph7j_a0a extends RefNodeListHandler {

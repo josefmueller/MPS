@@ -72,7 +72,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, _StyleParameter_QueryFunction_u338ov_a1a0());
     editorCell.getStyle().putAll(style);
     StatementList_Actions.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class statementListHandler_u338ov_a0 extends RefNodeListHandler {

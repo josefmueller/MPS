@@ -95,9 +95,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no variable>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("variable");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x2b7df577ffbb6a85L, 0x2b7df577ffbb6a86L, "variable"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);

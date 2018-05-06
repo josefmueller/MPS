@@ -102,9 +102,9 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
     provider.setNoTargetText("<no module>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("module");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL, 0x2c4467914643e8fdL, "module"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), "jetbrains.mps.build.mps.editor.add_reexport_BuildMps_ModuleDependencyOnJavaModule"));
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));

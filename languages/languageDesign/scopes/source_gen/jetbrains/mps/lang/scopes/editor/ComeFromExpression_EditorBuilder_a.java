@@ -94,9 +94,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("link");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("link");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xd8f591ec4d864af2L, 0x9f92a9e93c803ffaL, 0x701a981462928bdfL, 0x701a981462928f1eL, "link"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

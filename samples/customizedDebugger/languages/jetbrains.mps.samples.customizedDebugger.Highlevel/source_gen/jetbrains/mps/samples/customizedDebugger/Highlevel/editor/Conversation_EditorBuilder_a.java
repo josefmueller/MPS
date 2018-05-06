@@ -119,7 +119,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class participantsListHandler_h5gehg_d0 extends RefNodeListHandler {
@@ -200,7 +200,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     AbstractCellListHandler handler = new Conversation_EditorBuilder_a.smallTalkListHandler_h5gehg_f0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_smallTalk");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class smallTalkListHandler_h5gehg_f0 extends RefNodeListHandler {

@@ -57,7 +57,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     AbstractCellListHandler handler = new ExplicitHintsSpecification_EditorBuilder_a.hintsListHandler_a0aq3k_a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_hints");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class hintsListHandler_a0aq3k_a0 extends RefNodeListHandler {

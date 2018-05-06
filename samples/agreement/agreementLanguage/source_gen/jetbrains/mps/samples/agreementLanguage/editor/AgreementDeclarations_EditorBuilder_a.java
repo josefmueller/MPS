@@ -149,7 +149,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class accountTypeListHandler_5606pw_b2a extends RefNodeListHandler {
@@ -270,7 +270,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class eventTypeListHandler_5606pw_b4a extends RefNodeListHandler {

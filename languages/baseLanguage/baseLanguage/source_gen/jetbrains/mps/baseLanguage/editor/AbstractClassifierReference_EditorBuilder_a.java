@@ -88,9 +88,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, 0x6c6c91efa5ecbbb2L, "classifier"));
     }
     editorCell.addKeyMap(new AbstractClassifierReference_KeyMap());
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));

@@ -95,8 +95,8 @@ import jetbrains.mps.smodel.SNodePointer;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId"), MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x500fe561b6da3df1L, "jetbrains.mps.lang.smodel.structure.AbstractLanguageIdentity")), new SubstituteInfoPartExt[]{new LanguageReference_EditorBuilder_a.languageIdSingleRoleHandler_uxcxn0_a0.LanguageReference_generic_cellMenu_uxcxn0_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("languageId");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId"));
       }
     }
     @Override

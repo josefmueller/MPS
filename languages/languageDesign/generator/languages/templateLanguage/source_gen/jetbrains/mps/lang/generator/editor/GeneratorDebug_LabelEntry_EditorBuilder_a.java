@@ -95,7 +95,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new GeneratorDebug_LabelEntry_EditorBuilder_a.entriesListHandler_mfgmav_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entries");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class entriesListHandler_mfgmav_b0 extends RefNodeListHandler {

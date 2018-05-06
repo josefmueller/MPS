@@ -120,9 +120,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     provider.setNoTargetText("<no cncpt>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("cncpt");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL, 0x346ead2c08ccf9f3L, "cncpt"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -253,7 +253,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     AbstractCellListHandler handler = new SimpleEditorDeclaration_EditorBuilder_a.visiblePropertiesListHandler_3o46xk_c2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_visibleProperties");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class visiblePropertiesListHandler_3o46xk_c2a extends RefNodeListHandler {

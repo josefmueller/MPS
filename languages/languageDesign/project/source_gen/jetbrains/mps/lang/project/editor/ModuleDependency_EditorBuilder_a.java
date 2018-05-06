@@ -90,8 +90,8 @@ import jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet.KeyWordStyl
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("moduleRef");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x19bfb4173fb5241eL, "moduleRef"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);

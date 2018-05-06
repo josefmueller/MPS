@@ -184,8 +184,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("target");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x6a7c966ca6903a21L, "target"));
       }
       editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getInterfaceConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.modelapi.structure.ModelIdentity"), "jetbrains.mps.lang.modelapi.editor.AllRepositoryModels_TM"));
     }
@@ -234,7 +234,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class manifestListHandler_btgssu_a3c0 extends RefNodeListHandler {

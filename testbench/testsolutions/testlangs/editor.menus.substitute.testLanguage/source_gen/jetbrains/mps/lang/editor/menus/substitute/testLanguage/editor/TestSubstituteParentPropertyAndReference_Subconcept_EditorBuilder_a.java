@@ -164,9 +164,9 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     provider.setEmptyCellId("empty_" + "defaultSpecialReference");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("defaultReference");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x69b757bd7bd1810L, "defaultReference"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x6723ebbaa4956096L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildToReferenceSubconcept")));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -260,9 +260,9 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     provider.setEmptyCellId("empty_" + "specialReferenceWithMenuPart");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("referenceWithReferenceMenuPart");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x70e6651a9408d373L, "referenceWithReferenceMenuPart"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x314f66c376dfa909L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentPropertyAndReference_Subconcept"), "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteParentPropertyAndRef_Subconcept_RefMenuPart"));
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x6723ebbaa4956096L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildToReferenceSubconcept")));

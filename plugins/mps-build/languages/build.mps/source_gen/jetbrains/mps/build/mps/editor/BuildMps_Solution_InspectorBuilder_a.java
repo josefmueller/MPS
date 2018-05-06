@@ -198,7 +198,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class sourcesListHandler_ju7sd7_d1a0 extends RefNodeListHandler {
@@ -281,7 +281,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class dependenciesListHandler_ju7sd7_f1a0 extends RefNodeListHandler {

@@ -95,7 +95,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new BeforeTasksComponent_ComponentBuilder_a.beforeTaskListHandler_3w3ux3_b1b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("BTC_refNodeList_beforeTask");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class beforeTaskListHandler_3w3ux3_b1b0 extends RefNodeListHandler {

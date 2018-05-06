@@ -77,7 +77,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
     editorCell.setCellId("newId");
     TestTargetActionMap.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.addKeyMap(new TestTargetKeymap());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childrenListHandler_ugmp9z_a0 extends RefNodeListHandler {

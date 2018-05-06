@@ -114,9 +114,9 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     provider.setNoTargetText("<no classConcept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("classConcept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);

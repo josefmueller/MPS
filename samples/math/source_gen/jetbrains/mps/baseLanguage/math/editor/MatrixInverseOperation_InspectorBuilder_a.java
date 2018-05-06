@@ -62,9 +62,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
     provider.setNoTargetText("<no context>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("context");
+      editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abcL, 0x1a6fbb5a434b3ed7L, "context"));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

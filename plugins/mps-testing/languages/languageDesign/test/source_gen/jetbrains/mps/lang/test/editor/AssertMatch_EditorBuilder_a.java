@@ -88,7 +88,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     AbstractCellListHandler handler = new AssertMatch_EditorBuilder_a.beforeListHandler_nev4di_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_before");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class beforeListHandler_nev4di_c0 extends RefNodeListHandler {
@@ -188,7 +188,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     AbstractCellListHandler handler = new AssertMatch_EditorBuilder_a.afterListHandler_nev4di_g0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_after");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class afterListHandler_nev4di_g0 extends RefNodeListHandler {

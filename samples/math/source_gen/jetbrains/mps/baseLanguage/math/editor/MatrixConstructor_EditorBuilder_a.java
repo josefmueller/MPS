@@ -97,7 +97,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     style.set(StyleAttributes.DEFAULT_BASE_LINE, DefaultBaseLine.CENTER);
     style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class componentsListHandler_lhhqxl_b0a extends RefNodeListHandler {
@@ -190,7 +190,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     style.set(StyleAttributes.DEFAULT_BASE_LINE, DefaultBaseLine.CENTER);
     style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.HORIZONTAL_COLLECTION);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class componentsListHandler_lhhqxl_b0a_0 extends RefNodeListHandler {

@@ -97,9 +97,9 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     provider.setNoTargetText("<no author>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("author");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f713L, 0x71d6f475fc93f71fL, "author"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

@@ -62,7 +62,7 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class partsListHandler_k5fwh9_a0 extends RefNodeListHandler {

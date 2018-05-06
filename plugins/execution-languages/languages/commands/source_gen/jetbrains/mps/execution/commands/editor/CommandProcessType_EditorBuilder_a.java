@@ -105,9 +105,9 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.greate
     provider.setNoTargetText("<no commandDeclaration>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("commandDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x87f99370d7e1ea3L, 0x87f99370d7e1ea4L, "commandDeclaration"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

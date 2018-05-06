@@ -160,8 +160,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("dominates");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, 0x2ef3b3796a130bd8L, "dominates"));
       }
     }
     @Override
@@ -210,7 +210,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class styleItemListHandler_zc4y0i_b3a extends RefNodeListHandler {

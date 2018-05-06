@@ -112,8 +112,8 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("facetRef");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, 0x78c916bd7aecc3aeL, "facetRef"));
       }
     }
     @Override
@@ -176,9 +176,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no target>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("target");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, 0x78c916bd7aecc3bcL, "target"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));

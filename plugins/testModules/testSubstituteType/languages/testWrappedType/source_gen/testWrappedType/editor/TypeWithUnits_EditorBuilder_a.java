@@ -101,8 +101,8 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("wrapped");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL, 0x116157dc0d8c52bdL, "wrapped"));
       }
     }
     @Override

@@ -108,9 +108,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     provider.setNoTargetText("<no node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("node");
+      editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f0aeL, "node"));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

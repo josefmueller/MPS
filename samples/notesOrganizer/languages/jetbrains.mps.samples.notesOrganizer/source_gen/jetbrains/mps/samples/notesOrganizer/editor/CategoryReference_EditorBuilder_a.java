@@ -97,9 +97,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     provider.setNoTargetText("<no target>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("target");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df334L, 0x7ba12f0b163df335L, "target"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_dzi49r_a0a0()));

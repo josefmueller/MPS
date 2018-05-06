@@ -118,7 +118,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new PrimitiveTypeDescriptor_EditorBuilder_a.extendsListHandler_7ntfj2_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_extends");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class extendsListHandler_7ntfj2_d0 extends RefNodeListHandler {

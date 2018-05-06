@@ -123,9 +123,9 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("classifier");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0ac833a6L, "classifier"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), "jetbrains.mps.baseLanguage.editor.newExpression_DefaultClassCreator_ext_2"));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new ReferenceCellContext(getNode(), getNode(), referenceLink), new SubstituteInfoPartExt[]{new DefaultClassCreator_EditorBuilder_a.DefaultClassCreator_classifier_cellMenu_27y5p7_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
@@ -231,7 +231,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     AbstractCellListHandler handler = new DefaultClassCreator_EditorBuilder_a.typeParameterListHandler_27y5p7_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_typeParameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class typeParameterListHandler_27y5p7_b1a extends RefNodeListHandler {

@@ -100,9 +100,9 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
     provider.setNoTargetText("<no action>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("action");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x202f4c4e02a0918cL, 0x202f4c4e02a09194L, "action"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -175,7 +175,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class featuresListHandler_uxi26n_c0 extends RefNodeListHandler {

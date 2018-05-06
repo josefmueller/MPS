@@ -115,8 +115,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("source");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L, 0x6552f0adf298f24fL, "source"));
       }
     }
     @Override
@@ -181,8 +181,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("create");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L, 0x328e81d9f2097e86L, "create"));
       }
     }
     @Override
@@ -253,8 +253,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("isConfigurationFromContext");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L, 0x567cd4252ad2e9d7L, "isConfigurationFromContext"));
       }
     }
     @Override

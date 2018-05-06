@@ -88,8 +88,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("function");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de0L, "function"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -138,7 +138,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class argumentListHandler_ppbi6p_b1a extends RefNodeListHandler {

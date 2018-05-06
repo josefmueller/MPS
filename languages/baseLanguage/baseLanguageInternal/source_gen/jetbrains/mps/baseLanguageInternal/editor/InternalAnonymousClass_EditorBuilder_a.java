@@ -170,8 +170,8 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("type");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, 0x2f7b79225e7468e6L, "type"));
       }
     }
     @Override
@@ -253,7 +253,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     AbstractCellListHandler handler = new InternalAnonymousClass_EditorBuilder_a.typeParameterListHandler_lqrwoi_g0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_typeParameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class typeParameterListHandler_lqrwoi_g0a extends RefNodeListHandler {
@@ -346,7 +346,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class constructorArgumentListHandler_lqrwoi_b8a0 extends RefNodeListHandler {
@@ -538,8 +538,8 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("instanceInitializer");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x118f0bb6f38L, "instanceInitializer"));
       }
     }
     @Override
@@ -588,7 +588,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class fieldListHandler_lqrwoi_a3b0 extends RefNodeListHandler {
@@ -682,7 +682,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class methodListHandler_lqrwoi_a5b0 extends RefNodeListHandler {

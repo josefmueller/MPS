@@ -316,8 +316,8 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellM
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377600dd75eL, 0x133763776010fa10L, "child"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776010fa0dL, "jetbrains.mps.lang.editor.editorTest.structure.MenuTraceGrandChildCellMenu")), new SubstituteInfoPartExt[]{new MenuTraceChildCellMenu_EditorBuilder_a.childSingleRoleHandler_i2boga_e0.MenuTraceChildCellMenu_child_cellMenu_i2boga_a0e0(), new MenuTraceChildCellMenu_EditorBuilder_a.childSingleRoleHandler_i2boga_e0.MenuTraceChildCellMenu_child_cellMenu_i2boga_b0e0(), new MenuTraceChildCellMenu_EditorBuilder_a.childSingleRoleHandler_i2boga_e0.MenuTraceChildCellMenu_child_cellMenu_i2boga_c0e0(), new MenuTraceChildCellMenu_EditorBuilder_a.childSingleRoleHandler_i2boga_e0.MenuTraceChildCellMenu_child_cellMenu_i2boga_d0e0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("child");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377600dd75eL, 0x133763776010fa10L, "child"));
       }
     }
     @Override

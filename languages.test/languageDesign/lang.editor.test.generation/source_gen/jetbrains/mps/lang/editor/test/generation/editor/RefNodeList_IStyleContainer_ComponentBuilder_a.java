@@ -174,7 +174,7 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     style.set(StyleAttributes.UNDERLINED, false);
     style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_1fg3ie_a29a0());
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childrenListHandler_1fg3ie_a0 extends RefNodeListHandler {
@@ -393,7 +393,7 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     style.set(StyleAttributes.DEFAULT_BASE_LINE, DefaultBaseLine.CENTER);
     style.set(StyleAttributes.DEFAULT_BASE_LINE, DefaultBaseLine.LAST);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childrenListHandler_1fg3ie_b0 extends RefNodeListHandler {
@@ -476,7 +476,7 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childrenListHandler_1fg3ie_a2a extends RefNodeListHandler {

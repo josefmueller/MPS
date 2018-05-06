@@ -172,8 +172,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childSubconcept");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x3f759544c6a0705eL, "childSubconcept"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -256,8 +256,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childIncludeSameMenuTwiceForSameNode");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x3f759544c6a0729dL, "childIncludeSameMenuTwiceForSameNode"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -340,8 +340,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childIncludeDefaultAndNullMenuForSameNode");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x41299cab94e5c877L, "childIncludeDefaultAndNullMenuForSameNode"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -424,8 +424,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childIncludeSameMenuForDifferentLocations");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x41299cab94ea9316L, "childIncludeSameMenuForDifferentLocations"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -508,8 +508,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childIncludeDifferentMenusForSameNode");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x41299cab94d89a24L, "childIncludeDifferentMenusForSameNode"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -592,8 +592,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childIncludeDifferentMenusForDifferentNodes");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x1a41c6fb2809203aL, "childIncludeDifferentMenusForDifferentNodes"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -676,8 +676,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childIncludeSameMenuForDifferentNodes");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x3f759544c6a7e86fL, "childIncludeSameMenuForDifferentNodes"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -760,8 +760,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childWrapSameSubstituteMenuTwice");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x3f759544c6a0729aL, "childWrapSameSubstituteMenuTwice"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -844,8 +844,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childWrapDifferentSubstituteMenus");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x1a41c6fb280d1941L, "childWrapDifferentSubstituteMenus"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -930,8 +930,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childIncludeSameSubstituteMenuTwice");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x3f759544c6a82caeL, "childIncludeSameSubstituteMenuTwice"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -1016,8 +1016,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("childIncludeDifferentSubstituteMenus");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL, 0x1a41c6fb280bf85eL, "childIncludeDifferentSubstituteMenus"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

@@ -87,7 +87,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new BaseMethodDeclaration_ThrowsCollection_Component_ComponentBuilder_a.throwsItemListHandler_eoaxpc_b0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("BMDTCC_refNodeList_throwsItem");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class throwsItemListHandler_eoaxpc_b0a extends RefNodeListHandler {

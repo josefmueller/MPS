@@ -197,9 +197,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
     provider.setNoTargetText("<no migration_old>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("migration_old");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be54a3L, "migration_old"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -291,7 +291,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
     AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.migrationListHandler_w3rzlq_c2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_migration");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class migrationListHandler_w3rzlq_c2a extends RefNodeListHandler {
@@ -414,7 +414,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
     AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.inputNodesListHandler_w3rzlq_b4a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_inputNodes");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class inputNodesListHandler_w3rzlq_b4a extends RefNodeListHandler {
@@ -502,7 +502,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
     AbstractCellListHandler handler = new MigrationTestCase_EditorBuilder_a.outputNodesListHandler_w3rzlq_b6a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_outputNodes");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class outputNodesListHandler_w3rzlq_b6a extends RefNodeListHandler {

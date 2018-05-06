@@ -116,8 +116,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("priority");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x59427edd75744671L, "priority"));
       }
       Style style = new StyleImpl();
       new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -202,9 +202,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     provider.setNoTargetText("<no forConcept>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("forConcept");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x10d005a50b96761L, "forConcept"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

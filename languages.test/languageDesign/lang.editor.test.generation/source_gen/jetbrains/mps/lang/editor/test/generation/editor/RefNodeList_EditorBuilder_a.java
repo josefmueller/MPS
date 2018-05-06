@@ -95,7 +95,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     TestTargetActionMap.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class differentTypeOfChildrenListHandler_d0l3p8_a0 extends RefNodeListHandler {
@@ -478,7 +478,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     AbstractCellListHandler handler = new RefNodeList_EditorBuilder_a.differentTypeOfChildrenListHandler_d0l3p8_b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_differentTypeOfChildren_1");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class differentTypeOfChildrenListHandler_d0l3p8_b0 extends RefNodeListHandler {

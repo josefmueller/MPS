@@ -65,7 +65,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class statesListHandler_qpt50r_a0 extends RefNodeListHandler {
@@ -139,7 +139,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class eventsListHandler_qpt50r_c0 extends RefNodeListHandler {
@@ -213,7 +213,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class transitionsListHandler_qpt50r_e0 extends RefNodeListHandler {

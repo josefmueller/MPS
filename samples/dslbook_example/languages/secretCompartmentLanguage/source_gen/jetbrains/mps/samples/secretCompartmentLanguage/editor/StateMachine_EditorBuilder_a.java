@@ -162,7 +162,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     AbstractCellListHandler handler = new StateMachine_EditorBuilder_a.eventListHandler_qpt50r_b3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_event");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class eventListHandler_qpt50r_b3a extends RefNodeListHandler {
@@ -266,9 +266,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     provider.setNoTargetText("<no startState>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("startState");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, 0x116c1078061L, "startState"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -342,7 +342,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     AbstractCellListHandler handler = new StateMachine_EditorBuilder_a.stateListHandler_qpt50r_h0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_state");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class stateListHandler_qpt50r_h0 extends RefNodeListHandler {

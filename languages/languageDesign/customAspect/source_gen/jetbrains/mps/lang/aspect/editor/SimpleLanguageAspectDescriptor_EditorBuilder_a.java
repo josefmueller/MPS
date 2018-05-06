@@ -218,7 +218,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.oldMainLanguagesListHandler_rpszz1_b0b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_oldMainLanguages");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class oldMainLanguagesListHandler_rpszz1_b0b1a extends RefNodeListHandler {
@@ -300,7 +300,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.oldAdditionalLanguagesListHandler_rpszz1_b1b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_oldAdditionalLanguages");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class oldAdditionalLanguagesListHandler_rpszz1_b1b1a extends RefNodeListHandler {
@@ -414,8 +414,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("order");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2085244dcb121e81L, "order"));
       }
     }
     @Override
@@ -485,8 +485,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("devkit");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x721adb764b494af2L, "devkit"));
       }
     }
     @Override
@@ -527,7 +527,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.mainLanguagesListHandler_rpszz1_b4b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mainLanguages");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class mainLanguagesListHandler_rpszz1_b4b1a extends RefNodeListHandler {
@@ -618,7 +618,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
     AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_EditorBuilder_a.additionalLanguagesListHandler_rpszz1_b5b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_additionalLanguages");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class additionalLanguagesListHandler_rpszz1_b5b1a extends RefNodeListHandler {
@@ -753,8 +753,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("oldHelpUrl");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "oldHelpUrl"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.STRIKE_OUT, true);
@@ -811,8 +811,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("helpUrl");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x4197d5560e700dfbL, "helpUrl"));
       }
     }
     @Override
@@ -882,8 +882,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("icon");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0cff495L, "icon"));
       }
     }
     @Override

@@ -167,7 +167,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_field");
     editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class fieldListHandler_mcrsin_b1a extends RefNodeListHandler {

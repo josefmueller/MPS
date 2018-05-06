@@ -154,7 +154,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     AbstractCellListHandler handler = new StateMachineTestMethod_EditorBuilder_a.handleEventListHandler_ttjdsx_a1b0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_handleEvent");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class handleEventListHandler_ttjdsx_a1b0 extends RefNodeListHandler {
@@ -252,9 +252,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     provider.setNoTargetText("<no finalState>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("finalState");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c1d2af8aL, 0x116c1f8ec2bL, "finalState"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

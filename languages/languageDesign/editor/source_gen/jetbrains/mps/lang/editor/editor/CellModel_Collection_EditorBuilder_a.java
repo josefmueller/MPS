@@ -154,7 +154,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childCellModelListHandler_cvgoyj_b1a0a extends RefNodeListHandler {
@@ -290,7 +290,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
     style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childCellModelListHandler_cvgoyj_b0a0 extends RefNodeListHandler {
@@ -392,7 +392,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
     AbstractCellListHandler handler = new CellModel_Collection_EditorBuilder_a.childCellModelListHandler_cvgoyj_b0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_childCellModel_2");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childCellModelListHandler_cvgoyj_b0a extends RefNodeListHandler {

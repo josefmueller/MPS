@@ -86,9 +86,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     provider.setNoTargetText("<no base URL>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("baseURL");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x4197d5560e6966c4L, "baseURL"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);

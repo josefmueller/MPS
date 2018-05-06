@@ -133,9 +133,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     provider.setNoTargetText("<no key>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("key");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, 0x11b69e95df5L, "key"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_d8l4wt_a0d0());
@@ -209,7 +209,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new ActionDataParameterDeclaration_EditorBuilder_a.conditionListHandler_d8l4wt_e0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_condition");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class conditionListHandler_d8l4wt_e0 extends RefNodeListHandler {

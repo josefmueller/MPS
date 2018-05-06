@@ -184,8 +184,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("debuggerConfiguration");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x5b66ff7a6627d632L, "debuggerConfiguration"));
       }
     }
     @Override
@@ -240,7 +240,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class executePartListHandler_y485ry_b3a extends RefNodeListHandler {
@@ -338,7 +338,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     AbstractCellListHandler handler = new CommandDeclaration_EditorBuilder_a.methodListHandler_y485ry_b5a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_method");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class methodListHandler_y485ry_b5a extends RefNodeListHandler {

@@ -123,7 +123,7 @@ import jetbrains.mps.samples.Shapes.behavior.PreviewFactory;
     AbstractCellListHandler handler = new Canvas_ScenePreview_EditorBuilder_a.shapesListHandler_3bcydw_a2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_shapes");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class shapesListHandler_3bcydw_a2a extends RefNodeListHandler {

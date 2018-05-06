@@ -106,9 +106,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     provider.setNoTargetText("<no checkingReference>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("checkingReference");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference"));
     }
     ScopeTest_DeleteExpectedNodes.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
@@ -171,7 +171,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new ScopesTest_InspectorBuilder_a.nodesListHandler_qc0q19_b2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_nodes");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class nodesListHandler_qc0q19_b2a extends RefNodeListHandler {

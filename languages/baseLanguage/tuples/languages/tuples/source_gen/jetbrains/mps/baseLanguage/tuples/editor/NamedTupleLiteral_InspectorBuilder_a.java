@@ -121,9 +121,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("tupleDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL, 0x1209b88b156L, "tupleDeclaration"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -229,9 +229,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     provider.setNoTargetText("<no tupleDeclaration>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("tupleDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL, 0x1209b88b156L, "tupleDeclaration"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -283,7 +283,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
       editorCell.getStyle().putAll(style);
-      editorCell.setRole(handler.getElementRole());
+      editorCell.setSRole(handler.getElementSRole());
       return editorCell;
     }
     private static class componentListHandler_ulpguu_a0a1b0 extends RefNodeListHandler {

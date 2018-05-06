@@ -137,7 +137,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new PasteWrappers_EditorBuilder_a.wrapperListHandler_c4m4l8_a2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_wrapper");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class wrapperListHandler_c4m4l8_a2a extends RefNodeListHandler {

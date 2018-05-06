@@ -121,7 +121,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     AbstractCellListHandler handler = new HeatingPlan_EditorBuilder_a.dailyPlansListHandler_16fuhk_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_dailyPlans");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class dailyPlansListHandler_16fuhk_d0 extends RefNodeListHandler {

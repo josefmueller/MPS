@@ -142,7 +142,7 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     AbstractCellListHandler handler = new PersistentConfigurationTemplate_EditorBuilder_a.templateParameterListHandler_85j21_d0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_templateParameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class templateParameterListHandler_85j21_d0a extends RefNodeListHandler {

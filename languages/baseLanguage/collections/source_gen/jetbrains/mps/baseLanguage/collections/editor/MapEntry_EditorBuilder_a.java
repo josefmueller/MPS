@@ -84,8 +84,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("key");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118f249550fL, 0x118f24b00ccL, "key"));
       }
     }
     @Override
@@ -148,8 +148,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("value");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118f249550fL, 0x118f24b224fL, "value"));
       }
     }
     @Override

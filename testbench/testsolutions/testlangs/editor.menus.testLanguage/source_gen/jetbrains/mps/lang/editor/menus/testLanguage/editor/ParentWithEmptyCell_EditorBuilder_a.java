@@ -94,8 +94,8 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("child");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18c2L, 0x7cc9c0c2af1b18faL, "child"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

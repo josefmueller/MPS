@@ -105,9 +105,9 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     provider.setNoTargetText("<target>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("target");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, 0x64b394b6ee402faaL, "target"));
     }
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
@@ -243,8 +243,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("child");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, 0x64b394b6ee402fbcL, "child"));
       }
       NamedNodeReference_ChildDeleteAction.setCellActions(editorCell, getNode(), getEditorContext());
     }

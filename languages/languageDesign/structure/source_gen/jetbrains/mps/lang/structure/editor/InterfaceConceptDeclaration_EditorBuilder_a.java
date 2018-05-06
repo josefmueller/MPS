@@ -168,7 +168,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     AbstractCellListHandler handler = new InterfaceConceptDeclaration_EditorBuilder_a.extendsListHandler_7v1nzk_b2a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_extends");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class extendsListHandler_7v1nzk_b2a0 extends RefNodeListHandler {
@@ -311,7 +311,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class propertyDeclarationListHandler_7v1nzk_c1c0 extends RefNodeListHandler {
@@ -408,7 +408,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     AbstractConceptDeclaration_Link_Actions.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class linkDeclarationListHandler_7v1nzk_f1c0 extends RefNodeListHandler {
@@ -524,7 +524,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     AbstractConceptDeclaration_Link_Actions.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class linkDeclarationListHandler_7v1nzk_i1c0 extends RefNodeListHandler {

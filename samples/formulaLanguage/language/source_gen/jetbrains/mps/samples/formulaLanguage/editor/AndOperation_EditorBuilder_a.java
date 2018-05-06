@@ -94,8 +94,8 @@ import jetbrains.mps.smodel.SNodePointer;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("leftOperand");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, 0x102db86e5b3L, "leftOperand"));
       }
       Operation_leftOperand_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -172,8 +172,8 @@ import jetbrains.mps.smodel.SNodePointer;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("rightOperand");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, 0x102db87696bL, "rightOperand"));
       }
       Operation_rightOperand_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }

@@ -122,7 +122,7 @@ import jetbrains.mps.editor.runtime.style.CaretPosition;
     AbstractCellListHandler handler = new ReplaceableAliasAndParms_Comp_ComponentBuilder_a.parameterListHandler_n84rmm_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("RAAPC_refNodeList_parameter");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parameterListHandler_n84rmm_b1a extends RefNodeListHandler {

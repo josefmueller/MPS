@@ -103,7 +103,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     AbstractCellListHandler handler = new OrderDeclaration_EditorBuilder_a.seqListHandler_9yq480_b0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_seq");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class seqListHandler_9yq480_b0a extends RefNodeListHandler {
@@ -287,7 +287,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     AbstractCellListHandler handler = new OrderDeclaration_EditorBuilder_a.seqListHandler_9yq480_b1a0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_seq_1");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class seqListHandler_9yq480_b1a0a extends RefNodeListHandler {

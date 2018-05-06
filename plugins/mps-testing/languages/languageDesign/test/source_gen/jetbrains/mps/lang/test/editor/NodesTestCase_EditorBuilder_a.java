@@ -164,7 +164,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     AbstractCellListHandler handler = new NodesTestCase_EditorBuilder_a.nodesToCheckListHandler_58c6e4_b2a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_nodesToCheck");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class nodesToCheckListHandler_58c6e4_b2a extends RefNodeListHandler {
@@ -256,7 +256,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     AbstractCellListHandler handler = new NodesTestCase_EditorBuilder_a.testMethodsListHandler_58c6e4_b5a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_testMethods");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class testMethodsListHandler_58c6e4_b5a extends RefNodeListHandler {
@@ -383,8 +383,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("beforeTests");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x2045125020efb661L, "beforeTests"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.UNDERLINED, true);
@@ -464,8 +464,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("afterTests");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x2045125020efb66cL, "afterTests"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.UNDERLINED, true);
@@ -525,7 +525,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     AbstractCellListHandler handler = new NodesTestCase_EditorBuilder_a.methodsListHandler_58c6e4_b21a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_methods");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class methodsListHandler_58c6e4_b21a extends RefNodeListHandler {

@@ -122,9 +122,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     provider.setNoTargetText("<no analyzer>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("analyzer");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x151c4f99e489a17L, "analyzer"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -227,8 +227,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("nodeToCheck");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x27b1f33dd958ca0L, "nodeToCheck"));
       }
     }
     @Override
@@ -298,8 +298,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("mode");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, 0x2eb1cddc01267d7aL, "mode"));
       }
     }
     @Override
@@ -351,7 +351,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     AbstractCellListHandler handler = new AnalyzerRunnerCreator_EditorBuilder_a.parametersListHandler_u2jyfv_c5a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameters");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parametersListHandler_u2jyfv_c5a extends RefNodeListHandler {

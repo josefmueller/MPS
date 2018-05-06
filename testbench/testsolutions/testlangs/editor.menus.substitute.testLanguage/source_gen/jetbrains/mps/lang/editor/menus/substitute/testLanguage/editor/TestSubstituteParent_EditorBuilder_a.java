@@ -157,7 +157,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class simpleActionListHandler_tkqw7v_c2a extends RefNodeListHandler {
@@ -238,7 +238,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parameterizedQueryListHandler_tkqw7v_f2a extends RefNodeListHandler {
@@ -319,7 +319,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class wrapDefaultSubstituteMenuFromSubsituteListHandler_tkqw7v_i2a extends RefNodeListHandler {
@@ -400,7 +400,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class wrapDefaultSubstituteMenuWithFunctionFromSubsituteListHandler_tkqw7v_l2a extends RefNodeListHandler {
@@ -481,7 +481,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class wrapNamedSubstituteMenuFromSubsituteListHandler_tkqw7v_o2a extends RefNodeListHandler {
@@ -562,7 +562,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class conceptsMenuListHandler_tkqw7v_r2a extends RefNodeListHandler {
@@ -643,7 +643,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class addConceptListHandler_tkqw7v_u2a extends RefNodeListHandler {
@@ -717,7 +717,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class subconceptsListHandler_tkqw7v_w2a extends RefNodeListHandler {
@@ -791,7 +791,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class smartReferenceWithMenuListHandler_tkqw7v_y2a extends RefNodeListHandler {
@@ -865,7 +865,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class smartReferenceWithoutMenuListHandler_tkqw7v_ab2a extends RefNodeListHandler {
@@ -939,7 +939,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class smartReferenceWithoutMenuSubconceptListHandler_tkqw7v_cb2a extends RefNodeListHandler {
@@ -1013,7 +1013,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childrenForEmptyCellListHandler_tkqw7v_eb2a extends RefNodeListHandler {
@@ -1095,7 +1095,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childrenToContributeMenuListHandler_tkqw7v_gb2a extends RefNodeListHandler {
@@ -1169,7 +1169,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class wrapDefaultSubstituteMenuFromTransformListHandler_tkqw7v_ib2a extends RefNodeListHandler {
@@ -1251,7 +1251,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class wrapDefaultSubstituteMenuWithFunctionFromTransformListHandler_tkqw7v_kb2a extends RefNodeListHandler {
@@ -1333,7 +1333,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class wrapNamedSubstituteMenuFromTransformMenuListHandler_tkqw7v_mb2a extends RefNodeListHandler {
@@ -1415,7 +1415,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class superChildListHandler_tkqw7v_ob2a extends RefNodeListHandler {
@@ -1489,7 +1489,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class notSubconceptListHandler_tkqw7v_qb2a extends RefNodeListHandler {
@@ -1563,7 +1563,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class ambigousSameConceptsListHandler_tkqw7v_sb2a extends RefNodeListHandler {
@@ -1637,7 +1637,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class ambigousWrapSameConceptsListHandler_tkqw7v_ub2a extends RefNodeListHandler {
@@ -1711,7 +1711,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class ambigousDifferentConceptsListHandler_tkqw7v_wb2a extends RefNodeListHandler {
@@ -1785,7 +1785,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class ambigousWrapDifferentConceptsListHandler_tkqw7v_yb2a extends RefNodeListHandler {

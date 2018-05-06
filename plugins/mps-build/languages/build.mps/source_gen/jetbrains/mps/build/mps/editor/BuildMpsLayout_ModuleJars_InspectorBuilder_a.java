@@ -91,7 +91,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class jarLocationsListHandler_aqxvre_b0 extends RefNodeListHandler {

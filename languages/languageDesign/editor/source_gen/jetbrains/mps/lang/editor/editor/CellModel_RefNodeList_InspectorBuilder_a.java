@@ -198,9 +198,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     provider.setEmptyCellId("empty_" + "linkDeclaration");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("relationDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -320,8 +320,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("filter");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x1134299ee53L, "filter"));
       }
     }
     @Override
@@ -395,8 +395,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("cellLayout");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e8L, "cellLayout"));
       }
     }
     @Override
@@ -562,8 +562,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("usesFoldingCondition");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x3fdace61664c27e7L, "usesFoldingCondition"));
       }
     }
     @Override
@@ -714,8 +714,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0xce215999c843265L, "separatorTextQuery"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x9da6a4591fc7fb5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText")), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_InspectorBuilder_a.separatorTextQuerySingleRoleHandler_2v2794_c6d0.CellModel_RefNodeList_generic_cellMenu_2v2794_a0c6d0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("separatorTextQuery");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0xce215999c843265L, "separatorTextQuery"));
       }
       CellModel_RefNodeList_RemoveSeparatorQuery_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -879,8 +879,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("separatorStyle");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x11f1cf0e6aeL, "separatorStyle"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.DRAW_BORDER, true);
@@ -1003,8 +1003,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("nodeFactory");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x11204946ab7L, "nodeFactory"));
       }
     }
     @Override
@@ -1063,9 +1063,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     provider.setNoTargetText("<default>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("elementActionMap");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x11126d75849L, "elementActionMap"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
@@ -1185,8 +1185,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("elementMenuDescriptor");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x10f54188d34L, "elementMenuDescriptor"));
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.DRAW_BORDER, true);
@@ -1263,8 +1263,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("addHints");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x650641cc62245646L, "addHints"));
       }
       CellModel_RefNodeList_AddHint_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -1339,8 +1339,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("removeHints");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x650641cc62245647L, "removeHints"));
       }
       CellModel_RefNodeList_RemoveHint_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }

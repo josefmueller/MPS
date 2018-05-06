@@ -100,9 +100,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
     provider.setNoTargetText("<no debuggedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("type");
+      editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -172,8 +172,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
         if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
           editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
         }
-        if (editorCell.getRole() == null) {
-          editorCell.setRole("highType");
+        if (editorCell.getSRole() == null) {
+          editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25edaL, "highType"));
         }
       }
       @Override
@@ -253,9 +253,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
     provider.setNoTargetText("<no debuggedType>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("type");
+      editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -325,8 +325,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
         if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
           editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
         }
-        if (editorCell.getRole() == null) {
-          editorCell.setRole("lowType");
+        if (editorCell.getSRole() == null) {
+          editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25ed9L, "lowType"));
         }
       }
       @Override

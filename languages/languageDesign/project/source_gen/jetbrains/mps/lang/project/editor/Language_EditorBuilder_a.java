@@ -461,7 +461,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class modelListHandler_75gu8q_s3a extends RefNodeListHandler {
@@ -554,7 +554,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class modelRootsListHandler_75gu8q_w3a extends RefNodeListHandler {
@@ -647,7 +647,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class accessoryModelsListHandler_75gu8q_ab3a extends RefNodeListHandler {
@@ -740,7 +740,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class usedLanguagesListHandler_75gu8q_eb3a extends RefNodeListHandler {
@@ -833,7 +833,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class usedDevkitsListHandler_75gu8q_ib3a extends RefNodeListHandler {
@@ -926,7 +926,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class dependenciesListHandler_75gu8q_mb3a extends RefNodeListHandler {
@@ -1019,7 +1019,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class extendedLanguagesListHandler_75gu8q_qb3a extends RefNodeListHandler {
@@ -1151,7 +1151,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class sourcePathsListHandler_75gu8q_c64d0 extends RefNodeListHandler {
@@ -1244,7 +1244,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class stubSolutionsListHandler_75gu8q_g64d0 extends RefNodeListHandler {
@@ -1337,7 +1337,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class stubModelsListHandler_75gu8q_k64d0 extends RefNodeListHandler {
@@ -1470,7 +1470,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class runtimeModulesListHandler_75gu8q_c15d0 extends RefNodeListHandler {
@@ -1552,7 +1552,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class generatorListHandler_75gu8q_cc3a extends RefNodeListHandler {

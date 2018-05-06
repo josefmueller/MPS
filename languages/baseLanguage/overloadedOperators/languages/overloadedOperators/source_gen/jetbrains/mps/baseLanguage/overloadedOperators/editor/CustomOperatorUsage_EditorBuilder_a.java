@@ -106,8 +106,8 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("leftExpression");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
       }
       BinaryOperation_LeftArgument_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -155,9 +155,9 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
     provider.setNoTargetText("<no operator>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("operator");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, 0x15c86fdc60847670L, "operator"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -254,8 +254,8 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("rightExpression");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
       }
       BinaryOperation_RightArgument_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }

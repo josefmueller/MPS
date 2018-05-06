@@ -112,8 +112,8 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("numerator");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x1200914977fL, "numerator"));
       }
       delete_numerator.setCellActions(editorCell, getNode(), getEditorContext());
     }
@@ -181,8 +181,8 @@ import jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("denominator");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x12009149b1aL, "denominator"));
       }
       delete_denominator.setCellActions(editorCell, getNode(), getEditorContext());
     }

@@ -89,7 +89,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     AbstractCellListHandler handler = new TransformationLocation_SideTransform_EditorBuilder_a.placeInCellListHandler_gmxq4c_d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_placeInCell");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class placeInCellListHandler_gmxq4c_d0 extends RefNodeListHandler {

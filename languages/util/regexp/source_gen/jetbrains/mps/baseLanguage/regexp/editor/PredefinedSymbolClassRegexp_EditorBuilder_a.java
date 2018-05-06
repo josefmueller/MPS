@@ -95,9 +95,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no symbolClass>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("symbolClass");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, 0x11178fbdc7dL, "symbolClass"));
     }
     RegexpSequenceByEnter.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfoSmartReferenceDecorator(new SReferenceSubstituteInfo(editorCell, referenceLink)));

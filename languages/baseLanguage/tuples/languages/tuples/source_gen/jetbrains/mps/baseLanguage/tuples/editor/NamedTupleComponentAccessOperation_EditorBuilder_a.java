@@ -93,9 +93,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<no component>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("component");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL, 0x1209c84fd08L, "component"));
     }
     Style style = new StyleImpl();
     new FieldStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

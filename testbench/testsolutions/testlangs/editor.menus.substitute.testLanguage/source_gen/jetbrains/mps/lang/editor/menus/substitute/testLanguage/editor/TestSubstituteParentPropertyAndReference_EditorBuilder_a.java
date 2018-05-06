@@ -608,9 +608,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     provider.setNoTargetText("<no defaultReference>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("defaultReference");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x69b757bd7bd1810L, "defaultReference"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -703,9 +703,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     provider.setNoTargetText("<no referenceWithCustomMenu>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("referenceWithCustomMenu");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x69b757bd7bd1812L, "referenceWithCustomMenu"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentPropertyAndReference"), "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteParentPropertyAndReference_CustomReferenceMenu"));
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
@@ -799,9 +799,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     provider.setNoTargetText("<no referenceWithReferenceMenuPart>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("referenceWithReferenceMenuPart");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x70e6651a9408d373L, "referenceWithReferenceMenuPart"));
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentPropertyAndReference"), "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteParentPropertyAndReference_ReferenceMenuPart"));
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
@@ -895,9 +895,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     provider.setNoTargetText("<no referenceWithScope>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("referenceWithScope");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x1609dca8f16acffeL, "referenceWithScope"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));
@@ -990,9 +990,9 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     provider.setNoTargetText("<no referenceWithSetHandler>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("referenceWithSetHandler");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x1609dca8f16ad029L, "referenceWithSetHandler"));
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"));

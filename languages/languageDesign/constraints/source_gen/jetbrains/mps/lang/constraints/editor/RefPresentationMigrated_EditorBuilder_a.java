@@ -235,7 +235,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     AbstractCellListHandler handler = new RefPresentationMigrated_EditorBuilder_a.problemsListHandler_6blbyb_b5b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_problems");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class problemsListHandler_6blbyb_b5b1a extends RefNodeListHandler {

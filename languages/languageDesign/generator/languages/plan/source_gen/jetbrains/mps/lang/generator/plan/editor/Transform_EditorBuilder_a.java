@@ -90,7 +90,7 @@ import jetbrains.mps.smodel.SNodePointer;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class languagesListHandler_5ya0vk_a1a extends RefNodeListHandler {

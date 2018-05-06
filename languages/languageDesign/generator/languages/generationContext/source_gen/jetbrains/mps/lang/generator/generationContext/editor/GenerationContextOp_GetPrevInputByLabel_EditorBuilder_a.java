@@ -100,9 +100,9 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     provider.setNoTargetText("<choose mapping label>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("label");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8f6c38c2L, 0x11b8f6c38c3L, "label"));
     }
     Style style = new StyleImpl();
     new mappingLabelReferenceStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

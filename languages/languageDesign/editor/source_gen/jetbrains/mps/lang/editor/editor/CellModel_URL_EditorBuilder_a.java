@@ -113,9 +113,9 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
     provider.setEmptyCellId("empty_" + "propertyDeclaration");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("relationDeclaration");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"));
     }
     Style style = new StyleImpl();
     new borderedStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

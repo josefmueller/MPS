@@ -158,8 +158,8 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("customizes");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes"));
       }
       Style style = new StyleImpl();
       new FieldStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

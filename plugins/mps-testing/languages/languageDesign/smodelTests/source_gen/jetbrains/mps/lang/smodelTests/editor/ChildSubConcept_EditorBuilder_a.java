@@ -225,8 +225,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("grandChild_0_1");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x3dd540b968e9fbfL, 0x3dd540b968e9fc0L, "grandChild_0_1"));
       }
     }
     @Override
@@ -274,7 +274,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     AbstractCellListHandler handler = new ChildSubConcept_EditorBuilder_a.grandChild_0_nListHandler_d4chl0_b2b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_grandChild_0_n");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class grandChild_0_nListHandler_d4chl0_b2b1a extends RefNodeListHandler {

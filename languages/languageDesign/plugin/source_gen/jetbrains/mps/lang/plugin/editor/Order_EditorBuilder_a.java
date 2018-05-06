@@ -99,7 +99,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     AbstractCellListHandler handler = new Order_EditorBuilder_a.tabListHandler_yh3zz3_b0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_tab");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class tabListHandler_yh3zz3_b0a extends RefNodeListHandler {
@@ -242,7 +242,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     AbstractCellListHandler handler = new Order_EditorBuilder_a.tabListHandler_yh3zz3_d0a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_tab_1");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class tabListHandler_yh3zz3_d0a extends RefNodeListHandler {

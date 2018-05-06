@@ -108,9 +108,9 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
     provider.setNoTargetText("<no property>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("property");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, 0x11b35f87187L, "property"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);

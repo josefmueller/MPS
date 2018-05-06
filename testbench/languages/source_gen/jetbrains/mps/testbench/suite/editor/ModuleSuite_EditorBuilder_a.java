@@ -99,8 +99,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("moduleRef");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"));
       }
     }
     @Override
@@ -129,7 +129,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     AbstractCellListHandler handler = new ModuleSuite_EditorBuilder_a.testRefListHandler_of3p2o_c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_testRef");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class testRefListHandler_of3p2o_c0 extends RefNodeListHandler {

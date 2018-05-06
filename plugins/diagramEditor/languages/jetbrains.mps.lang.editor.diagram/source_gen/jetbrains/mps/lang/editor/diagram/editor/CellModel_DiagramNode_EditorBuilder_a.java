@@ -107,8 +107,8 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.RightParenStyleClass;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("figure");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a329d9L, "figure"));
       }
     }
     @Override
@@ -145,7 +145,7 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.RightParenStyleClass;
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new DiagramNodeParameters());
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class parametersListHandler_5xszyv_d0 extends RefNodeListHandler {
@@ -262,8 +262,8 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.RightParenStyleClass;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("inputPort");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0x1ceea85e3fc07f4bL, "inputPort"));
       }
     }
     @Override
@@ -323,8 +323,8 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.RightParenStyleClass;
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
       }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("outputPort");
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0x1ceea85e3fc07f76L, "outputPort"));
       }
     }
     @Override

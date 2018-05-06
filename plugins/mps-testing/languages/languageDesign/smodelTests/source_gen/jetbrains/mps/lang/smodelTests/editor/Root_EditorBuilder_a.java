@@ -201,7 +201,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     AbstractCellListHandler handler = new Root_EditorBuilder_a.child_0_nListHandler_30aiet_b1b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_child_0_n");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class child_0_nListHandler_30aiet_b1b1a extends RefNodeListHandler {
@@ -293,7 +293,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     AbstractCellListHandler handler = new Root_EditorBuilder_a.child_1_nListHandler_30aiet_b3b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_child_1_n");
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class child_1_nListHandler_30aiet_b3b1a extends RefNodeListHandler {
@@ -388,7 +388,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
+    editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
   private static class childSubConcept_0_nListHandler_30aiet_b5b1a extends RefNodeListHandler {

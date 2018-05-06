@@ -119,9 +119,9 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     provider.setNoTargetText("<no migrateTo>");
     EditorCell editorCell = provider.createCell();
 
-    if (editorCell.getRole() == null) {
+    if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("migrateTo");
+      editorCell.setSRole(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, 0x7ce0198267c4eb3L, "migrateTo"));
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "migrateTo");
