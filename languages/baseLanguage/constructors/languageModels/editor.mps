@@ -762,7 +762,7 @@
                                                 <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
                                               </node>
                                               <node concept="3nyPlj" id="5UC0dNSP1p_" role="33vP2m">
-                                                <ref role="37wK5l" to="emqf:~AbstractCellListHandler.createEmptyCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createEmptyCell" />
+                                                <ref role="37wK5l" to="p9jd:~RefNodeListHandler.createEmptyCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createEmptyCell" />
                                               </node>
                                             </node>
                                           </node>

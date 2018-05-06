@@ -28101,13 +28101,18 @@
                     <node concept="3clFbS" id="1NWvkmRYMz4" role="2VODD2">
                       <node concept="3clFbF" id="1NWvkmRYMAE" role="3cqZAp">
                         <node concept="2OqwBi" id="1NWvkmRYL_7" role="3clFbG">
-                          <node concept="2OqwBi" id="1NWvkmRYLa8" role="2Oq$k0">
-                            <node concept="30H73N" id="1NWvkmRYLa9" role="2Oq$k0" />
-                            <node concept="2qgKlT" id="4YnqLFjkSZi" role="2OqNvi">
-                              <ref role="37wK5l" to="tpcb:4YnqLFjkxyn" resolve="getFeatureForCell" />
+                          <node concept="1PxgMI" id="3Lp5DsINfah" role="2Oq$k0">
+                            <node concept="chp4Y" id="3Lp5DsINfpA" role="3oSUPX">
+                              <ref role="cht4Q" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+                            </node>
+                            <node concept="2OqwBi" id="1NWvkmRYLa8" role="1m5AlR">
+                              <node concept="30H73N" id="1NWvkmRYLa9" role="2Oq$k0" />
+                              <node concept="2qgKlT" id="4YnqLFjkSZi" role="2OqNvi">
+                                <ref role="37wK5l" to="tpcb:4YnqLFjkxyn" resolve="getFeatureForCell" />
+                              </node>
                             </node>
                           </node>
-                          <node concept="2qgKlT" id="1NWvkmRYM3h" role="2OqNvi">
+                          <node concept="2qgKlT" id="3Lp5DsINg36" role="2OqNvi">
                             <ref role="37wK5l" to="tpcn:hEwIf_V" resolve="getGenuineLink" />
                           </node>
                         </node>
@@ -28139,13 +28144,18 @@
                     <node concept="3clFbS" id="1NWvkmRYFCU" role="2VODD2">
                       <node concept="3clFbF" id="1NWvkmRYFVF" role="3cqZAp">
                         <node concept="2OqwBi" id="1NWvkmRYHaE" role="3clFbG">
-                          <node concept="2OqwBi" id="1NWvkmRYGhv" role="2Oq$k0">
-                            <node concept="30H73N" id="1NWvkmRYFVE" role="2Oq$k0" />
-                            <node concept="2qgKlT" id="4YnqLFjkVI8" role="2OqNvi">
-                              <ref role="37wK5l" to="tpcb:4YnqLFjkxyn" resolve="getFeatureForCell" />
+                          <node concept="1PxgMI" id="3Lp5DsINdRv" role="2Oq$k0">
+                            <node concept="chp4Y" id="3Lp5DsINe45" role="3oSUPX">
+                              <ref role="cht4Q" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+                            </node>
+                            <node concept="2OqwBi" id="1NWvkmRYGhv" role="1m5AlR">
+                              <node concept="30H73N" id="1NWvkmRYFVE" role="2Oq$k0" />
+                              <node concept="2qgKlT" id="4YnqLFjkVI8" role="2OqNvi">
+                                <ref role="37wK5l" to="tpcb:4YnqLFjkxyn" resolve="getFeatureForCell" />
+                              </node>
                             </node>
                           </node>
-                          <node concept="3TrEf2" id="1NWvkmRYHWt" role="2OqNvi">
+                          <node concept="3TrEf2" id="3Lp5DsINeBy" role="2OqNvi">
                             <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                           </node>
                         </node>
@@ -29039,7 +29049,7 @@
                       <ref role="3cqZAo" node="3LoVd4J5$PJ" resolve="emptyCell" />
                     </node>
                     <node concept="3nyPlj" id="3LoVd4J5$Qc" role="37vLTx">
-                      <ref role="37wK5l" to="emqf:~AbstractCellListHandler.createEmptyCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createEmptyCell" />
+                      <ref role="37wK5l" to="p9jd:~RefNodeListHandler.createEmptyCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createEmptyCell" />
                     </node>
                   </node>
                   <node concept="1W57fq" id="3LoVd4J5$Qd" role="lGtFl">

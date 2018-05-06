@@ -85,6 +85,8 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     myIsReverseOrder = isReverseOrder;
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   @Override
   public String getElementRole() {
     return getSLink().getName();
