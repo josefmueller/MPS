@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 
 public class _PatternExpression_KeyMap extends KeyMapImpl {
   public _PatternExpression_KeyMap() {
@@ -368,8 +367,7 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       if (!(selectedCell.isReferenceCell())) {
         return;
       }
-      String role = selectedCell.getRole();
-      SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(contextNode)).convertAssociation(role);
+      SReferenceLink ref = (SReferenceLink) selectedCell.getSRole();
       if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c10465dL, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"))) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
         assert attributedNode != null;

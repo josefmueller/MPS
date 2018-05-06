@@ -103,7 +103,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     }
 
     SContainmentLink link;
-    if (!cell.isBig() && (link = CellUtil.getCellContainmentLink(cell)) != null && cell.isSelectable()) {
+    if (!cell.isBig() && (link = ((SContainmentLink) cell.getSRole())) != null && cell.isSelectable()) {
       // FIXME This is a hacky way to determine whether the cell is a no-target cell.
       //
       // We assume here that if the cell had a role specified and was selectable then that the cell is a no-target placeholder cell (called "empty cell" in the

@@ -6,11 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -36,7 +35,7 @@ public final class EditingUtil {
     }
     // ----- 
     // it can be 'ref.cell->{name}'. in this case both are 'applicable'. but link has priority 
-    String linkRole = EditingUtil.getEditedLinkRole(cell);
+    SReferenceLink linkRole = EditingUtil.getEditedLinkRole(cell);
     if (linkRole != null) {
       return false;
     }
@@ -53,12 +52,11 @@ public final class EditingUtil {
     if (!(isAnyMacroApplicable(node))) {
       return false;
     }
-    String linkRole = EditingUtil.getEditedLinkRole(cell);
-    if (linkRole == null) {
+    SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
+    SReferenceLink ref = EditingUtil.getEditedLinkRole(cell);
+    if (ref == null) {
       return false;
     }
-    SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
-    SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAssociation(linkRole);
     return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref)) == null;
   }
   public static boolean isAnyMacroApplicable(SNode node) {
@@ -127,7 +125,6 @@ public final class EditingUtil {
     return propertyMacro;
   }
   public static SNode addReferenceMacro(SNode node, EditorCell cell) {
-    String linkRole = EditingUtil.getEditedLinkRole(cell);
     SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
     // surround with <TF> if necessary 
     if (SNodeOperations.getNodeAncestorWhereConceptInList(referentNode, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")}, false, false) != null) {
@@ -135,7 +132,7 @@ public final class EditingUtil {
         EditingUtil.createTemplateFragment(referentNode);
       }
     }
-    SReferenceLink ref = ((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertAssociation(linkRole);
+    SReferenceLink ref = EditingUtil.getEditedLinkRole(cell);
     SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro")));
     if (ref != null) {
       LinkAttribute__BehaviorDescriptor.setLink_id6Gg5KlvuxxF.invoke(referenceMacro, ref);
@@ -181,11 +178,11 @@ public final class EditingUtil {
   public static SProperty getEditedProperty(EditorCell cell) {
     return check_vooyx9_a0a31(check_vooyx9_a0a0n(check_vooyx9_a0a0a31(cell)));
   }
-  public static String getEditedLinkRole(EditorCell cell) {
+  public static SReferenceLink getEditedLinkRole(EditorCell cell) {
     if (!(cell.isReferenceCell())) {
       return null;
     }
-    return cell.getRole();
+    return (SReferenceLink) cell.getSRole();
   }
   public static SNode getEditedLinkReferentNode(EditorCell cell) {
     return cell.getSNode();

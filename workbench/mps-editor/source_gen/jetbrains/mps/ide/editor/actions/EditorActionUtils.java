@@ -175,6 +175,6 @@ public class EditorActionUtils {
     return l != null && l.isValid() && !(l.isMultiple());
   }
   private static boolean isLinkCollection(EditorCell cell) {
-    return cell.getRole() != null;
+    return cell.getSRole() != null;
   }
 }

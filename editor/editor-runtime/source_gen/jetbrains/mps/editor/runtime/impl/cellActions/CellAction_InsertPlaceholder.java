@@ -16,11 +16,9 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class CellAction_InsertPlaceholder extends AbstractCellAction {
   private final boolean myIsAfter;
@@ -85,9 +83,6 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
       myChildNode = childNode;
       myContainmentLink = containmentLink;
     }
-    private PlaceToInsert(@NotNull SNode parentNode, @Nullable SNode childNode, @NotNull String role) {
-      this(parentNode, childNode, ((ConceptMetaInfoConverter) parentNode.getConcept()).convertAggregation(role));
-    }
 
     /*package*/ void insertPlaceholder() {
       SNode placeholder = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, "jetbrains.mps.lang.core.structure.BasePlaceholder"));
@@ -105,17 +100,16 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
     }
   }
 
-
   private static CellAction_InsertPlaceholder.PlaceToInsert getPlaceFromCollectionCell(EditorCell cell) {
-    if (cell.getRole() != null) {
-      String role = cell.getRole();
-      SNode currentNode = cell.getSNode();
-      SNode linkDeclaration = (SNode) new SNodeLegacy(currentNode).getLinkDeclaration(role);
-      if (linkDeclaration != null && !(SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) && SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {
-        return new CellAction_InsertPlaceholder.PlaceToInsert(currentNode, null, role);
-      }
+    if (cell.getSRole() == null) {
+      return null;
     }
-    return null;
-  }
 
+    SAbstractLink role = (SAbstractLink) cell.getSRole();
+    if (role == null || (role instanceof SReferenceLink) || !(role.isMultiple())) {
+      return null;
+    }
+
+    return new CellAction_InsertPlaceholder.PlaceToInsert(cell.getSNode(), null, (SContainmentLink) role);
+  }
 }

@@ -144,7 +144,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }
   }
   private void drawDeletedChild(Graphics graphics, EditorCell cell) {
-    if (myMessageTarget.getRole().equals(cell.getRole())) {
+    if (myMessageTarget.getRole().equals(cell.getSRole().getName())) {
       int index = ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex();
       if (index != -1) {
         EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
@@ -315,7 +315,7 @@ __switch__:
       if (cell == null) {
         return new Bounds(-1, -1);
       }
-      if (cmt.getRole().equals(cell.getRole())) {
+      if (cmt.getRole().equals(cell.getSRole().getName())) {
         if (hasChildrenWithDifferentNode(cell)) {
           return getBoundsForChild((EditorCell_Collection) cell, cmt.getNextChildIndex());
         } else {
