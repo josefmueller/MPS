@@ -28,11 +28,8 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -42,26 +39,27 @@ import java.util.Iterator;
 import java.util.List;
 
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
-
-  private SNode myChildConcept; //todo make it use S-entities internally
-  private SNode myLinkDeclaration; //todo make it use S-entities internally
   private boolean myIsReverseOrder = false;
+  private SContainmentLink mySLink;
+  private SAbstractConcept myChildSConcept;
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
     super(childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
-        myLinkDeclaration = new SNodeLegacy(ownerNode).getLinkDeclaration(childRole);
+        SNode linkDecl = new SNodeLegacy(ownerNode).getLinkDeclaration(childRole);
         assert
-            myLinkDeclaration != null :
+            linkDecl != null :
             "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getQualifiedName();
-        SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
-        myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
+        SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(linkDecl);
+        SNode childConcept = SModelUtil.getLinkDeclarationTarget(linkDecl);
         if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
           throw new RuntimeException("Only Aggregation links can be used in list");
         }
         myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
+        mySLink = MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(linkDecl));
+        myChildSConcept = MetaAdapterByDeclaration.getConcept(childConcept);
       }
     });
   }
@@ -75,11 +73,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
    * @return original link (not specialized)
    */
   public SContainmentLink getSLink() {
-    return MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration));
+    return mySLink;
   }
 
   public SAbstractConcept getChildSConcept() {
-    return MetaAdapterByDeclaration.getConcept(myChildConcept);
+    return myChildSConcept;
   }
 
   @Override
@@ -98,7 +96,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     SNode anchorNodeResult = null;
     if (anchorNodeTemp != null) {
       Collection<? extends SNode> listElements = IterableUtil.asCollection(
-          AttributeOperations.getChildNodesAndAttributes(getNode(), ((ConceptMetaInfoConverter) getNode().getConcept()).convertAggregation(myElementRole)));
+          AttributeOperations.getChildNodesAndAttributes(getNode(), mySLink));
       if (!listElements.isEmpty()) {
         // anchor should be directly referenced from "list owner"
         while (anchorNodeTemp != null && anchorNodeTemp != getNode()) {
@@ -124,9 +122,8 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   @Override
   protected List<SNode> getNodesForList() {
     List<SNode> resultList = new ArrayList<SNode>();
-    SContainmentLink containmentLink = ((ConceptMetaInfoConverter) getNode().getConcept()).convertAggregation(myElementRole);
     Iterable<SNode> nodesAndComments =
-        AttributeOperations.getChildNodesAndAttributes(getNode(), containmentLink);
+        AttributeOperations.getChildNodesAndAttributes(getNode(), mySLink);
     if (!myIsReverseOrder) {
       resultList.addAll(IterableUtil.asCollection(nodesAndComments));
     } else {
