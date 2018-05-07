@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -35,33 +36,41 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
 
   private EditorCell createTransactionalProperty_tg3yo7_a() {
-    SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");
-    PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
-    EditorCell_Property editorCell = null;
-    {
-      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, true, getEditorContext()) {
-        public void doCommit(final String oldValue, final String newValue) {
-          doCommitImpl(oldValue, newValue);
-        }
-        public void doCommitImpl(final String oldValue, final String newValue) {
-          boolean var = getEditorContext() != null || myNode != null || oldValue != null || newValue != null;
-          if (var) {
-
+    getCellFactory().pushCellContext();
+    try {
+      SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");
+      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+      PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
+      EditorCell_Property editorCell = null;
+      {
+        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, true, getEditorContext()) {
+          public void doCommit(final String oldValue, final String newValue) {
+            doCommitImpl(oldValue, newValue);
           }
-        }
-      };
-      editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
-      editorCell.setCellId("TransactionalProperty_tg3yo7_a");
-      editorCell.setBig(true);
-      editorCell.setCellContext(getCellFactory().getCellContext());
-      editorCell.setDefaultText("<no theProperty>");
-      editorCell.setCommitInCommand(true);
+          public void doCommitImpl(final String oldValue, final String newValue) {
+            boolean var = getEditorContext() != null || myNode != null || oldValue != null || newValue != null;
+            if (var) {
+
+            }
+          }
+        };
+        editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
+        editorCell.setCellId("TransactionalProperty_tg3yo7_a");
+        editorCell.setBig(true);
+        editorCell.setCellContext(getCellFactory().getCellContext());
+        editorCell.setDefaultText("<no theProperty>");
+        setCellContext(editorCell);
+        editorCell.setCommitInCommand(true);
+      }
+      SNode attributeConcept = provider.getRoleAttribute();
+      if (attributeConcept != null) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
+      } else
+      return editorCell;
+
+    } finally {
+      getCellFactory().popCellContext();
     }
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
   }
 }

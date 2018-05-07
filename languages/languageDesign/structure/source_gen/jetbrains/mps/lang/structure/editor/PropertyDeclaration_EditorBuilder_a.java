@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -43,7 +44,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
-import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
@@ -88,43 +88,51 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     return IdEditorHelper.shownInEditor(myNode);
   }
   private EditorCell createTransactionalProperty_lnae77_a0() {
-    SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
-    EditorCell_Property editorCell = null;
-    {
-      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, false, getEditorContext()) {
-        public void doCommit(final String oldValue, final String newValue) {
-          doCommitImpl(oldValue, newValue);
-        }
-        public void doCommitImpl(final String oldValue, final String newValue) {
-          if (!(Sequence.fromIterable(new ExtensionPoint<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>("jetbrains.mps.lang.structure.NodeRenamer").getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
-            public boolean accept(_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> it) {
-              return it.invoke(getEditorContext(), myNode, oldValue, newValue);
-            }
-          }))) {
-            getEditorContext().getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(getEditorContext(), "name_" + myNode.getNodeId().toString()) {
-              protected void doExecute() {
-                SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newValue);
-              }
-            });
+    getCellFactory().pushCellContext();
+    try {
+      SProperty property = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+      PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
+      EditorCell_Property editorCell = null;
+      {
+        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, false, getEditorContext()) {
+          public void doCommit(final String oldValue, final String newValue) {
+            doCommitImpl(oldValue, newValue);
           }
-        }
-      };
-      editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
-      editorCell.setCellId("name");
-      Style style = new StyleImpl();
-      new FieldStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      editorCell.getStyle().putAll(style);
-      editorCell.setDefaultText("<no name>");
-      editorCell.setCommitInCommand(false);
+          public void doCommitImpl(final String oldValue, final String newValue) {
+            if (!(Sequence.fromIterable(new ExtensionPoint<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>("jetbrains.mps.lang.structure.NodeRenamer").getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
+              public boolean accept(_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> it) {
+                return it.invoke(getEditorContext(), myNode, oldValue, newValue);
+              }
+            }))) {
+              getEditorContext().getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(getEditorContext(), "name_" + myNode.getNodeId().toString()) {
+                protected void doExecute() {
+                  SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newValue);
+                }
+              });
+            }
+          }
+        };
+        editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
+        editorCell.setCellId("name");
+        Style style = new StyleImpl();
+        new FieldStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        editorCell.getStyle().putAll(style);
+        editorCell.setDefaultText("<no name>");
+        setCellContext(editorCell);
+        editorCell.setCommitInCommand(false);
+      }
+      SNode attributeConcept = provider.getRoleAttribute();
+      if (attributeConcept != null) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
+      } else
+      return editorCell;
+
+    } finally {
+      getCellFactory().popCellContext();
     }
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
   }
   private EditorCell createConstant_lnae77_b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
