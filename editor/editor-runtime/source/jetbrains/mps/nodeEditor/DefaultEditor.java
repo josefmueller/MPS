@@ -44,10 +44,12 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation.FromNode;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation.FromParentAndLink;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -95,27 +97,36 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addPropertyCell(SProperty property) {
-    EditorCell_Property editorCell = new EditorCell_Property(getEditorContext(), new SPropertyAccessor(getNode(), property, false, false), getNode());
-    getUpdateSession().registerCleanDependency(editorCell, new Pair<>(new SNodePointer(getNode()), property.getName()));
-    editorCell.setDefaultText("<no " + property.getName() + ">");
-    if (editorCell.getCellId() == null) {
-      editorCell.setCellId("property_" + property);
-    }
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(getNode(), property, DeleteDirection.FORWARD));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(getNode(), property, DeleteDirection.BACKWARD));
-    SDataType type = property.getType();
-    if (type instanceof SPrimitiveDataType) {
-      if (((SPrimitiveDataType) type).getType() == SPrimitiveDataType.BOOL) {
-        editorCell.setSubstituteInfo(new BooleanSPropertySubstituteInfo(getNode(), property, getEditorContext()));
+    getCellFactory().pushCellContext();
+    try {
+      getCellFactory().setPropertyInfo(new SPropertyInfo(getNode(), property));
+      EditorCell_Property editorCell = new EditorCell_Property(getEditorContext(), new SPropertyAccessor(getNode(), property, false, false), getNode());
+      getUpdateSession().registerCleanDependency(editorCell, new Pair<>(new SNodePointer(getNode()), property.getName()));
+      editorCell.setDefaultText("<no " + property.getName() + ">");
+      if (editorCell.getCellId() == null) {
+        editorCell.setCellId("property_" + property);
       }
-    } else {
-      editorCell.setSubstituteInfo(new EnumSPropertySubstituteInfo(getNode(), property, getEditorContext()));
-    }
-    //todo generate property data type
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(getNode(), property, DeleteDirection.FORWARD));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(getNode(), property, DeleteDirection.BACKWARD));
+      SDataType type = property.getType();
+      if (type instanceof SPrimitiveDataType) {
+        if (((SPrimitiveDataType) type).getType() == SPrimitiveDataType.BOOL) {
+          editorCell.setSubstituteInfo(new BooleanSPropertySubstituteInfo(getNode(), property, getEditorContext()));
+        }
+      } else {
+        editorCell.setSubstituteInfo(new EnumSPropertySubstituteInfo(getNode(), property, getEditorContext()));
+      }
+      if (editorCell.getCellContext() == null) {
+        editorCell.setCellContext(getCellFactory().getCellContext());
+      }
+      //todo generate property data type
 //    if (type instanceof SEnumeration) {
 //      editorCell.setSubstituteInfo(new EnumSPropertySubstituteInfo(mySNode, property, myEditorContext));
 //    }
-    addCellWithRole(IterableUtils.first(AttributeOperations.getPropertyAttributes(getNode(), property)), AttributeKind.PROPERTY, editorCell);
+      addCellWithRole(IterableUtils.first(AttributeOperations.getPropertyAttributes(getNode(), property)), AttributeKind.PROPERTY, editorCell);
+    } finally {
+      getCellFactory().popCellContext();
+    }
   }
 
   @Override
@@ -182,7 +193,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
     if (reference == null) {
       String noTargetText = "<no " + referenceLink.getName() + ">";
       jetbrains.mps.nodeEditor.cells.EditorCell_Label noRefCell = referenceLink.isOptional() ?
-          new EditorCell_Constant(getEditorContext(), getNode(), "") : new EditorCell_Error(getEditorContext(), getNode(), noTargetText);
+                                                                  new EditorCell_Constant(getEditorContext(), getNode(), "") :
+                                                                  new EditorCell_Error(getEditorContext(), getNode(), noTargetText);
       noRefCell.setText("");
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(noTargetText);
