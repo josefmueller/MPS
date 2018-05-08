@@ -354,6 +354,9 @@
           <node concept="2OqwBi" id="hBxOoyw" role="3clFbG">
             <node concept="1OKiuA" id="385mdrYGIRT" role="2OqNvi">
               <node concept="1XNTG" id="hBxOtgu" role="lBI5i" />
+              <node concept="2B6iha" id="6Q2cACerpGF" role="lGT1i">
+                <property role="1lyBwo" value="firstEditable" />
+              </node>
             </node>
             <node concept="37vLTw" id="3GM_nagTrcH" role="2Oq$k0">
               <ref role="3cqZAo" node="hBxOnhi" resolve="newAnnotation" />
