@@ -208,10 +208,10 @@
             <node concept="3uibUv" id="1Tx3V$IEcxb" role="1tU5fm">
               <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
             </node>
-            <node concept="2YIFZM" id="6D854YCmA9S" role="33vP2m">
+            <node concept="2YIFZM" id="66eB7trnL_u" role="33vP2m">
+              <ref role="37wK5l" to="75ov:66eB7trnDoM" resolve="getEditedLink" />
               <ref role="1Pybhc" to="75ov:hz2ORac" resolve="EditingUtil" />
-              <ref role="37wK5l" to="75ov:hz42liW" resolve="getEditedLinkRole" />
-              <node concept="37vLTw" id="3GM_nagTtzJ" role="37wK5m">
+              <node concept="37vLTw" id="66eB7trnL_v" role="37wK5m">
                 <ref role="3cqZAo" node="6D854YCm$3i" resolve="cell" />
               </node>
             </node>
@@ -283,10 +283,10 @@
             <node concept="3uibUv" id="2YVXvcLej8V" role="1tU5fm">
               <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
             </node>
-            <node concept="2YIFZM" id="2YVXvcLej8M" role="33vP2m">
+            <node concept="2YIFZM" id="66eB7trnLiS" role="33vP2m">
+              <ref role="37wK5l" to="75ov:66eB7trnDoM" resolve="getEditedLink" />
               <ref role="1Pybhc" to="75ov:hz2ORac" resolve="EditingUtil" />
-              <ref role="37wK5l" to="75ov:hz42liW" resolve="getEditedLinkRole" />
-              <node concept="37vLTw" id="2YVXvcLej8N" role="37wK5m">
+              <node concept="37vLTw" id="66eB7trnLiT" role="37wK5m">
                 <ref role="3cqZAo" node="2YVXvcLej8E" resolve="cell" />
               </node>
             </node>

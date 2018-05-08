@@ -45,7 +45,7 @@ public final class AddTestReferenceAnnotation_Intention extends AbstractIntentio
       return false;
     }
 
-    SReferenceLink ref = EditingUtil.getEditedLinkRole(cell);
+    SReferenceLink ref = EditingUtil.getEditedLink(cell);
     if (ref == null || !(ref.isValid())) {
       return false;
     }
@@ -78,7 +78,7 @@ public final class AddTestReferenceAnnotation_Intention extends AbstractIntentio
     public void execute(final SNode node, final EditorContext editorContext) {
       EditorCell cell = editorContext.getSelectedCell();
       SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
-      SReferenceLink ref = EditingUtil.getEditedLinkRole(cell);
+      SReferenceLink ref = EditingUtil.getEditedLink(cell);
       SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), ref), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion")));
     }
     @Override

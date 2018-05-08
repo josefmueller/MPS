@@ -18,6 +18,7 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 
@@ -35,7 +36,7 @@ public final class EditingUtil {
     }
     // ----- 
     // it can be 'ref.cell->{name}'. in this case both are 'applicable'. but link has priority 
-    SReferenceLink linkRole = EditingUtil.getEditedLinkRole(cell);
+    SReferenceLink linkRole = EditingUtil.getEditedLink(cell);
     if (linkRole != null) {
       return false;
     }
@@ -53,7 +54,7 @@ public final class EditingUtil {
       return false;
     }
     SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
-    SReferenceLink ref = EditingUtil.getEditedLinkRole(cell);
+    SReferenceLink ref = EditingUtil.getEditedLink(cell);
     if (ref == null) {
       return false;
     }
@@ -132,7 +133,7 @@ public final class EditingUtil {
         EditingUtil.createTemplateFragment(referentNode);
       }
     }
-    SReferenceLink ref = EditingUtil.getEditedLinkRole(cell);
+    SReferenceLink ref = EditingUtil.getEditedLink(cell);
     SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro")));
     if (ref != null) {
       LinkAttribute__BehaviorDescriptor.setLink_id6Gg5KlvuxxF.invoke(referenceMacro, ref);
@@ -178,7 +179,20 @@ public final class EditingUtil {
   public static SProperty getEditedProperty(EditorCell cell) {
     return check_vooyx9_a0a31(check_vooyx9_a0a0n(check_vooyx9_a0a0a31(cell)));
   }
-  public static SReferenceLink getEditedLinkRole(EditorCell cell) {
+  /**
+   * Use getEditedLink() instead
+   * 
+   * @deprecated 
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  public static String getEditedLinkRole(EditorCell cell) {
+    if (!(cell.isReferenceCell())) {
+      return null;
+    }
+    return cell.getRole();
+  }
+  public static SReferenceLink getEditedLink(EditorCell cell) {
     if (!(cell.isReferenceCell())) {
       return null;
     }
