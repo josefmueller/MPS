@@ -130,7 +130,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return myProperty.getName();
   }
 
-  protected SProperty getProperty() {
+  public SProperty getProperty() {
     return myProperty;
   }
 }
