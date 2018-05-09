@@ -326,12 +326,6 @@
           <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
         </node>
       </node>
-      <node concept="37vLTG" id="20viQQRnxft" role="3clF46">
-        <property role="TrG5h" value="dataModule" />
-        <node concept="3uibUv" id="20viQQRnxJw" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
       <node concept="37vLTG" id="1J$cIcvsVqe" role="3clF46">
         <property role="TrG5h" value="data" />
         <property role="3TUv4t" value="false" />
@@ -837,12 +831,6 @@
           <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
         </node>
       </node>
-      <node concept="37vLTG" id="20viQQRnZW4" role="3clF46">
-        <property role="TrG5h" value="dataModule" />
-        <node concept="3uibUv" id="20viQQRo0GP" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
       <node concept="37vLTG" id="1J$cIcvsVsp" role="3clF46">
         <property role="TrG5h" value="script" />
         <property role="3TUv4t" value="false" />
@@ -915,9 +903,6 @@
               <node concept="3uibUv" id="54APHaXdOAb" role="10QFUM">
                 <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
               </node>
-            </node>
-            <node concept="37vLTw" id="20viQQRo0Mz" role="37wK5m">
-              <ref role="3cqZAo" node="20viQQRnZW4" resolve="dataModule" />
             </node>
             <node concept="37vLTw" id="1J$cIcvsVsQ" role="37wK5m">
               <ref role="3cqZAo" node="1J$cIcvsVsu" resolve="loadedData" />
