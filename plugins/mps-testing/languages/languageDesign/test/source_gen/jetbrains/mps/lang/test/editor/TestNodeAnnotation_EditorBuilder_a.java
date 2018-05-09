@@ -25,6 +25,7 @@ import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet.NodeAnnotati
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -90,6 +91,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       new NodeAnnotationStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);
+      if (true) {
+        editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
+      }
       Annotation_Actions.setCellActions(editorCell, myNode, getEditorContext());
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
