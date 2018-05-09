@@ -185,10 +185,20 @@ public class Utils {
 
       ModelRootDescriptor mrDesc = new ModelRootDescriptor(PersistenceRegistry.DEFAULT_MODEL_ROOT, mem);
 
-      TempModuleOptions tempModOpts = TempModuleOptions.forNewModule(Collections.singleton(mrDesc), false, true);
+      // DirParser uses API to create models through ModelRoot, therefore we've got root descriptor here 
+      // OTOH, it seems Utils is the only client of DirParser now, and we don't need to keep it generic,  
+      //       and could use whatever we like for model creation, e.g. explicit new RegularModelDescriptor 
+      //       along with SModuleBase.registerModel(). 
+      TempModuleOptions tempModOpts = TempModuleOptions.forNewModule(Collections.singleton(mrDesc));
       testMaterials = tempModOpts.createModule();
 
+      // It looks like dirParser and its use of YetUnknownResolver needs a model from a module attached to a  
+      // repository (to get references resolved). The best we can do here is to have own repository for the  
+      // testMaterials module which is capable to delegate to another (one supplied at construction). 
       DirParser dirParser = new DirParser(testMaterials, myRepo.getModelAccess(), dirPath);
+      // XXX the use of model access in DirParser looks odd. Here, we are inside a command already (test setting), 
+      // and DirParser assumes it can execute command, so we can not be in model read here. As long as it's the  
+      // only use of DirParser, perhaps, we shall not use ModelAccess at all, as we ensure we're inside command. 
 
       dirParser.parseDirs();
 
@@ -197,8 +207,8 @@ public class Utils {
       final SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
 
       SModel expected = expectedRef.resolve(myRepo);
-      for (SNode root : ListSequence.fromList(SModelOperations.roots(expected, null))) {
-        NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
+      for (SNode root : ListSequence.fromList(SModelOperations.roots(expected, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+        NodePatcher.fixNonStatic(root);
       }
 
       Map<SNode, SNode> referentMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -331,16 +341,16 @@ public class Utils {
 
   public static void buildModelNodeMap(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightRootIndex = MapSequence.fromMap(new HashMap<String, SNode>());
-    for (SNode rightRoot : ListSequence.fromList(SModelOperations.roots(right, null))) {
-      MapSequence.fromMap(rightRootIndex).put(SPropertyOperations.getString(SNodeOperations.cast(rightRoot, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), rightRoot);
+    for (SNode rightRoot : ListSequence.fromList(SModelOperations.roots(right, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+      MapSequence.fromMap(rightRootIndex).put(SPropertyOperations.getString(rightRoot, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), rightRoot);
     }
 
-    for (SNode leftRoot : ListSequence.fromList(SModelOperations.roots(left, null))) {
-      SNode rightBrother = MapSequence.fromMap(rightRootIndex).get(SPropertyOperations.getString(SNodeOperations.cast(leftRoot, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    for (SNode leftRoot : ListSequence.fromList(SModelOperations.roots(left, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+      SNode rightBrother = MapSequence.fromMap(rightRootIndex).get(SPropertyOperations.getString(leftRoot, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       if ((rightBrother != null)) {
         NodePatcher.copyImportAttrs(leftRoot, rightBrother);
       }
-      buildClassifierNodeMap(SNodeOperations.cast(leftRoot, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), SNodeOperations.cast(rightBrother, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), nodeMap);
+      buildClassifierNodeMap(leftRoot, rightBrother, nodeMap);
     }
   }
 
@@ -352,7 +362,7 @@ public class Utils {
     }
 
     for (SNode cl : ListSequence.fromList(SNodeOperations.getNodeDescendants(left, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, new SAbstractConcept[]{}))) {
-      SNode rightBrother = SNodeOperations.cast(MapSequence.fromMap(rightNestedIndex).get(SPropertyOperations.getString(cl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+      SNode rightBrother = MapSequence.fromMap(rightNestedIndex).get(SPropertyOperations.getString(cl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
 
 
       Assert.assertNull(MapSequence.fromMap(nodeMap).get(cl));
