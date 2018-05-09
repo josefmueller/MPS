@@ -8,9 +8,6 @@ import org.junit.ClassRule;
 import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.impl.cache.FileSwapOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,6 +25,7 @@ import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
@@ -87,18 +85,11 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
     public void test_justWrite() throws Exception {
       addNodeById("1732396662099564446");
       try {
-        SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-
-        try {
-          SNode node = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(getNodeById("1732396662099564449"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7f0L, "LocalVariableDeclarationStatement"))));
-          model.addRootNode(node);
-          {
-            List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1732396662099564449"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7f0L, "LocalVariableDeclarationStatement"))));
-            List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), node);
-            Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
-          }
-        } finally {
-          TemporaryModels.getInstance().dispose(model);
+        SNode node = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(getNodeById("1732396662099564449"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7f0L, "LocalVariableDeclarationStatement"))));
+        {
+          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1732396662099564449"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7f0L, "LocalVariableDeclarationStatement"))));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), node);
+          Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
         }
       } catch (IOException e) {
         e.printStackTrace();
@@ -193,25 +184,19 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
         }
 
         SNode readNode = FileSwapOwner.writeAndReadNode(SNodeOperations.cast(getNodeById("1732396662099564449"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7f0L, "LocalVariableDeclarationStatement"))));
-        SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
 
-        try {
-          model.addRootNode(readNode);
-          {
-            List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1732396662099564449"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7f0L, "LocalVariableDeclarationStatement"))));
-            List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), readNode);
-            Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
-          }
+        {
+          List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(getNodeById("1732396662099564449"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7f0L, "LocalVariableDeclarationStatement"))));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), readNode);
+          Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
+        }
 
-          for (IMapping<Object, Object> object : MapSequence.fromMap(userObjects)) {
-            if (MapSequence.fromMap(userObjectsToLoose).contains(object)) {
-              Assert.assertNull("User object " + object + " should have been lost.", readNode.getUserObject(object.key()));
-            } else {
-              Assert.assertEquals("User object " + object + " was lost.", object.value(), readNode.getUserObject(object.key()));
-            }
+        for (IMapping<Object, Object> object : MapSequence.fromMap(userObjects)) {
+          if (MapSequence.fromMap(userObjectsToLoose).contains(object)) {
+            Assert.assertNull("User object " + object + " should have been lost.", readNode.getUserObject(object.key()));
+          } else {
+            Assert.assertEquals("User object " + object + " was lost.", object.value(), readNode.getUserObject(object.key()));
           }
-        } finally {
-          TemporaryModels.getInstance().dispose(model);
         }
       } catch (IOException e) {
         e.printStackTrace();
