@@ -39,6 +39,12 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
 
   protected EditorCell_Collection myListEditorCell_Collection;
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  public AbstractCellListHandler(String elementRole, EditorContext editorContext) {
+    this(editorContext);
+  }
+
   public AbstractCellListHandler(EditorContext editorContext) {
     super(editorContext);
   }
