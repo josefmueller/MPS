@@ -61,7 +61,6 @@ import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
-import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
@@ -441,7 +440,7 @@ public class ChangesTracking {
         SetSequence.fromSet(affectedFiles).addElement(((FileDataSource) dataSource).getFile());
       } else if (dataSource instanceof FilePerRootDataSource) {
         FilePerRootDataSource ds = (FilePerRootDataSource) dataSource;
-        Map<SNodeId, String> streamNames = FilePerRootFormatUtil.getStreamNames(((SModelBase) myModelDescriptor).getSModel());
+        Map<SNodeId, String> streamNames = FilePerRootFormatUtil.getStreamNames(myModelDescriptor.getRootNodes());
         for (SModelEvent event : ListSequence.fromList(events)) {
           SNodeId rootId = check_5iuzi5_a0a0c0a7a2bc(event.getAffectedRoot());
           if (rootId != null && streamNames.containsKey(rootId)) {

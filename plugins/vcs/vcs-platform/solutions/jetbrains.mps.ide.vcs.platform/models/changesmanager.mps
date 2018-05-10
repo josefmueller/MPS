@@ -24,7 +24,6 @@
     <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
-    <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -54,7 +53,6 @@
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="bxo2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence.datasource(MPS.OpenAPI/)" />
-    <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
@@ -7980,22 +7978,15 @@
                         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="1JEtvnKIBty" role="33vP2m">
-                      <ref role="37wK5l" to="5fzo:~FilePerRootFormatUtil.getStreamNames(jetbrains.mps.smodel.SModel):java.util.Map" resolve="getStreamNames" />
+                    <node concept="2YIFZM" id="1kIO5AA8JnM" role="33vP2m">
+                      <ref role="37wK5l" to="5fzo:~FilePerRootFormatUtil.getStreamNames(java.lang.Iterable):java.util.Map" resolve="getStreamNames" />
                       <ref role="1Pybhc" to="5fzo:~FilePerRootFormatUtil" resolve="FilePerRootFormatUtil" />
-                      <node concept="2OqwBi" id="1JEtvnKIBtz" role="37wK5m">
-                        <node concept="1eOMI4" id="1JEtvnKIBt$" role="2Oq$k0">
-                          <node concept="10QFUN" id="1JEtvnKIBt_" role="1eOMHV">
-                            <node concept="3uibUv" id="1JEtvnKIBtA" role="10QFUM">
-                              <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                            </node>
-                            <node concept="37vLTw" id="1JEtvnKIBtB" role="10QFUP">
-                              <ref role="3cqZAo" node="2JwSLRbzll2" resolve="myModelDescriptor" />
-                            </node>
-                          </node>
+                      <node concept="2OqwBi" id="1kIO5AA8JnN" role="37wK5m">
+                        <node concept="37vLTw" id="1kIO5AA8JnO" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2JwSLRbzll2" resolve="myModelDescriptor" />
                         </node>
-                        <node concept="liA8E" id="1JEtvnKIBtC" role="2OqNvi">
-                          <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
+                        <node concept="liA8E" id="1kIO5AA8JnP" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModel.getRootNodes():java.lang.Iterable" resolve="getRootNodes" />
                         </node>
                       </node>
                     </node>
