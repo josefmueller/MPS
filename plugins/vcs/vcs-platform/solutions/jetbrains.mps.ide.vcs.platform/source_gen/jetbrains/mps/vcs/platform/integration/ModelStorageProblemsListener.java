@@ -42,7 +42,8 @@ import com.intellij.openapi.application.ModalityState;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
@@ -260,19 +261,19 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       }
     }
   }
-  private static File doBackup(IFile modelFile, final SModel inMemory) {
+  private static File doBackup(final IFile modelFile, final SModel inMemory) {
     try {
       File tmp = FileUtil.createTmpDir();
       // as the model is already in repo, we can assume it's in supported persistence 
       // XXX though not apparent why it's necessarily default xml persistence 
-      // XXX and why we don't use ModelFactory.save(openapi.SModel) here 
-      final Wrappers._T<String> modelData = new Wrappers._T<String>();
-      inMemory.getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          modelData.value = ModelPersistence.modelToString(((SModelBase) inMemory).getSModel());
+      // XXX and why we don't use ModelFactory.save(openapi.SModel) here, with properly created FileDataSource at temp location. 
+      // XXX We still assume text-backed persistence. Perhaps, could use PersistenceVersionAware.getModelFactory() and its save() directly? 
+      String modelData = new ModelAccessHelper(inMemory.getRepository()).runReadAction(new Computable<String>() {
+        public String compute() {
+          return PersistenceUtil.saveModel(inMemory, FileUtil.getExtension(modelFile.getName()));
         }
       });
-      MergeDriverBackupUtil.writeContentsToFile(modelData.value.getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, ModelStorageProblemsListener.DiskMemoryConflictVersion.MEMORY.getSuffix());
+      MergeDriverBackupUtil.writeContentsToFile(modelData.getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, ModelStorageProblemsListener.DiskMemoryConflictVersion.MEMORY.getSuffix());
       if (modelFile.exists()) {
         com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + ModelStorageProblemsListener.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
       }

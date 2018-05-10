@@ -19,7 +19,6 @@
     <import index="4rb9" ref="r:e4939376-be00-4167-9510-67715eca6425(jetbrains.mps.vcs.platform.util)" />
     <import index="2eq1" ref="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="5fzo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.def(MPS.Core/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
@@ -357,7 +356,6 @@
         <child id="1423104411234567454" name="repo" index="ukAjM" />
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
-      <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
       <concept id="8974276187400348177" name="jetbrains.mps.lang.access.structure.ExecuteCommandStatement" flags="nn" index="1QHqEO" />
     </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
@@ -3187,7 +3185,12 @@
             </node>
             <node concept="3SKdUt" id="7bkTVicUYwi" role="3cqZAp">
               <node concept="3SKdUq" id="7bkTVicUYwk" role="3SKWNk">
-                <property role="3SKdUp" value="XXX and why we don't use ModelFactory.save(openapi.SModel) here" />
+                <property role="3SKdUp" value="XXX and why we don't use ModelFactory.save(openapi.SModel) here, with properly created FileDataSource at temp location." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="59Mw_8gIQeW" role="3cqZAp">
+              <node concept="3SKdUq" id="59Mw_8gIQeY" role="3SKWNk">
+                <property role="3SKdUp" value="XXX We still assume text-backed persistence. Perhaps, could use PersistenceVersionAware.getModelFactory() and its save() directly?" />
               </node>
             </node>
             <node concept="3cpWs8" id="1gbSomzw_Y7" role="3cqZAp">
@@ -3196,45 +3199,48 @@
                 <node concept="3uibUv" id="1gbSomzw_Y4" role="1tU5fm">
                   <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
-              </node>
-            </node>
-            <node concept="1QHqEK" id="1gbSomzwIvG" role="3cqZAp">
-              <node concept="1QHqEC" id="1gbSomzwIvI" role="1QHqEI">
-                <node concept="3clFbS" id="1gbSomzwIvK" role="1bW5cS">
-                  <node concept="3clFbF" id="1gbSomzwAPn" role="3cqZAp">
-                    <node concept="37vLTI" id="1gbSomzwAPp" role="3clFbG">
-                      <node concept="2YIFZM" id="1gbSomzw_Y9" role="37vLTx">
-                        <ref role="1Pybhc" to="5fzo:~ModelPersistence" resolve="ModelPersistence" />
-                        <ref role="37wK5l" to="5fzo:~ModelPersistence.modelToString(jetbrains.mps.smodel.SModel):java.lang.String" resolve="modelToString" />
-                        <node concept="2OqwBi" id="1gbSomzw_Ya" role="37wK5m">
-                          <node concept="liA8E" id="1gbSomzw_Yb" role="2OqNvi">
-                            <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
-                          </node>
-                          <node concept="1eOMI4" id="1gbSomzw_Yc" role="2Oq$k0">
-                            <node concept="10QFUN" id="1gbSomzw_Yd" role="1eOMHV">
-                              <node concept="3uibUv" id="1gbSomzw_Ye" role="10QFUM">
-                                <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                              </node>
-                              <node concept="37vLTw" id="1gbSomzw_Yf" role="10QFUP">
-                                <ref role="3cqZAo" node="6KmbN9hT1cH" resolve="inMemory" />
+                <node concept="2OqwBi" id="59Mw_8gIkZe" role="33vP2m">
+                  <node concept="2ShNRf" id="59Mw_8gI2Sd" role="2Oq$k0">
+                    <node concept="1pGfFk" id="59Mw_8gIiwi" role="2ShVmc">
+                      <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                      <node concept="2OqwBi" id="59Mw_8gIklK" role="37wK5m">
+                        <node concept="37vLTw" id="59Mw_8gIjDW" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6KmbN9hT1cH" resolve="inMemory" />
+                        </node>
+                        <node concept="liA8E" id="59Mw_8gIkGN" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="59Mw_8gIlic" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                    <node concept="1bVj0M" id="59Mw_8gImtr" role="37wK5m">
+                      <node concept="3clFbS" id="59Mw_8gImts" role="1bW5cS">
+                        <node concept="3clFbF" id="59Mw_8gIopZ" role="3cqZAp">
+                          <node concept="2YIFZM" id="59Mw_8gIoAe" role="3clFbG">
+                            <ref role="37wK5l" to="pa15:~PersistenceUtil.saveModel(org.jetbrains.mps.openapi.model.SModel,java.lang.String):java.lang.String" resolve="saveModel" />
+                            <ref role="1Pybhc" to="pa15:~PersistenceUtil" resolve="PersistenceUtil" />
+                            <node concept="37vLTw" id="59Mw_8gIpLK" role="37wK5m">
+                              <ref role="3cqZAo" node="6KmbN9hT1cH" resolve="inMemory" />
+                            </node>
+                            <node concept="2YIFZM" id="59Mw_8gIyWb" role="37wK5m">
+                              <ref role="37wK5l" to="18ew:~FileUtil.getExtension(java.lang.String):java.lang.String" resolve="getExtension" />
+                              <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+                              <node concept="2OqwBi" id="59Mw_8gIsXd" role="37wK5m">
+                                <node concept="37vLTw" id="59Mw_8gIsg5" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6KmbN9hT1cF" resolve="modelFile" />
+                                </node>
+                                <node concept="liA8E" id="59Mw_8gItzP" role="2OqNvi">
+                                  <ref role="37wK5l" to="3ju5:~IFile.getName():java.lang.String" resolve="getName" />
+                                </node>
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node concept="37vLTw" id="1gbSomzwAPt" role="37vLTJ">
-                        <ref role="3cqZAo" node="1gbSomzw_Y8" resolve="modelData" />
-                      </node>
                     </node>
                   </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="1gbSomzwLR_" role="ukAjM">
-                <node concept="37vLTw" id="1gbSomzwKXP" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6KmbN9hT1cH" resolve="inMemory" />
-                </node>
-                <node concept="liA8E" id="1gbSomzwMcQ" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                 </node>
               </node>
             </node>
