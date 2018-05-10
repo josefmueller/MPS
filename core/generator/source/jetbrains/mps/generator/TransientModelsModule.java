@@ -277,7 +277,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
         oldState = getLoadingState();
         if (mySModel == null) {
           mySModel = createModel();
-          mySModel.setModelDescriptor(this);
+          mySModel.setModelDescriptor(this, getNodeEventDispatch());
           if (wasUnloaded) {
             // ensure imports are back
             // XXX don't ask me why we don't swap out models with imports, but bare nodes only.

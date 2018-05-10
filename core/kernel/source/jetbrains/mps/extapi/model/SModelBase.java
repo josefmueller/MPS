@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.event.ModelListenerDispatch;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -240,9 +241,13 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return true;
   }
 
+  /**
+   * @deprecated not in use, no apparent scenario for usage.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public boolean isRegistered() {
-    SModule copy = myModule;
-    return copy != null && copy.getRepository() != null;
+    return myRepository != null;
   }
 
   /**
@@ -421,7 +426,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
       oldModel.dispose();
     }
     if (newModel != null) {
-      newModel.setModelDescriptor(this);
+      newModel.setModelDescriptor(this, getNodeEventDispatch());
     }
 
     fireModelReplaced();
@@ -468,6 +473,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   /**
    * CLIENTS SHALL NOT USE THIS METHOD. It's public merely to overcome java package boundaries (those of SModelData implementation and this class).
+   * FIXME Once deprecated SModel.setModelDescriptor is removed, visibility shall be changed to protected
    * FIXME This is a hack. We shall pass myEventDispatch the moment internal model is initialized.
    * However, it's tricky to find out exact moment with present approach (getSModelInternal() either
    * returns existing or creates new), fireModeStateChanged is feasible option, but misguiding as well.

@@ -71,7 +71,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
         oldState = getLoadingState();
         if (myModel == null) {
           myModel = loadSModel();
-          myModel.setModelDescriptor(this);
+          myModel.setModelDescriptor(this, getNodeEventDispatch());
           setLoadingState(ModelLoadingState.FULLY_LOADED);
         }
       }
@@ -134,7 +134,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     final SModel oldModel = myModel;
     myModel = loadSModel();
     oldModel.dispose();
-    myModel.setModelDescriptor(this);
+    myModel.setModelDescriptor(this, getNodeEventDispatch());
     setChanged(false);
 
     // XXX loadSModel() doesn't change loading state (though it's wrong, as reload might load empty model)

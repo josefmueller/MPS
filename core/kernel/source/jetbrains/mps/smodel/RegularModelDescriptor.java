@@ -58,7 +58,7 @@ public abstract class RegularModelDescriptor extends SModelBase {
       if (mySModel == null) {
         ModelLoadResult<jetbrains.mps.smodel.SModel> loadResult = createModel();
         mySModel = loadResult.getModelData();
-        mySModel.setModelDescriptor(this);
+        mySModel.setModelDescriptor(this, getNodeEventDispatch());
         setLoadingState(loadResult.getState());
       }
     }
@@ -99,7 +99,7 @@ public abstract class RegularModelDescriptor extends SModelBase {
       }
       mySModel = newModel.getModelData();
       if (mySModel != null) {
-        mySModel.setModelDescriptor(this);
+        mySModel.setModelDescriptor(this, getNodeEventDispatch());
       }
       setLoadingState(newModel.getState());
     }
