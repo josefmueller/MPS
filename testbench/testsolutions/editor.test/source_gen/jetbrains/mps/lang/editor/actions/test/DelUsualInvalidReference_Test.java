@@ -41,6 +41,8 @@ public class DelUsualInvalidReference_Test extends BaseTransformationTest {
           invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.End_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
         }
       }, false);
