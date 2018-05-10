@@ -271,9 +271,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public Iterable<Problem> getProblems() {
     assertCanRead();
-    jetbrains.mps.smodel.SModel sModelInternal = getSModelInternal();
-    if (sModelInternal instanceof InvalidSModel) {
-      return ((InvalidSModel) sModelInternal).getProblems();
+    SModelData modelData = getModelData();
+    if (modelData instanceof InvalidSModel) {
+      return ((InvalidSModel) modelData).getProblems();
     }
     return Collections.emptySet();
   }

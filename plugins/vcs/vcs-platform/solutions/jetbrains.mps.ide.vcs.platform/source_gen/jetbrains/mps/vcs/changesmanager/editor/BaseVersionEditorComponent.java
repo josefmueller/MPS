@@ -40,7 +40,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     final ModelAccess modelAccess = repository.getModelAccess();
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        final jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0a0a0a0a0c0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
+        final jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0a0a0a0a0c0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModel();
         myBaseModel = new MergeTemporaryModel(CopyUtil.copyModel(baseModel), true);
       }
     });

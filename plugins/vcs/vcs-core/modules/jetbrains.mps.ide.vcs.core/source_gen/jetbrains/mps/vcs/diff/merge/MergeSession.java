@@ -266,7 +266,7 @@ public final class MergeSession {
   }
   public void restoreState(MergeSessionState state) {
     MergeSessionState stateCopy = new MergeSessionState(state);
-    myResultModel.setSModelInternal(stateCopy.myResultModel.getSModelInternal());
+    myResultModel.setSModelInternal(stateCopy.myResultModel.getSModel());
 
     // clear UnregisteredNodes pool to avoid a lot of ERRORs in log: 
     UnregisteredNodes.instance().clear();

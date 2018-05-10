@@ -6428,7 +6428,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="5ikp7PICrI3" role="2OqNvi">
-                              <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
+                              <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
                             </node>
                           </node>
                         </node>

@@ -144,7 +144,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
   @Override
   protected boolean saveModel() throws ModelSaveException, IOException {
-    SModel smodel = getSModel();
+    SModelData smodel = getModelData();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -160,8 +160,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
       IFile brokenFile = getBackupFile(false);
       try {
         PersistenceFacade.getInstance().getDefaultModelFactory().save(this, new FileDataSource(brokenFile, null));
-      } catch (ModelSaveException ignore) {
-      } catch (IOException ignore) {
+      } catch (ModelSaveException | IOException ignore) {
       }
       myProblems = e.getProblems();
       throw e;

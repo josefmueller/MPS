@@ -604,7 +604,7 @@
                       <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
                     </node>
                     <node concept="1rXfSq" id="21i_bH2Ut2l" role="33vP2m">
-                      <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
+                      <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
                     </node>
                   </node>
                 </node>

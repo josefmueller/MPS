@@ -19,7 +19,7 @@ public class MergeSessionState {
   /*package*/ final Set<ModelChange> myResolvedChanges;
   /*package*/ final Map<SNodeId, SNodeId> myIdReplacementCache;
   /*package*/ MergeSessionState(MergeTemporaryModel resultModel, Set<ModelChange> resolvedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
-    myResultModel = new MergeTemporaryModel(CopyUtil.copyModel(resultModel.getSModelInternal()), true);
+    myResultModel = new MergeTemporaryModel(CopyUtil.copyModel(resultModel.getSModel()), true);
     myResolvedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), resolvedChanges);
     myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.fromMap(idReplacementCache).count()));
     MapSequence.fromMap(idReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {

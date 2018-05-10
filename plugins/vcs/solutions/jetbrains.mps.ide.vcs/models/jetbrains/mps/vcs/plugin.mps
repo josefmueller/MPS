@@ -933,6 +933,11 @@
                     <property role="3SKdUp" value="this.model came from repo, so it must be supported by ModelPersistence" />
                   </node>
                 </node>
+                <node concept="3SKdUt" id="7bkTVicVyxM" role="3cqZAp">
+                  <node concept="3SKdUq" id="7bkTVicVyxO" role="3SKWNk">
+                    <property role="3SKdUp" value="FIXME prefer ModelFactory.save(openapi.SModel, in-memory stream data source)" />
+                  </node>
+                </node>
                 <node concept="3cpWs8" id="1gbSomzwiDZ" role="3cqZAp">
                   <node concept="3cpWsn" id="1gbSomzwiE0" role="3cpWs9">
                     <property role="TrG5h" value="modelData" />
@@ -949,7 +954,7 @@
                             <ref role="37wK5l" to="5fzo:~ModelPersistence.modelToString(jetbrains.mps.smodel.SModel):java.lang.String" resolve="modelToString" />
                             <node concept="2OqwBi" id="1gbSomzwiE2" role="37wK5m">
                               <node concept="liA8E" id="1gbSomzwiE3" role="2OqNvi">
-                                <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
+                                <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
                               </node>
                               <node concept="1eOMI4" id="1gbSomzwiE4" role="2Oq$k0">
                                 <node concept="10QFUN" id="1gbSomzwiE5" role="1eOMHV">

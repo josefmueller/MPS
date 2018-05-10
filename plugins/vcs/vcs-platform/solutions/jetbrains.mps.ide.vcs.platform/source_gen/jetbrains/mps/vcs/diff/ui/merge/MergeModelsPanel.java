@@ -217,7 +217,7 @@ public class MergeModelsPanel extends JPanel {
     SModel resultModel = new ModelAccessHelper(myProjectRepository).runReadAction(new Computable<MergeTemporaryModel>() {
       public MergeTemporaryModel compute() {
         // copy to avoid problems with de-registration 
-        jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_ktyr7l_a0a0a1a0a0a0a0a0qb(myMergeSession.getResultModel(), SModelBase.class).getSModelInternal());
+        jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_ktyr7l_a0a0a1a0a0a0a0a0qb(myMergeSession.getResultModel(), SModelBase.class).getSModel());
         return new MergeTemporaryModel(resModel, false);
       }
     });

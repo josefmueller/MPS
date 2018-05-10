@@ -115,10 +115,11 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         }
 
         // this.model came from repo, so it must be supported by ModelPersistence 
+        // FIXME prefer ModelFactory.save(openapi.SModel, in-memory stream data source) 
         final Wrappers._T<String> modelData = new Wrappers._T<String>();
         ((SModel) MapSequence.fromMap(_params).get("model")).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            modelData.value = ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal());
+            modelData.value = ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModel());
           }
         });
         mine = ReRunMergeFromBackup_Action.this.selectMineModel(modelData.value, mine, _params);

@@ -18,7 +18,6 @@
     <import index="wenr" ref="r:351fe3d9-2ce5-4ea0-8afc-9b076259a949(jetbrains.mps.vcs.diff.ui.merge)" />
     <import index="4rb9" ref="r:e4939376-be00-4167-9510-67715eca6425(jetbrains.mps.vcs.platform.util)" />
     <import index="2eq1" ref="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="5fzo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.def(MPS.Core/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -1912,7 +1911,7 @@
                       <ref role="3cqZAo" node="2Xde4lKb0fX" resolve="model" />
                     </node>
                     <node concept="liA8E" id="2Xde4lKlDe8" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                      <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="2Xde4lKlEke" role="37wK5m">
@@ -2304,7 +2303,7 @@
                     <ref role="3cqZAo" node="6KmbN9hT18Q" resolve="model" />
                   </node>
                   <node concept="liA8E" id="3Ss$euZpCM1" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                    <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="3Ss$euZpEWr" role="37wK5m">
@@ -3151,6 +3150,16 @@
                 <property role="3SKdUp" value="as the model is already in repo, we can assume it's in supported persistence" />
               </node>
             </node>
+            <node concept="3SKdUt" id="7bkTVicUWQl" role="3cqZAp">
+              <node concept="3SKdUq" id="7bkTVicUWQn" role="3SKWNk">
+                <property role="3SKdUp" value="XXX though not apparent why it's necessarily default xml persistence" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="7bkTVicUYwi" role="3cqZAp">
+              <node concept="3SKdUq" id="7bkTVicUYwk" role="3SKWNk">
+                <property role="3SKdUp" value="XXX and why we don't use ModelFactory.save(openapi.SModel) here" />
+              </node>
+            </node>
             <node concept="3cpWs8" id="1gbSomzw_Y7" role="3cqZAp">
               <node concept="3cpWsn" id="1gbSomzw_Y8" role="3cpWs9">
                 <property role="TrG5h" value="modelData" />
@@ -3169,7 +3178,7 @@
                         <ref role="37wK5l" to="5fzo:~ModelPersistence.modelToString(jetbrains.mps.smodel.SModel):java.lang.String" resolve="modelToString" />
                         <node concept="2OqwBi" id="1gbSomzw_Ya" role="37wK5m">
                           <node concept="liA8E" id="1gbSomzw_Yb" role="2OqNvi">
-                            <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModelInternal():jetbrains.mps.smodel.SModel" resolve="getSModelInternal" />
+                            <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
                           </node>
                           <node concept="1eOMI4" id="1gbSomzw_Yc" role="2Oq$k0">
                             <node concept="10QFUN" id="1gbSomzw_Yd" role="1eOMHV">
@@ -3373,11 +3382,12 @@
               <node concept="RRSsy" id="3jYQuSB37kX" role="3cqZAp">
                 <property role="RRSoG" value="error" />
                 <node concept="3cpWs3" id="608sk1uSLs" role="RRSoy">
-                  <node concept="2YIFZM" id="2n9zn0CqMNX" role="3uHU7w">
-                    <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
-                    <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                    <node concept="37vLTw" id="2BHiRxgmNIF" role="37wK5m">
+                  <node concept="2OqwBi" id="7bkTVicV0lX" role="3uHU7w">
+                    <node concept="37vLTw" id="7bkTVicUZDw" role="2Oq$k0">
                       <ref role="3cqZAo" node="6KmbN9hT1cH" resolve="inMemory" />
+                    </node>
+                    <node concept="liA8E" id="7bkTVicV0v0" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
                     </node>
                   </node>
                   <node concept="Xl_RD" id="608sk1uSLw" role="3uHU7B">

@@ -46,7 +46,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import com.intellij.diff.contents.DiffContent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -130,7 +129,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
           return "error: " + it.getText() + link;
         }
       }).take(3), "<br/>");
-      final String message = String.format("<p>Cannot %s model %s.<br/>%s</p>", (isSave ? "save" : "load"), model.getModelName(), problemText);
+      final String message = String.format("<p>Cannot %s model %s.<br/>%s</p>", (isSave ? "save" : "load"), model.getName(), problemText);
       final SModelReference ref = model.getReference();
       UIUtil.invokeLaterIfNeeded(new Runnable() {
         public void run() {
@@ -170,7 +169,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   private void resolveDiskMemoryConflict(final EditableSModel model) {
     if (!(model.getSource() instanceof FileDataSource)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error(String.format("Conflicting content in memory and on disk for model %s from %s. Unfortunately, MPS does not support conflict resolution for models from multiple files yet, conflict ignored.", model.getModelName(), model.getSource().getLocation()));
+        LOG.error(String.format("Conflicting content in memory and on disk for model %s from %s. Unfortunately, MPS does not support conflict resolution for models from multiple files yet, conflict ignored.", model.getName(), model.getSource().getLocation()));
       }
       return;
     }
@@ -259,10 +258,12 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     try {
       File tmp = FileUtil.createTmpDir();
       // as the model is already in repo, we can assume it's in supported persistence 
+      // XXX though not apparent why it's necessarily default xml persistence 
+      // XXX and why we don't use ModelFactory.save(openapi.SModel) here 
       final Wrappers._T<String> modelData = new Wrappers._T<String>();
       inMemory.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          modelData.value = ModelPersistence.modelToString(((SModelBase) inMemory).getSModelInternal());
+          modelData.value = ModelPersistence.modelToString(((SModelBase) inMemory).getSModel());
         }
       });
       MergeDriverBackupUtil.writeContentsToFile(modelData.value.getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, ModelStorageProblemsListener.DiskMemoryConflictVersion.MEMORY.getSuffix());
@@ -276,7 +277,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       return zipfile;
     } catch (IOException e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("Cannot create backup during resolving disk-memory conflict for " + SNodeOperations.getModelLongName(inMemory), e);
+        LOG.error("Cannot create backup during resolving disk-memory conflict for " + inMemory.getName(), e);
       }
       throw new RuntimeException(e);
     }
