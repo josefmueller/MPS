@@ -22,6 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -88,6 +89,24 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   }
 
   public abstract SNode createNodeToInsert(EditorContext editorContext);
+
+  /**
+   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  public EditorCell_Collection createCells_Vertical(EditorContext editorContext) {
+    return createCells(new CellLayout_Vertical());
+  }
+
+  /**
+   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  public EditorCell_Collection createCells_Horizontal(EditorContext editorContext) {
+    return createCells(new CellLayout_Horizontal());
+  }
 
   public EditorCell_Collection createCells(CellLayout cellLayout, boolean selectable) {
     EditorCell_Collection cellsCollection = createCells(cellLayout);
