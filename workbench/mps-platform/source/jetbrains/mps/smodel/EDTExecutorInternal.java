@@ -20,14 +20,13 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.TransactionGuard;
 import com.intellij.openapi.application.TransactionGuardImpl;
-import com.intellij.openapi.application.TransactionId;
-import com.intellij.openapi.application.impl.ModalityStateEx;
 import com.intellij.testFramework.ThreadTracker;
 import com.intellij.util.ReflectionUtil;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.TaskScheduler.Task;
 import jetbrains.mps.smodel.TaskScheduler.TaskIsOutdated;
 import jetbrains.mps.util.NamedThreadFactory;
+import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -65,6 +64,8 @@ final class EDTExecutorInternal implements Disposable {
   private final Condition myQueueIsEmptyCondition = myQueueLock.newCondition();
   private final AtomicInteger myTasksCount = new AtomicInteger();
   private boolean myDisposed = false; // access only in EDT!
+
+  private final com.intellij.openapi.util.Condition myExpiredCondition = o -> myDisposed;
 
   @NotNull
   private static ThreadFactory createDaemonFactory() {
@@ -119,7 +120,7 @@ final class EDTExecutorInternal implements Disposable {
   }
 
   /**
-   * flushing the whole queue in the edt within the transaction.
+   * flushing the whole queue in the edt asynchronously
    */
   private void flushQueueLaterInEDT() {
     assert !taskQueueIsEmpty() : "private method precondition is not satisfied";
@@ -127,7 +128,24 @@ final class EDTExecutorInternal implements Disposable {
       LOG.trace("flushing the queue: the caller is " + ReflectionUtil.findCallerClass(9) + " : context transaction " +
                 TransactionGuard.getInstance().getContextTransaction());
     }
-    TransactionGuard.getInstance().submitTransactionLater(this, this::flushTasksQueue);
+    TransactionGuardImpl guard = (TransactionGuardImpl) TransactionGuard.getInstance();
+    Runnable wrapped = guaranteeWriteSafetyViaHack(guard);
+    ApplicationManager.getApplication().invokeLater(wrapped, ModalityState.any(), myExpiredCondition);
+  }
+
+  /**
+   * Tricking the IDEA's write-safety model.
+   * The hack simply repeats the code from the ApplicationImpl#invokeLater with write-safe modality (e.g. NON_MODAL)
+   * Due to that we never get the exception from the TransactionGuardImpl#assertWriteActionAllowed
+   */
+  @Hack
+  @NotNull
+  private Runnable guaranteeWriteSafetyViaHack(@NotNull TransactionGuardImpl guard) {
+    return guard.wrapLaterInvocation(() -> {
+        ThreadUtils.assertEDT();
+        guard.assertWriteActionAllowed();
+        flushTasksQueue();
+      }, ModalityState.NON_MODAL);
   }
 
   private void flushTasksQueue() {
