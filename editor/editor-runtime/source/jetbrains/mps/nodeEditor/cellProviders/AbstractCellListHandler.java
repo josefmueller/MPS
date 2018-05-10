@@ -49,6 +49,16 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     return null;
   }
 
+  /**
+   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
+   * @deprecated since MPS 3.5 use {@link #getNode()} method
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  public SNode getOwner() {
+    return getNode();
+  }
+
   //todo remove body after 2018.2
   public SConceptFeature getElementSRole(){
     return null;

@@ -111,7 +111,16 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     return myChildSConcept;
   }
 
-  @Override
+  /**
+   * Usage in mbeddr-generated code in 2018.1, so we leave it here until 18.2
+   */
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  protected EditorCell createEmptyCell(EditorContext ec) {
+    return createEmptyCell();
+  }
+
+    @Override
   protected EditorCell createEmptyCell() {
     EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getNode(), null);
     emptyCell.setDefaultText("<< ... >>");
