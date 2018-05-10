@@ -25,10 +25,12 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class DiffModelUtil {
   private static Map<SModel, TempModuleOptions> myRegisteredModels = MapSequence.fromMap(new HashMap<SModel, TempModuleOptions>());
   public static void renameModelAndRegister(SModel model, String version) {
+    // takes a model, changes its reference if version is specified, and registers a model with a newly created 
+    // module which is registered with a global repository. 
     if (version != null) {
       renameModel(model, version);
     }
-    TempModuleOptions mo = TempModuleOptions.forDefaultModule();
+    TempModuleOptions mo = TempModuleOptions.nonReloadableModule();
     MapSequence.fromMap(myRegisteredModels).put(model, mo);
     SModuleBase module = (SModuleBase) mo.createModule();
     module.registerModel((SModelBase) model);

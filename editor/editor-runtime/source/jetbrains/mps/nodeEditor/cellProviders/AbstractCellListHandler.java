@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -49,16 +48,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   public abstract String getElementRole();
 
   public abstract SConceptFeature getElementSRole();
-
-  /**
-   * Used in mbeddr in 2018.1
-   * @deprecated since MPS 3.5 use {@link #getNode()} method
-   */
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public SNode getOwner() {
-    return getNode();
-  }
 
   protected abstract SNode getAnchorNode(EditorCell anchorCell);
 

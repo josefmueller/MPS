@@ -12950,6 +12950,16 @@
         <node concept="17QB3L" id="2v$NtEHjqWQ" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="2v$NtEHjiFp" role="3clF47">
+        <node concept="3SKdUt" id="2ReZlN1U5a0" role="3cqZAp">
+          <node concept="3SKdUq" id="2ReZlN1U5a2" role="3SKWNk">
+            <property role="3SKdUp" value="takes a model, changes its reference if version is specified, and registers a model with a newly created" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2ReZlN1U5$B" role="3cqZAp">
+          <node concept="3SKdUq" id="2ReZlN1U5$D" role="3SKWNk">
+            <property role="3SKdUp" value="module which is registered with a global repository." />
+          </node>
+        </node>
         <node concept="3clFbJ" id="2v$NtEHjt8W" role="3cqZAp">
           <property role="TyiWK" value="false" />
           <property role="TyiWL" value="true" />
@@ -12979,9 +12989,9 @@
             <node concept="3uibUv" id="2v$NtEHjt97" role="1tU5fm">
               <ref role="3uigEE" to="tqvn:~TempModuleOptions" resolve="TempModuleOptions" />
             </node>
-            <node concept="2YIFZM" id="2v$NtEHjt98" role="33vP2m">
+            <node concept="2YIFZM" id="2ReZlN1Tkv_" role="33vP2m">
+              <ref role="37wK5l" to="tqvn:~TempModuleOptions.nonReloadableModule():jetbrains.mps.smodel.tempmodel.TempModuleOptions" resolve="nonReloadableModule" />
               <ref role="1Pybhc" to="tqvn:~TempModuleOptions" resolve="TempModuleOptions" />
-              <ref role="37wK5l" to="tqvn:~TempModuleOptions.forDefaultModule():jetbrains.mps.smodel.tempmodel.TempModuleOptions" resolve="forDefaultModule" />
             </node>
           </node>
         </node>

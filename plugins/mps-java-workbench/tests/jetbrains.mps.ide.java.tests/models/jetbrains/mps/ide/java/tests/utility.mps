@@ -1789,6 +1789,26 @@
               </node>
             </node>
             <node concept="3clFbH" id="7q5dBpSnYi7" role="3cqZAp" />
+            <node concept="3SKdUt" id="4zKIK8wU5Yu" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8wU5Yw" role="3SKWNk">
+                <property role="3SKdUp" value="DirParser uses API to create models through ModelRoot, therefore we've got root descriptor here" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4zKIK8wV10I" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8wV10K" role="3SKWNk">
+                <property role="3SKdUp" value="OTOH, it seems Utils is the only client of DirParser now, and we don't need to keep it generic, " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4zKIK8wVNa_" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8wVNaB" role="3SKWNk">
+                <property role="3SKdUp" value="      and could use whatever we like for model creation, e.g. explicit new RegularModelDescriptor" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4zKIK8wYuOB" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8wYuOD" role="3SKWNk">
+                <property role="3SKdUp" value="      along with SModuleBase.registerModel()." />
+              </node>
+            </node>
             <node concept="3cpWs8" id="7q5dBpSnYi8" role="3cqZAp">
               <node concept="3cpWsn" id="7q5dBpSnYi9" role="3cpWs9">
                 <property role="TrG5h" value="tempModOpts" />
@@ -1797,19 +1817,13 @@
                 </node>
                 <node concept="2YIFZM" id="7q5dBpSnYib" role="33vP2m">
                   <ref role="1Pybhc" to="tqvn:~TempModuleOptions" resolve="TempModuleOptions" />
-                  <ref role="37wK5l" to="tqvn:~TempModuleOptions.forNewModule(java.util.Set,boolean,boolean):jetbrains.mps.smodel.tempmodel.TempModuleOptions" resolve="forNewModule" />
+                  <ref role="37wK5l" to="tqvn:~TempModuleOptions.forNewModule(java.util.Set):jetbrains.mps.smodel.tempmodel.TempModuleOptions" resolve="forNewModule" />
                   <node concept="2YIFZM" id="7q5dBpSnYic" role="37wK5m">
                     <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
                     <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
                     <node concept="37vLTw" id="7q5dBpSnYid" role="37wK5m">
                       <ref role="3cqZAo" node="7q5dBpSnYi1" resolve="mrDesc" />
                     </node>
-                  </node>
-                  <node concept="3clFbT" id="7q5dBpSnYie" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
-                  <node concept="3clFbT" id="7q5dBpSnYif" role="37wK5m">
-                    <property role="3clFbU" value="true" />
                   </node>
                 </node>
               </node>
@@ -1830,6 +1844,21 @@
               </node>
             </node>
             <node concept="3clFbH" id="7q5dBpSnYim" role="3cqZAp" />
+            <node concept="3SKdUt" id="4zKIK8wYOYJ" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8wYOYL" role="3SKWNk">
+                <property role="3SKdUp" value="It looks like dirParser and its use of YetUnknownResolver needs a model from a module attached to a " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4zKIK8wZZc_" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8wZZcA" role="3SKWNk">
+                <property role="3SKdUp" value="repository (to get references resolved). The best we can do here is to have own repository for the " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4zKIK8x11FB" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8x11FD" role="3SKWNk">
+                <property role="3SKdUp" value="testMaterials module which is capable to delegate to another (one supplied at construction)." />
+              </node>
+            </node>
             <node concept="3cpWs8" id="7q5dBpSnYin" role="3cqZAp">
               <node concept="3cpWsn" id="7q5dBpSnYio" role="3cpWs9">
                 <property role="TrG5h" value="dirParser" />
@@ -1855,6 +1884,21 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4zKIK8x3oDQ" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8x3oDS" role="3SKWNk">
+                <property role="3SKdUp" value="XXX the use of model access in DirParser looks odd. Here, we are inside a command already (test setting)," />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4zKIK8x4SIl" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8x4SIn" role="3SKWNk">
+                <property role="3SKdUp" value="and DirParser assumes it can execute command, so we can not be in model read here. As long as it's the " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4zKIK8x7FO6" role="3cqZAp">
+              <node concept="3SKdUq" id="4zKIK8x7FO7" role="3SKWNk">
+                <property role="3SKdUp" value="only use of DirParser, perhaps, we shall not use ModelAccess at all, as we ensure we're inside command." />
               </node>
             </node>
             <node concept="3clFbH" id="7q5dBpSnYix" role="3cqZAp" />
@@ -1935,7 +1979,9 @@
             </node>
             <node concept="2Gpval" id="7q5dBpSnYiV" role="3cqZAp">
               <node concept="2OqwBi" id="7q5dBpSnYiW" role="2GsD0m">
-                <node concept="2RRcyG" id="7q5dBpSnYiX" role="2OqNvi" />
+                <node concept="2RRcyG" id="7q5dBpSnYiX" role="2OqNvi">
+                  <ref role="2RRcyH" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
                 <node concept="37vLTw" id="7q5dBpSrswM" role="2Oq$k0">
                   <ref role="3cqZAo" node="7q5dBpSqVUt" resolve="expected" />
                 </node>
@@ -1948,13 +1994,8 @@
                   <node concept="2YIFZM" id="7q5dBpSnYj2" role="3clFbG">
                     <ref role="37wK5l" node="70HT6wFrZAZ" resolve="fixNonStatic" />
                     <ref role="1Pybhc" node="70HT6wFrYV3" resolve="NodePatcher" />
-                    <node concept="1PxgMI" id="7q5dBpSnYj3" role="37wK5m">
-                      <node concept="2GrUjf" id="7q5dBpSnYj4" role="1m5AlR">
-                        <ref role="2Gs0qQ" node="7q5dBpSnYiZ" resolve="root" />
-                      </node>
-                      <node concept="chp4Y" id="7q5dBpSnYj5" role="3oSUPX">
-                        <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
-                      </node>
+                    <node concept="2GrUjf" id="7yzRhuJlxPE" role="37wK5m">
+                      <ref role="2Gs0qQ" node="7q5dBpSnYiZ" resolve="root" />
                     </node>
                   </node>
                 </node>
@@ -3207,12 +3248,16 @@
             <property role="TrG5h" value="rightRootIndex" />
             <node concept="2ShNRf" id="6zNM6VZneAE" role="33vP2m">
               <node concept="3rGOSV" id="6zNM6VZneAG" role="2ShVmc">
-                <node concept="3Tqbb2" id="6zNM6VZneAK" role="3rHtpV" />
+                <node concept="3Tqbb2" id="6zNM6VZneAK" role="3rHtpV">
+                  <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
                 <node concept="17QB3L" id="6zNM6VZneAJ" role="3rHrn6" />
               </node>
             </node>
             <node concept="3rvAFt" id="6zNM6VZneA$" role="1tU5fm">
-              <node concept="3Tqbb2" id="6zNM6VZneAC" role="3rvSg0" />
+              <node concept="3Tqbb2" id="6zNM6VZneAC" role="3rvSg0">
+                <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+              </node>
               <node concept="17QB3L" id="6zNM6VZneAB" role="3rvQeY" />
             </node>
           </node>
@@ -3235,13 +3280,8 @@
                     <node concept="3TrcHB" id="6zNM6VZnmsp" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
-                    <node concept="1PxgMI" id="6zNM6VZneCc" role="2Oq$k0">
-                      <node concept="2GrUjf" id="6zNM6VZneB_" role="1m5AlR">
-                        <ref role="2Gs0qQ" node="6zNM6VZneAN" resolve="rightRoot" />
-                      </node>
-                      <node concept="chp4Y" id="714IaVdGZkw" role="3oSUPX">
-                        <ref role="cht4Q" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-                      </node>
+                    <node concept="2GrUjf" id="6zNM6VZneB_" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6zNM6VZneAN" resolve="rightRoot" />
                     </node>
                   </node>
                 </node>
@@ -3249,7 +3289,9 @@
             </node>
           </node>
           <node concept="2OqwBi" id="6zNM6VZneB7" role="2GsD0m">
-            <node concept="2RRcyG" id="6zNM6VZneBd" role="2OqNvi" />
+            <node concept="2RRcyG" id="6zNM6VZneBd" role="2OqNvi">
+              <ref role="2RRcyH" to="tpee:g7pOWCK" resolve="Classifier" />
+            </node>
             <node concept="37vLTw" id="2BHiRxgm9cU" role="2Oq$k0">
               <ref role="3cqZAo" node="70HT6wFs4KU" resolve="right" />
             </node>
@@ -3258,7 +3300,9 @@
         <node concept="3clFbH" id="6zNM6VZnmsI" role="3cqZAp" />
         <node concept="2Gpval" id="6zNM6VZnmsK" role="3cqZAp">
           <node concept="2OqwBi" id="6zNM6VZnmt5" role="2GsD0m">
-            <node concept="2RRcyG" id="6zNM6VZnmtb" role="2OqNvi" />
+            <node concept="2RRcyG" id="6zNM6VZnmtb" role="2OqNvi">
+              <ref role="2RRcyH" to="tpee:g7pOWCK" resolve="Classifier" />
+            </node>
             <node concept="37vLTw" id="2BHiRxgl0Ma" role="2Oq$k0">
               <ref role="3cqZAo" node="70HT6wFs4KS" resolve="left" />
             </node>
@@ -3270,7 +3314,9 @@
             <node concept="3cpWs8" id="6zNM6VZnmtI" role="3cqZAp">
               <node concept="3cpWsn" id="6zNM6VZnmtJ" role="3cpWs9">
                 <property role="TrG5h" value="rightBrother" />
-                <node concept="3Tqbb2" id="6zNM6VZnmtK" role="1tU5fm" />
+                <node concept="3Tqbb2" id="6zNM6VZnmtK" role="1tU5fm">
+                  <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
                 <node concept="3EllGN" id="6zNM6VZnmu5" role="33vP2m">
                   <node concept="37vLTw" id="3GM_nagTz_s" role="3ElQJh">
                     <ref role="3cqZAo" node="6zNM6VZneAz" resolve="rightRootIndex" />
@@ -3279,13 +3325,8 @@
                     <node concept="3TrcHB" id="6zNM6VZnmv0" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
-                    <node concept="1PxgMI" id="6zNM6VZnmup" role="2Oq$k0">
-                      <node concept="2GrUjf" id="6zNM6VZnmu8" role="1m5AlR">
-                        <ref role="2Gs0qQ" node="6zNM6VZnmsL" resolve="leftRoot" />
-                      </node>
-                      <node concept="chp4Y" id="714IaVdGZkz" role="3oSUPX">
-                        <ref role="cht4Q" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-                      </node>
+                    <node concept="2GrUjf" id="6zNM6VZnmu8" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6zNM6VZnmsL" resolve="leftRoot" />
                     </node>
                   </node>
                 </node>
@@ -3316,21 +3357,11 @@
             <node concept="3clFbF" id="66hA68phU9O" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqysqt_" role="3clFbG">
                 <ref role="37wK5l" node="6zNM6VZne_w" resolve="buildClassifierNodeMap" />
-                <node concept="1PxgMI" id="70HT6wFs4Mk" role="37wK5m">
-                  <node concept="2GrUjf" id="70HT6wFs4LI" role="1m5AlR">
-                    <ref role="2Gs0qQ" node="6zNM6VZnmsL" resolve="leftRoot" />
-                  </node>
-                  <node concept="chp4Y" id="714IaVdGZkJ" role="3oSUPX">
-                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
-                  </node>
+                <node concept="2GrUjf" id="70HT6wFs4LI" role="37wK5m">
+                  <ref role="2Gs0qQ" node="6zNM6VZnmsL" resolve="leftRoot" />
                 </node>
-                <node concept="1PxgMI" id="70HT6wFs4MI" role="37wK5m">
-                  <node concept="37vLTw" id="3GM_nagT_x7" role="1m5AlR">
-                    <ref role="3cqZAo" node="6zNM6VZnmtJ" resolve="rightBrother" />
-                  </node>
-                  <node concept="chp4Y" id="714IaVdGZkK" role="3oSUPX">
-                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
-                  </node>
+                <node concept="37vLTw" id="3GM_nagT_x7" role="37wK5m">
+                  <ref role="3cqZAo" node="6zNM6VZnmtJ" resolve="rightBrother" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxglcQT" role="37wK5m">
                   <ref role="3cqZAo" node="70HT6wFs4KX" resolve="nodeMap" />
@@ -3385,11 +3416,15 @@
             <node concept="2ShNRf" id="6zNM6VZnxYw" role="33vP2m">
               <node concept="3rGOSV" id="6zNM6VZnxYy" role="2ShVmc">
                 <node concept="17QB3L" id="6zNM6VZnxY_" role="3rHrn6" />
-                <node concept="3Tqbb2" id="6zNM6VZnxYA" role="3rHtpV" />
+                <node concept="3Tqbb2" id="6zNM6VZnxYA" role="3rHtpV">
+                  <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+                </node>
               </node>
             </node>
             <node concept="3rvAFt" id="6zNM6VZnxYq" role="1tU5fm">
-              <node concept="3Tqbb2" id="6zNM6VZnxYu" role="3rvSg0" />
+              <node concept="3Tqbb2" id="6zNM6VZnxYu" role="3rvSg0">
+                <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+              </node>
               <node concept="17QB3L" id="6zNM6VZnxYt" role="3rvQeY" />
             </node>
           </node>
@@ -3453,22 +3488,17 @@
             <node concept="3cpWs8" id="66hA68pgXgY" role="3cqZAp">
               <node concept="3cpWsn" id="66hA68pgXgZ" role="3cpWs9">
                 <property role="TrG5h" value="rightBrother" />
-                <node concept="1PxgMI" id="66hA68ph9Co" role="33vP2m">
-                  <node concept="3EllGN" id="66hA68pgXh6" role="1m5AlR">
-                    <node concept="2OqwBi" id="66hA68pgXh7" role="3ElVtu">
-                      <node concept="3TrcHB" id="66hA68pgXh9" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                      </node>
-                      <node concept="2GrUjf" id="66hA68pgXh8" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="6zNM6VZny15" resolve="cl" />
-                      </node>
+                <node concept="3EllGN" id="66hA68pgXh6" role="33vP2m">
+                  <node concept="2OqwBi" id="66hA68pgXh7" role="3ElVtu">
+                    <node concept="3TrcHB" id="66hA68pgXh9" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTyyR" role="3ElQJh">
-                      <ref role="3cqZAo" node="6zNM6VZnxYp" resolve="rightNestedIndex" />
+                    <node concept="2GrUjf" id="66hA68pgXh8" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6zNM6VZny15" resolve="cl" />
                     </node>
                   </node>
-                  <node concept="chp4Y" id="714IaVdGZkG" role="3oSUPX">
-                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                  <node concept="37vLTw" id="3GM_nagTyyR" role="3ElQJh">
+                    <ref role="3cqZAo" node="6zNM6VZnxYp" resolve="rightNestedIndex" />
                   </node>
                 </node>
                 <node concept="3Tqbb2" id="66hA68pgXh0" role="1tU5fm">
