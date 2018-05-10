@@ -336,12 +336,20 @@ public class SModel implements SModelData, UpdateModeSupport {
     return canFireEvent();
   }
 
+  /**
+   * Make this SModelData unusable, free references to nodes hold to get them available to GC.
+   * Doesn't dispatch any event (it's responsibility of openapi.SModel impl).
+   * Disconnects from openapi.SModel descriptor, if any.
+   * XXX At the moment, doesn't change owner of nodes to DetachedNodeOwner, though it seems it should.
+   *     The only objection is that doing so would trigger a lot of unregister events we don't really care to get.
+   */
   public void dispose() {
     if (myDisposed) {
       return;
     }
 
     myDisposed = true;
+    setModelDescriptor(null);
     myDisposedStacktrace = new Throwable().getStackTrace();
     myIdToNodeMap = null;
     myRoots.clear();

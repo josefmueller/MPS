@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,7 +127,14 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     fireBeforeModelDisposed(this);
     jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
     if (model != null) {
+      // XXX In fact, seems reasonable to call doUnload() here, as subclasses might need to clear their state on detach in
+      //     a manner similar to unload (just w/o event dispatch, though this is questionable as well - why detach doesn't
+      //     need to send out 'unloaded' event?). However, at the moment TransientModel does swap out on doUnload, and it's
+      //     NOT what we want on model detach. Need a better contract for unload, detach and cleanup of instance fields.
+      // OTOH, it's not apparent why detach of a model shall dispose its data. Perhaps, all we need to do here
+      //     is to clean fields to free references, and leave model data intact?
       model.dispose();
+      setLoadingState(ModelLoadingState.NOT_LOADED);
     }
     clearListeners();
   }
@@ -302,7 +309,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     if (modelData == null) {
       return;
     }
-    modelData.setModelDescriptor(null);
     modelData.dispose();
     setLoadingState(ModelLoadingState.NOT_LOADED);
   }
@@ -412,7 +418,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
    */
   protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
     if (oldModel != null) {
-      oldModel.setModelDescriptor(null);
       oldModel.dispose();
     }
     if (newModel != null) {
