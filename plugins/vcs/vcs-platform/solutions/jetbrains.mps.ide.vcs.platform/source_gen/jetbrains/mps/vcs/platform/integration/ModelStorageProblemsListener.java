@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.platform.integration;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import com.intellij.notification.Notification;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -34,7 +35,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.vfs.IFile;
 import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -60,8 +60,14 @@ import com.intellij.openapi.application.Application;
 
 public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   private static final Logger LOG = LogManager.getLogger(ModelStorageProblemsListener.class);
+  private final ReloadManager myReloadManager;
+
   private Notification myLastNotification;
   private volatile SModelReference myLastModel;
+
+  /*package*/ ModelStorageProblemsListener(ReloadManager reloadManager) {
+    myReloadManager = reloadManager;
+  }
 
   @Override
   protected void startListening(SModel model) {
@@ -185,7 +191,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
         assert model.getRepository() != null;
 
         final boolean contentConflict = file.exists();
-        boolean needSave = ReloadManager.getInstance().computeNoReload(new Computable<Boolean>() {
+        boolean needSave = myReloadManager.computeNoReload(new Computable<Boolean>() {
           public Boolean compute() {
             if (contentConflict) {
               return showDiskMemoryQuestion(file, model, backupFile);

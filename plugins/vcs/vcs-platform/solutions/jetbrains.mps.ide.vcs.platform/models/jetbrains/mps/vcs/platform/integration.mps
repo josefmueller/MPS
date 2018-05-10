@@ -1311,6 +1311,15 @@
   </node>
   <node concept="312cEu" id="6KmbN9hT18K">
     <property role="TrG5h" value="ModelStorageProblemsListener" />
+    <node concept="312cEg" id="7bkTVicVPjX" role="jymVt">
+      <property role="TrG5h" value="myReloadManager" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7bkTVicVPjY" role="1B3o_S" />
+      <node concept="3uibUv" id="7bkTVicVOdk" role="1tU5fm">
+        <ref role="3uigEE" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7bkTVicVQq1" role="jymVt" />
     <node concept="312cEg" id="LU1F_JOd9w" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -1329,6 +1338,28 @@
       <node concept="3Tm6S6" id="LU1F_JPs_I" role="1B3o_S" />
       <node concept="3uibUv" id="LU1F_JPw7F" role="1tU5fm">
         <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7bkTVicVYca" role="jymVt" />
+    <node concept="3clFbW" id="7bkTVicVZYb" role="jymVt">
+      <node concept="3cqZAl" id="7bkTVicVZYd" role="3clF45" />
+      <node concept="3clFbS" id="7bkTVicVZYf" role="3clF47">
+        <node concept="3clFbF" id="7bkTVicW1K8" role="3cqZAp">
+          <node concept="37vLTI" id="7bkTVicW1Ka" role="3clFbG">
+            <node concept="37vLTw" id="7bkTVicW1Kd" role="37vLTJ">
+              <ref role="3cqZAo" node="7bkTVicVPjX" resolve="myReloadManager" />
+            </node>
+            <node concept="37vLTw" id="7bkTVicW1Ke" role="37vLTx">
+              <ref role="3cqZAo" node="7bkTVicW1Bp" resolve="reloadManager" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7bkTVicW1Bp" role="3clF46">
+        <property role="TrG5h" value="reloadManager" />
+        <node concept="3uibUv" id="7bkTVicW1Bo" role="1tU5fm">
+          <ref role="3uigEE" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="LU1F_JNWk_" role="jymVt" />
@@ -2470,9 +2501,8 @@
                       <property role="TrG5h" value="needSave" />
                       <node concept="10P_77" id="6KmbN9hT193" role="1tU5fm" />
                       <node concept="2OqwBi" id="6KmbN9hT194" role="33vP2m">
-                        <node concept="2YIFZM" id="491od_Z6njI" role="2Oq$k0">
-                          <ref role="37wK5l" to="2eq1:491od_XK12s" resolve="getInstance" />
-                          <ref role="1Pybhc" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+                        <node concept="37vLTw" id="7bkTVicVVCy" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7bkTVicVPjX" resolve="myReloadManager" />
                         </node>
                         <node concept="liA8E" id="6KmbN9hT196" role="2OqNvi">
                           <ref role="37wK5l" to="2eq1:491od_Z4vc8" resolve="computeNoReload" />
@@ -4333,12 +4363,21 @@
           <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
         </node>
       </node>
+      <node concept="37vLTG" id="7bkTVicVNh$" role="3clF46">
+        <property role="TrG5h" value="reloadManager" />
+        <node concept="3uibUv" id="7bkTVicVNAX" role="1tU5fm">
+          <ref role="3uigEE" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+        </node>
+      </node>
       <node concept="3clFbS" id="5BzO5O3s5i2" role="3clF47">
         <node concept="3clFbF" id="cbbchzfPaD" role="3cqZAp">
           <node concept="37vLTI" id="cbbchzfPox" role="3clFbG">
             <node concept="2ShNRf" id="12Mp1sL3vxr" role="37vLTx">
-              <node concept="HV5vD" id="d4HXLLr08D" role="2ShVmc">
-                <ref role="HV5vE" node="6KmbN9hT18K" resolve="ModelStorageProblemsListener" />
+              <node concept="1pGfFk" id="7bkTVicWmpm" role="2ShVmc">
+                <ref role="37wK5l" node="7bkTVicVZYb" resolve="ModelStorageProblemsListener" />
+                <node concept="37vLTw" id="7bkTVicWmSQ" role="37wK5m">
+                  <ref role="3cqZAo" node="7bkTVicVNh$" resolve="reloadManager" />
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="cbbchzfPaB" role="37vLTJ">

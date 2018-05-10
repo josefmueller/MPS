@@ -335,6 +335,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.extapi.module.SRepositoryRegistry" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManager" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

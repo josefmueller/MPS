@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.platform.integration;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -12,8 +13,8 @@ public class PluginVCSManager implements ApplicationComponent {
   private final ModelStorageProblemsListener myResolver;
   private final MPSCoreComponents myMPSComponents;
 
-  public PluginVCSManager(MPSCoreComponents coreComponents) {
-    myResolver = new ModelStorageProblemsListener();
+  public PluginVCSManager(MPSCoreComponents coreComponents, ReloadManager reloadManager) {
+    myResolver = new ModelStorageProblemsListener(reloadManager);
     myMPSComponents = coreComponents;
   }
 

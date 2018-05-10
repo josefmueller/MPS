@@ -17,6 +17,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import java.io.File;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import org.junit.Assume;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
@@ -104,7 +106,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
 
     myIdeaProject = ourProject.getProject();
     CurrentDifferenceRegistry.getInstance(myIdeaProject).getCommandQueue().setHadExceptions(false);
-    myWaitHelper = new ChangesManagerTestWaitHelper(myIdeaProject);
+    myWaitHelper = new ChangesManagerTestWaitHelper(myIdeaProject, ApplicationManager.getApplication().getComponent(ReloadManager.class));
     myWaitHelper.waitForChangesManager();
 
     myGitVcs = AllVcses.getInstance(myIdeaProject).getByName("Git");

@@ -70,6 +70,7 @@
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
     <import index="wcxw" ref="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -949,6 +950,18 @@
                 <ref role="37wK5l" node="56cvcsnEVnD" resolve="ChangesManagerTestWaitHelper" />
                 <node concept="37vLTw" id="56cvcsnGIn5" role="37wK5m">
                   <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
+                </node>
+                <node concept="2OqwBi" id="7t2WeWl96ud" role="37wK5m">
+                  <node concept="2YIFZM" id="7t2WeWl96q4" role="2Oq$k0">
+                    <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                    <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                  </node>
+                  <node concept="liA8E" id="7t2WeWl96DC" role="2OqNvi">
+                    <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <node concept="3VsKOn" id="1iFB90Pkutm" role="37wK5m">
+                      <ref role="3VsUkX" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -9568,6 +9581,14 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="7bkTVicWDIv" role="jymVt">
+      <property role="TrG5h" value="myReloadManager" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7bkTVicWDIw" role="1B3o_S" />
+      <node concept="3uibUv" id="7bkTVicWDIy" role="1tU5fm">
+        <ref role="3uigEE" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="56cvcsnFO6G" role="jymVt" />
     <node concept="3clFbW" id="56cvcsnEVnD" role="jymVt">
       <node concept="3cqZAl" id="56cvcsnEVnE" role="3clF45" />
@@ -9583,6 +9604,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="7bkTVicWDIz" role="3cqZAp">
+          <node concept="37vLTI" id="7bkTVicWDI_" role="3clFbG">
+            <node concept="37vLTw" id="7bkTVicWDIC" role="37vLTJ">
+              <ref role="3cqZAo" node="7bkTVicWDIv" resolve="myReloadManager" />
+            </node>
+            <node concept="37vLTw" id="7bkTVicWDID" role="37vLTx">
+              <ref role="3cqZAo" node="7bkTVicWCux" resolve="reloadManager" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="491od_YTI3c" role="3cqZAp">
           <node concept="2OqwBi" id="491od_YUlXV" role="3clFbG">
             <node concept="liA8E" id="491od_YWwCK" role="2OqNvi">
@@ -9594,9 +9625,8 @@
                 </node>
               </node>
             </node>
-            <node concept="2YIFZM" id="491od_YU1Ny" role="2Oq$k0">
-              <ref role="37wK5l" to="2eq1:491od_XK12s" resolve="getInstance" />
-              <ref role="1Pybhc" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
+            <node concept="37vLTw" id="7bkTVicWF3G" role="2Oq$k0">
+              <ref role="3cqZAo" node="7bkTVicWDIv" resolve="myReloadManager" />
             </node>
           </node>
         </node>
@@ -9605,6 +9635,12 @@
         <property role="TrG5h" value="p" />
         <node concept="3uibUv" id="56cvcsnGCkT" role="1tU5fm">
           <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7bkTVicWCux" role="3clF46">
+        <property role="TrG5h" value="reloadManager" />
+        <node concept="3uibUv" id="7bkTVicWDHl" role="1tU5fm">
+          <ref role="3uigEE" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
         </node>
       </node>
     </node>
@@ -9624,9 +9660,8 @@
                 <ref role="3cqZAo" node="56cvcsnFY50" resolve="myReloadListener" />
               </node>
             </node>
-            <node concept="2YIFZM" id="56cvcsnFY2J" role="2Oq$k0">
-              <ref role="1Pybhc" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
-              <ref role="37wK5l" to="2eq1:491od_XK12s" resolve="getInstance" />
+            <node concept="37vLTw" id="7bkTVicWF8u" role="2Oq$k0">
+              <ref role="3cqZAo" node="7bkTVicWDIv" resolve="myReloadManager" />
             </node>
           </node>
         </node>

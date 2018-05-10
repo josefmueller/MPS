@@ -94,6 +94,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase" file="ChangesTestBase.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.registry.Registry" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
@@ -120,6 +121,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManager" />
     <classNode dependClassName="jetbrains.mps.ide.vcs.test.merge.ChangesManagerTestWaitHelper" />
     <classNode dependClassName="jetbrains.mps.ide.vcs.test.merge.RootStatusItem" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
