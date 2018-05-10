@@ -688,6 +688,100 @@
       <unit id="2103596388770305401" at="12,0,36,0" name="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncommentWithSelection_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2389096682426212159">
+    <file name="SubstituteSmartInvalidReference_CaretInCenter_Test.java">
+      <node id="2389096682426212159" at="20,63,21,25" concept="6" />
+      <node id="2389096682426212159" at="25,85,26,135" concept="1" />
+      <node id="2389096682426212159" at="32,51,33,72" concept="1" />
+      <node id="2389096682426215438" at="35,44,36,46" concept="3" />
+      <node id="2389096682426212165" at="36,46,37,73" concept="1" />
+      <node id="2389096682426214128" at="37,73,38,73" concept="1" />
+      <node id="2389096682426214642" at="38,73,39,39" concept="1" />
+      <node id="2389096682426226373" at="39,39,40,0" concept="4" />
+      <node id="2389096682426226140" at="40,0,41,33" concept="3" />
+      <node id="2389096682426216171" at="41,33,42,73" concept="1" />
+      <node id="2389096682426226055" at="42,73,43,73" concept="1" />
+      <node id="2389096682426226068" at="43,73,44,73" concept="1" />
+      <node id="2389096682426226846" at="44,73,45,0" concept="4" />
+      <node id="2389096682426227199" at="45,0,46,41" concept="3" />
+      <node id="2389096682426228615" at="46,41,47,71" concept="1" />
+      <node id="2389096682426228814" at="47,71,48,76" concept="1" />
+      <node id="2389096682426228953" at="48,76,49,76" concept="1" />
+      <node id="2389096682426229037" at="49,76,50,76" concept="1" />
+      <node id="2389096682426229527" at="50,76,51,0" concept="4" />
+      <node id="2389096682426231013" at="51,0,52,30" concept="1" />
+      <node id="2389096682426230218" at="52,30,53,75" concept="1" />
+      <node id="2389096682426376590" at="53,75,54,86" concept="1" />
+      <node id="2389096682426376500" at="54,86,55,0" concept="4" />
+      <node id="2389096682426215510" at="57,16,58,0" concept="4" />
+      <node id="2389096682426212159" at="17,0,19,0" concept="5" trace="ourParamCache" />
+      <node id="2389096682426212159" at="20,0,23,0" concept="0" trace="SubstituteSmartInvalidReference_CaretInCenter_Test#()V" />
+      <node id="2389096682426212159" at="24,0,28,0" concept="2" trace="test_SubstituteSmartInvalidReference_CaretInCenter#()V" />
+      <node id="2389096682426212163" at="35,0,57,0" concept="2" trace="run#()V" />
+      <node id="2389096682426212161" at="33,72,57,16" concept="1" />
+      <node id="2389096682426212159" at="31,0,60,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2389096682426212159" at="20,63,21,25" />
+      <scope id="2389096682426212159" at="25,85,26,135" />
+      <scope id="2389096682426212159" at="20,0,23,0" />
+      <scope id="2389096682426212159" at="24,0,28,0" />
+      <scope id="2389096682426212164" at="35,44,55,0" />
+      <scope id="2389096682426212163" at="35,0,57,0" />
+      <scope id="2389096682426212159" at="32,51,58,0" />
+      <scope id="2389096682426212159" at="31,0,60,0" />
+      <unit id="2389096682426212163" at="34,44,57,7" name="jetbrains.mps.lang.editor.actions.test.SubstituteSmartInvalidReference_CaretInCenter_Test$TestBody$1" />
+      <unit id="2389096682426212159" at="29,0,61,0" name="jetbrains.mps.lang.editor.actions.test.SubstituteSmartInvalidReference_CaretInCenter_Test$TestBody" />
+      <unit id="2389096682426212159" at="15,0,62,0" name="jetbrains.mps.lang.editor.actions.test.SubstituteSmartInvalidReference_CaretInCenter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2389096682426283890">
+    <file name="SubstituteUsualInvalidReference_CaretInCenter_Test.java">
+      <node id="2389096682426283890" at="20,63,21,25" concept="6" />
+      <node id="2389096682426283890" at="25,85,26,135" concept="1" />
+      <node id="2389096682426283890" at="32,51,33,72" concept="1" />
+      <node id="2389096682426283896" at="35,44,36,46" concept="3" />
+      <node id="2389096682426283898" at="36,46,37,73" concept="1" />
+      <node id="2389096682426283900" at="37,73,38,73" concept="1" />
+      <node id="2389096682426283902" at="38,73,39,39" concept="1" />
+      <node id="2389096682426283903" at="39,39,40,0" concept="4" />
+      <node id="2389096682426283904" at="40,0,41,33" concept="3" />
+      <node id="2389096682426331083" at="41,33,42,71" concept="1" />
+      <node id="2389096682426283906" at="42,71,43,73" concept="1" />
+      <node id="2389096682426283908" at="43,73,44,73" concept="1" />
+      <node id="2389096682426283910" at="44,73,45,73" concept="1" />
+      <node id="2389096682426285317" at="45,73,46,73" concept="1" />
+      <node id="2389096682426285352" at="46,73,47,73" concept="1" />
+      <node id="2389096682426285446" at="47,73,48,73" concept="1" />
+      <node id="2389096682426283912" at="48,73,49,0" concept="4" />
+      <node id="2389096682426283913" at="49,0,50,41" concept="3" />
+      <node id="2389096682426283915" at="50,41,51,71" concept="1" />
+      <node id="2389096682426286348" at="51,71,52,84" concept="1" />
+      <node id="2389096682426283917" at="52,84,53,76" concept="1" />
+      <node id="2389096682426283919" at="53,76,54,76" concept="1" />
+      <node id="2389096682426283921" at="54,76,55,76" concept="1" />
+      <node id="2389096682426283923" at="55,76,56,0" concept="4" />
+      <node id="2389096682426283924" at="56,0,57,30" concept="1" />
+      <node id="2389096682426283925" at="57,30,58,75" concept="1" />
+      <node id="2389096682426376131" at="58,75,59,86" concept="1" />
+      <node id="2389096682426283928" at="61,16,62,0" concept="4" />
+      <node id="2389096682426283890" at="17,0,19,0" concept="5" trace="ourParamCache" />
+      <node id="2389096682426283890" at="20,0,23,0" concept="0" trace="SubstituteUsualInvalidReference_CaretInCenter_Test#()V" />
+      <node id="2389096682426283890" at="24,0,28,0" concept="2" trace="test_SubstituteUsualInvalidReference_CaretInCenter#()V" />
+      <node id="2389096682426283894" at="35,0,61,0" concept="2" trace="run#()V" />
+      <node id="2389096682426283892" at="33,72,61,16" concept="1" />
+      <node id="2389096682426283890" at="31,0,64,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2389096682426283890" at="20,63,21,25" />
+      <scope id="2389096682426283890" at="25,85,26,135" />
+      <scope id="2389096682426283890" at="20,0,23,0" />
+      <scope id="2389096682426283890" at="24,0,28,0" />
+      <scope id="2389096682426283895" at="35,44,59,86" />
+      <scope id="2389096682426283894" at="35,0,61,0" />
+      <scope id="2389096682426283890" at="32,51,62,0" />
+      <scope id="2389096682426283890" at="31,0,64,0" />
+      <unit id="2389096682426283894" at="34,44,61,7" name="jetbrains.mps.lang.editor.actions.test.SubstituteUsualInvalidReference_CaretInCenter_Test$TestBody$1" />
+      <unit id="2389096682426283890" at="29,0,65,0" name="jetbrains.mps.lang.editor.actions.test.SubstituteUsualInvalidReference_CaretInCenter_Test$TestBody" />
+      <unit id="2389096682426283890" at="15,0,66,0" name="jetbrains.mps.lang.editor.actions.test.SubstituteUsualInvalidReference_CaretInCenter_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2420730201805048185">
     <file name="TwoStepDeleteChildWithAttributeChildSelected_Test.java">
       <node id="2420730201805048185" at="22,62,23,25" concept="6" />
