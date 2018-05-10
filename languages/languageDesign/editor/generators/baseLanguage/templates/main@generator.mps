@@ -49336,7 +49336,7 @@
                             </node>
                             <node concept="2ShNRf" id="5EogwwlSs9E" role="33vP2m">
                               <node concept="1pGfFk" id="5EogwwlSs9F" role="2ShVmc">
-                                <ref role="37wK5l" to="g51k:~EditorCell_Error.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,java.lang.String)" resolve="EditorCell_Error" />
+                                <ref role="37wK5l" to="g51k:~EditorCell_Error.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,java.lang.String,boolean)" resolve="EditorCell_Error" />
                                 <node concept="1rXfSq" id="5EogwwlSs9G" role="37wK5m">
                                   <ref role="37wK5l" to="nivk:~AbstractEditorBuilder.getEditorContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getEditorContext" />
                                 </node>
@@ -49345,6 +49345,9 @@
                                 </node>
                                 <node concept="37vLTw" id="5EogwwlSs9I" role="37wK5m">
                                   <ref role="3cqZAo" node="5EogwwlQ2hW" resolve="error" />
+                                </node>
+                                <node concept="3clFbT" id="2vGL3zr1Kqz" role="37wK5m">
+                                  <property role="3clFbU" value="true" />
                                 </node>
                               </node>
                             </node>
