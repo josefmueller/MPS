@@ -7,7 +7,9 @@ import jetbrains.mps.persistence.PersistenceVersionAware;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +22,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  * Merge model has to be EditableSModel for now (there's otherwise dubious use of isChanged status),
  * however, rest of the EditableSModel API is superfluous for the merge model.
  */
-public class MergeTemporaryModel extends EditableModelDescriptor implements PersistenceVersionAware, EditableSModel {
+public final class MergeTemporaryModel extends EditableModelDescriptor implements PersistenceVersionAware, EditableSModel {
   private boolean myReadOnly;
 
   public MergeTemporaryModel(SModelReference modelRef, boolean readonly) {
@@ -28,19 +30,30 @@ public class MergeTemporaryModel extends EditableModelDescriptor implements Pers
     myReadOnly = readonly;
   }
 
-  public MergeTemporaryModel(SModel model, boolean readonly) {
-    this(model.getReference(), readonly);
-    replace(new ModelLoadResult<SModel>(model, ModelLoadingState.FULLY_LOADED));
+  public static MergeTemporaryModel writableCloneOf(SModel model) {
+    return cloneDataInto(new MergeTemporaryModel(model.getReference(), false), model);
+  }
+
+  public static MergeTemporaryModel readonlyCloneOf(SModel model) {
+    return cloneDataInto(new MergeTemporaryModel(model.getReference(), true), model);
+  }
+
+  private static MergeTemporaryModel cloneDataInto(MergeTemporaryModel rv, SModel origin) {
+    // TODO generalize merge for any SModel 
+    jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(((SModelBase) origin).getSModel());
+    rv.replace(new ModelLoadResult<jetbrains.mps.smodel.SModel>(resModel, ModelLoadingState.FULLY_LOADED));
+    return rv;
   }
 
   @NotNull
-  protected ModelLoadResult<SModel> createModel() {
-    return new ModelLoadResult<SModel>(new SModel(getReference()), ModelLoadingState.FULLY_LOADED);
+  protected ModelLoadResult<jetbrains.mps.smodel.SModel> createModel() {
+    // XXX why not UnsupportedOperationException? Generally, we shall never get here (well, except of unloaded model) 
+    return new ModelLoadResult<jetbrains.mps.smodel.SModel>(new jetbrains.mps.smodel.SModel(getReference()), ModelLoadingState.FULLY_LOADED);
   }
 
-  /*package*/ void setSModelInternal(SModel model) {
+  /*package*/ void setSModelInternal(jetbrains.mps.smodel.SModel model) {
     assert model == null || getReference().equals(model.getReference());
-    replace(new ModelLoadResult<SModel>(model, (model == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED)));
+    replace(new ModelLoadResult<jetbrains.mps.smodel.SModel>(model, (model == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED)));
   }
 
   @Override

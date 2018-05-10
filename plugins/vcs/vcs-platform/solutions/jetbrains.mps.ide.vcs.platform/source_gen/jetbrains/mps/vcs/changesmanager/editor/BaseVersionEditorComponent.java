@@ -9,10 +9,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
-import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
@@ -38,14 +36,9 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   public BaseVersionEditorComponent(SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
     final ModelAccess modelAccess = repository.getModelAccess();
-    modelAccess.runReadAction(new Runnable() {
-      public void run() {
-        final jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0a0a0a0a0c0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModel();
-        myBaseModel = new MergeTemporaryModel(CopyUtil.copyModel(baseModel), true);
-      }
-    });
     modelAccess.runWriteAction(new Runnable() {
       public void run() {
+        myBaseModel = MergeTemporaryModel.readonlyCloneOf(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel());
         DiffModelUtil.renameModelAndRegister(myBaseModel, null);
       }
     });
@@ -108,8 +101,5 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   }
   public JScrollPane getScrollPane() {
     return myScrollPane;
-  }
-  private static <T> T as_i3w5ys_a0a0a0a0a0a0c0c(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

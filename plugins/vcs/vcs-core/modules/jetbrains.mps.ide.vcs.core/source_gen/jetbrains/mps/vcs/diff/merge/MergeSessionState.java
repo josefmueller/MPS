@@ -6,7 +6,6 @@ import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -19,7 +18,8 @@ public class MergeSessionState {
   /*package*/ final Set<ModelChange> myResolvedChanges;
   /*package*/ final Map<SNodeId, SNodeId> myIdReplacementCache;
   /*package*/ MergeSessionState(MergeTemporaryModel resultModel, Set<ModelChange> resolvedChanges, Map<SNodeId, SNodeId> idReplacementCache) {
-    myResultModel = new MergeTemporaryModel(CopyUtil.copyModel(resultModel.getSModel()), true);
+    // XXX as long as we know resultModel is MTM, shall we copy its persistence version as well (set by MergeSession)? 
+    myResultModel = MergeTemporaryModel.readonlyCloneOf(resultModel);
     myResolvedChanges = SetSequence.fromSetWithValues(new HashSet<ModelChange>(), resolvedChanges);
     myIdReplacementCache = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>(MapSequence.fromMap(idReplacementCache).count()));
     MapSequence.fromMap(idReplacementCache).visitAll(new IVisitor<IMapping<SNodeId, SNodeId>>() {

@@ -24,7 +24,6 @@
     <import index="px75" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.leftHighlighter(MPS.Editor/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="zyr2" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.inspector(MPS.Editor/)" />
@@ -36,7 +35,6 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
@@ -61,10 +59,6 @@
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
-        <child id="1224071154657" name="classifierType" index="0kSFW" />
-        <child id="1224071154656" name="expression" index="0kSFX" />
-      </concept>
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -7084,82 +7078,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7lUntKWVAC4" role="3cqZAp">
-          <node concept="2OqwBi" id="7lUntKWVKje" role="3clFbG">
-            <node concept="37vLTw" id="20tipxamZST" role="2Oq$k0">
-              <ref role="3cqZAo" node="20tipxamZSP" resolve="modelAccess" />
-            </node>
-            <node concept="liA8E" id="7lUntKWVR9v" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
-              <node concept="1bVj0M" id="47DaO77SqP4" role="37wK5m">
-                <node concept="3clFbS" id="47DaO77SqPE" role="1bW5cS">
-                  <node concept="3cpWs8" id="3SxFjl1oOMx" role="3cqZAp">
-                    <node concept="3cpWsn" id="3SxFjl1oOMy" role="3cpWs9">
-                      <property role="TrG5h" value="baseModel" />
-                      <property role="3TUv4t" value="true" />
-                      <node concept="3uibUv" id="7lUntKWV9bS" role="1tU5fm">
-                        <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
-                      </node>
-                      <node concept="2OqwBi" id="47DaO77Sxum" role="33vP2m">
-                        <node concept="0kSF2" id="47DaO77Sxun" role="2Oq$k0">
-                          <node concept="3uibUv" id="47DaO77Sxuo" role="0kSFW">
-                            <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                          </node>
-                          <node concept="2OqwBi" id="47DaO77Sxup" role="0kSFX">
-                            <node concept="2OqwBi" id="47DaO77Sxuq" role="2Oq$k0">
-                              <node concept="2OqwBi" id="47DaO77Sxur" role="2Oq$k0">
-                                <node concept="2OqwBi" id="47DaO77Sxus" role="2Oq$k0">
-                                  <node concept="37vLTw" id="47DaO77Sxut" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="3SxFjl1oOMt" resolve="changeGroup" />
-                                  </node>
-                                  <node concept="liA8E" id="47DaO77Sxuu" role="2OqNvi">
-                                    <ref role="37wK5l" to="hdhb:42hl10VHagK" resolve="getChanges" />
-                                  </node>
-                                </node>
-                                <node concept="1uHKPH" id="47DaO77Sxuv" role="2OqNvi" />
-                              </node>
-                              <node concept="liA8E" id="47DaO77Sxuw" role="2OqNvi">
-                                <ref role="37wK5l" to="btf5:5x0q8wkvS4u" resolve="getChangeSet" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="47DaO77Sxux" role="2OqNvi">
-                              <ref role="37wK5l" to="bfxj:3kRMfhMv9u3" resolve="getOldModel" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="47DaO77Sxuy" role="2OqNvi">
-                          <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbF" id="1Y7GmwEcdan" role="3cqZAp">
-                    <node concept="37vLTI" id="1Y7GmwEchB1" role="3clFbG">
-                      <node concept="2ShNRf" id="377Orl2pJES" role="37vLTx">
-                        <node concept="1pGfFk" id="377Orl2qaNd" role="2ShVmc">
-                          <ref role="37wK5l" to="bmv6:377Orl25wDS" resolve="MergeTemporaryModel" />
-                          <node concept="2YIFZM" id="1Y7GmwEcntt" role="37wK5m">
-                            <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
-                            <ref role="37wK5l" to="w1kc:~CopyUtil.copyModel(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModel" resolve="copyModel" />
-                            <node concept="37vLTw" id="1Y7GmwEcntu" role="37wK5m">
-                              <ref role="3cqZAo" node="3SxFjl1oOMy" resolve="baseModel" />
-                            </node>
-                          </node>
-                          <node concept="3clFbT" id="377Orl2qrsk" role="37wK5m">
-                            <property role="3clFbU" value="true" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="1Y7GmwEcdam" role="37vLTJ">
-                        <ref role="3cqZAo" node="3zkePfDxuNU" resolve="myBaseModel" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1KUoCiqb5QA" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCiqb5QB" role="3clFbG">
             <node concept="37vLTw" id="20tipxan0PZ" role="2Oq$k0">
@@ -7169,6 +7087,38 @@
               <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
               <node concept="1bVj0M" id="1KUoCiqb5QE" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCiqb5QF" role="1bW5cS">
+                  <node concept="3clFbF" id="1Y7GmwEcdan" role="3cqZAp">
+                    <node concept="37vLTI" id="1Y7GmwEchB1" role="3clFbG">
+                      <node concept="2YIFZM" id="59Mw_8gFb5p" role="37vLTx">
+                        <ref role="37wK5l" to="bmv6:59Mw_8gDxK2" resolve="readonlyCloneOf" />
+                        <ref role="1Pybhc" to="bmv6:1m2uLwrRQWq" resolve="MergeTemporaryModel" />
+                        <node concept="2OqwBi" id="59Mw_8gFbes" role="37wK5m">
+                          <node concept="2OqwBi" id="59Mw_8gFbet" role="2Oq$k0">
+                            <node concept="2OqwBi" id="59Mw_8gFbeu" role="2Oq$k0">
+                              <node concept="2OqwBi" id="59Mw_8gFbev" role="2Oq$k0">
+                                <node concept="37vLTw" id="59Mw_8gFbew" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="3SxFjl1oOMt" resolve="changeGroup" />
+                                </node>
+                                <node concept="liA8E" id="59Mw_8gFbex" role="2OqNvi">
+                                  <ref role="37wK5l" to="hdhb:42hl10VHagK" resolve="getChanges" />
+                                </node>
+                              </node>
+                              <node concept="1uHKPH" id="59Mw_8gFbey" role="2OqNvi" />
+                            </node>
+                            <node concept="liA8E" id="59Mw_8gFbez" role="2OqNvi">
+                              <ref role="37wK5l" to="btf5:5x0q8wkvS4u" resolve="getChangeSet" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="59Mw_8gFbe$" role="2OqNvi">
+                            <ref role="37wK5l" to="bfxj:3kRMfhMv9u3" resolve="getOldModel" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="1Y7GmwEcdam" role="37vLTJ">
+                        <ref role="3cqZAo" node="3zkePfDxuNU" resolve="myBaseModel" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="1KUoCiqb5QG" role="3cqZAp">
                     <node concept="2YIFZM" id="2v$NtEHkyua" role="3clFbG">
                       <ref role="37wK5l" to="hdhb:2v$NtEHjiFm" resolve="renameModelAndRegister" />

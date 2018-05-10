@@ -44,8 +44,6 @@ import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -217,8 +215,7 @@ public class MergeModelsPanel extends JPanel {
     SModel resultModel = new ModelAccessHelper(myProjectRepository).runReadAction(new Computable<MergeTemporaryModel>() {
       public MergeTemporaryModel compute() {
         // copy to avoid problems with de-registration 
-        jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(as_ktyr7l_a0a0a1a0a0a0a0a0qb(myMergeSession.getResultModel(), SModelBase.class).getSModel());
-        return new MergeTemporaryModel(resModel, false);
+        return MergeTemporaryModel.writableCloneOf(myMergeSession.getResultModel());
       }
     });
     DiffModelUtil.restoreModelName(resultModel);
@@ -543,8 +540,5 @@ public class MergeModelsPanel extends JPanel {
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
-  }
-  private static <T> T as_ktyr7l_a0a0a1a0a0a0a0a0qb(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

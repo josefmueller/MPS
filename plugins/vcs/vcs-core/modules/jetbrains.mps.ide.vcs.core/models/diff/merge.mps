@@ -3565,54 +3565,17 @@
         <node concept="H_c77" id="5ikp7PIAGZ9" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="62HG2toA5Tj" role="3clF47">
-        <node concept="3SKdUt" id="62HG2toA5Ui" role="3cqZAp">
-          <node concept="3SKdUq" id="62HG2toA5Uh" role="3SKWNk">
-            <property role="3SKdUp" value="TODO generalize merge for any SModel" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="62HG2toA5Tl" role="3cqZAp">
-          <node concept="3cpWsn" id="62HG2toA5Tk" role="3cpWs9">
-            <property role="TrG5h" value="resModel" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="62HG2toAVQH" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
-            </node>
-            <node concept="2YIFZM" id="62HG2toA5UW" role="33vP2m">
-              <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
-              <ref role="37wK5l" to="w1kc:~CopyUtil.copyModel(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModel" resolve="copyModel" />
-              <node concept="2OqwBi" id="5ikp7PIC8Pi" role="37wK5m">
-                <node concept="1eOMI4" id="5oYZQ1ab4mZ" role="2Oq$k0">
-                  <node concept="10QFUN" id="5oYZQ1ab4n0" role="1eOMHV">
-                    <node concept="37vLTw" id="5oYZQ1ab4mY" role="10QFUP">
-                      <ref role="3cqZAo" node="62HG2toA5Td" resolve="base" />
-                    </node>
-                    <node concept="3uibUv" id="5oYZQ1ab4Iw" role="10QFUM">
-                      <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="5ikp7PICrI3" role="2OqNvi">
-                  <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="35oJ7ckBJJe" role="3cqZAp">
           <node concept="3cpWsn" id="35oJ7ckBJJf" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="3uibUv" id="35oJ7ckBJJb" role="1tU5fm">
               <ref role="3uigEE" node="1m2uLwrRQWq" resolve="MergeTemporaryModel" />
             </node>
-            <node concept="2ShNRf" id="35oJ7ckBJJg" role="33vP2m">
-              <node concept="1pGfFk" id="35oJ7ckBJJh" role="2ShVmc">
-                <ref role="37wK5l" node="377Orl25wDS" resolve="MergeTemporaryModel" />
-                <node concept="37vLTw" id="35oJ7ckBJJi" role="37wK5m">
-                  <ref role="3cqZAo" node="62HG2toA5Tk" resolve="resModel" />
-                </node>
-                <node concept="3clFbT" id="35oJ7ckBJJj" role="37wK5m">
-                  <property role="3clFbU" value="false" />
-                </node>
+            <node concept="2YIFZM" id="59Mw_8gE5bN" role="33vP2m">
+              <ref role="37wK5l" node="59Mw_8gDwR3" resolve="writableCloneOf" />
+              <ref role="1Pybhc" node="1m2uLwrRQWq" resolve="MergeTemporaryModel" />
+              <node concept="37vLTw" id="59Mw_8gE5lY" role="37wK5m">
+                <ref role="3cqZAo" node="62HG2toA5Td" resolve="base" />
               </node>
             </node>
           </node>
@@ -6772,26 +6735,18 @@
     <node concept="3clFbW" id="3$YpntjF4ug" role="jymVt">
       <node concept="3cqZAl" id="3$YpntjF4uh" role="3clF45" />
       <node concept="3clFbS" id="3$YpntjF4ui" role="3clF47">
+        <node concept="3SKdUt" id="59Mw_8gE7Vn" role="3cqZAp">
+          <node concept="3SKdUq" id="59Mw_8gE7Vp" role="3SKWNk">
+            <property role="3SKdUp" value="XXX as long as we know resultModel is MTM, shall we copy its persistence version as well (set by MergeSession)?" />
+          </node>
+        </node>
         <node concept="3clFbF" id="35oJ7ckDuIV" role="3cqZAp">
           <node concept="37vLTI" id="35oJ7ckDw7q" role="3clFbG">
-            <node concept="2ShNRf" id="35oJ7ckDwch" role="37vLTx">
-              <node concept="1pGfFk" id="35oJ7ckD$dN" role="2ShVmc">
-                <ref role="37wK5l" node="377Orl25wDS" resolve="MergeTemporaryModel" />
-                <node concept="2YIFZM" id="35oJ7ckDAnQ" role="37wK5m">
-                  <ref role="37wK5l" to="w1kc:~CopyUtil.copyModel(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModel" resolve="copyModel" />
-                  <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
-                  <node concept="2OqwBi" id="35oJ7ckD$HR" role="37wK5m">
-                    <node concept="37vLTw" id="35oJ7ckD$m3" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3$YpntjF4v2" resolve="resultModel" />
-                    </node>
-                    <node concept="liA8E" id="35oJ7ckD_I5" role="2OqNvi">
-                      <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbT" id="35oJ7ckDAL8" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
+            <node concept="2YIFZM" id="59Mw_8gE6A7" role="37vLTx">
+              <ref role="37wK5l" node="59Mw_8gDxK2" resolve="readonlyCloneOf" />
+              <ref role="1Pybhc" node="1m2uLwrRQWq" resolve="MergeTemporaryModel" />
+              <node concept="37vLTw" id="59Mw_8gE6FM" role="37wK5m">
+                <ref role="3cqZAo" node="3$YpntjF4v2" resolve="resultModel" />
               </node>
             </node>
             <node concept="37vLTw" id="35oJ7ckDuIT" role="37vLTJ">
@@ -6945,6 +6900,7 @@
   </node>
   <node concept="312cEu" id="1m2uLwrRQWq">
     <property role="TrG5h" value="MergeTemporaryModel" />
+    <property role="1EXbeo" value="true" />
     <node concept="3uibUv" id="2ezzEn64blN" role="EKbjA">
       <ref role="3uigEE" to="pa15:~PersistenceVersionAware" resolve="PersistenceVersionAware" />
     </node>
@@ -6998,55 +6954,173 @@
       </node>
     </node>
     <node concept="2tJIrI" id="jzhoHG2Mck" role="jymVt" />
-    <node concept="3clFbW" id="377Orl25wDS" role="jymVt">
-      <node concept="3cqZAl" id="377Orl25wDU" role="3clF45" />
-      <node concept="3Tm1VV" id="377Orl25wDV" role="1B3o_S" />
-      <node concept="3clFbS" id="377Orl25wDW" role="3clF47">
-        <node concept="1VxSAg" id="377Orl25zln" role="3cqZAp">
-          <ref role="37wK5l" node="1m2uLwrS0vs" resolve="MergeTemporaryModel" />
-          <node concept="2OqwBi" id="377Orl25$7j" role="37wK5m">
-            <node concept="37vLTw" id="377Orl25zKu" role="2Oq$k0">
-              <ref role="3cqZAo" node="377Orl25xfj" resolve="model" />
+    <node concept="2YIFZL" id="59Mw_8gDwR3" role="jymVt">
+      <property role="TrG5h" value="writableCloneOf" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="59Mw_8gDoil" role="3clF47">
+        <node concept="3cpWs6" id="59Mw_8gE0zs" role="3cqZAp">
+          <node concept="1rXfSq" id="59Mw_8gE0zt" role="3cqZAk">
+            <ref role="37wK5l" node="59Mw_8gDV2u" resolve="cloneDataInto" />
+            <node concept="2ShNRf" id="59Mw_8gE0zu" role="37wK5m">
+              <node concept="1pGfFk" id="59Mw_8gE0zv" role="2ShVmc">
+                <ref role="37wK5l" node="1m2uLwrS0vs" resolve="MergeTemporaryModel" />
+                <node concept="2OqwBi" id="59Mw_8gE0zw" role="37wK5m">
+                  <node concept="37vLTw" id="59Mw_8gE0zx" role="2Oq$k0">
+                    <ref role="3cqZAo" node="59Mw_8gDvxm" resolve="model" />
+                  </node>
+                  <node concept="liA8E" id="59Mw_8gE0zy" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                  </node>
+                </node>
+                <node concept="3clFbT" id="59Mw_8gE0zz" role="37wK5m" />
+              </node>
             </node>
-            <node concept="liA8E" id="377Orl25_sJ" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+            <node concept="37vLTw" id="59Mw_8gE0z$" role="37wK5m">
+              <ref role="3cqZAo" node="59Mw_8gDvxm" resolve="model" />
             </node>
-          </node>
-          <node concept="37vLTw" id="377Orl25A0O" role="37wK5m">
-            <ref role="3cqZAo" node="377Orl25yhL" resolve="readonly" />
           </node>
         </node>
-        <node concept="3clFbF" id="jzhoHG2L4s" role="3cqZAp">
-          <node concept="1rXfSq" id="jzhoHG2L4q" role="3clFbG">
-            <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.replace(jetbrains.mps.smodel.ModelLoadResult):void" resolve="replace" />
-            <node concept="2ShNRf" id="jzhoHG2Lcg" role="37wK5m">
-              <node concept="1pGfFk" id="jzhoHG2L$V" role="2ShVmc">
-                <ref role="37wK5l" to="w1kc:~ModelLoadResult.&lt;init&gt;(jetbrains.mps.extapi.model.SModelData,jetbrains.mps.smodel.loading.ModelLoadingState)" resolve="ModelLoadResult" />
-                <node concept="37vLTw" id="jzhoHG2LCk" role="37wK5m">
-                  <ref role="3cqZAo" node="377Orl25xfj" resolve="model" />
+      </node>
+      <node concept="37vLTG" id="59Mw_8gDvxm" role="3clF46">
+        <property role="TrG5h" value="model" />
+        <node concept="3uibUv" id="59Mw_8gDvxl" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="59Mw_8gDq22" role="3clF45">
+        <ref role="3uigEE" node="1m2uLwrRQWq" resolve="MergeTemporaryModel" />
+      </node>
+      <node concept="3Tm1VV" id="59Mw_8gDoik" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="59Mw_8gDydv" role="jymVt" />
+    <node concept="2YIFZL" id="59Mw_8gDxK2" role="jymVt">
+      <property role="TrG5h" value="readonlyCloneOf" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="59Mw_8gDxK3" role="3clF47">
+        <node concept="3cpWs6" id="59Mw_8gDUJr" role="3cqZAp">
+          <node concept="1rXfSq" id="59Mw_8gDYuF" role="3cqZAk">
+            <ref role="37wK5l" node="59Mw_8gDV2u" resolve="cloneDataInto" />
+            <node concept="2ShNRf" id="59Mw_8gD$ls" role="37wK5m">
+              <node concept="1pGfFk" id="59Mw_8gDAPR" role="2ShVmc">
+                <ref role="37wK5l" node="1m2uLwrS0vs" resolve="MergeTemporaryModel" />
+                <node concept="2OqwBi" id="59Mw_8gDBdI" role="37wK5m">
+                  <node concept="37vLTw" id="59Mw_8gDB6h" role="2Oq$k0">
+                    <ref role="3cqZAo" node="59Mw_8gDxK4" resolve="model" />
+                  </node>
+                  <node concept="liA8E" id="59Mw_8gDBpI" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                  </node>
                 </node>
-                <node concept="Rm8GO" id="jzhoHG2LF1" role="37wK5m">
-                  <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
-                  <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                <node concept="3clFbT" id="59Mw_8gDBFA" role="37wK5m">
+                  <property role="3clFbU" value="true" />
                 </node>
-                <node concept="3uibUv" id="jzhoHG2LIN" role="1pMfVU">
-                  <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="59Mw_8gDZt0" role="37wK5m">
+              <ref role="3cqZAo" node="59Mw_8gDxK4" resolve="model" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="59Mw_8gDxK4" role="3clF46">
+        <property role="TrG5h" value="model" />
+        <node concept="3uibUv" id="59Mw_8gDxK5" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="59Mw_8gDxK6" role="3clF45">
+        <ref role="3uigEE" node="1m2uLwrRQWq" resolve="MergeTemporaryModel" />
+      </node>
+      <node concept="3Tm1VV" id="59Mw_8gDxK7" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="59Mw_8gDvWS" role="jymVt" />
+    <node concept="2YIFZL" id="59Mw_8gDV2u" role="jymVt">
+      <property role="TrG5h" value="cloneDataInto" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="59Mw_8gDSXy" role="3clF47">
+        <node concept="3SKdUt" id="59Mw_8gDV$T" role="3cqZAp">
+          <node concept="3SKdUq" id="59Mw_8gDV$U" role="3SKWNk">
+            <property role="3SKdUp" value="TODO generalize merge for any SModel" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="59Mw_8gDV$V" role="3cqZAp">
+          <node concept="3cpWsn" id="59Mw_8gDV$W" role="3cpWs9">
+            <property role="TrG5h" value="resModel" />
+            <property role="3TUv4t" value="false" />
+            <node concept="3uibUv" id="59Mw_8gDV$X" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+            </node>
+            <node concept="2YIFZM" id="59Mw_8gDV$Y" role="33vP2m">
+              <ref role="37wK5l" to="w1kc:~CopyUtil.copyModel(jetbrains.mps.smodel.SModel):jetbrains.mps.smodel.SModel" resolve="copyModel" />
+              <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
+              <node concept="2OqwBi" id="59Mw_8gDV$Z" role="37wK5m">
+                <node concept="1eOMI4" id="59Mw_8gDV_0" role="2Oq$k0">
+                  <node concept="10QFUN" id="59Mw_8gDV_1" role="1eOMHV">
+                    <node concept="37vLTw" id="59Mw_8gDVXG" role="10QFUP">
+                      <ref role="3cqZAo" node="59Mw_8gDTYp" resolve="origin" />
+                    </node>
+                    <node concept="3uibUv" id="59Mw_8gDV_3" role="10QFUM">
+                      <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="59Mw_8gDV_4" role="2OqNvi">
+                  <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node concept="37vLTG" id="377Orl25xfj" role="3clF46">
-        <property role="TrG5h" value="model" />
-        <node concept="3uibUv" id="377Orl25xfi" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+        <node concept="3clFbF" id="59Mw_8gDV_5" role="3cqZAp">
+          <node concept="2OqwBi" id="59Mw_8gDV_6" role="3clFbG">
+            <node concept="37vLTw" id="59Mw_8gDV_7" role="2Oq$k0">
+              <ref role="3cqZAo" node="59Mw_8gDTvR" resolve="rv" />
+            </node>
+            <node concept="liA8E" id="59Mw_8gDV_8" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~RegularModelDescriptor.replace(jetbrains.mps.smodel.ModelLoadResult):void" resolve="replace" />
+              <node concept="2ShNRf" id="59Mw_8gDV_9" role="37wK5m">
+                <node concept="1pGfFk" id="59Mw_8gDV_a" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModelLoadResult.&lt;init&gt;(jetbrains.mps.extapi.model.SModelData,jetbrains.mps.smodel.loading.ModelLoadingState)" resolve="ModelLoadResult" />
+                  <node concept="37vLTw" id="59Mw_8gDV_b" role="37wK5m">
+                    <ref role="3cqZAo" node="59Mw_8gDV$W" resolve="resModel" />
+                  </node>
+                  <node concept="Rm8GO" id="59Mw_8gDV_c" role="37wK5m">
+                    <ref role="Rm8GQ" to="4it6:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                    <ref role="1Px2BO" to="4it6:~ModelLoadingState" resolve="ModelLoadingState" />
+                  </node>
+                  <node concept="3uibUv" id="59Mw_8gDV_d" role="1pMfVU">
+                    <ref role="3uigEE" to="w1kc:~SModel" resolve="SModel" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="59Mw_8gDWZo" role="3cqZAp">
+          <node concept="37vLTw" id="59Mw_8gDXYu" role="3cqZAk">
+            <ref role="3cqZAo" node="59Mw_8gDTvR" resolve="rv" />
+          </node>
         </node>
       </node>
-      <node concept="37vLTG" id="377Orl25yhL" role="3clF46">
-        <property role="TrG5h" value="readonly" />
-        <node concept="10P_77" id="377Orl25yyO" role="1tU5fm" />
+      <node concept="37vLTG" id="59Mw_8gDTvR" role="3clF46">
+        <property role="TrG5h" value="rv" />
+        <node concept="3uibUv" id="59Mw_8gDTvQ" role="1tU5fm">
+          <ref role="3uigEE" node="1m2uLwrRQWq" resolve="MergeTemporaryModel" />
+        </node>
       </node>
+      <node concept="37vLTG" id="59Mw_8gDTYp" role="3clF46">
+        <property role="TrG5h" value="origin" />
+        <node concept="3uibUv" id="59Mw_8gDUsY" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="59Mw_8gDSHH" role="3clF45">
+        <ref role="3uigEE" node="1m2uLwrRQWq" resolve="MergeTemporaryModel" />
+      </node>
+      <node concept="3Tm6S6" id="59Mw_8gDScF" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="jzhoHG370m" role="jymVt" />
     <node concept="3clFb_" id="jzhoHG37qR" role="jymVt">
@@ -7066,6 +7140,11 @@
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
       <node concept="3clFbS" id="jzhoHG37qX" role="3clF47">
+        <node concept="3SKdUt" id="59Mw_8gG0$Q" role="3cqZAp">
+          <node concept="3SKdUq" id="59Mw_8gG0$S" role="3SKWNk">
+            <property role="3SKdUp" value="XXX why not UnsupportedOperationException? Generally, we shall never get here (well, except of unloaded model)" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="jzhoHG38oa" role="3cqZAp">
           <node concept="2ShNRf" id="jzhoHG38q3" role="3cqZAk">
             <node concept="1pGfFk" id="jzhoHG398J" role="2ShVmc">
