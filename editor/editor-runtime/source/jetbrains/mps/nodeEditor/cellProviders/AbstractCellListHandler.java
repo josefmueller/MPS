@@ -45,9 +45,14 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   @Deprecated
   @ToRemove(version = 2018.2)
   //use getLink/getReference instead
-  public abstract String getElementRole();
+  public String getElementRole(){
+    return null;
+  }
 
-  public abstract SConceptFeature getElementSRole();
+  //todo remove body after 2018.2
+  public SConceptFeature getElementSRole(){
+    return null;
+  }
 
   protected abstract SNode getAnchorNode(EditorCell anchorCell);
 
