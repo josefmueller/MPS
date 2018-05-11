@@ -54,7 +54,7 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
 
     if (treeNode instanceof ReferenceTreeNode) {
       SReference ref = ((ReferenceTreeNode) treeNode).getRef();
-      return new ReferenceFeature(new SNodePointer(ref.getSourceNode()), ref.getRole());
+      return new ReferenceFeature(new SNodePointer(ref.getSourceNode()), ref.getLink());
     }
 
     if (treeNode instanceof PackageNode) {

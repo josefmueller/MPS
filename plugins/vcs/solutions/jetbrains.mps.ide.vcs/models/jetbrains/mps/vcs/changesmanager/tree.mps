@@ -1839,7 +1839,7 @@
                             <ref role="3cqZAo" node="3ghtVL8Ttdm" resolve="src" />
                           </node>
                           <node concept="liA8E" id="3ghtVL8TtdE" role="2OqNvi">
-                            <ref role="37wK5l" to="btf5:4TJPS00dNDU" resolve="getRole" />
+                            <ref role="37wK5l" to="btf5:42UviMIiTxr" resolve="getRoleLink" />
                           </node>
                         </node>
                       </node>
@@ -5964,7 +5964,7 @@
                       <ref role="3cqZAo" node="3zYHoP1jQFG" resolve="ref" />
                     </node>
                     <node concept="liA8E" id="48c8IXZGL7e" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SReference.getRole():java.lang.String" resolve="getRole" />
+                      <ref role="37wK5l" to="mhbf:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
                     </node>
                   </node>
                 </node>

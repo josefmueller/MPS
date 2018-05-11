@@ -66,7 +66,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
       ListSequence.fromList(result).addElement(new PropertyFeature(new SNodePointer(modelReference, spc.getAffectedNodeId()), spc.getProperty()));
     } else if (change instanceof SetReferenceChange) {
       SetReferenceChange src = ((SetReferenceChange) change);
-      ListSequence.fromList(result).addElement(new ReferenceFeature(new SNodePointer(modelReference, src.getAffectedNodeId()), src.getRole()));
+      ListSequence.fromList(result).addElement(new ReferenceFeature(new SNodePointer(modelReference, src.getAffectedNodeId()), src.getRoleLink()));
     } else if (change instanceof NodeGroupChange) {
       NodeGroupChange ngc = ((NodeGroupChange) change);
       SNodeId parentId = ngc.getParentNodeId();
