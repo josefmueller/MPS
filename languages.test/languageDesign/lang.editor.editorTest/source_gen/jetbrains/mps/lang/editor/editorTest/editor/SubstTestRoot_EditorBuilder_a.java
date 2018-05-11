@@ -374,6 +374,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
         return cell;
       }
     };
+    provider.setRole("middlewareChild");
     provider.setNoTargetText("<no middlewareChild>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
