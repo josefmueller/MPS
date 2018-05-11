@@ -276,7 +276,7 @@
       <node id="3751911615136912244" at="61,42,62,51" concept="9" />
       <node id="3751911615136910650" at="62,51,63,115" concept="3" />
       <node id="3751911615136912169" at="64,53,65,59" concept="9" />
-      <node id="3751911615136912146" at="65,59,66,150" concept="3" />
+      <node id="3751911615136912146" at="65,59,66,146" concept="3" />
       <node id="3751911615136912213" at="67,54,68,61" concept="9" />
       <node id="3751911615136912220" at="68,61,69,143" concept="3" />
       <node id="410698761440029746" at="70,51,71,55" concept="9" />
@@ -321,7 +321,7 @@
       <scope id="3751911615136910629" at="61,42,63,115">
         <var name="arc" id="3751911615136912245" />
       </scope>
-      <scope id="3751911615136912140" at="64,53,66,150">
+      <scope id="3751911615136912140" at="64,53,66,146">
         <var name="spc" id="3751911615136912170" />
       </scope>
       <scope id="3751911615136912185" at="67,54,69,143">
@@ -383,56 +383,56 @@
   </root>
   <root nodeRef="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)/4106919528499190854">
     <file name="ProjectTreeFeatureExtractor.java">
-      <node id="4106919528499211061" at="34,60,35,22" concept="9" />
-      <node id="4106919528499211074" at="36,44,37,51" concept="3" />
-      <node id="4106919528499211096" at="38,63,39,63" concept="3" />
-      <node id="4106919528499211127" at="40,5,41,77" concept="9" />
-      <node id="4106919528499202462" at="43,85,44,44" concept="10" />
-      <node id="4106919528499210911" at="45,105,46,93" concept="10" />
-      <node id="4106919528499211115" at="47,58,48,50" concept="10" />
-      <node id="4106919528499211164" at="49,58,50,50" concept="10" />
-      <node id="7862969797705509651" at="52,5,53,0" concept="12" />
-      <node id="4106919528499210987" at="54,48,55,63" concept="9" />
-      <node id="4106919528499210957" at="55,63,56,87" concept="10" />
-      <node id="7862969797705483661" at="57,5,58,0" concept="12" />
-      <node id="6189315166600221477" at="59,42,60,48" concept="9" />
-      <node id="4394654201966537206" at="60,48,61,80" concept="10" />
-      <node id="7862969797705495274" at="62,5,63,0" concept="12" />
-      <node id="3201398707754971929" at="64,45,65,85" concept="10" />
-      <node id="7862969797705503678" at="66,5,67,0" concept="12" />
-      <node id="4106919528499210870" at="67,0,68,16" concept="10" />
-      <node id="4106919528499190856" at="30,0,32,0" concept="2" trace="ProjectTreeFeatureExtractor#()V" />
-      <node id="7862969797705497125" at="63,0,66,5" concept="7" />
-      <node id="7862969797705455901" at="53,0,57,5" concept="7" />
-      <node id="7862969797705485510" at="58,0,62,5" concept="7" />
-      <node id="4106919528499211026" at="35,22,40,5" concept="7" />
-      <node id="4106919528499201709" at="42,73,51,7" concept="7" />
-      <node id="2105471615617473991" at="41,77,52,5" concept="7" />
-      <node id="4106919528499201699" at="32,0,70,0" concept="8" trace="getFeature#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
-      <scope id="4106919528499190859" at="30,40,30,40" />
-      <scope id="4106919528499211027" at="36,44,37,51" />
-      <scope id="4106919528499211085" at="38,63,39,63" />
-      <scope id="4106919528499201711" at="43,85,44,44" />
-      <scope id="4106919528499205870" at="45,105,46,93" />
-      <scope id="4106919528499211019" at="47,58,48,50" />
-      <scope id="4106919528499211156" at="49,58,50,50" />
-      <scope id="7862969797705497127" at="64,45,65,85" />
-      <scope id="4106919528499190856" at="30,0,32,0" />
-      <scope id="7862969797705455903" at="54,48,56,87">
+      <node id="4106919528499211061" at="35,60,36,22" concept="9" />
+      <node id="4106919528499211074" at="37,44,38,51" concept="3" />
+      <node id="4106919528499211096" at="39,63,40,63" concept="3" />
+      <node id="4106919528499211127" at="41,5,42,77" concept="9" />
+      <node id="4106919528499202462" at="44,85,45,44" concept="10" />
+      <node id="4106919528499210911" at="46,105,47,93" concept="10" />
+      <node id="4106919528499211115" at="48,58,49,50" concept="10" />
+      <node id="4106919528499211164" at="50,58,51,50" concept="10" />
+      <node id="7862969797705509651" at="53,5,54,0" concept="12" />
+      <node id="4106919528499210987" at="55,48,56,63" concept="9" />
+      <node id="4106919528499210957" at="56,63,57,88" concept="10" />
+      <node id="7862969797705483661" at="58,5,59,0" concept="12" />
+      <node id="6189315166600221477" at="60,42,61,48" concept="9" />
+      <node id="4394654201966537206" at="61,48,62,80" concept="10" />
+      <node id="7862969797705495274" at="63,5,64,0" concept="12" />
+      <node id="3201398707754971929" at="65,45,66,85" concept="10" />
+      <node id="7862969797705503678" at="67,5,68,0" concept="12" />
+      <node id="4106919528499210870" at="68,0,69,16" concept="10" />
+      <node id="4106919528499190856" at="31,0,33,0" concept="2" trace="ProjectTreeFeatureExtractor#()V" />
+      <node id="7862969797705497125" at="64,0,67,5" concept="7" />
+      <node id="7862969797705455901" at="54,0,58,5" concept="7" />
+      <node id="7862969797705485510" at="59,0,63,5" concept="7" />
+      <node id="4106919528499211026" at="36,22,41,5" concept="7" />
+      <node id="4106919528499201709" at="43,73,52,7" concept="7" />
+      <node id="2105471615617473991" at="42,77,53,5" concept="7" />
+      <node id="4106919528499201699" at="33,0,71,0" concept="8" trace="getFeature#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;)Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
+      <scope id="4106919528499190859" at="31,40,31,40" />
+      <scope id="4106919528499211027" at="37,44,38,51" />
+      <scope id="4106919528499211085" at="39,63,40,63" />
+      <scope id="4106919528499201711" at="44,85,45,44" />
+      <scope id="4106919528499205870" at="46,105,47,93" />
+      <scope id="4106919528499211019" at="48,58,49,50" />
+      <scope id="4106919528499211156" at="50,58,51,50" />
+      <scope id="7862969797705497127" at="65,45,66,85" />
+      <scope id="4106919528499190856" at="31,0,33,0" />
+      <scope id="7862969797705455903" at="55,48,57,88">
         <var name="ref" id="4106919528499210988" />
       </scope>
-      <scope id="7862969797705485512" at="59,42,61,80">
+      <scope id="7862969797705485512" at="60,42,62,80">
         <var name="pn" id="6189315166600221478" />
       </scope>
-      <scope id="2105471615617473992" at="42,73,51,7" />
-      <scope id="4106919528499201706" at="34,60,68,16">
+      <scope id="2105471615617473992" at="43,73,52,7" />
+      <scope id="4106919528499201706" at="35,60,69,16">
         <var name="node" id="4106919528499211062" />
         <var name="nodePointer" id="4106919528499211128" />
       </scope>
-      <scope id="4106919528499201699" at="32,0,70,0">
+      <scope id="4106919528499201699" at="33,0,71,0">
         <var name="treeNode" id="4106919528499201700" />
       </scope>
-      <unit id="4106919528499190854" at="29,0,71,0" name="jetbrains.mps.vcs.changesmanager.tree.ProjectTreeFeatureExtractor" />
+      <unit id="4106919528499190854" at="30,0,72,0" name="jetbrains.mps.vcs.changesmanager.tree.ProjectTreeFeatureExtractor" />
     </file>
   </root>
   <root nodeRef="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)/4106919528499268085">

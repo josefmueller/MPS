@@ -5407,26 +5407,26 @@
           </node>
         </node>
         <node concept="3clFbF" id="hSPVNdg" role="3cqZAp">
-          <node concept="2YIFZM" id="5CFnob0Pbgu" role="3clFbG">
+          <node concept="2YIFZM" id="48c8IXZEIpl" role="3clFbG">
+            <ref role="37wK5l" to="mhbf:~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void" resolve="setProperty" />
             <ref role="1Pybhc" to="mhbf:~SNodeAccessUtil" resolve="SNodeAccessUtil" />
-            <ref role="37wK5l" to="mhbf:~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String):void" resolve="setProperty" />
-            <node concept="2OqwBi" id="5CFnob0Pbgv" role="37wK5m">
-              <node concept="37vLTw" id="3GM_nagT$Ib" role="2Oq$k0">
+            <node concept="2OqwBi" id="48c8IXZEIpm" role="37wK5m">
+              <node concept="37vLTw" id="48c8IXZEIpn" role="2Oq$k0">
                 <ref role="3cqZAo" node="hSPVNd3" resolve="propsNode" />
               </node>
-              <node concept="liA8E" id="5CFnob0Pbgx" role="2OqNvi">
+              <node concept="liA8E" id="48c8IXZEIpo" role="2OqNvi">
                 <ref role="37wK5l" to="cx5i:~PropertiesTreeNode.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
               </node>
             </node>
-            <node concept="2OqwBi" id="5CFnob0Pbgy" role="37wK5m">
-              <node concept="37vLTw" id="3GM_nagTu4d" role="2Oq$k0">
+            <node concept="2OqwBi" id="48c8IXZEIpp" role="37wK5m">
+              <node concept="37vLTw" id="48c8IXZEIpq" role="2Oq$k0">
                 <ref role="3cqZAo" node="hSPVNd9" resolve="propNode" />
               </node>
-              <node concept="liA8E" id="5CFnob0Pbg$" role="2OqNvi">
-                <ref role="37wK5l" to="cx5i:~PropertyTreeNode.getProperty():java.lang.String" resolve="getProperty" />
+              <node concept="liA8E" id="48c8IXZEIpr" role="2OqNvi">
+                <ref role="37wK5l" to="cx5i:~PropertyTreeNode.getProperty():org.jetbrains.mps.openapi.language.SProperty" resolve="getProperty" />
               </node>
             </node>
-            <node concept="10Nm6u" id="5CFnob0Pbg_" role="37wK5m" />
+            <node concept="10Nm6u" id="48c8IXZEIps" role="37wK5m" />
           </node>
         </node>
       </node>

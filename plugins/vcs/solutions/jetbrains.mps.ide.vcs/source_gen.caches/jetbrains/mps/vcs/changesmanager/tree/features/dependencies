@@ -74,6 +74,7 @@
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature" file="PropertyFeature.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -81,6 +82,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.AbstractNodeFeature" />

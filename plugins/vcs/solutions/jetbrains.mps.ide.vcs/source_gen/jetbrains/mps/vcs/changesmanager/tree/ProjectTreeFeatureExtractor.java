@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature;
 import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature;
@@ -53,7 +54,7 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
 
     if (treeNode instanceof ReferenceTreeNode) {
       SReference ref = ((ReferenceTreeNode) treeNode).getRef();
-      return new PropertyFeature(new SNodePointer(ref.getSourceNode()), ref.getRole());
+      return new ReferenceFeature(new SNodePointer(ref.getSourceNode()), ref.getRole());
     }
 
     if (treeNode instanceof PackageNode) {

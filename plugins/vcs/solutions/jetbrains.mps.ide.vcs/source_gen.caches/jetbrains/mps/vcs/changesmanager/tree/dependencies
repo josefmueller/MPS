@@ -98,6 +98,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

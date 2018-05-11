@@ -1771,7 +1771,7 @@
                             <ref role="3cqZAo" node="3ghtVL8TtcE" resolve="spc" />
                           </node>
                           <node concept="liA8E" id="3ghtVL8TtcQ" role="2OqNvi">
-                            <ref role="37wK5l" to="btf5:2nH2HpRnsoR" resolve="getPropertyName" />
+                            <ref role="37wK5l" to="btf5:42UviMIicV_" resolve="getProperty" />
                           </node>
                         </node>
                       </node>
@@ -5842,7 +5842,7 @@
                             </node>
                           </node>
                           <node concept="liA8E" id="3zYHoP1jQEN" role="2OqNvi">
-                            <ref role="37wK5l" to="cx5i:~PropertyTreeNode.getProperty():java.lang.String" resolve="getProperty" />
+                            <ref role="37wK5l" to="cx5i:~PropertyTreeNode.getProperty():org.jetbrains.mps.openapi.language.SProperty" resolve="getProperty" />
                           </node>
                         </node>
                       </node>
@@ -5945,7 +5945,7 @@
             <node concept="3cpWs6" id="3zYHoP1jQFd" role="3cqZAp">
               <node concept="2ShNRf" id="3zYHoP1jQFe" role="3cqZAk">
                 <node concept="1pGfFk" id="3zYHoP1jQFf" role="2ShVmc">
-                  <ref role="37wK5l" to="gwd2:4oT3Lbm4M1u" resolve="PropertyFeature" />
+                  <ref role="37wK5l" to="gwd2:4oT3Lbm4M2F" resolve="ReferenceFeature" />
                   <node concept="2ShNRf" id="3zYHoP1jQFg" role="37wK5m">
                     <node concept="1pGfFk" id="3zYHoP1jQFh" role="2ShVmc">
                       <ref role="37wK5l" to="w1kc:~SNodePointer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodePointer" />
@@ -5959,11 +5959,11 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="3zYHoP1jQG4" role="37wK5m">
+                  <node concept="2OqwBi" id="48c8IXZGKCp" role="37wK5m">
                     <node concept="37vLTw" id="3GM_nagTz4_" role="2Oq$k0">
                       <ref role="3cqZAo" node="3zYHoP1jQFG" resolve="ref" />
                     </node>
-                    <node concept="liA8E" id="3zYHoP1jQG8" role="2OqNvi">
+                    <node concept="liA8E" id="48c8IXZGL7e" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SReference.getRole():java.lang.String" resolve="getRole" />
                     </node>
                   </node>
