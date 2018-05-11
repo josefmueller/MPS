@@ -56,7 +56,7 @@ public class APICellAdapter {
     }
     SNode node = cell.getSNode();
     SConceptFeature role = cell.getSRole();
-    SNode referentNode = role == null ? null : node.getReferenceTarget(((SReferenceLink) role));
+    SNode referentNode = role instanceof SReferenceLink ? node.getReferenceTarget(((SReferenceLink) role)) : null;
     return referentNode != null ? referentNode : node;
   }
 
@@ -66,7 +66,8 @@ public class APICellAdapter {
       return false;
     }
 
-    final SubstituteInfo substituteInfoWithPatternMatchingFilter = NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, cell.getContext().getRepository());
+    final SubstituteInfo substituteInfoWithPatternMatchingFilter =
+        NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, cell.getContext().getRepository());
 
     if (cell instanceof EditorCell_Collection) {
       return false;
@@ -80,7 +81,8 @@ public class APICellAdapter {
     List<SubstituteAction> matchingActions = new ModelAccessHelper(cell.getContext().getRepository()).runReadAction(
         () -> TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) cell.getEditorComponent(),
                                                                           cell.getEditorComponent().getEditedNode(),
-                                                                          context -> substituteInfoWithPatternMatchingFilter.getMatchingActions(pattern, strict)));
+                                                                          context -> substituteInfoWithPatternMatchingFilter.getMatchingActions(pattern,
+                                                                                                                                                strict)));
     return substituteIfPossible(cell, canActivatePopup, pattern, matchingActions);
   }
 
