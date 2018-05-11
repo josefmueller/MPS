@@ -20,16 +20,17 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.project.MPSExtentions;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import jetbrains.mps.vcs.util.MergeVersion;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.extapi.model.SModelBase;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -102,6 +103,18 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    final SModelReference modelReference = ((SModel) MapSequence.fromMap(_params).get("model")).getReference();
+    // this.model came from repo, so it must be supported by ModelPersistence 
+    // XXX ^^^ WHY? 
+    // FIXME prefer ModelFactory.save(openapi.SModel, in-memory stream data source); perhaps PersVersAware.getModelFactory()? 
+    // In fact, we need to use actual model persistence format, as strings in the zip are likely plain text from VCS, which, 
+    // for the same model, usually means same persistence as current (unless persistence has been changed). 
+    String modelData = new ModelAccessHelper(((SModel) MapSequence.fromMap(_params).get("model")).getRepository()).runReadAction(new Computable<String>() {
+      public String compute() {
+        return PersistenceUtil.saveModel(((SModel) MapSequence.fromMap(_params).get("model")), MPSExtentions.MODEL);
+      }
+    });
+
     for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
       try {
         String[] modelsAsText = MergeBackupUtil.loadZippedModelsAsText(backupFile, MergeVersion.values());
@@ -110,19 +123,11 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
 
         SModelReference uid = VCSPersistenceSupport.loadDescriptor(new InputSource(new StringReader(mine))).getModelReference();
-        if (uid == null || !(uid.equals(((SModel) MapSequence.fromMap(_params).get("model")).getReference()))) {
+        if (uid == null || !(uid.equals(modelReference))) {
           continue;
         }
 
-        // this.model came from repo, so it must be supported by ModelPersistence 
-        // FIXME prefer ModelFactory.save(openapi.SModel, in-memory stream data source) 
-        final Wrappers._T<String> modelData = new Wrappers._T<String>();
-        ((SModel) MapSequence.fromMap(_params).get("model")).getRepository().getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            modelData.value = ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModel());
-          }
-        });
-        mine = ReRunMergeFromBackup_Action.this.selectMineModel(modelData.value, mine, _params);
+        mine = ReRunMergeFromBackup_Action.this.selectMineModel(modelData, mine, _params);
         if (mine == null) {
           return;
         }
@@ -145,7 +150,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         }
       }
     }
-    Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getModelName() + "was not found.", "No Backup Files Found");
+    Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getName() + "was not found.", "No Backup Files Found");
   }
   private Iterable<File> getBackupFiles(final Map<String, Object> _params) {
     return MergeBackupUtil.findZipFilesForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getName());

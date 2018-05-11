@@ -24,7 +24,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="5fzo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.def(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="jlcu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs(MPS.IDEA/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
@@ -326,14 +325,6 @@
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
-    </language>
-    <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
-      <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
-      <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
-        <child id="1423104411234567454" name="repo" index="ukAjM" />
-        <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
-      </concept>
-      <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -771,6 +762,99 @@
     </node>
     <node concept="tnohg" id="6ySnuJfjgBq" role="tncku">
       <node concept="3clFbS" id="6ySnuJfjgBr" role="2VODD2">
+        <node concept="3cpWs8" id="59Mw_8gJfFf" role="3cqZAp">
+          <node concept="3cpWsn" id="59Mw_8gJfFg" role="3cpWs9">
+            <property role="TrG5h" value="modelReference" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="59Mw_8gJfFd" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+            </node>
+            <node concept="2OqwBi" id="59Mw_8gJfFh" role="33vP2m">
+              <node concept="liA8E" id="59Mw_8gJfFi" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+              </node>
+              <node concept="2OqwBi" id="59Mw_8gJfFj" role="2Oq$k0">
+                <node concept="2WthIp" id="59Mw_8gJfFk" role="2Oq$k0" />
+                <node concept="1DTwFV" id="59Mw_8gJfFl" role="2OqNvi">
+                  <ref role="2WH_rO" node="6ySnuJfjgCN" resolve="model" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4BapoMDqoin" role="3cqZAp">
+          <node concept="3SKdUq" id="4BapoMDqoCD" role="3SKWNk">
+            <property role="3SKdUp" value="this.model came from repo, so it must be supported by ModelPersistence" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2MLOuzOTAfF" role="3cqZAp">
+          <node concept="3SKdUq" id="2MLOuzOTAfH" role="3SKWNk">
+            <property role="3SKdUp" value="XXX ^^^ WHY?" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7bkTVicVyxM" role="3cqZAp">
+          <node concept="3SKdUq" id="7bkTVicVyxO" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME prefer ModelFactory.save(openapi.SModel, in-memory stream data source); perhaps PersVersAware.getModelFactory()?" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2MLOuzOTSWD" role="3cqZAp">
+          <node concept="3SKdUq" id="2MLOuzOTSWF" role="3SKWNk">
+            <property role="3SKdUp" value="In fact, we need to use actual model persistence format, as strings in the zip are likely plain text from VCS, which," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2MLOuzOTV0N" role="3cqZAp">
+          <node concept="3SKdUq" id="2MLOuzOTV0P" role="3SKWNk">
+            <property role="3SKdUp" value="for the same model, usually means same persistence as current (unless persistence has been changed)." />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1gbSomzwiDZ" role="3cqZAp">
+          <node concept="3cpWsn" id="1gbSomzwiE0" role="3cpWs9">
+            <property role="TrG5h" value="modelData" />
+            <node concept="17QB3L" id="1LiylnUNQ2c" role="1tU5fm" />
+            <node concept="2OqwBi" id="59Mw_8gJK5k" role="33vP2m">
+              <node concept="2ShNRf" id="59Mw_8gJAAd" role="2Oq$k0">
+                <node concept="1pGfFk" id="59Mw_8gJGh5" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                  <node concept="2OqwBi" id="59Mw_8gJIVC" role="37wK5m">
+                    <node concept="2OqwBi" id="59Mw_8gJIVD" role="2Oq$k0">
+                      <node concept="2WthIp" id="59Mw_8gJIVE" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="59Mw_8gJIVF" role="2OqNvi">
+                        <ref role="2WH_rO" node="6ySnuJfjgCN" resolve="model" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="59Mw_8gJIVG" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="59Mw_8gJLg9" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <node concept="1bVj0M" id="59Mw_8gJMdk" role="37wK5m">
+                  <node concept="3clFbS" id="59Mw_8gJMdl" role="1bW5cS">
+                    <node concept="3clFbF" id="59Mw_8gJPf1" role="3cqZAp">
+                      <node concept="2YIFZM" id="59Mw_8gJR7z" role="3clFbG">
+                        <ref role="37wK5l" to="pa15:~PersistenceUtil.saveModel(org.jetbrains.mps.openapi.model.SModel,java.lang.String):java.lang.String" resolve="saveModel" />
+                        <ref role="1Pybhc" to="pa15:~PersistenceUtil" resolve="PersistenceUtil" />
+                        <node concept="2OqwBi" id="59Mw_8gJVjB" role="37wK5m">
+                          <node concept="2WthIp" id="59Mw_8gJS4x" role="2Oq$k0" />
+                          <node concept="1DTwFV" id="59Mw_8gJWwp" role="2OqNvi">
+                            <ref role="2WH_rO" node="6ySnuJfjgCN" resolve="model" />
+                          </node>
+                        </node>
+                        <node concept="10M0yZ" id="2MLOuzOTyNG" role="37wK5m">
+                          <ref role="3cqZAo" to="z1c3:~MPSExtentions.MODEL" resolve="MODEL" />
+                          <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="59Mw_8gJx$J" role="3cqZAp" />
         <node concept="2Gpval" id="6ySnuJfjgBK" role="3cqZAp">
           <node concept="2OqwBi" id="7xjR2e1IJaj" role="2GsD0m">
             <node concept="2WthIp" id="7xjR2e1IJak" role="2Oq$k0" />
@@ -905,16 +989,8 @@
                         </node>
                         <node concept="liA8E" id="1OiuLPRkY8f" role="2OqNvi">
                           <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                          <node concept="2OqwBi" id="791rit5f5LO" role="37wK5m">
-                            <node concept="liA8E" id="791rit5f5LP" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                            </node>
-                            <node concept="2OqwBi" id="791rit5f5LQ" role="2Oq$k0">
-                              <node concept="2WthIp" id="791rit5f5LR" role="2Oq$k0" />
-                              <node concept="1DTwFV" id="791rit5f5LS" role="2OqNvi">
-                                <ref role="2WH_rO" node="6ySnuJfjgCN" resolve="model" />
-                              </node>
-                            </node>
+                          <node concept="37vLTw" id="59Mw_8gJfFm" role="37wK5m">
+                            <ref role="3cqZAo" node="59Mw_8gJfFg" resolve="modelReference" />
                           </node>
                         </node>
                       </node>
@@ -928,68 +1004,6 @@
                   </node>
                 </node>
                 <node concept="3clFbH" id="1OiuLPRl1IC" role="3cqZAp" />
-                <node concept="3SKdUt" id="4BapoMDqoin" role="3cqZAp">
-                  <node concept="3SKdUq" id="4BapoMDqoCD" role="3SKWNk">
-                    <property role="3SKdUp" value="this.model came from repo, so it must be supported by ModelPersistence" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="7bkTVicVyxM" role="3cqZAp">
-                  <node concept="3SKdUq" id="7bkTVicVyxO" role="3SKWNk">
-                    <property role="3SKdUp" value="FIXME prefer ModelFactory.save(openapi.SModel, in-memory stream data source)" />
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="1gbSomzwiDZ" role="3cqZAp">
-                  <node concept="3cpWsn" id="1gbSomzwiE0" role="3cpWs9">
-                    <property role="TrG5h" value="modelData" />
-                    <node concept="17QB3L" id="1LiylnUNQ2c" role="1tU5fm" />
-                  </node>
-                </node>
-                <node concept="1QHqEK" id="1gbSomzwkIA" role="3cqZAp">
-                  <node concept="1QHqEC" id="1gbSomzwkIC" role="1QHqEI">
-                    <node concept="3clFbS" id="1gbSomzwkIE" role="1bW5cS">
-                      <node concept="3clFbF" id="1gbSomzwjuR" role="3cqZAp">
-                        <node concept="37vLTI" id="1gbSomzwjuT" role="3clFbG">
-                          <node concept="2YIFZM" id="1gbSomzwiE1" role="37vLTx">
-                            <ref role="1Pybhc" to="5fzo:~ModelPersistence" resolve="ModelPersistence" />
-                            <ref role="37wK5l" to="5fzo:~ModelPersistence.modelToString(jetbrains.mps.smodel.SModel):java.lang.String" resolve="modelToString" />
-                            <node concept="2OqwBi" id="1gbSomzwiE2" role="37wK5m">
-                              <node concept="liA8E" id="1gbSomzwiE3" role="2OqNvi">
-                                <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.getSModel():jetbrains.mps.smodel.SModel" resolve="getSModel" />
-                              </node>
-                              <node concept="1eOMI4" id="1gbSomzwiE4" role="2Oq$k0">
-                                <node concept="10QFUN" id="1gbSomzwiE5" role="1eOMHV">
-                                  <node concept="3uibUv" id="1gbSomzwiE6" role="10QFUM">
-                                    <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                                  </node>
-                                  <node concept="2OqwBi" id="1gbSomzwiE7" role="10QFUP">
-                                    <node concept="2WthIp" id="1gbSomzwiE8" role="2Oq$k0" />
-                                    <node concept="1DTwFV" id="1gbSomzwiE9" role="2OqNvi">
-                                      <ref role="2WH_rO" node="6ySnuJfjgCN" resolve="model" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="1gbSomzwjuX" role="37vLTJ">
-                            <ref role="3cqZAo" node="1gbSomzwiE0" resolve="modelData" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="1gbSomzwlJa" role="ukAjM">
-                    <node concept="2OqwBi" id="1gbSomzwljz" role="2Oq$k0">
-                      <node concept="2WthIp" id="1gbSomzwljA" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="1gbSomzwljC" role="2OqNvi">
-                        <ref role="2WH_rO" node="6ySnuJfjgCN" resolve="model" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="1gbSomzwmng" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbF" id="1pUzypQvwjY" role="3cqZAp">
                   <node concept="37vLTI" id="1pUzypQvwka" role="3clFbG">
                     <node concept="37vLTw" id="3GM_nagTx3W" role="37vLTJ">
@@ -1216,20 +1230,15 @@
                 <property role="Xl_RC" value="was not found." />
               </node>
               <node concept="3cpWs3" id="6ySnuJfjgCD" role="3uHU7B">
-                <node concept="2OqwBi" id="2ZDBRmk5i2$" role="3uHU7w">
-                  <node concept="liA8E" id="2ZDBRmk5i2_" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModelReference.getModelName():java.lang.String" resolve="getModelName" />
+                <node concept="2OqwBi" id="2ZDBRmk5i2A" role="3uHU7w">
+                  <node concept="2OqwBi" id="2ZDBRmk5i2C" role="2Oq$k0">
+                    <node concept="2WthIp" id="2ZDBRmk5i2D" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="2ZDBRmk5i2E" role="2OqNvi">
+                      <ref role="2WH_rO" node="6ySnuJfjgCN" resolve="model" />
+                    </node>
                   </node>
-                  <node concept="2OqwBi" id="2ZDBRmk5i2A" role="2Oq$k0">
-                    <node concept="liA8E" id="2ZDBRmk5i2B" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                    </node>
-                    <node concept="2OqwBi" id="2ZDBRmk5i2C" role="2Oq$k0">
-                      <node concept="2WthIp" id="2ZDBRmk5i2D" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="2ZDBRmk5i2E" role="2OqNvi">
-                        <ref role="2WH_rO" node="6ySnuJfjgCN" resolve="model" />
-                      </node>
-                    </node>
+                  <node concept="liA8E" id="59Mw_8gJdnv" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="6ySnuJfjgCE" role="3uHU7B">
