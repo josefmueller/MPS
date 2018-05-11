@@ -52,6 +52,9 @@ public class PropertyCellProvider extends CellProviderWithRole {
   @ToRemove(version = 2018.2)
   @Override
   public void setRole(Object role) {
+    if (myProperty != null) {
+      return;
+    }
     String roleName = role.toString();
     NodeReadAccessCasterInEditor.runReadTransparentAction(() -> {
       SNode decl = new SNodeLegacy(getSNode()).getPropertyDeclaration(roleName);
