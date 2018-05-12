@@ -35,6 +35,8 @@ public class DelSmartInvalidReference_Test extends BaseTransformationTest {
           invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
         }
       }, false);

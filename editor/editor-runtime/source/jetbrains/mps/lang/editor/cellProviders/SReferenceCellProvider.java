@@ -147,7 +147,7 @@ public abstract class SReferenceCellProvider extends AbstractEditorBuilder imple
   protected abstract EditorCell createReferenceCell(SNode targetNode);
 
   protected EditorCell createErrorCell(String error) {
-    EditorCell_Error errorCell = new EditorCell_Error(getEditorContext(), getNode(), error);
+    EditorCell_Error errorCell = new EditorCell_Error(getEditorContext(), getNode(), error, true);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorSReference(getNode(), myReferenceLink));
     errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorSReference(getNode(), myReferenceLink));
     return errorCell;
