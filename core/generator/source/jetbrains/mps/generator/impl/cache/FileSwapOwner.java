@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,7 +104,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public boolean swapOut(SModelData model) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-      String modelId = model.getReference().getModelId().toString();
+      String modelId = model.getModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
         LOG.error("Bad model id <" + modelId + ">");
         return false;
