@@ -6,6 +6,7 @@ import com.intellij.util.indexing.FileBasedIndexExtension;
 import jetbrains.mps.workbench.index.SNodeEntry;
 import java.util.List;
 import com.intellij.util.indexing.ID;
+import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -22,6 +23,7 @@ import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.core.platform.Platform;
 import java.util.Map;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.workbench.index.RootNodeNameIndex;
@@ -40,9 +42,14 @@ import java.util.ArrayList;
 
 public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEntry, List<SNodeEntry>> {
   private static final ID<SNodeEntry, List<SNodeEntry>> NAME = ID.create("mps.ClassifierSuccessors");
+  private final MPSCoreComponents myCoreComponents;
 
   /*package*/ static void processValues(SNode nextClassifier, FileBasedIndex.ValueProcessor<List<SNodeEntry>> valueProcessor, GlobalSearchScope filter) {
     FileBasedIndex.getInstance().processValues(NAME, new SNodeEntry(SNodeOperations.getPointer(nextClassifier)), null, valueProcessor, filter);
+  }
+
+  public ClassifierSuccessorsIndexer(MPSCoreComponents mpsCoreComponents) {
+    myCoreComponents = mpsCoreComponents;
   }
 
   @NotNull
@@ -91,7 +98,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
   @NotNull
   @Override
   public DataIndexer<SNodeEntry, List<SNodeEntry>, FileContent> getIndexer() {
-    return new ClassifierSuccessorsIndexer.Indexer();
+    return new ClassifierSuccessorsIndexer.Indexer(myCoreComponents.getPlatform());
   }
 
   private static class InputFilter implements FileBasedIndex.InputFilter {
@@ -102,11 +109,17 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
   }
 
   private static class Indexer implements DataIndexer<SNodeEntry, List<SNodeEntry>, FileContent> {
+    private final Platform myPlatform;
+
+    /*package*/ Indexer(Platform mpsPlatform) {
+      myPlatform = mpsPlatform;
+    }
+
     @NotNull
     @Override
     public Map<SNodeEntry, List<SNodeEntry>> map(final FileContent inputData) {
       try {
-        SModelData modelData = RootNodeNameIndex.doModelParsing(inputData);
+        SModelData modelData = RootNodeNameIndex.doModelParsing(myPlatform, inputData);
         // e.g. model with merge conflict 
         if (modelData == null) {
           return Collections.emptyMap();

@@ -33,6 +33,7 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
+    <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1953,6 +1954,16 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="7Sr6m6IKXAi" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myCoreComponents" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7Sr6m6IKVvS" role="1B3o_S" />
+      <node concept="3uibUv" id="7Sr6m6IKXip" role="1tU5fm">
+        <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="5DqLs1Fjct8" role="jymVt" />
     <node concept="2YIFZL" id="5DqLs1Fjdtg" role="jymVt">
       <property role="TrG5h" value="processValues" />
@@ -2017,6 +2028,29 @@
         <property role="TrG5h" value="filter" />
         <node concept="3uibUv" id="5DqLs1Fjgmt" role="1tU5fm">
           <ref role="3uigEE" to="fpru:~GlobalSearchScope" resolve="GlobalSearchScope" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7Sr6m6IKLep" role="jymVt" />
+    <node concept="3clFbW" id="7Sr6m6IKSbt" role="jymVt">
+      <node concept="3cqZAl" id="7Sr6m6IKSbw" role="3clF45" />
+      <node concept="3Tm1VV" id="7Sr6m6IKSbx" role="1B3o_S" />
+      <node concept="3clFbS" id="7Sr6m6IKSby" role="3clF47">
+        <node concept="3clFbF" id="7Sr6m6IKZ5j" role="3cqZAp">
+          <node concept="37vLTI" id="7Sr6m6IKZ$v" role="3clFbG">
+            <node concept="37vLTw" id="7Sr6m6IKZXa" role="37vLTx">
+              <ref role="3cqZAo" node="7Sr6m6IKTEh" resolve="mpsCoreComponents" />
+            </node>
+            <node concept="37vLTw" id="7Sr6m6IKZ5i" role="37vLTJ">
+              <ref role="3cqZAo" node="7Sr6m6IKXAi" resolve="myCoreComponents" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7Sr6m6IKTEh" role="3clF46">
+        <property role="TrG5h" value="mpsCoreComponents" />
+        <node concept="3uibUv" id="7Sr6m6IKTEg" role="1tU5fm">
+          <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
         </node>
       </node>
     </node>
@@ -2292,9 +2326,17 @@
       </node>
       <node concept="3clFbS" id="3Cep5Ce5gWH" role="3clF47">
         <node concept="3cpWs6" id="3Cep5Ce5gWI" role="3cqZAp">
-          <node concept="2ShNRf" id="3Cep5Ce5gVQ" role="3cqZAk">
-            <node concept="HV5vD" id="6PADvnrVWKW" role="2ShVmc">
-              <ref role="HV5vE" node="3Cep5Ce5gRa" resolve="ClassifierSuccessorsIndexer.Indexer" />
+          <node concept="2ShNRf" id="7Sr6m6ILKiI" role="3cqZAk">
+            <node concept="1pGfFk" id="7Sr6m6ILMeJ" role="2ShVmc">
+              <ref role="37wK5l" node="7Sr6m6IL1Cp" resolve="ClassifierSuccessorsIndexer.Indexer" />
+              <node concept="2OqwBi" id="7Sr6m6ILPsw" role="37wK5m">
+                <node concept="37vLTw" id="7Sr6m6ILNNd" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7Sr6m6IKXAi" resolve="myCoreComponents" />
+                </node>
+                <node concept="liA8E" id="7Sr6m6ILRb9" role="2OqNvi">
+                  <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2352,6 +2394,37 @@
     <node concept="2tJIrI" id="6PADvnrVVmD" role="jymVt" />
     <node concept="312cEu" id="3Cep5Ce5gRa" role="jymVt">
       <property role="TrG5h" value="Indexer" />
+      <node concept="312cEg" id="7Sr6m6ILa$$" role="jymVt">
+        <property role="TrG5h" value="myPlatform" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="7Sr6m6ILa$_" role="1B3o_S" />
+        <node concept="3uibUv" id="7Sr6m6ILa$B" role="1tU5fm">
+          <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="7Sr6m6IL01z" role="jymVt" />
+      <node concept="3clFbW" id="7Sr6m6IL1Cp" role="jymVt">
+        <node concept="3cqZAl" id="7Sr6m6IL1Cr" role="3clF45" />
+        <node concept="3clFbS" id="7Sr6m6IL1Ct" role="3clF47">
+          <node concept="3clFbF" id="7Sr6m6ILa$C" role="3cqZAp">
+            <node concept="37vLTI" id="7Sr6m6ILa$E" role="3clFbG">
+              <node concept="37vLTw" id="7Sr6m6ILa$H" role="37vLTJ">
+                <ref role="3cqZAo" node="7Sr6m6ILa$$" resolve="myPlatform" />
+              </node>
+              <node concept="37vLTw" id="7Sr6m6ILa$I" role="37vLTx">
+                <ref role="3cqZAo" node="7Sr6m6ILarE" resolve="mpsPlatform" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="7Sr6m6ILarE" role="3clF46">
+          <property role="TrG5h" value="mpsPlatform" />
+          <node concept="3uibUv" id="7Sr6m6ILarD" role="1tU5fm">
+            <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="7Sr6m6IL3h7" role="jymVt" />
       <node concept="3Tm6S6" id="3Cep5Ce5gRb" role="1B3o_S" />
       <node concept="3uibUv" id="3Cep5Ce5gRc" role="EKbjA">
         <ref role="3uigEE" to="8902:~DataIndexer" resolve="DataIndexer" />
@@ -2397,8 +2470,11 @@
                     <ref role="3uigEE" to="g3l6:~SModelData" resolve="SModelData" />
                   </node>
                   <node concept="2YIFZM" id="xQ1ke1Q7kT" role="33vP2m">
-                    <ref role="37wK5l" to="qpn1:~RootNodeNameIndex.doModelParsing(com.intellij.util.indexing.FileContent):jetbrains.mps.extapi.model.SModelData" resolve="doModelParsing" />
                     <ref role="1Pybhc" to="qpn1:~RootNodeNameIndex" resolve="RootNodeNameIndex" />
+                    <ref role="37wK5l" to="qpn1:~RootNodeNameIndex.doModelParsing(jetbrains.mps.core.platform.Platform,com.intellij.util.indexing.FileContent):jetbrains.mps.extapi.model.SModelData" resolve="doModelParsing" />
+                    <node concept="37vLTw" id="7Sr6m6ILksw" role="37wK5m">
+                      <ref role="3cqZAo" node="7Sr6m6ILa$$" resolve="myPlatform" />
+                    </node>
                     <node concept="37vLTw" id="xQ1ke1Q7kU" role="37wK5m">
                       <ref role="3cqZAo" node="3Cep5Ce5gRr" resolve="inputData" />
                     </node>
