@@ -28,8 +28,12 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.build.util.RelativePathHelper;
+import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.facets.TestsFacetImpl;
@@ -478,16 +482,20 @@ public final class ModuleChecker {
     // XXX instead of myModuleDescriptoFile, could use module.path.getLocalPath() 
     RelativePathHelper moduleRelativePathHelper = new RelativePathHelper(myModuleDescriptorFile.getParent().getPath());
     for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
-      if (!(PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(modelRootDescriptor.getType()))) {
+      // FIXME Though use of ModelRootFactory is much better than to instantiate DefaultModelRoot directly, still uncertain if  
+      //       alternative with myLoadedModule.getModelRoots() is not better. 
+      // XXX it's not clear why we do not copy model roots other than default here. 
+      ModelRootFactory mrFactory = PersistenceRegistry.getInstance().getModelRootFactory(modelRootDescriptor.getType());
+      if (mrFactory == null) {
         continue;
       }
-
-      DefaultModelRoot mr = new DefaultModelRoot();
+      ModelRoot mr = mrFactory.create();
+      if (!(mr instanceof DefaultModelRoot)) {
+        continue;
+      }
       mr.load(modelRootDescriptor.getMemento());
-      for (String path : mr.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-        if (path == null) {
-          continue;
-        }
+      for (SourceRoot sr : ((DefaultModelRoot) mr).getSourceRoots(SourceRootKinds.SOURCES)) {
+        String path = sr.getAbsolutePath().getPath();
         SNode p = convertPath(path);
         if (p == null) {
           continue;
@@ -501,7 +509,7 @@ public final class ModuleChecker {
             // FIXME in fact, we shall reference these names inside generated/copied module descriptors and stop implying they match names in the original descriptor source 
             deployName = moduleRelativePathHelper.makeRelative(path);
           } catch (RelativePathHelper.PathException ex) {
-            report(String.format("Failed to make model root path %s relative to module %s, using default folder name for deployment", path, moduleRelativePathHelper.getBasePath()), ex);
+            report(String.format("Failed to make model root path %s relative to module %s, using default folder name for deployment", sr, moduleRelativePathHelper.getBasePath()), ex);
             deployName = "models";
           }
           buildModuleFacade.addModelSources(p, deployName);
