@@ -84,8 +84,11 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
   /**
    * FIXME must be made package-local or protected (as long as there's subclass)
    * FIXME one must have either factory creation or a public constructor not both [AP]
-   * Use {@link #createDescriptor(IFile, IFile)} if you need to populate ModuleDescriptor. Cons shall get invoked from ModelRootFactory only.
+   * @deprecated Use {@link #createDescriptor(IFile, IFile...)} if you need to populate ModuleDescriptor. Proper cons (package-local) shall get
+   *             invoked from ModelRootFactory only.
    */
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public DefaultModelRoot() {
     // do not remove
     this(ModelFactoryService.getInstance(), DataSourceFactoryRuleService.getInstance());
@@ -94,6 +97,23 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
   /*package*/ DefaultModelRoot(ModelFactoryRegistry modelFactoryRegistry, DataSourceFactoryRuleService dsRegistry) {
     myModelFactoryRegistry = modelFactoryRegistry;
     myDataSourceRegistry = dsRegistry;
+  }
+
+  /**
+   * Provisional way to instantiate DMR for specific scenario to create root descriptor.
+   * DO NOT invoke methods that may require externally configured services/components.
+   *
+   * Unless {@link #createDescriptor(IFile, IFile...)} is re-written not to use DMR.save(),
+   * and there are uses in MPS that access the method without MPS initialized.
+   * IDEA plugin tests do that, which is somewhat legal as ModelRootDescriptor has to be
+   * available w/o started MPS, though originally the code in
+   * JpsTestModelsEnvironment.createModelRoot relied on DMR, which is wrong, although used to work)
+   *
+   */
+  @ToRemove(version = 0)
+  private DefaultModelRoot(int ignored) {
+    myModelFactoryRegistry = null;
+    myDataSourceRegistry = null;
   }
 
   @NotNull
@@ -329,50 +349,67 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
    * Build a descriptor that could be added to a {@link jetbrains.mps.project.structure.modules.ModuleDescriptor} to
    * facilitate instantiation of a model root of this specific type when a module loads.
    *
-   * With ModelRootDescriptor/ModuleDescriptor being a mechanism to create/update SModule information, we need a way to constuct
+   * With ModelRootDescriptor/ModuleDescriptor being a mechanism to create/update SModule information, we need a way to construct
    * a descriptor that would end up as DefaultModelRoot. Since there's no relevant API in {@link ModelRootDescriptor} itself (which is
    * questionable btw, provided approach for Language/Generator/Solution module descriptor is different), and exposing Memento keys of
    * this root implementation is bad, these factory methods give an way to construct descriptor for most common scenarios.
    *
+   * Present approach is that ModelRootDescriptor controls nothing and accepts plain strings, while objects like ModelRootDescriptor/ModuleDescriptor
+   * deal with files. DefaultModelRoot is initialized with MRD and constraints/manipulates low-level persistence data. From that perspective the
+   * right way to create ModelRootDescriptor is to configure it with plain strings. OTOH, in many cases we've got IFile already, and it looks odd
+   * to go to strings when IFile is handy. Besides, need to be very careful to mangle strings properly to place sourceRoots relative to content root
+   * without using IFile/File objects. FIXME Perhaps, need a similar method with String parameters to satisfy both worlds?
+   *
    *
    * @param contentRoot root folder for model locations
-   * @param modelDir folder (usually under contentRoot) with model source files
+   * @param modelDir at least one folder (usually under contentRoot; could be equal to it) with model source files
    * @return descriptor for a default model root
    */
   @NotNull
-  public static ModelRootDescriptor createDescriptor(@NotNull IFile contentRoot, @NotNull final IFile modelDir) {
+  public static ModelRootDescriptor createDescriptor(@NotNull IFile contentRoot, final IFile ... modelDir) {
+    if (modelDir.length == 0) {
+      throw new IllegalArgumentException("Please specify at least one source root (could be same as contentRoot)");
+    }
     // XXX proper implementation shall do what save() method does without need to instantiate DefaultModelRoot
-    DefaultModelRoot result = new DefaultModelRoot();
+    DefaultModelRoot result = new DefaultModelRoot(0);
     result.setContentDirectory(contentRoot);
-    result.addSourceRoot(SourceRootKinds.SOURCES, new SourceRoot() {
+    class SourceRootPrim implements SourceRoot {
+      private final IFile myModelDir;
+
+      SourceRootPrim(IFile modelRoot) {
+        myModelDir = modelRoot;
+      }
+
       @NotNull
       @Override
       public String getPath() {
-        return modelDir.getPath();
+        return myModelDir.getPath();
       }
 
       @NotNull
       @Override
       public IFile getAbsolutePath() {
-        return modelDir;
+        return myModelDir;
       }
-    });
+    };
+    for (IFile md : modelDir) {
+      result.addSourceRoot(SourceRootKinds.SOURCES, new SourceRootPrim(md));
+    }
     return result.toDescriptor();
   }
 
   /**
-   * Same as {@link #createDescriptor(IFile, IFile)} limited to a single location with source model files
-   * @param modelDir folder with model source files
+   * Same as {@link #createDescriptor(IFile, IFile...)} limited to a single location with source model files
+   * @param modelDir folder with model source files, serves both as content root and as a source location
    * @return descriptor for a default model root
    */
   @NotNull
   public static ModelRootDescriptor createSingleFolderDescriptor(@NotNull final IFile modelDir) {
-    DefaultModelRoot result = new DefaultModelRoot();
+    DefaultModelRoot result = new DefaultModelRoot(0);
     result.setContentDirectory(modelDir);
     result.addSourceRoot(SourceRootKinds.SOURCES, new DefaultSourceRoot("", modelDir));
     return result.toDescriptor();
   }
-
 
   static final class Defaults {
     /*package*/ static final DataSourceType DATA_SOURCE_TYPE = PreinstalledDataSourceTypes.MPS;
