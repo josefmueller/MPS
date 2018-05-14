@@ -1835,17 +1835,12 @@
                                           </node>
                                         </node>
                                       </node>
-                                      <node concept="2OqwBi" id="5_KOZNNvkkD" role="37wK5m">
-                                        <node concept="2OqwBi" id="5_KOZNNv9CP" role="2Oq$k0">
-                                          <node concept="37vLTw" id="5_KOZNNv8VT" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="2Xde4lKk_6G" resolve="it" />
-                                          </node>
-                                          <node concept="liA8E" id="5_KOZNNvixv" role="2OqNvi">
-                                            <ref role="37wK5l" to="mhbf:~SModel$Problem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                                          </node>
+                                      <node concept="2OqwBi" id="5_KOZNNv9CP" role="37wK5m">
+                                        <node concept="37vLTw" id="5_KOZNNv8VT" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="2Xde4lKk_6G" resolve="it" />
                                         </node>
-                                        <node concept="liA8E" id="5_KOZNNvmM8" role="2OqNvi">
-                                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
+                                        <node concept="liA8E" id="5du0$MKmb7w" role="2OqNvi">
+                                          <ref role="37wK5l" to="mhbf:~SModel$Problem.getAnchorNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getAnchorNode" />
                                         </node>
                                       </node>
                                     </node>
@@ -1865,7 +1860,7 @@
                                       <ref role="3cqZAo" node="2Xde4lKk_6G" resolve="it" />
                                     </node>
                                     <node concept="liA8E" id="5_KOZNNuBqM" role="2OqNvi">
-                                      <ref role="37wK5l" to="mhbf:~SModel$Problem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                                      <ref role="37wK5l" to="mhbf:~SModel$Problem.getAnchorNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getAnchorNode" />
                                     </node>
                                   </node>
                                   <node concept="10Nm6u" id="5_KOZNNuDVX" role="3uHU7w" />

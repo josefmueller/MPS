@@ -129,9 +129,9 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       }).select(new ISelector<SModel.Problem, String>() {
         public String select(SModel.Problem it) {
           String link = "";
-          if (it.getNode() != null && project != null) {
+          if (it.getAnchorNode() != null && project != null) {
             link = " (<a href=\"" + index.value + "\">view node</a>)";
-            errMap.put(Integer.toString(index.value++), it.getNode().getReference());
+            errMap.put(Integer.toString(index.value++), it.getAnchorNode());
           }
           return "error: " + it.getText() + link;
         }
