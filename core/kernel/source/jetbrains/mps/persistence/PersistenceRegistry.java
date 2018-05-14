@@ -332,11 +332,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     isDisabled = false;
   }
 
-  private static class DefaultModelRootFactory implements ModelRootFactory {
+  private class DefaultModelRootFactory implements ModelRootFactory {
     @NotNull
     @Override
     public ModelRoot create() {
-      return new DefaultModelRoot();
+      return new DefaultModelRoot(PersistenceRegistry.this.MODEL_FACTORY_SERVICE);
     }
   }
 }

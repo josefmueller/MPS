@@ -43,8 +43,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.ModuleId;
@@ -262,17 +260,10 @@ public class NewModuleUtil {
     generatorDescriptor.setNamespace(namespace);
     // unlike other modules, in outburst of pure antagonism, namespace in generator used to mean alias. Now, it's the way it has to be. 
     generatorDescriptor.setAlias("main");
-    DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
-    // XXX instead of this odd logic and conventions, need a factory object with reasobable defaults, so that external code that cares about 
-    // IFile.mkdirs doesn't need to pass location here, and instead can rely on factory to obtain actual value. 
     IFile modelsDir = (templateModelsLocation == null ? generatorModuleLocation.getDescendant("template") : templateModelsLocation);
     // there used to be 2 approaches, contentRoot = moduleRoot + sourceRoot descendant, and the one with both pointing to the same location 
     // no idea how to reason to pick one, go ahead and change if you're brave to prove. 
-    templateModelsRoot.setContentRoot(modelsDir.getPath());
-    templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, modelsDir.getPath());
-    ModelRootDescriptor mrd = new ModelRootDescriptor(templateModelsRoot.getType(), new MementoImpl());
-    templateModelsRoot.save(mrd.getMemento());
-    generatorDescriptor.getModelRootDescriptors().add(mrd);
+    generatorDescriptor.getModelRootDescriptors().add(DefaultModelRoot.createSingleFolderDescriptor(modelsDir));
     ProjectPathUtil.setGeneratorOutputPath(generatorDescriptor, generatorModuleLocation.getDescendant("source_gen").getPath());
     return generatorDescriptor;
   }
@@ -295,11 +286,7 @@ public class NewModuleUtil {
       modelsDir.mkdirs();
     }
 
-    //  default descriptorModel roots 
-    DefaultModelRoot modelRoot = new DefaultModelRoot();
-    modelRoot.setContentRoot(modelsDir.getParent().getPath());
-    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, modelsDir.getPath());
-    descriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
+    descriptor.getModelRootDescriptors().add(DefaultModelRoot.createDescriptor(modelsDir.getParent(), modelsDir));
     ProjectPathUtil.setGeneratorOutputPath(descriptor, moduleLocation.getDescendant("source_gen").getPath());
     return descriptor;
   }
@@ -313,11 +300,7 @@ public class NewModuleUtil {
     if (languageModels.exists()) {
       throw new IllegalStateException("Trying to create a language in an existing language's directory " + languageModels);
     }
-    //  default descriptorModel roots 
-    DefaultModelRoot modelRoot = new DefaultModelRoot();
-    modelRoot.setContentRoot(languageModels.getParent().getPath());
-    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, languageModels.getPath());
-    languageDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
+    languageDescriptor.getModelRootDescriptors().add(DefaultModelRoot.createDescriptor(languageModels.getParent(), languageModels));
     ProjectPathUtil.setGeneratorOutputPath(languageDescriptor, moduleLocation.getDescendant("source_gen").getPath());
     return languageDescriptor;
   }

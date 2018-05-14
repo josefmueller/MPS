@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,21 +17,21 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
+import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -42,6 +42,8 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -76,14 +78,20 @@ import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
  */
 public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements CopyableModelRoot<DefaultModelRoot> {
   private static final Logger LOG = LogManager.getLogger(DefaultModelRoot.class);
-  private static final ModelFactoryRegistry ourModelFactoryRegistry = ModelFactoryService.getInstance();
+  private final ModelFactoryRegistry myModelFactoryRegistry;
 
   /**
-   * FIXME must be made package-local
+   * FIXME must be made package-local or protected (as long as there's subclass)
    * FIXME one must have either factory creation or a public constructor not both [AP]
+   * Use {@link #createDescriptor(IFile, IFile)} if you need to populate ModuleDescriptor. Cons shall get invoked from ModelRootFactory only.
    */
   public DefaultModelRoot() {
     // do not remove
+    this(ModelFactoryService.getInstance());
+  }
+
+  /*package*/ DefaultModelRoot(ModelFactoryRegistry modelFactoryRegistry) {
+    myModelFactoryRegistry = modelFactoryRegistry;
   }
 
   @NotNull
@@ -142,11 +150,19 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
       return false;
     }
 
+    ModelFactory defaultModelFactory = myModelFactoryRegistry.getDefaultModelFactory(Defaults.DATA_SOURCE_TYPE);
+    if (defaultModelFactory == null) {
+      return false;
+    }
+
     DataSourceFactoryBridge dataSourceFactory = new DataSourceFactoryBridge(this);
     try {
+      // XXX could iterate over all source roots to find the one capable to create a model, but the rest of MR API (namely, createModel) would need
+      //     to figure out proper source root as well, which is not a task I'd like to tackle now. I'd use object return value instead of simple
+      //     boolean here, which would keep all relevant data (model factory, source root) for model creation
       CompositeResult<DataSource> result = dataSourceFactory.create(new SModelName(modelName), Defaults.sourceRoot(this), Defaults.DATA_SOURCE_TYPE);
-      return new ModelFactoryFacade(Defaults.modelFactory()).canCreate(result.getDataSource(), result.getOptions());
-    } catch (NoSourceRootsInModelRootException | ModelFactoryNotFoundException | DataSourceFactoryNotFoundException | SourceRootDoesNotExistException ignored) {
+      return new ModelFactoryFacade(defaultModelFactory).canCreate(result.getDataSource(), result.getOptions());
+    } catch (NoSourceRootsInModelRootException | DataSourceFactoryNotFoundException | SourceRootDoesNotExistException ignored) {
     }
     return false;
   }
@@ -204,7 +220,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     if (modelFactoryType == null) {
       modelFactoryType = Defaults.MODEL_FACTORY_TYPE;
     }
-    ModelFactory modelFactory = ourModelFactoryRegistry.getFactoryByType(modelFactoryType);
+    ModelFactory modelFactory = myModelFactoryRegistry.getFactoryByType(modelFactoryType);
     if (modelFactory == null) {
       throw new ModelFactoryNotFoundException(modelFactoryType);
     }
@@ -256,7 +272,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     }
     if (modelFactory == null) {
       DataSourceType dataSourceType = dataSourceFactory.getType();
-      modelFactory = ourModelFactoryRegistry.getDefaultModelFactory(dataSourceType);
+      modelFactory = myModelFactoryRegistry.getDefaultModelFactory(dataSourceType);
       if (modelFactory == null) {
         throw new ModelFactoryNotFoundException(dataSourceType);
       }
@@ -304,6 +320,55 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     return result;
   }
 
+  /**
+   * Build a descriptor that could be added to a {@link jetbrains.mps.project.structure.modules.ModuleDescriptor} to
+   * facilitate instantiation of a model root of this specific type when a module loads.
+   *
+   * With ModelRootDescriptor/ModuleDescriptor being a mechanism to create/update SModule information, we need a way to constuct
+   * a descriptor that would end up as DefaultModelRoot. Since there's no relevant API in {@link ModelRootDescriptor} itself (which is
+   * questionable btw, provided approach for Language/Generator/Solution module descriptor is different), and exposing Memento keys of
+   * this root implementation is bad, these factory methods give an way to construct descriptor for most common scenarios.
+   *
+   *
+   * @param contentRoot root folder for model locations
+   * @param modelDir folder (usually under contentRoot) with model source files
+   * @return descriptor for a default model root
+   */
+  @NotNull
+  public static ModelRootDescriptor createDescriptor(@NotNull IFile contentRoot, @NotNull final IFile modelDir) {
+    // XXX proper implementation shall do what save() method does without need to instantiate DefaultModelRoot
+    DefaultModelRoot result = new DefaultModelRoot();
+    result.setContentDirectory(contentRoot);
+    result.addSourceRoot(SourceRootKinds.SOURCES, new SourceRoot() {
+      @NotNull
+      @Override
+      public String getPath() {
+        return modelDir.getPath();
+      }
+
+      @NotNull
+      @Override
+      public IFile getAbsolutePath() {
+        return modelDir;
+      }
+    });
+    return result.toDescriptor();
+  }
+
+  /**
+   * Same as {@link #createDescriptor(IFile, IFile)} limited to a single location with source model files
+   * @param modelDir folder with model source files
+   * @return descriptor for a default model root
+   */
+  @NotNull
+  public static ModelRootDescriptor createSingleFolderDescriptor(@NotNull final IFile modelDir) {
+    DefaultModelRoot result = new DefaultModelRoot();
+    result.setContentDirectory(modelDir);
+    result.addSourceRoot(SourceRootKinds.SOURCES, new DefaultSourceRoot("", modelDir));
+    return result.toDescriptor();
+  }
+
+
   static final class Defaults {
     @NotNull private static final DataSourceType DATA_SOURCE_TYPE = PreinstalledDataSourceTypes.MPS;
     @NotNull private static final ModelFactoryType MODEL_FACTORY_TYPE = PreinstalledModelFactoryTypes.PLAIN_XML;
@@ -315,15 +380,6 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
         throw new DataSourceFactoryNotFoundException(DATA_SOURCE_TYPE);
       }
       return factory;
-    }
-
-    @NotNull
-    static ModelFactory modelFactory() throws ModelFactoryNotFoundException {
-      ModelFactory defaultModelFactory = ourModelFactoryRegistry.getDefaultModelFactory(DATA_SOURCE_TYPE);
-      if (defaultModelFactory == null) {
-        throw new ModelFactoryNotFoundException(DATA_SOURCE_TYPE);
-      }
-      return defaultModelFactory;
     }
 
     /**
