@@ -16,7 +16,12 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.TransactionGuard;
+import com.intellij.openapi.application.TransactionGuardImpl;
+import com.intellij.openapi.application.TransactionId;
+import com.intellij.openapi.application.impl.ModalityStateEx;
 import com.intellij.testFramework.ThreadTracker;
 import com.intellij.util.ReflectionUtil;
 import jetbrains.mps.ide.ThreadUtils;
@@ -105,7 +110,7 @@ final class EDTExecutorInternal implements Disposable {
 
   private void traceTheCaller() {
     if (LOG.isTraceEnabled()) {
-      LOG.trace("schedule task: the caller is " + ReflectionUtil.findCallerClass(7));
+      LOG.trace("schedule task: the caller is " + ReflectionUtil.findCallerClass(8));
     }
   }
 
@@ -118,6 +123,10 @@ final class EDTExecutorInternal implements Disposable {
    */
   private void flushQueueLaterInEDT() {
     assert !taskQueueIsEmpty() : "private method precondition is not satisfied";
+    if (LOG.isTraceEnabled()) {
+      LOG.trace("flushing the queue: the caller is " + ReflectionUtil.findCallerClass(9) + " : context transaction " +
+                TransactionGuard.getInstance().getContextTransaction());
+    }
     TransactionGuard.getInstance().submitTransactionLater(this, this::flushTasksQueue);
   }
 
@@ -144,7 +153,7 @@ final class EDTExecutorInternal implements Disposable {
           }
           queueSize = myTasksCount.get();
         }
-      } finally{
+      } finally {
         try {
           myQueueLock.lock();
           if (taskQueueIsEmpty()) {
@@ -202,6 +211,9 @@ final class EDTExecutorInternal implements Disposable {
     boolean taskPassed = true;
     try {
       taskPassed = task.tryRun();
+      if (!taskPassed) {
+        LOG.warn("refused in the task execution: " + task);
+      }
     } catch (TaskIsOutdated ignored) {
       LOG.warn("The scheduled task has expired", ignored);
     } catch (Exception e) {
