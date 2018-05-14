@@ -45,6 +45,13 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     this(editorContext);
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  //used bu mps-extensions in 2018.1, can be removed when different branches are used for 18.1 and 18.2
+  public AbstractCellListHandler(SNode node, String elementRole, EditorContext editorContext) {
+    this(editorContext);
+  }
+
   public AbstractCellListHandler(EditorContext editorContext) {
     super(editorContext);
   }
