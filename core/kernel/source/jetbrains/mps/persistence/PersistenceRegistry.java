@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -69,6 +70,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   public static final String JAVA_CLASSES_ROOT = "java_classes";
 
   private final ModelFactoryService MODEL_FACTORY_SERVICE = ModelFactoryService.getInstance();
+  private final DataSourceFactoryRuleService myDataSourceRegistry;
 
   @ToRemove(version = 181) private final Map<String, ModelFactory> myLegacyFileExt2ModelFactoryMap = new ConcurrentHashMap<>();
 
@@ -79,6 +81,10 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   private final Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
 
   private boolean isDisabled = false;
+
+  public PersistenceRegistry(DataSourceFactoryRuleService dsRegistry) {
+    myDataSourceRegistry = dsRegistry;
+  }
 
   public static PersistenceRegistry getInstance() {
     return (PersistenceRegistry) INSTANCE;
@@ -336,7 +342,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     @NotNull
     @Override
     public ModelRoot create() {
-      return new DefaultModelRoot(PersistenceRegistry.this.MODEL_FACTORY_SERVICE);
+      return new DefaultModelRoot(PersistenceRegistry.this.MODEL_FACTORY_SERVICE, PersistenceRegistry.this.myDataSourceRegistry);
     }
   }
 }

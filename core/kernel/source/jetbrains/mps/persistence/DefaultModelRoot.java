@@ -79,6 +79,7 @@ import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
 public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements CopyableModelRoot<DefaultModelRoot> {
   private static final Logger LOG = LogManager.getLogger(DefaultModelRoot.class);
   private final ModelFactoryRegistry myModelFactoryRegistry;
+  private final DataSourceFactoryRuleService myDataSourceRegistry;
 
   /**
    * FIXME must be made package-local or protected (as long as there's subclass)
@@ -87,11 +88,12 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
    */
   public DefaultModelRoot() {
     // do not remove
-    this(ModelFactoryService.getInstance());
+    this(ModelFactoryService.getInstance(), DataSourceFactoryRuleService.getInstance());
   }
 
-  /*package*/ DefaultModelRoot(ModelFactoryRegistry modelFactoryRegistry) {
+  /*package*/ DefaultModelRoot(ModelFactoryRegistry modelFactoryRegistry, DataSourceFactoryRuleService dsRegistry) {
     myModelFactoryRegistry = modelFactoryRegistry;
+    myDataSourceRegistry = dsRegistry;
   }
 
   @NotNull
@@ -235,7 +237,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
         }
       }
     }
-    DataSourceFactoryFromName dataSourceFactory = DataSourceFactoryRuleService.getInstance().getFactory(dataSourceType);
+    DataSourceFactoryFromName dataSourceFactory = myDataSourceRegistry.getFactory(dataSourceType);
     if (dataSourceFactory == null) {
       throw new DataSourceFactoryNotFoundException(dataSourceType);
     }
@@ -268,7 +270,10 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
       sourceRoot = Defaults.sourceRoot(this);
     }
     if (dataSourceFactory == null) {
-      dataSourceFactory = Defaults.dataSourceFactory();
+      dataSourceFactory = myDataSourceRegistry.getFactory(Defaults.DATA_SOURCE_TYPE);
+      if (dataSourceFactory == null) {
+        throw new DataSourceFactoryNotFoundException(Defaults.DATA_SOURCE_TYPE);
+      }
     }
     if (modelFactory == null) {
       DataSourceType dataSourceType = dataSourceFactory.getType();
@@ -370,17 +375,8 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
 
 
   static final class Defaults {
-    @NotNull private static final DataSourceType DATA_SOURCE_TYPE = PreinstalledDataSourceTypes.MPS;
-    @NotNull private static final ModelFactoryType MODEL_FACTORY_TYPE = PreinstalledModelFactoryTypes.PLAIN_XML;
-
-    @NotNull
-    static DataSourceFactoryFromName dataSourceFactory() throws DataSourceFactoryNotFoundException {
-      DataSourceFactoryFromName factory = DataSourceFactoryRuleService.getInstance().getFactory(DATA_SOURCE_TYPE);
-      if (factory == null) {
-        throw new DataSourceFactoryNotFoundException(DATA_SOURCE_TYPE);
-      }
-      return factory;
-    }
+    /*package*/ static final DataSourceType DATA_SOURCE_TYPE = PreinstalledDataSourceTypes.MPS;
+    /*package*/ static final ModelFactoryType MODEL_FACTORY_TYPE = PreinstalledModelFactoryTypes.PLAIN_XML;
 
     /**
      * @return first source root as a default one

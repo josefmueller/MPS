@@ -82,7 +82,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
           LOG.error("URL cannot be created from " + inputData.getFile());
           return null;
         }
-        DataSourceFactoryFromURL dataSourceFactory = getDataSourceFactory(url);
+        DataSourceFactoryFromURL dataSourceFactory = getDataSourceFactory(mpsPlatform, url);
         if (dataSourceFactory == null) {
           return null;
         }
@@ -112,8 +112,8 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
   }
 
   @Nullable
-  private static DataSourceFactoryFromURL getDataSourceFactory(URL url) {
-    DataSourceFactoryRuleService service = DataSourceFactoryRuleService.getInstance();
+  private static DataSourceFactoryFromURL getDataSourceFactory(Platform mpsPlatform, URL url) {
+    DataSourceFactoryRuleService service = mpsPlatform.findComponent(DataSourceFactoryRuleService.class);
     DataSourceFactoryFromURL dataSourceFactory = service.getFactory(url);
     if (dataSourceFactory == null) {
       LOG.error("Data Source Factory is not found for " + url);
