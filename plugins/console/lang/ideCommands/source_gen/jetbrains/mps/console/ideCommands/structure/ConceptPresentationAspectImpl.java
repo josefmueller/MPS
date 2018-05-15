@@ -146,6 +146,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModelReference:
         if (props_ModelReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.rawPresentation("model");
           props_ModelReference = cpb.create();
         }
@@ -220,7 +221,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ShowExpression;
       case LanguageConceptSwitch.ShowGenPlan:
         if (props_ShowGenPlan == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L);
+          cpb.deprecateAggregation(0x61f2dd6de47f867aL, "targetModelOld");
           cpb.shortDesc("show the generation plan");
           cpb.rawPresentation("#showGenPlan");
           props_ShowGenPlan = cpb.create();

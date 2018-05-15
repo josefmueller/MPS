@@ -13,10 +13,12 @@
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="dvox" ref="r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
@@ -200,6 +202,10 @@
     <property role="34LRSv" value="model" />
     <property role="EcuMT" value="7820875636625377576" />
     <ref role="1TJDcQ" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
+    <node concept="asaX9" id="4xqDcS7BDh8" role="lGtFl">
+      <property role="YLPcu" value="2018.2" />
+      <property role="YLQ7P" value="Neither extends Expression nor name-only reference are acceptable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6M9lfhD_4eJ">
     <property role="3GE5qa" value="stat" />
@@ -216,10 +222,21 @@
     <ref role="1TJDcQ" to="eynw:1yfzJNJq9L_" resolve="InterpretedCommand" />
     <node concept="1TJgyj" id="67MRmR$vSpU" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="targetModel" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="targetModelOld" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="7057947030097725050" />
       <ref role="20lvS9" node="6M9lfhD$0$C" resolve="ModelReference" />
+      <node concept="asaX9" id="73IzULxmLje" role="lGtFl">
+        <property role="YLPcu" value="2018.2" />
+        <property role="YLQ7P" value="ModelReference is faulty, deprecated and about to cease existence" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="73IzULxmOWN" role="1TKVEi">
+      <property role="IQ2ns" value="8137599547235585843" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="targetModel" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
     </node>
     <node concept="1TJgyi" id="2Lh2Nufzent" role="1TKVEl">
       <property role="TrG5h" value="ignoreExternalPlan" />
