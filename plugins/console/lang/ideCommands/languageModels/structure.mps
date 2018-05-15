@@ -146,10 +146,20 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6vMIJHUnaQp" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="target" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="targetOld" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="7490254719523007897" />
       <ref role="20lvS9" node="6M9lfhD$0$C" resolve="ModelReference" />
+      <node concept="asaX9" id="4xqDcS7DICi" role="lGtFl">
+        <property role="YLPcu" value="2018.2" />
+        <property role="YLQ7P" value="Remove in next release along with ModelReference, and set [1] for target" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="4xqDcS7DICf" role="1TKVEi">
+      <property role="IQ2ns" value="5213660723433368079" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="target" />
+      <ref role="20lvS9" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
     </node>
     <node concept="PrWs8" id="6vMIJHUnaQn" role="PzmwI">
       <ref role="PrY4T" node="6vMIJHUlTMM" resolve="IStatisticsTarget" />
@@ -228,7 +238,7 @@
       <ref role="20lvS9" node="6M9lfhD$0$C" resolve="ModelReference" />
       <node concept="asaX9" id="73IzULxmLje" role="lGtFl">
         <property role="YLPcu" value="2018.2" />
-        <property role="YLQ7P" value="ModelReference is faulty, deprecated and about to cease existence" />
+        <property role="YLQ7P" value="ModelReference is faulty, deprecated and about to cease existence. Set targetModel[1] once old is gone" />
       </node>
     </node>
     <node concept="1TJgyj" id="73IzULxmOWN" role="1TKVEi">

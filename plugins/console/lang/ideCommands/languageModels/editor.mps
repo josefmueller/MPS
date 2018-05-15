@@ -263,7 +263,7 @@
     <property role="3GE5qa" value="stat" />
     <ref role="1XX52x" to="caxt:6vMIJHUnaQm" resolve="ModelStatisticsTarget" />
     <node concept="3F1sOY" id="6vMIJHUnaQO" role="2wV5jI">
-      <ref role="1NtTu8" to="caxt:6vMIJHUnaQp" resolve="target" />
+      <ref role="1NtTu8" to="caxt:4xqDcS7DICf" resolve="target" />
     </node>
   </node>
   <node concept="24kQdi" id="1NRmRaKF8Rh">

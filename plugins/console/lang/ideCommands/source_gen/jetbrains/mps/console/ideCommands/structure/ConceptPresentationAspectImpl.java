@@ -153,7 +153,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ModelReference;
       case LanguageConceptSwitch.ModelStatisticsTarget:
         if (props_ModelStatisticsTarget == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L);
+          cpb.deprecateAggregation(0x67f2bafb7a5cad99L, "targetOld");
           cpb.rawPresentation("model");
           props_ModelStatisticsTarget = cpb.create();
         }
