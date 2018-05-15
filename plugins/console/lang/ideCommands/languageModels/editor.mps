@@ -1057,8 +1057,5 @@
   <node concept="3p36aQ" id="1wEcoXjJ7Kc">
     <ref role="aqKnT" to="caxt:4PRmqZe_ouN" resolve="ModuleProperties" />
   </node>
-  <node concept="3p36aQ" id="1wEcoXjJ7Ke">
-    <ref role="aqKnT" to="caxt:7mV0m3L$tW2" resolve="RebuildProjectCommand" />
-  </node>
 </model>
 

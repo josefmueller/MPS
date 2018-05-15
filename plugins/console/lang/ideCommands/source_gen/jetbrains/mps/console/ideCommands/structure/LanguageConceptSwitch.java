@@ -29,16 +29,15 @@ public final class LanguageConceptSwitch {
   public static final int NodeReference = 17;
   public static final int OfAspectOperation_old = 18;
   public static final int ProjectStatisticsTarget = 19;
-  public static final int RebuildProjectCommand = 20;
-  public static final int RemoveGenSources = 21;
-  public static final int ShowBrokenReferences = 22;
-  public static final int ShowExpression = 23;
-  public static final int ShowGenPlan = 24;
-  public static final int StatCommand = 25;
-  public static final int SubtreeStatisticsTarget = 26;
-  public static final int UnloadModelsCommand = 27;
-  public static final int VisibleModulesScope = 28;
-  public static final int WithDependencies = 29;
+  public static final int RemoveGenSources = 20;
+  public static final int ShowBrokenReferences = 21;
+  public static final int ShowExpression = 22;
+  public static final int ShowGenPlan = 23;
+  public static final int StatCommand = 24;
+  public static final int SubtreeStatisticsTarget = 25;
+  public static final int UnloadModelsCommand = 26;
+  public static final int VisibleModulesScope = 27;
+  public static final int WithDependencies = 28;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L);
@@ -62,7 +61,6 @@ public final class LanguageConceptSwitch {
     builder.put(0x6c8954f4699443afL, NodeReference);
     builder.put(0x5252d9021b8b45a8L, OfAspectOperation_old);
     builder.put(0x67f2bafb7a579e36L, ProjectStatisticsTarget);
-    builder.put(0x75bb0160f191df02L, RebuildProjectCommand);
     builder.put(0x276b371e77c0a11bL, RemoveGenSources);
     builder.put(0x1cf75b72b0ac828cL, ShowBrokenReferences);
     builder.put(0x75bb0160f191d79fL, ShowExpression);

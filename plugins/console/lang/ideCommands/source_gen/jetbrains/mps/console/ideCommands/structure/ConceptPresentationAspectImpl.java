@@ -29,7 +29,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_NodeReference;
   private ConceptPresentation props_OfAspectOperation_old;
   private ConceptPresentation props_ProjectStatisticsTarget;
-  private ConceptPresentation props_RebuildProjectCommand;
   private ConceptPresentation props_RemoveGenSources;
   private ConceptPresentation props_ShowBrokenReferences;
   private ConceptPresentation props_ShowExpression;
@@ -189,13 +188,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ProjectStatisticsTarget = cpb.create();
         }
         return props_ProjectStatisticsTarget;
-      case LanguageConceptSwitch.RebuildProjectCommand:
-        if (props_RebuildProjectCommand == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("clean and make");
-          props_RebuildProjectCommand = cpb.create();
-        }
-        return props_RebuildProjectCommand;
       case LanguageConceptSwitch.RemoveGenSources:
         if (props_RemoveGenSources == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

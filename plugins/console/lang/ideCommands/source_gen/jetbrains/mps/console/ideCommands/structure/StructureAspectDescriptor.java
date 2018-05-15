@@ -32,7 +32,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNodeReference = createDescriptorForNodeReference();
   /*package*/ final ConceptDescriptor myConceptOfAspectOperation_old = createDescriptorForOfAspectOperation_old();
   /*package*/ final ConceptDescriptor myConceptProjectStatisticsTarget = createDescriptorForProjectStatisticsTarget();
-  /*package*/ final ConceptDescriptor myConceptRebuildProjectCommand = createDescriptorForRebuildProjectCommand();
   /*package*/ final ConceptDescriptor myConceptRemoveGenSources = createDescriptorForRemoveGenSources();
   /*package*/ final ConceptDescriptor myConceptShowBrokenReferences = createDescriptorForShowBrokenReferences();
   /*package*/ final ConceptDescriptor myConceptShowExpression = createDescriptorForShowExpression();
@@ -50,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbsractMake, myConceptActionCallDeclaredParameter, myConceptActionCallGlobalParameter, myConceptActionCallParameter, myConceptCallActionExpression, myConceptClean, myConceptClickableGenerator, myConceptGlobalScope, myConceptGlobalScope_old, myConceptGlobalStatisticTarget, myConceptINodeSetReference, myConceptIStatisticsTarget, myConceptMake, myConceptModelProperties, myConceptModelReference, myConceptModelStatisticsTarget, myConceptModuleProperties, myConceptNodeReference, myConceptOfAspectOperation_old, myConceptProjectStatisticsTarget, myConceptRebuildProjectCommand, myConceptRemoveGenSources, myConceptShowBrokenReferences, myConceptShowExpression, myConceptShowGenPlan, myConceptStatCommand, myConceptSubtreeStatisticsTarget, myConceptUnloadModelsCommand, myConceptVisibleModulesScope, myConceptWithDependencies);
+    return Arrays.asList(myConceptAbsractMake, myConceptActionCallDeclaredParameter, myConceptActionCallGlobalParameter, myConceptActionCallParameter, myConceptCallActionExpression, myConceptClean, myConceptClickableGenerator, myConceptGlobalScope, myConceptGlobalScope_old, myConceptGlobalStatisticTarget, myConceptINodeSetReference, myConceptIStatisticsTarget, myConceptMake, myConceptModelProperties, myConceptModelReference, myConceptModelStatisticsTarget, myConceptModuleProperties, myConceptNodeReference, myConceptOfAspectOperation_old, myConceptProjectStatisticsTarget, myConceptRemoveGenSources, myConceptShowBrokenReferences, myConceptShowExpression, myConceptShowGenPlan, myConceptStatCommand, myConceptSubtreeStatisticsTarget, myConceptUnloadModelsCommand, myConceptVisibleModulesScope, myConceptWithDependencies);
   }
 
   @Override
@@ -97,8 +96,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptOfAspectOperation_old;
       case LanguageConceptSwitch.ProjectStatisticsTarget:
         return myConceptProjectStatisticsTarget;
-      case LanguageConceptSwitch.RebuildProjectCommand:
-        return myConceptRebuildProjectCommand;
       case LanguageConceptSwitch.RemoveGenSources:
         return myConceptRemoveGenSources;
       case LanguageConceptSwitch.ShowBrokenReferences:
@@ -291,16 +288,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4843e803da101441L);
     b.origin("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)/7490254719522676278");
     b.alias("project");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForRebuildProjectCommand() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.ideCommands", "RebuildProjectCommand", 0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191df02L);
-    b.class_(false, true, false);
-    b.super_("jetbrains.mps.console.base.structure.InterpretedCommand", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
-    b.origin("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)/8483375838963818242");
-    b.aggregate("model", 0x75bb0160f191df03L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L).optional(false).ordered(true).multiple(false).origin("8483375838963818243").done();
-    b.alias("#rebuild project");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRemoveGenSources() {

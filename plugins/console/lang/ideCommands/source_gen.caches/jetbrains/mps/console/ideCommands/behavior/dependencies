@@ -113,7 +113,6 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModuleProperties__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_old__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowBrokenReferences__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ShowExpression__BehaviorDescriptor" />
@@ -481,30 +480,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand__BehaviorDescriptor" file="RebuildProjectCommand__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
-    <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources__BehaviorDescriptor" file="RemoveGenSources__BehaviorDescriptor.java">

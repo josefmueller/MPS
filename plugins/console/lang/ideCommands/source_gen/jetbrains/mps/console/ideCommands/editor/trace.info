@@ -25,7 +25,7 @@
       <unit at="24,0,87,0" name="jetbrains.mps.console.ideCommands.editor.ActionCallGlobalParameter_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="19,0,110,0" name="jetbrains.mps.console.ideCommands.editor.EditorAspectDescriptorImpl" />
+      <unit at="19,0,108,0" name="jetbrains.mps.console.ideCommands.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1125969196844413435">
@@ -221,32 +221,6 @@
         <var name="context" id="1741258697587063820" />
       </scope>
       <unit id="1741258697587063820" at="15,0,37,0" name="jetbrains.mps.console.ideCommands.editor.ModuleProperties_SubstituteMenu" />
-    </file>
-  </root>
-  <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063822">
-    <file name="RebuildProjectCommand_SubstituteMenu.java">
-      <node id="1741258697587063822" at="18,118,19,140" concept="6" />
-      <node id="1741258697587063822" at="19,140,20,18" concept="7" />
-      <node id="1741258697587063822" at="25,91,26,49" concept="2" />
-      <node id="1741258697587063822" at="26,49,27,260" concept="2" />
-      <node id="1741258697587063822" at="28,9,29,44" concept="7" />
-      <node id="1741258697587063822" at="30,15,31,50" concept="2" />
-      <node id="1741258697587063822" at="27,260,32,5" concept="12" />
-      <node id="1741258697587063822" at="16,0,22,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="1741258697587063822" at="23,0,34,0" concept="5" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587063822" at="28,9,29,44" />
-      <scope id="1741258697587063822" at="30,15,31,50" />
-      <scope id="1741258697587063822" at="18,118,20,18">
-        <var name="result" id="1741258697587063822" />
-      </scope>
-      <scope id="1741258697587063822" at="16,0,22,0">
-        <var name="_context" id="1741258697587063822" />
-      </scope>
-      <scope id="1741258697587063822" at="25,91,32,5" />
-      <scope id="1741258697587063822" at="23,0,34,0">
-        <var name="context" id="1741258697587063822" />
-      </scope>
-      <unit id="1741258697587063822" at="15,0,37,0" name="jetbrains.mps.console.ideCommands.editor.RebuildProjectCommand_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/2087237500458012113">

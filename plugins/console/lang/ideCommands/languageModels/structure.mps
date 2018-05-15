@@ -71,25 +71,6 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7mV0m3L$tW2">
-    <property role="TrG5h" value="RebuildProjectCommand" />
-    <property role="34LRSv" value="#rebuild project" />
-    <property role="R4oN_" value="clean and make" />
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="EcuMT" value="8483375838963818242" />
-    <ref role="1TJDcQ" to="eynw:1yfzJNJq9L_" resolve="InterpretedCommand" />
-    <node concept="1TJgyj" id="7mV0m3L$tW3" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="model" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="8483375838963818243" />
-      <ref role="20lvS9" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
-    </node>
-    <node concept="PrWs8" id="6M9lfhDxgRi" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="6vMIJHUloMo">
     <property role="TrG5h" value="StatCommand" />
     <property role="R5$K7" value="false" />
