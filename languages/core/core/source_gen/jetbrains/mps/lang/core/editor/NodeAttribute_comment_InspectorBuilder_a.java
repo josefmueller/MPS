@@ -40,7 +40,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       {
         EditorCell editorCell = getCellFactory().createEditorCell(myNode, true, NodeAttribute_comment_Editor.class);
         editorCell.setBig(true);
-        editorCell.setCellContext(getCellFactory().getCellContext());
+        setCellContext(editorCell);
         return editorCell;
       }
     } finally {

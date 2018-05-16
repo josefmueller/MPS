@@ -5303,22 +5303,6 @@
             </node>
           </node>
           <node concept="3clFbF" id="2zXaaLEql40" role="3cqZAp">
-            <node concept="2OqwBi" id="2zXaaLEqlvW" role="3clFbG">
-              <node concept="37vLTw" id="2zXaaLEql3Y" role="2Oq$k0">
-                <ref role="3cqZAo" node="4GrrhHoqGxV" resolve="editorCell" />
-              </node>
-              <node concept="liA8E" id="2zXaaLEqlYA" role="2OqNvi">
-                <ref role="37wK5l" to="f4zo:~EditorCell.setCellContext(jetbrains.mps.openapi.editor.cells.EditorCellContext):void" resolve="setCellContext" />
-                <node concept="2OqwBi" id="2zXaaLEqmQQ" role="37wK5m">
-                  <node concept="1rXfSq" id="2zXaaLEqmKe" role="2Oq$k0">
-                    <ref role="37wK5l" to="qvne:6OQfiPCHBjx" resolve="getCellFactory" />
-                  </node>
-                  <node concept="liA8E" id="2zXaaLEqmYJ" role="2OqNvi">
-                    <ref role="37wK5l" to="f4zo:~EditorCellFactory.getCellContext():jetbrains.mps.openapi.editor.cells.EditorCellContext" resolve="getCellContext" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="raruj" id="2zXaaLEqn2m" role="lGtFl" />
             <node concept="1W57fq" id="2zXaaLEqngI" role="lGtFl">
               <node concept="3IZrLx" id="2zXaaLEqngK" role="3IZSJc">
@@ -5337,6 +5321,12 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="1rXfSq" id="3IckRr9iyWG" role="3clFbG">
+              <ref role="37wK5l" to="tpc3:4gNWjiBdWj$" resolve="setCellContext" />
+              <node concept="37vLTw" id="3IckRr9izQe" role="37wK5m">
+                <ref role="3cqZAo" node="4GrrhHoqGxV" resolve="editorCell" />
               </node>
             </node>
           </node>
