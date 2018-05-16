@@ -61,7 +61,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_5u6q3h_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_5u6q3h_a0());
     editorCell.addEditorCell(createProperty_5u6q3h_b0());
     editorCell.addEditorCell(createConstant_5u6q3h_c0());

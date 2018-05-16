@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myTestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor = new TestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor();
-  private final BHDescriptor myTestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor = new TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor();
+  private final BHDescriptor myTestSubstituteAbstractChildAmbigousPosition__BehaviorDescriptor = new TestSubstituteAbstractChildAmbigousPosition__BehaviorDescriptor();
+  private final BHDescriptor myTestSubstituteAbstractSubChildAmbigousPosition__BehaviorDescriptor = new TestSubstituteAbstractSubChildAmbigousPosition__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -23,9 +23,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     SAbstractConcept cncpt_a0f = concept;
     switch (index_846f5o_a0f.index(cncpt_a0f)) {
       case 0:
-        return myTestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor;
+        return myTestSubstituteAbstractChildAmbigousPosition__BehaviorDescriptor;
       case 1:
-        return myTestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor;
+        return myTestSubstituteAbstractSubChildAmbigousPosition__BehaviorDescriptor;
       default:
     }
     return null;

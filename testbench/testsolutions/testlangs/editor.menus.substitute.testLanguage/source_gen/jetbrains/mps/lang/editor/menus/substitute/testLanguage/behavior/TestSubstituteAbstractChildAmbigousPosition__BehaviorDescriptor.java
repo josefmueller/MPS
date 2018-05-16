@@ -20,8 +20,8 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992362f22L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteAbstractSubChildAmbigousPosition");
+public final class TestSubstituteAbstractChildAmbigousPosition__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAbstractChildAmbigousPosition");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Boolean> substituteInAmbigousPosition_id1653mnvAgq$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("substituteInAmbigousPosition").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgq$").registry(REGISTRY).build();
@@ -35,7 +35,7 @@ public final class TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDes
     return true;
   }
 
-  /*package*/ TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor() {
+  /*package*/ TestSubstituteAbstractChildAmbigousPosition__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

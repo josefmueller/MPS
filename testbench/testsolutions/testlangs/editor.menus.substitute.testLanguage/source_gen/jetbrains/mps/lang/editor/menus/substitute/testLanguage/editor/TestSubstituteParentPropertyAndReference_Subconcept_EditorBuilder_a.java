@@ -64,7 +64,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_xjx176_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_xjx176_a0());
     editorCell.addEditorCell(createProperty_xjx176_b0());
     editorCell.addEditorCell(createConstant_xjx176_c0());

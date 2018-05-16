@@ -10,15 +10,17 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-/*package*/ class TestSubstitituteChildOfWrapper_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class TestSubstituteAttribute_RegularEditor_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public TestSubstitituteChildOfWrapper_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public TestSubstituteAttribute_RegularEditor_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -30,31 +32,30 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_wnxrdx_a();
+    return createCollection_w91v6x_a();
   }
 
-  private EditorCell createCollection_wnxrdx_a() {
+  private EditorCell createCollection_w91v6x_a() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_wnxrdx_a");
+    editorCell.setCellId("Collection_w91v6x_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_wnxrdx_a0());
-    editorCell.addEditorCell(createConstant_wnxrdx_b0());
+    setCellContext(editorCell);
+    editorCell.addEditorCell(createConstant_w91v6x_a0());
+    editorCell.addEditorCell(createAttributedNodeCell_w91v6x_b0());
     return editorCell;
   }
-  private EditorCell createConstant_wnxrdx_a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "test substititute child of wrapper");
-    editorCell.setCellId("Constant_wnxrdx_a0");
+  private EditorCell createConstant_w91v6x_a0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "@attribute regular editor");
+    editorCell.setCellId("Constant_w91v6x_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_wnxrdx_b0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ";");
-    editorCell.setCellId("Constant_wnxrdx_b0");
+  private EditorCell createAttributedNodeCell_w91v6x_b0() {
+    EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+    EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 }

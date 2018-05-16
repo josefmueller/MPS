@@ -21,12 +21,12 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class TestSubstitituteChildOfWrapper_SubstituteMenu extends SubstituteMenuBase {
+public class TestSubstituteChildOfWrapper_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestSubstitituteChildOfWrapper_SubstituteMenu.SMP_Action_ihqc3f_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteChildOfWrapper")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestSubstituteChildOfWrapper_SubstituteMenu.SMP_Action_2atrom_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildOfWrapper")));
     return result;
   }
 
@@ -34,7 +34,7 @@ public class TestSubstitituteChildOfWrapper_SubstituteMenu extends SubstituteMen
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "TestSubstitituteChildOfWrapper", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "4616565815313123318")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "TestSubstituteChildOfWrapper", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "4616565815313123318")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -43,12 +43,12 @@ public class TestSubstitituteChildOfWrapper_SubstituteMenu extends SubstituteMen
   }
 
 
-  private class SMP_Action_ihqc3f_a extends SingleItemSubstituteMenuPart {
+  private class SMP_Action_2atrom_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      TestSubstitituteChildOfWrapper_SubstituteMenu.SMP_Action_ihqc3f_a.Item item = new TestSubstitituteChildOfWrapper_SubstituteMenu.SMP_Action_ihqc3f_a.Item(_context);
+      TestSubstituteChildOfWrapper_SubstituteMenu.SMP_Action_2atrom_a.Item item = new TestSubstituteChildOfWrapper_SubstituteMenu.SMP_Action_2atrom_a.Item(_context);
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
@@ -71,7 +71,7 @@ public class TestSubstitituteChildOfWrapper_SubstituteMenu extends SubstituteMen
       private final SubstituteMenuContext _context;
       private EditorMenuTraceInfo myTraceInfo;
       public Item(SubstituteMenuContext context) {
-        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteChildOfWrapper"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
+        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildOfWrapper"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
       }
 
@@ -82,7 +82,7 @@ public class TestSubstitituteChildOfWrapper_SubstituteMenu extends SubstituteMen
       @Nullable
       @Override
       public SNode createNode(@NotNull String pattern) {
-        return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteChildOfWrapper"));
+        return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildOfWrapper"));
       }
 
       @Override

@@ -44,7 +44,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_4v04fi_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_4v04fi_a0());
     editorCell.addEditorCell(createConstant_4v04fi_b0());
     editorCell.addEditorCell(createRefNode_4v04fi_c0());
