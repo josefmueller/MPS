@@ -38,7 +38,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptShowGenPlan = createDescriptorForShowGenPlan();
   /*package*/ final ConceptDescriptor myConceptStatCommand = createDescriptorForStatCommand();
   /*package*/ final ConceptDescriptor myConceptSubtreeStatisticsTarget = createDescriptorForSubtreeStatisticsTarget();
-  /*package*/ final ConceptDescriptor myConceptUnloadModelsCommand = createDescriptorForUnloadModelsCommand();
   /*package*/ final ConceptDescriptor myConceptVisibleModulesScope = createDescriptorForVisibleModulesScope();
   /*package*/ final ConceptDescriptor myConceptWithDependencies = createDescriptorForWithDependencies();
   private final LanguageConceptSwitch myConceptIndex;
@@ -49,7 +48,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbsractMake, myConceptActionCallDeclaredParameter, myConceptActionCallGlobalParameter, myConceptActionCallParameter, myConceptCallActionExpression, myConceptClean, myConceptClickableGenerator, myConceptGlobalScope, myConceptGlobalScope_old, myConceptGlobalStatisticTarget, myConceptINodeSetReference, myConceptIStatisticsTarget, myConceptMake, myConceptModelProperties, myConceptModelReference, myConceptModelStatisticsTarget, myConceptModuleProperties, myConceptNodeReference, myConceptOfAspectOperation_old, myConceptProjectStatisticsTarget, myConceptRemoveGenSources, myConceptShowBrokenReferences, myConceptShowExpression, myConceptShowGenPlan, myConceptStatCommand, myConceptSubtreeStatisticsTarget, myConceptUnloadModelsCommand, myConceptVisibleModulesScope, myConceptWithDependencies);
+    return Arrays.asList(myConceptAbsractMake, myConceptActionCallDeclaredParameter, myConceptActionCallGlobalParameter, myConceptActionCallParameter, myConceptCallActionExpression, myConceptClean, myConceptClickableGenerator, myConceptGlobalScope, myConceptGlobalScope_old, myConceptGlobalStatisticTarget, myConceptINodeSetReference, myConceptIStatisticsTarget, myConceptMake, myConceptModelProperties, myConceptModelReference, myConceptModelStatisticsTarget, myConceptModuleProperties, myConceptNodeReference, myConceptOfAspectOperation_old, myConceptProjectStatisticsTarget, myConceptRemoveGenSources, myConceptShowBrokenReferences, myConceptShowExpression, myConceptShowGenPlan, myConceptStatCommand, myConceptSubtreeStatisticsTarget, myConceptVisibleModulesScope, myConceptWithDependencies);
   }
 
   @Override
@@ -108,8 +107,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptStatCommand;
       case LanguageConceptSwitch.SubtreeStatisticsTarget:
         return myConceptSubtreeStatisticsTarget;
-      case LanguageConceptSwitch.UnloadModelsCommand:
-        return myConceptUnloadModelsCommand;
       case LanguageConceptSwitch.VisibleModulesScope:
         return myConceptVisibleModulesScope;
       case LanguageConceptSwitch.WithDependencies:
@@ -345,15 +342,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)/2087237500458473003");
     b.aggregate("target", 0x1cf75b72b0b396c6L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL).optional(false).ordered(true).multiple(false).origin("2087237500458473158").done();
     b.alias("node");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForUnloadModelsCommand() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.ideCommands", "UnloadModelsCommand", 0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191ddffL);
-    b.class_(false, true, false);
-    b.super_("jetbrains.mps.console.base.structure.InterpretedCommand", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c65L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
-    b.origin("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)/8483375838963817983");
-    b.alias("#unload models");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForVisibleModulesScope() {

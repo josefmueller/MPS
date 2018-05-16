@@ -305,33 +305,6 @@
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
     </language>
   </registry>
-  <node concept="13h7C7" id="5pylk$7XIdZ">
-    <ref role="13h7C2" to="caxt:7mV0m3L$tRZ" resolve="UnloadModelsCommand" />
-    <node concept="13hLZK" id="5pylk$7XIe0" role="13h7CW">
-      <node concept="3clFbS" id="5pylk$7XIe1" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="5pylk$7XIe2" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="13i0it" value="false" />
-      <property role="TrG5h" value="doExecute" />
-      <ref role="13i0hy" to="zyb2:2SpVAIqougW" resolve="doExecute" />
-      <node concept="3Tm1VV" id="5pylk$7XIe4" role="1B3o_S" />
-      <node concept="3clFbS" id="5pylk$7XIea" role="3clF47" />
-      <node concept="37vLTG" id="2SpVAIqtRKJ" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="2SpVAIqtRKK" role="1tU5fm">
-          <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="2SpVAIqtRKL" role="3clF46">
-        <property role="TrG5h" value="console" />
-        <node concept="3uibUv" id="2SpVAIqtRKM" role="1tU5fm">
-          <ref role="3uigEE" to="qgo0:5WpmwkrQPPk" resolve="ConsoleStream" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="2SpVAIqtRKN" role="3clF45" />
-    </node>
-  </node>
   <node concept="13h7C7" id="6vMIJHUn4XW">
     <property role="3GE5qa" value="stat" />
     <ref role="13h7C2" to="caxt:6vMIJHUloMo" resolve="StatCommand" />

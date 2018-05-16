@@ -35,9 +35,8 @@ public final class LanguageConceptSwitch {
   public static final int ShowGenPlan = 23;
   public static final int StatCommand = 24;
   public static final int SubtreeStatisticsTarget = 25;
-  public static final int UnloadModelsCommand = 26;
-  public static final int VisibleModulesScope = 27;
-  public static final int WithDependencies = 28;
+  public static final int VisibleModulesScope = 26;
+  public static final int WithDependencies = 27;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L);
@@ -67,7 +66,6 @@ public final class LanguageConceptSwitch {
     builder.put(0x61f2dd6de47f85e4L, ShowGenPlan);
     builder.put(0x67f2bafb7a558c98L, StatCommand);
     builder.put(0x1cf75b72b0b3962bL, SubtreeStatisticsTarget);
-    builder.put(0x75bb0160f191ddffL, UnloadModelsCommand);
     builder.put(0x20c897bb39d93cd3L, VisibleModulesScope);
     builder.put(0x826e97ca237a1b1L, WithDependencies);
     myIndex = builder.seal();

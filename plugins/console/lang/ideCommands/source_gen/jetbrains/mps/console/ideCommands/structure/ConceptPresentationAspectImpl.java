@@ -35,7 +35,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ShowGenPlan;
   private ConceptPresentation props_StatCommand;
   private ConceptPresentation props_SubtreeStatisticsTarget;
-  private ConceptPresentation props_UnloadModelsCommand;
   private ConceptPresentation props_VisibleModulesScope;
   private ConceptPresentation props_WithDependencies;
 
@@ -236,12 +235,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SubtreeStatisticsTarget = cpb.create();
         }
         return props_SubtreeStatisticsTarget;
-      case LanguageConceptSwitch.UnloadModelsCommand:
-        if (props_UnloadModelsCommand == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_UnloadModelsCommand = cpb.create();
-        }
-        return props_UnloadModelsCommand;
       case LanguageConceptSwitch.VisibleModulesScope:
         if (props_VisibleModulesScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

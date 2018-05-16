@@ -296,7 +296,6 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ShowGenPlan_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.StatCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.SubtreeStatisticsTarget_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.UnloadModelsCommand_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
@@ -709,18 +708,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.editor.UnloadModelsCommand_SubstituteMenu" file="UnloadModelsCommand_SubstituteMenu.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
 </dependenciesRoot>
 
