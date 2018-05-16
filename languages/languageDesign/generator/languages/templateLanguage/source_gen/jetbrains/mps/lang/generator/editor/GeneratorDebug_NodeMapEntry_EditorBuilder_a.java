@@ -69,7 +69,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_w25ia2_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_w25ia2_a0());
     editorCell.addEditorCell(createCollection_w25ia2_b0());
     editorCell.addEditorCell(createConstant_w25ia2_c0());

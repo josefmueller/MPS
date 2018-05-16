@@ -66,7 +66,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_sexq64_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_sexq64_a0());
     editorCell.addEditorCell(createProperty_sexq64_b0());
     editorCell.addEditorCell(createConstant_sexq64_c0());

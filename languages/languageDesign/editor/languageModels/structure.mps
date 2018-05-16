@@ -2110,6 +2110,9 @@
     <node concept="PrWs8" id="4$$3zrO4fhS" role="PzmwI">
       <ref role="PrY4T" to="tpce:2hxg_BDjKM4" resolve="IConceptAspect" />
     </node>
+    <node concept="PrWs8" id="6GI$fc4daP8" role="PzmwI">
+      <ref role="PrY4T" to="tpce:hOIDzy1" resolve="IStructureDeprecatable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gXXtyFs">
     <property role="R5$K7" value="true" />

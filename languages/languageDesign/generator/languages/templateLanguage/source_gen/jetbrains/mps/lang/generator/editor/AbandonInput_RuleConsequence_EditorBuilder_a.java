@@ -36,7 +36,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<abandon input>");
     editorCell.setCellId("Constant_msmwtj_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);

@@ -81,7 +81,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_pxqe0v_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_pxqe0v_a0());
     editorCell.addEditorCell(createConstant_pxqe0v_b0());
     if (nodeCondition_pxqe0v_a2a()) {

@@ -1708,6 +1708,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.structure.AbstractComponent", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L);
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL);
     b.parent(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L);
+    b.parent(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1166040637528");
     b.aggregate("applicableFeature", 0x10f7d739ad9L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d762adcL).optional(true).ordered(true).multiple(false).origin("1166040865497").done();
     b.aggregate("menuDescriptor", 0x10f7d7d5e61L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL).optional(false).ordered(true).multiple(false).origin("1166041505377").done();
