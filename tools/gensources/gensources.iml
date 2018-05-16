@@ -1403,6 +1403,7 @@
     <orderEntry type="module" module-name="execution-languages-library" />
     <orderEntry type="module" module-name="httpsupport" />
     <orderEntry type="module" module-name="migration-platform" />
+    <orderEntry type="module" module-name="model" />
   </component>
 </module>
 
