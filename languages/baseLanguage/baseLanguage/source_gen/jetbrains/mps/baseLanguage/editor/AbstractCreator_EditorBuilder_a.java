@@ -32,7 +32,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "?");
     editorCell.setCellId("Error_e9h7u9_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     return editorCell;
   }
 }

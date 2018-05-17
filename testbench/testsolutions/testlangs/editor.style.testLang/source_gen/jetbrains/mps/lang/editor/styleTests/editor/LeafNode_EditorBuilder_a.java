@@ -40,7 +40,7 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_iqgd1i_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_iqgd1i_a0());
     return editorCell;
   }

@@ -81,7 +81,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_32adaa_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_32adaa_a0());
     editorCell.addEditorCell(createConstant_32adaa_b0());
     editorCell.addEditorCell(createDiagram_32adaa_c0());

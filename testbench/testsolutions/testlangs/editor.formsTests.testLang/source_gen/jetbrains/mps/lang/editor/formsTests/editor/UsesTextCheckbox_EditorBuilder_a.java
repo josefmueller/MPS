@@ -36,7 +36,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_c4zoug_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Checkbox_ActionMap_c4zoug_a.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.addKeyMap(new Checkbox_KeyMap_c4zoug_a());
     editorCell.addEditorCell(createAlternation_c4zoug_a0());

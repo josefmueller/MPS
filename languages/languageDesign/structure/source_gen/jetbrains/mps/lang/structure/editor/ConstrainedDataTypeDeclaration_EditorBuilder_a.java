@@ -58,7 +58,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_993c3a_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_993c3a_a0());
     editorCell.addEditorCell(createConstant_993c3a_b0());
     editorCell.addEditorCell(createCollection_993c3a_c0());

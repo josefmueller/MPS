@@ -47,7 +47,7 @@ import jetbrains.jetpad.model.property.ReadableProperty;
     final EditorCell editorCell = new OutputPort_diagram_EditorBuilder_a.PortCellImpl_bbhyff_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramPort_bbhyff_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     return editorCell;
   }
   private class PortCellImpl_bbhyff_a extends PortCell {

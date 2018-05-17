@@ -100,7 +100,7 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_6h6dhy_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createTransactionalProperty_6h6dhy_a0());
     editorCell.addEditorCell(createConstant_6h6dhy_b0());
     editorCell.addEditorCell(createCollection_6h6dhy_c0());

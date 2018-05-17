@@ -37,7 +37,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "containing root");
     editorCell.setCellId("Constant_50x6v_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.EDITABLE, true);

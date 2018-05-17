@@ -32,7 +32,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "keystroke");
     editorCell.setCellId("Constant_8b4s31_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

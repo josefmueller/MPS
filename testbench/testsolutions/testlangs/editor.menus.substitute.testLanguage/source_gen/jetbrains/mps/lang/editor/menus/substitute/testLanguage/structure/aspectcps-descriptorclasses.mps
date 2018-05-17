@@ -313,7 +313,7 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
-      <property role="TrG5h" value="props_TestSubstituteAttribute_TransientEditor" />
+      <property role="TrG5h" value="props_TestSubstituteAttribute_TransparentEditor" />
       <node concept="3uibUv" id="1q" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
       </node>
@@ -1375,10 +1375,10 @@
                       <node concept="liA8E" id="77" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.rawPresentation(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="rawPresentation" />
                         <node concept="Xl_RD" id="78" role="37wK5m">
-                          <property role="Xl_RC" value="TestSubstituteAttribute_TransientEditor" />
+                          <property role="Xl_RC" value="TestSubstituteAttribute_TransparentEditor" />
                         </node>
                         <node concept="M6xJ_" id="79" role="lGtFl">
-                          <property role="Hh88m" value="attributeTransientEditor" />
+                          <property role="Hh88m" value="attributeTransparentEditor" />
                           <node concept="tn0Fv" id="7a" role="HhnKV">
                             <property role="tnX3d" value="false" />
                           </node>
@@ -1400,7 +1400,7 @@
                         </node>
                       </node>
                       <node concept="37vLTw" id="7e" role="37vLTJ">
-                        <ref role="3cqZAo" node="7" resolve="props_TestSubstituteAttribute_TransientEditor" />
+                        <ref role="3cqZAo" node="7" resolve="props_TestSubstituteAttribute_TransparentEditor" />
                       </node>
                     </node>
                   </node>
@@ -1408,19 +1408,19 @@
                 <node concept="3clFbC" id="6X" role="3clFbw">
                   <node concept="10Nm6u" id="7h" role="3uHU7w" />
                   <node concept="37vLTw" id="7i" role="3uHU7B">
-                    <ref role="3cqZAo" node="7" resolve="props_TestSubstituteAttribute_TransientEditor" />
+                    <ref role="3cqZAo" node="7" resolve="props_TestSubstituteAttribute_TransparentEditor" />
                   </node>
                 </node>
               </node>
               <node concept="3cpWs6" id="6V" role="3cqZAp">
                 <node concept="37vLTw" id="7j" role="3cqZAk">
-                  <ref role="3cqZAo" node="7" resolve="props_TestSubstituteAttribute_TransientEditor" />
+                  <ref role="3cqZAo" node="7" resolve="props_TestSubstituteAttribute_TransparentEditor" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="6T" role="3Kbmr1">
               <ref role="1PxDUh" node="y$" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="yF" resolve="TestSubstituteAttribute_TransientEditor" />
+              <ref role="3cqZAo" node="yF" resolve="TestSubstituteAttribute_TransparentEditor" />
             </node>
           </node>
           <node concept="3KbdKl" id="3Z" role="3KbHQx">
@@ -6000,7 +6000,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="TestSubstituteAttribute_TransientEditor" />
+      <property role="TrG5h" value="TestSubstituteAttribute_TransparentEditor" />
       <node concept="3Tm1VV" id="$9" role="1B3o_S" />
       <node concept="10Oyi0" id="$a" role="1tU5fm" />
       <node concept="3cmrfG" id="$b" role="33vP2m">
@@ -6881,7 +6881,7 @@
                 <property role="1adDun" value="0x446b8c93949517d5L" />
               </node>
               <node concept="37vLTw" id="De" role="37wK5m">
-                <ref role="3cqZAo" node="yF" resolve="TestSubstituteAttribute_TransientEditor" />
+                <ref role="3cqZAo" node="yF" resolve="TestSubstituteAttribute_TransparentEditor" />
               </node>
             </node>
           </node>
@@ -8131,12 +8131,12 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myConceptTestSubstituteAttribute_TransientEditor" />
+      <property role="TrG5h" value="myConceptTestSubstituteAttribute_TransparentEditor" />
       <node concept="3uibUv" id="LH" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptDescriptor" resolve="ConceptDescriptor" />
       </node>
       <node concept="1rXfSq" id="LI" role="33vP2m">
-        <ref role="37wK5l" node="Kt" resolve="createDescriptorForTestSubstituteAttribute_TransientEditor" />
+        <ref role="37wK5l" node="Kt" resolve="createDescriptorForTestSubstituteAttribute_TransparentEditor" />
       </node>
     </node>
     <node concept="312cEg" id="J8" role="jymVt">
@@ -9022,7 +9022,7 @@
               <ref role="3cqZAo" node="J6" resolve="myConceptTestSubstituteAttribute_RegularEditor" />
             </node>
             <node concept="37vLTw" id="Oe" role="37wK5m">
-              <ref role="3cqZAo" node="J7" resolve="myConceptTestSubstituteAttribute_TransientEditor" />
+              <ref role="3cqZAo" node="J7" resolve="myConceptTestSubstituteAttribute_TransparentEditor" />
             </node>
             <node concept="37vLTw" id="Of" role="37wK5m">
               <ref role="3cqZAo" node="J8" resolve="myConceptTestSubstituteAttribute_WithReference" />
@@ -9329,13 +9329,13 @@
             <node concept="3clFbS" id="QY" role="3Kbo56">
               <node concept="3cpWs6" id="R0" role="3cqZAp">
                 <node concept="37vLTw" id="R1" role="3cqZAk">
-                  <ref role="3cqZAo" node="J7" resolve="myConceptTestSubstituteAttribute_TransientEditor" />
+                  <ref role="3cqZAo" node="J7" resolve="myConceptTestSubstituteAttribute_TransparentEditor" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="QZ" role="3Kbmr1">
               <ref role="1PxDUh" node="y$" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="yF" resolve="TestSubstituteAttribute_TransientEditor" />
+              <ref role="3cqZAo" node="yF" resolve="TestSubstituteAttribute_TransparentEditor" />
             </node>
           </node>
           <node concept="3KbdKl" id="Pz" role="3KbHQx">
@@ -10873,7 +10873,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="createDescriptorForTestSubstituteAttribute_TransientEditor" />
+      <property role="TrG5h" value="createDescriptorForTestSubstituteAttribute_TransparentEditor" />
       <node concept="3clFbS" id="YO" role="3clF47">
         <node concept="3cpWs8" id="YR" role="3cqZAp">
           <node concept="3cpWsn" id="YW" role="3cpWs9">
@@ -10888,7 +10888,7 @@
                   <property role="Xl_RC" value="jetbrains.mps.lang.editor.menus.substitute.testLanguage" />
                 </node>
                 <node concept="Xl_RD" id="Z1" role="37wK5m">
-                  <property role="Xl_RC" value="TestSubstituteAttribute_TransientEditor" />
+                  <property role="Xl_RC" value="TestSubstituteAttribute_TransparentEditor" />
                 </node>
                 <node concept="1adDum" id="Z2" role="37wK5m">
                   <property role="1adDun" value="0xcb6d57037c8e46a9L" />

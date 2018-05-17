@@ -67,7 +67,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_crdhdg_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createProperty_crdhdg_a0());
     if (nodeCondition_crdhdg_a1a()) {
       editorCell.addEditorCell(createConstant_crdhdg_b0());

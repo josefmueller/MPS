@@ -36,7 +36,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "stub");
     editorCell.setCellId("Constant_yipinq_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);

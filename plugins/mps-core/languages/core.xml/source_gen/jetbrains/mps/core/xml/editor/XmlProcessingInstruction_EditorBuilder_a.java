@@ -59,7 +59,7 @@ import jetbrains.mps.core.xml.editor.XmlSS_StyleSheet.xmlPIDataStyleClass;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_9277sk_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_9277sk_a0());
     editorCell.addEditorCell(createProperty_9277sk_b0());
     editorCell.addEditorCell(createProperty_9277sk_c0());

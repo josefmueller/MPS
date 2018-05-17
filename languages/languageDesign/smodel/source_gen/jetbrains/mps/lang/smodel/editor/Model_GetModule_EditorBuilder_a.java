@@ -34,7 +34,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "module");
     editorCell.setCellId("Constant_ajm574_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }

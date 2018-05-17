@@ -94,7 +94,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_62ivzp_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_62ivzp_a0());
     editorCell.addEditorCell(createConstant_62ivzp_b0());
     editorCell.addEditorCell(createCollection_62ivzp_c0());

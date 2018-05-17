@@ -75,7 +75,7 @@ import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_y8xyxm_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_y8xyxm_a0());
     editorCell.addEditorCell(createProperty_y8xyxm_b0());
     editorCell.addEditorCell(createConstant_y8xyxm_c0());

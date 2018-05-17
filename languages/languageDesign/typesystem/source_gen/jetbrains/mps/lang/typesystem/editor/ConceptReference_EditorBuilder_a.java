@@ -88,7 +88,7 @@ import java.util.ArrayList;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_s9fwl0_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_s9fwl0_a0());
     editorCell.addEditorCell(createConstant_s9fwl0_b0());
     editorCell.addEditorCell(createRefCell_s9fwl0_c0());

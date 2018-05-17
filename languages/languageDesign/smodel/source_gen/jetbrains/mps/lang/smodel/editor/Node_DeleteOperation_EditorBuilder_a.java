@@ -37,7 +37,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "delete");
     editorCell.setCellId("Constant_6be9za_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.STRIKE_OUT, true);
     style.set(StyleAttributes.EDITABLE, true);

@@ -33,7 +33,7 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     CustomSelectAll.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;

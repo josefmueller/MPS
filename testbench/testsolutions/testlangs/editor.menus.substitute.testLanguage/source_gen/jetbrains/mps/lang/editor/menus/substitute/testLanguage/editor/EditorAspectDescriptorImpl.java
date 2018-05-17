@@ -24,7 +24,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<ConceptEditor>singletonList(new TestSubstituteAttribute_RegularEditor_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new TestSubstituteAttribute_TransientEditor_Editor());
+        return Collections.<ConceptEditor>singletonList(new TestSubstituteAttribute_TransparentEditor_Editor());
       case 2:
         return Collections.<ConceptEditor>singletonList(new TestSubstituteAttribute_WithReference_Editor());
       case 3:

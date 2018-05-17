@@ -62,7 +62,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
       editorCell.setCellId("property_text");
       editorCell.setBig(true);
-      editorCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(editorCell);
       Style style = new StyleImpl();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));

@@ -66,7 +66,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_qyzwn3_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createAlternation_qyzwn3_a0());
     if (nodeCondition_qyzwn3_a1a()) {
       editorCell.addEditorCell(createConstant_qyzwn3_b0());

@@ -63,7 +63,7 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_c5arh5_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     if (nodeCondition_c5arh5_a0a()) {
       editorCell.addEditorCell(createRefCell_c5arh5_a0());
     }

@@ -58,7 +58,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_6wnsz8_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(createCollection_6wnsz8_a0_0());
     editorCell.addEditorCell(createCollection_6wnsz8_b0());

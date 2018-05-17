@@ -38,7 +38,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_g9eea5_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_g9eea5_a0_0());
     editorCell.addEditorCell(createConstant_g9eea5_b0());
     editorCell.addEditorCell(createCollection_g9eea5_c0_0());

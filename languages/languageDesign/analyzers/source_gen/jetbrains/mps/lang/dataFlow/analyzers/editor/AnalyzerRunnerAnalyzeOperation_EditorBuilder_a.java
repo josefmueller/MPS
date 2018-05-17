@@ -34,7 +34,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_f2r9d9_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_f2r9d9_a0());
     editorCell.addEditorCell(createConstant_f2r9d9_b0());
     editorCell.addEditorCell(createConstant_f2r9d9_c0());

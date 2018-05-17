@@ -63,7 +63,7 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.greate
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_2uesqr_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_2uesqr_a0());
     editorCell.addEditorCell(createConstant_2uesqr_b0());
     editorCell.addEditorCell(createRefCell_2uesqr_c0());

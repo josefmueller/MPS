@@ -51,7 +51,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
     final ConnectorCell editorCell = new Specializes_diagram_EditorBuilder_a.ConnectorCellImpl_x5bto0_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramConnector_x5bto0_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     DeleteRelationship.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }

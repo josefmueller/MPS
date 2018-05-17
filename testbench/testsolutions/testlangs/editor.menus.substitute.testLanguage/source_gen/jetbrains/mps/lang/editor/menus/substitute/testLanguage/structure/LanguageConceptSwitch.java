@@ -14,7 +14,7 @@ public final class LanguageConceptSwitch {
   public static final int TestSubstituteAbstractChildWithConstraints = 2;
   public static final int TestSubstituteAbstractSubChildAmbigousPosition = 3;
   public static final int TestSubstituteAttribute_RegularEditor = 4;
-  public static final int TestSubstituteAttribute_TransientEditor = 5;
+  public static final int TestSubstituteAttribute_TransparentEditor = 5;
   public static final int TestSubstituteAttribute_WithReference = 6;
   public static final int TestSubstituteChild = 7;
   public static final int TestSubstituteChildAmbigousPosition1 = 8;
@@ -92,7 +92,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x9c8de75f2cc6e9bL, TestSubstituteAbstractChildWithConstraints);
     builder.put(0x7f53d21992362f22L, TestSubstituteAbstractSubChildAmbigousPosition);
     builder.put(0x446b8c93949517d6L, TestSubstituteAttribute_RegularEditor);
-    builder.put(0x446b8c93949517d5L, TestSubstituteAttribute_TransientEditor);
+    builder.put(0x446b8c93949517d5L, TestSubstituteAttribute_TransparentEditor);
     builder.put(0x446b8c93949517d7L, TestSubstituteAttribute_WithReference);
     builder.put(0x7ce1116e3a6fb0beL, TestSubstituteChild);
     builder.put(0x7f53d21992378bccL, TestSubstituteChildAmbigousPosition1);

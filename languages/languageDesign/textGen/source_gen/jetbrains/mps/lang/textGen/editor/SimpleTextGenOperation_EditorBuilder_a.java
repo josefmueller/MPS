@@ -40,7 +40,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_yb6w4b_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_yb6w4b_a0());
     editorCell.addEditorCell(createConstant_yb6w4b_b0());
     return editorCell;

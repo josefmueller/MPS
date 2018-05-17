@@ -36,7 +36,7 @@ import jetbrains.mps.lang.editor.styleTests.editor.TestStylesheet_StyleSheet.pri
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     Style style = new StyleImpl();
     new priorityStyleCopyStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

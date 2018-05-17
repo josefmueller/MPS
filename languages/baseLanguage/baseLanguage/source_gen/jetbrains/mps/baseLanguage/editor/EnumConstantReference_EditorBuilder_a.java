@@ -78,7 +78,7 @@ import jetbrains.mps.smodel.SNodePointer;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_igv5hf_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createRefCell_igv5hf_a0());
     editorCell.addEditorCell(createConstant_igv5hf_b0());
     editorCell.addEditorCell(createRefCell_igv5hf_c0());

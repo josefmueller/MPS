@@ -82,7 +82,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_e8klwn_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_e8klwn_a0());
     editorCell.addEditorCell(createProperty_e8klwn_b0());
     editorCell.addEditorCell(createConstant_e8klwn_c0());

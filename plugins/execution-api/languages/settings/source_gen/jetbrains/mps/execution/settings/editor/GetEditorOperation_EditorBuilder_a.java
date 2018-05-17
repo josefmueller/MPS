@@ -36,7 +36,7 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.operat
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     Style style = new StyleImpl();
     new operationStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

@@ -41,7 +41,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_ywfh4u_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_ywfh4u_a0());
     editorCell.addEditorCell(createCollection_ywfh4u_b0());
     return editorCell;

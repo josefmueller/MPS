@@ -82,7 +82,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_c8nh03_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_c8nh03_a0());
     editorCell.addEditorCell(createRefCell_c8nh03_b0());
     editorCell.addEditorCell(createConstant_c8nh03_c0());

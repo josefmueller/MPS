@@ -38,7 +38,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "FUTURE");
     editorCell.setCellId("Constant_8433h8_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.EDITABLE, true);

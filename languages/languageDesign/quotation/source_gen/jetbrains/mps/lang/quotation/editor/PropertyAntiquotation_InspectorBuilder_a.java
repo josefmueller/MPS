@@ -44,7 +44,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_dqkua3_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_dqkua3_a0_0());
     editorCell.addEditorCell(createConstant_dqkua3_b0());
     editorCell.addEditorCell(createConstant_dqkua3_c0());

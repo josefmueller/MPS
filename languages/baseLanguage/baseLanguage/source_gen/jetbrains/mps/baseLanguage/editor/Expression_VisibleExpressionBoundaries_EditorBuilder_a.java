@@ -51,7 +51,7 @@ import jetbrains.mps.smodel.SNodePointer;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_nejlv4_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     if (nodeCondition_nejlv4_a0a()) {
       editorCell.addEditorCell(createConstant_nejlv4_a0());
     }

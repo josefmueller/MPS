@@ -47,7 +47,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ti2jjv_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_ti2jjv_a0());
     return editorCell;
   }

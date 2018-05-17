@@ -51,7 +51,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
     final ConnectorCell editorCell = new OutputToInputPortConnector_EditorBuilder_a.ConnectorCellImpl_87pg9j_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramConnector_87pg9j_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }

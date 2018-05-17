@@ -45,7 +45,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
     BlockCell editorCell = new RectangleNode_EditorBuilder_a.BlockCellImpl_t2nwzx_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramNode_t2nwzx_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }

@@ -31,7 +31,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
     {
       EditorCell editorCell = getCellFactory().createEditorCell(myNode, true, Expression_VisibleExpressionBoundaries_Editor.class);
       editorCell.setBig(true);
-      editorCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(editorCell);
       return editorCell;
     }
   }

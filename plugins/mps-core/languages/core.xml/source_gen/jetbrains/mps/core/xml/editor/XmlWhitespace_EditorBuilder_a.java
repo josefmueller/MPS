@@ -60,7 +60,7 @@ import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
       editorCell.setCellId("property_value");
       editorCell.setBig(true);
-      editorCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(editorCell);
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_2bpkx8_a0a());
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_2bpkx8_a1a());

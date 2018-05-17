@@ -37,7 +37,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_8j431v_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_8j431v_a0());
     editorCell.addEditorCell(createConstant_8j431v_b0());
     editorCell.addEditorCell(createConstant_8j431v_c0());

@@ -55,7 +55,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_qdlcig_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createProperty_qdlcig_a0());
     editorCell.addEditorCell(createConstant_qdlcig_b0());
     editorCell.addEditorCell(createProperty_qdlcig_c0());

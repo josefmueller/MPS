@@ -63,7 +63,7 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.greate
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_rxc56p_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_rxc56p_a0());
     editorCell.addEditorCell(createConstant_rxc56p_b0());
     editorCell.addEditorCell(createRefCell_rxc56p_c0());

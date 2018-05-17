@@ -14,7 +14,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestSubstituteAbstractChildWithConstraints;
   private ConceptPresentation props_TestSubstituteAbstractSubChildAmbigousPosition;
   private ConceptPresentation props_TestSubstituteAttribute_RegularEditor;
-  private ConceptPresentation props_TestSubstituteAttribute_TransientEditor;
+  private ConceptPresentation props_TestSubstituteAttribute_TransparentEditor;
   private ConceptPresentation props_TestSubstituteAttribute_WithReference;
   private ConceptPresentation props_TestSubstituteChild;
   private ConceptPresentation props_TestSubstituteChildAmbigousPosition1;
@@ -122,13 +122,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSubstituteAttribute_RegularEditor = cpb.create();
         }
         return props_TestSubstituteAttribute_RegularEditor;
-      case LanguageConceptSwitch.TestSubstituteAttribute_TransientEditor:
-        if (props_TestSubstituteAttribute_TransientEditor == null) {
+      case LanguageConceptSwitch.TestSubstituteAttribute_TransparentEditor:
+        if (props_TestSubstituteAttribute_TransparentEditor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestSubstituteAttribute_TransientEditor");
-          props_TestSubstituteAttribute_TransientEditor = cpb.create();
+          cpb.rawPresentation("TestSubstituteAttribute_TransparentEditor");
+          props_TestSubstituteAttribute_TransparentEditor = cpb.create();
         }
-        return props_TestSubstituteAttribute_TransientEditor;
+        return props_TestSubstituteAttribute_TransparentEditor;
       case LanguageConceptSwitch.TestSubstituteAttribute_WithReference:
         if (props_TestSubstituteAttribute_WithReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

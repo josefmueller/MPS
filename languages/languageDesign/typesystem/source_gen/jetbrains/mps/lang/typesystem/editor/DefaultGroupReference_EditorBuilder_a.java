@@ -36,7 +36,7 @@ import jetbrains.mps.lang.typesystem.editor.TypesystemStyles_StyleSheet.Inequati
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     Style style = new StyleImpl();
     new InequationsGroupsLabelStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

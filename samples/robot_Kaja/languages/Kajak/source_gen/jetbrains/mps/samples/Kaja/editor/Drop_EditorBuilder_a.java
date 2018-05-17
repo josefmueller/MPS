@@ -36,7 +36,7 @@ import jetbrains.mps.samples.Kaja.editor.KajakStyles_StyleSheet.CommandStyleClas
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     Style style = new StyleImpl();
     new CommandStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

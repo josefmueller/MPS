@@ -76,7 +76,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_pdl482_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_pdl482_a0());
     editorCell.addEditorCell(createProperty_pdl482_b0());
     return editorCell;

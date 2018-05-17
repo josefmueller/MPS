@@ -33,7 +33,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_cjxhcm_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_cjxhcm_a0());
     editorCell.setUsesBraces(true);
     return editorCell;

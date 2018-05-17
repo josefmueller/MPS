@@ -35,7 +35,7 @@ import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.rootCellModelStyleStyl
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<choose cell model>");
     editorCell.setCellId("Error_nb4xc9_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

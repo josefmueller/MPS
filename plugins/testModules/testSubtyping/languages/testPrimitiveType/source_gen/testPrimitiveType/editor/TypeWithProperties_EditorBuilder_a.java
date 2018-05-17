@@ -70,7 +70,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_8yz4v0_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_8yz4v0_a0());
     editorCell.addEditorCell(createConstant_8yz4v0_b0());
     editorCell.addEditorCell(createConstant_8yz4v0_c0());

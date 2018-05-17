@@ -75,7 +75,7 @@ import java.util.Arrays;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_y27sly_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_y27sly_a0_0());
     editorCell.addEditorCell(createProperty_y27sly_b0_0());
     editorCell.addEditorCell(createConstant_y27sly_c0_0());

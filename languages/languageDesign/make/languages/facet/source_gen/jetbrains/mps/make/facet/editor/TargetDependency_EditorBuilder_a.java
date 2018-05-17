@@ -73,7 +73,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_x08tk8_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createProperty_x08tk8_a0());
     editorCell.addEditorCell(createRefCell_x08tk8_b0());
     return editorCell;

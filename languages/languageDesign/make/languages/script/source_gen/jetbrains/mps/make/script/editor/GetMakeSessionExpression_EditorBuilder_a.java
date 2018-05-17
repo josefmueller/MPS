@@ -35,7 +35,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_STA
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "makeSession");
     editorCell.setCellId("Constant_lvtjnl_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     new DEFAULT_STATIC_FIELD_StyleKey().apply(style);
     editorCell.getStyle().putAll(style);

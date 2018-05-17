@@ -56,7 +56,7 @@ import jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet.KeyWordStyl
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_v0z12q_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createProperty_v0z12q_a0());
     editorCell.addEditorCell(createConstant_v0z12q_b0());
     editorCell.addEditorCell(createConstant_v0z12q_c0());

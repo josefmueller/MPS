@@ -61,7 +61,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_qpt50r_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_qpt50r_a0());
     editorCell.addEditorCell(createProperty_qpt50r_b0());
     editorCell.addEditorCell(createTable_qpt50r_c0());

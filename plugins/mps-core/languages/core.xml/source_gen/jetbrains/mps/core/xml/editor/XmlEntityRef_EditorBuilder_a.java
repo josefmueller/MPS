@@ -73,7 +73,7 @@ import jetbrains.mps.core.xml.constraints.XmlNameUtil;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_40aq2x_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_40aq2x_a0());
     editorCell.addEditorCell(createProperty_40aq2x_b0());
     editorCell.addEditorCell(createConstant_40aq2x_c0());

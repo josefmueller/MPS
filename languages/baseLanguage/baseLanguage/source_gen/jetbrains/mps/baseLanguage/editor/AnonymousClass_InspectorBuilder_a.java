@@ -52,7 +52,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_msf9u8_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_msf9u8_a0());
     editorCell.addEditorCell(createRefCell_msf9u8_b0());
     return editorCell;

@@ -62,7 +62,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_xk09i2_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_xk09i2_a0());
     editorCell.addEditorCell(createProperty_xk09i2_b0());
     editorCell.addEditorCell(createAttributedNodeCell_xk09i2_c0());

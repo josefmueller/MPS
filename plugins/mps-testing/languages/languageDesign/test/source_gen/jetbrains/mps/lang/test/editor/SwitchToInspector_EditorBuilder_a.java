@@ -36,7 +36,7 @@ import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet.EditorOperat
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     Style style = new StyleImpl();
     new EditorOperationStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

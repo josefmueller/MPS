@@ -58,7 +58,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_jko2wt_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_jko2wt_a0());
     editorCell.addEditorCell(createProperty_jko2wt_b0());
     editorCell.addEditorCell(createAttributedNodeCell_jko2wt_c0());

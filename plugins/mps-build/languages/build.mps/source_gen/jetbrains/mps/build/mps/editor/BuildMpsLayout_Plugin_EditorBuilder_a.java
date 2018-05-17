@@ -71,7 +71,7 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_y1xun7_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_y1xun7_a0());
     editorCell.addEditorCell(createRefCell_y1xun7_b0());
     editorCell.addEditorCell(createComponent_y1xun7_c0());

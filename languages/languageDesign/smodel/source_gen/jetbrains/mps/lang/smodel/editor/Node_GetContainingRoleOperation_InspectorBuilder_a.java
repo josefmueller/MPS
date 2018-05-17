@@ -40,7 +40,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_ylb7pt_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_ylb7pt_a0());
     editorCell.addEditorCell(createConstant_ylb7pt_b0());
     editorCell.addEditorCell(createConstant_ylb7pt_c0());

@@ -80,7 +80,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_paq7mh_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_paq7mh_a0());
     editorCell.addEditorCell(createProperty_paq7mh_b0());
     editorCell.addEditorCell(createConstant_paq7mh_c0());

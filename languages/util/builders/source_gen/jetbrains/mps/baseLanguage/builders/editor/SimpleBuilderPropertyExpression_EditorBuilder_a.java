@@ -36,7 +36,7 @@ import jetbrains.mps.baseLanguage.builders.editor.StyleSheet_StyleSheet.Paramete
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     Style style = new StyleImpl();
     new ParameterStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

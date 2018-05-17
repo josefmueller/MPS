@@ -38,7 +38,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "detach");
     editorCell.setCellId("Constant_3d0agq_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

@@ -52,7 +52,7 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_w2956w_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createAlternation_w2956w_a0());
     editorCell.addEditorCell(createJComponent_w2956w_b0());
     return editorCell;

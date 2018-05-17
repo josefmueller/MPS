@@ -38,7 +38,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "reference");
     editorCell.setCellId("Constant_2ltjzh_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

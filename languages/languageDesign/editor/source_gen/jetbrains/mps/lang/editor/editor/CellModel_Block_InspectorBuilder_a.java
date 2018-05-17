@@ -33,7 +33,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_paqmtn_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(createComponent_paqmtn_a0());
     return editorCell;

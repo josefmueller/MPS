@@ -43,7 +43,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_yxrtdc_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_yxrtdc_a0_0());
     editorCell.addEditorCell(createConstant_yxrtdc_b0());
     editorCell.addEditorCell(createConstant_yxrtdc_c0());

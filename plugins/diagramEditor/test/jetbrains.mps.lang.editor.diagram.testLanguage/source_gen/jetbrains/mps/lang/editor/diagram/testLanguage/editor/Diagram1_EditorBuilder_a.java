@@ -60,7 +60,7 @@ import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_yfdxtz_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

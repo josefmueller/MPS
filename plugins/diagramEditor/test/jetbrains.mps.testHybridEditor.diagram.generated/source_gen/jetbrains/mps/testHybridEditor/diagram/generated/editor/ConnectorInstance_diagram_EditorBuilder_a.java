@@ -52,7 +52,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
     final ConnectorCell editorCell = new ConnectorInstance_diagram_EditorBuilder_a.ConnectorCellImpl_z1vupn_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramConnector_z1vupn_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     ConnectorActionMap.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }

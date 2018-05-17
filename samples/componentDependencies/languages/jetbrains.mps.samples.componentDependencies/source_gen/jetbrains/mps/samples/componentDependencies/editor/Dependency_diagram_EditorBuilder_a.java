@@ -55,7 +55,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
     final ConnectorCell editorCell = new Dependency_diagram_EditorBuilder_a.ConnectorCellImpl_wb79wm_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramConnector_wb79wm_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     delConnector.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }

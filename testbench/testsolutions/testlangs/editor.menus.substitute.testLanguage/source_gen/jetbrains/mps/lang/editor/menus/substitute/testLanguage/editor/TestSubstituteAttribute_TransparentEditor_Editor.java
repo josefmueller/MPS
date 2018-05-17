@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class TestSubstituteAttribute_TransientEditor_Editor extends DefaultNodeEditor {
+public class TestSubstituteAttribute_TransparentEditor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new TestSubstituteAttribute_TransientEditor_EditorBuilder_a(editorContext, node).createCell();
+    return new TestSubstituteAttribute_TransparentEditor_EditorBuilder_a(editorContext, node).createCell();
   }
 }

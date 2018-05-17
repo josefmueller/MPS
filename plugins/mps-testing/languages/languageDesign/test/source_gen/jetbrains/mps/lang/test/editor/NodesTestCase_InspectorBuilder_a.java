@@ -60,7 +60,7 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_58c6e4_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_58c6e4_a0_0());
     editorCell.addEditorCell(createCollection_58c6e4_b0());
     return editorCell;

@@ -54,7 +54,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
     editorCell.setCellId("Collection_29llnk_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_29llnk_a0());
     return editorCell;
   }

@@ -57,7 +57,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
         editorCell = EditorCell_Property.create(getEditorContext(), modelAccessor, myNode);
         editorCell.setCellId("TransactionalProperty_tg3yo7_a");
         editorCell.setBig(true);
-        editorCell.setCellContext(getCellFactory().getCellContext());
+        setCellContext(editorCell);
         editorCell.setDefaultText("<no theProperty>");
         setCellContext(editorCell);
         editorCell.setCommitInCommand(true);

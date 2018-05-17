@@ -47,7 +47,7 @@ import jetbrains.jetpad.model.property.ReadableProperty;
     final EditorCell editorCell = new InputPort_diagram_EditorBuilder_a.PortCellImpl_gtlhx2_a(getEditorContext(), myNode);
     editorCell.setCellId("DiagramPort_gtlhx2_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     return editorCell;
   }
   private class PortCellImpl_gtlhx2_a extends PortCell {

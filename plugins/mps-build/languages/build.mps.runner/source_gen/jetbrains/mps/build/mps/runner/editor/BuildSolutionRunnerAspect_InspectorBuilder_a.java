@@ -67,7 +67,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_xi87ym_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_xi87ym_a0_0());
     editorCell.addEditorCell(createReadOnlyModelAccessor_xi87ym_b0());
     editorCell.addEditorCell(createConstant_xi87ym_c0());

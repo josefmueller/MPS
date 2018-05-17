@@ -12,11 +12,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 
-/*package*/ class TestSubstituteAttribute_TransientEditor_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class TestSubstituteAttribute_TransparentEditor_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public TestSubstituteAttribute_TransientEditor_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public TestSubstituteAttribute_TransparentEditor_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -28,18 +28,18 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_wh9i5u_a();
+    return createCollection_lfp6y6_a();
   }
 
-  private EditorCell createCollection_wh9i5u_a() {
+  private EditorCell createCollection_lfp6y6_a() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_wh9i5u_a");
+    editorCell.setCellId("Collection_lfp6y6_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    editorCell.addEditorCell(createAttributedNodeCell_wh9i5u_a0());
+    editorCell.addEditorCell(createAttributedNodeCell_lfp6y6_a0());
     return editorCell;
   }
-  private EditorCell createAttributedNodeCell_wh9i5u_a0() {
+  private EditorCell createAttributedNodeCell_lfp6y6_a0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
     return editorCell;

@@ -58,7 +58,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_cbnorm_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_cbnorm_a0());
     editorCell.addEditorCell(createProperty_cbnorm_b0());
     editorCell.addEditorCell(createAlternation_cbnorm_c0());

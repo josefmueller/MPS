@@ -60,7 +60,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(myNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
       editorCell.setCellId("property_devkitName");
       editorCell.setBig(true);
-      editorCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(editorCell);
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, _StyleParameter_QueryFunction_wnl9q0_a0a());
       editorCell.getStyle().putAll(style);

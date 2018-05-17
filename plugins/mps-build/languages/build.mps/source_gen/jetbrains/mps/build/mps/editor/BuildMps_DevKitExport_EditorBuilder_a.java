@@ -37,7 +37,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no export>");
     editorCell.setCellId("Error_u13xsd_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));

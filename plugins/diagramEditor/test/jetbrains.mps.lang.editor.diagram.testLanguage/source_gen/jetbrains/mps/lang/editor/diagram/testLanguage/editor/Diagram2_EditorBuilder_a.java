@@ -77,7 +77,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_dbn5di_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_dbn5di_a0());
     editorCell.addEditorCell(createCollection_dbn5di_b0());
     return editorCell;

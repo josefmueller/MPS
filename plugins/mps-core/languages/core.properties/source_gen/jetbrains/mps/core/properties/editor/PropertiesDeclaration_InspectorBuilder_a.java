@@ -48,7 +48,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_cuzp02_a_0");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_cuzp02_a0());
     editorCell.addEditorCell(createReadOnlyModelAccessor_cuzp02_b0());
     editorCell.addEditorCell(createConstant_cuzp02_c0());

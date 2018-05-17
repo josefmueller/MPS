@@ -37,7 +37,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
-      bigCell.setCellContext(getCellFactory().getCellContext());
+      setCellContext(bigCell);
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.STRIKE_OUT, true);

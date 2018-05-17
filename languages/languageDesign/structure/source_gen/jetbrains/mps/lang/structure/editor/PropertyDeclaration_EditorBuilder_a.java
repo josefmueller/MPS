@@ -74,7 +74,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyO
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_lnae77_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createTransactionalProperty_lnae77_a0());
     editorCell.addEditorCell(createConstant_lnae77_b0());
     editorCell.addEditorCell(createRefCell_lnae77_c0());

@@ -70,7 +70,7 @@ import jetbrains.mps.smodel.action.IReferentPresentationProvider;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_iuxdpw_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createProperty_iuxdpw_a0());
     editorCell.addEditorCell(createConstant_iuxdpw_b0());
     editorCell.addEditorCell(createRefCell_iuxdpw_c0());

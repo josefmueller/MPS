@@ -92,7 +92,7 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellM
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_i2boga_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_i2boga_a0());
     editorCell.addEditorCell(createProperty_i2boga_b0());
     editorCell.addEditorCell(createConstant_i2boga_c0());
@@ -306,13 +306,13 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellM
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377600dd75eL, 0x133763776010fa10L, "child"), child));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377600dd75eL, 0x133763776010fa10L, "child"), child));
-      installCellInfo(child, editorCell);
+      installCellInfo(child, editorCell, false);
       return editorCell;
     }
 
 
 
-    private void installCellInfo(SNode child, EditorCell editorCell) {
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
         editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377600dd75eL, 0x133763776010fa10L, "child"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776010fa0dL, "jetbrains.mps.lang.editor.editorTest.structure.MenuTraceGrandChildCellMenu")), new SubstituteInfoPartExt[]{new MenuTraceChildCellMenu_EditorBuilder_a.childSingleRoleHandler_i2boga_e0.MenuTraceChildCellMenu_child_cellMenu_i2boga_a0e0(), new MenuTraceChildCellMenu_EditorBuilder_a.childSingleRoleHandler_i2boga_e0.MenuTraceChildCellMenu_child_cellMenu_i2boga_b0e0(), new MenuTraceChildCellMenu_EditorBuilder_a.childSingleRoleHandler_i2boga_e0.MenuTraceChildCellMenu_child_cellMenu_i2boga_c0e0(), new MenuTraceChildCellMenu_EditorBuilder_a.childSingleRoleHandler_i2boga_e0.MenuTraceChildCellMenu_child_cellMenu_i2boga_d0e0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
@@ -327,7 +327,7 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellM
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_child");
-        installCellInfo(null, editorCell);
+        installCellInfo(null, editorCell, true);
         setCellContext(editorCell);
         return editorCell;
       } finally {

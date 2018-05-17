@@ -74,7 +74,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_ejwutq_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createRefCell_ejwutq_a0());
     editorCell.addEditorCell(createConstant_ejwutq_b0());
     editorCell.addEditorCell(createConstant_ejwutq_c0());

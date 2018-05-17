@@ -62,7 +62,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_fxg4hy_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_fxg4hy_a0());
     editorCell.addEditorCell(createProperty_fxg4hy_b0());
     editorCell.addEditorCell(createConstant_fxg4hy_c0());

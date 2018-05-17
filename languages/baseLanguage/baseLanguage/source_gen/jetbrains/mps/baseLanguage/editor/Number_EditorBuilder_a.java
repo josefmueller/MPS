@@ -37,7 +37,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "number");
     editorCell.setCellId("Constant_ydd9ch_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);

@@ -81,7 +81,7 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_h77kbg_a");
     editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_h77kbg_a0());
     editorCell.addEditorCell(createConstant_h77kbg_b0());
     editorCell.addEditorCell(createRefCell_h77kbg_c0());
