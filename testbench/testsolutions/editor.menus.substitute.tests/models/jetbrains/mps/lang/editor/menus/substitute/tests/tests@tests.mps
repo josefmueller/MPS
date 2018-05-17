@@ -169,7 +169,7 @@
         <reference id="4930188782568043333" name="nodeToReference" index="3gZJZm" />
       </concept>
       <concept id="4930188782568019926" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAttribute_RegularEditor" flags="ng" index="3gZDH5" />
-      <concept id="4930188782568019925" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAttribute_TransientEditor" flags="ng" index="3gZDH6" />
+      <concept id="4930188782568019925" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAttribute_TransparentEditor" flags="ng" index="3gZDH6" />
       <concept id="4930188782568019924" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithAttibute" flags="ng" index="3gZDH7" />
       <concept id="476103360378640385" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentPropertyAndReference" flags="ng" index="3h9APU">
         <property id="476103360378640386" name="defaultBooleanProperty" index="3h9APT" />
@@ -192,13 +192,13 @@
         <child id="8629363476786100065" name="subChild" index="3CkhWX" />
       </concept>
       <concept id="4085424218237852313" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSpecialParent" flags="ng" index="1GqwOR" />
-      <concept id="9174907873152961484" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteChildAmbigousPosition1" flags="ng" index="3Hp5Bl" />
-      <concept id="9174907873152962435" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteChildAmbigousPosition2" flags="ng" index="3Hp5Qq" />
-      <concept id="9174907873152812907" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteAbstractChildAmbigousPosition" flags="ng" index="3HpDlM">
+      <concept id="9174907873152961484" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildAmbigousPosition1" flags="ng" index="3Hp5Bl" />
+      <concept id="9174907873152962435" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildAmbigousPosition2" flags="ng" index="3Hp5Qq" />
+      <concept id="9174907873152812907" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAbstractChildAmbigousPosition" flags="ng" index="3HpDlM">
         <child id="9174907873152872229" name="subchild" index="3HpvOW" />
       </concept>
-      <concept id="9174907873153018649" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition2" flags="ng" index="3HqV$0" />
-      <concept id="9174907873153018648" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition1" flags="ng" index="3HqV$1" />
+      <concept id="9174907873153018649" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildAmbigousPosition2" flags="ng" index="3HqV$0" />
+      <concept id="9174907873153018648" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildAmbigousPosition1" flags="ng" index="3HqV$1" />
       <concept id="4572725119287324743" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_Subconcept" flags="ng" index="3TPuk3" />
       <concept id="4572725119287324734" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_Parent" flags="ng" index="3TPulU">
         <child id="1892012100483553523" name="childIncludeDifferentMenus" index="MktS8" />
@@ -230,14 +230,14 @@
       <concept id="705057939849964258" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraintsWrapper2" flags="ng" index="3V6Vin">
         <child id="705057939849964259" name="childToWrap" index="3V6Vim" />
       </concept>
-      <concept id="4616565815313123084" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteChildOfWrapper" flags="ng" index="1ZSx4E" />
-      <concept id="4616565815313123083" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteWrapper" flags="ng" index="1ZSx4H">
+      <concept id="4616565815313123084" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildOfWrapper" flags="ng" index="1ZSx4E" />
+      <concept id="4616565815313123083" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteWrapper" flags="ng" index="1ZSx4H">
         <property id="5957872731948342277" name="wrappedConceptAlias" index="2IqG6F" />
         <property id="5957872731948342274" name="wrappedDescriptionText" index="2IqG6G" />
         <property id="5957872731948342272" name="wrappedMatchingText" index="2IqG6I" />
         <child id="4616565815313123087" name="child" index="1ZSx4D" />
       </concept>
-      <concept id="4616565815313104460" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteParentOfWrapper" flags="ng" index="1ZSUxE">
+      <concept id="4616565815313104460" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentOfWrapper" flags="ng" index="1ZSUxE">
         <child id="4616565815313123085" name="wrapper" index="1ZSx4F" />
       </concept>
     </language>
@@ -2097,11 +2097,11 @@
     <node concept="16zE7j" id="7XjOxAidSID" role="LiZbd">
       <node concept="3Hp5Bl" id="7XjOxAiejp5" role="3Hpp75">
         <node concept="3HqV$1" id="7XjOxAiejp4" role="3HpvOW">
-          <node concept="LIFWc" id="7XjOxAiejp8" role="lGtFl">
+          <node concept="LIFWc" id="4RaDo_Q$eOs" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="46" />
-            <property role="p6zMs" value="46" />
+            <property role="p6zMq" value="44" />
+            <property role="p6zMs" value="44" />
             <property role="LIFWd" value="constant_0" />
           </node>
         </node>
@@ -2288,11 +2288,11 @@
     <node concept="16zE7j" id="7XjOxAiew_j" role="LiZbd">
       <node concept="3Hp5Bl" id="7XjOxAiewIZ" role="3HqV2Q">
         <node concept="3HqV$0" id="7XjOxAiewIY" role="3HpvOW">
-          <node concept="LIFWc" id="7XjOxAiewKo" role="lGtFl">
+          <node concept="LIFWc" id="4RaDo_QzIxB" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="46" />
-            <property role="p6zMs" value="46" />
+            <property role="p6zMq" value="44" />
+            <property role="p6zMs" value="44" />
             <property role="LIFWd" value="constant_0" />
           </node>
         </node>
@@ -3192,12 +3192,12 @@
       <node concept="1ZSx4H" id="5aIBqVWMf09" role="1ZSx4F">
         <property role="2IqG6F" value="test substitute child of wrapper" />
         <node concept="1ZSx4E" id="5aIBqVWMf08" role="1ZSx4D">
-          <node concept="LIFWc" id="5aIBqVWMf0c" role="lGtFl">
+          <node concept="LIFWc" id="4RaDo_Q$mDH" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="34" />
             <property role="p6zMs" value="34" />
-            <property role="LIFWd" value="Constant_wnxrdx_a0" />
+            <property role="LIFWd" value="Constant_1urw28_a0" />
           </node>
         </node>
       </node>
@@ -3343,12 +3343,12 @@
         <property role="2IqG6I" value="child matching text" />
         <property role="2IqG6G" value="child description text" />
         <node concept="1ZSx4E" id="5aIBqVWMeZW" role="1ZSx4D">
-          <node concept="LIFWc" id="5aIBqVWMeZX" role="lGtFl">
+          <node concept="LIFWc" id="4RaDo_QA81o" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="34" />
             <property role="p6zMs" value="34" />
-            <property role="LIFWd" value="Constant_wnxrdx_a0" />
+            <property role="LIFWd" value="Constant_1urw28_a0" />
           </node>
         </node>
       </node>
@@ -3441,12 +3441,12 @@
     </node>
     <node concept="1ZSUxE" id="11tgvsie2wl" role="LiRBU">
       <node concept="1ZSx4H" id="11tgvsie551" role="1ZSx4F">
-        <node concept="LIFWc" id="11tgvsif1$Y" role="lGtFl">
+        <node concept="LIFWc" id="4RaDo_QzZyn" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
           <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_aca94t_a0" />
+          <property role="LIFWd" value="Constant_svk57m_a0" />
         </node>
       </node>
     </node>
@@ -3456,12 +3456,12 @@
         <property role="2IqG6G" value="child description text" />
         <property role="2IqG6F" value="test substitute child of wrapper" />
         <node concept="1ZSx4E" id="11tgvsif1_f" role="1ZSx4D">
-          <node concept="LIFWc" id="11tgvsif1_h" role="lGtFl">
+          <node concept="LIFWc" id="4RaDo_Q$7iV" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="34" />
             <property role="p6zMs" value="34" />
-            <property role="LIFWd" value="Constant_wnxrdx_a0" />
+            <property role="LIFWd" value="Constant_1urw28_a0" />
           </node>
         </node>
       </node>
@@ -6646,9 +6646,9 @@
       <node concept="3gZDH7" id="4hFz9ekC7Mc" role="3gZDHb">
         <property role="TrG5h" value="before" />
         <node concept="3gZDH6" id="4hFz9ekC95l" role="lGtFl">
-          <node concept="LIFWc" id="6GI$fc4amlW" role="lGtFl">
+          <node concept="LIFWc" id="4RaDo_QzRIC" role="lGtFl">
             <property role="LIFWa" value="0" />
-            <property role="LIFWd" value="Collection_wh9i5u_a" />
+            <property role="LIFWd" value="Collection_lfp6y6_a" />
           </node>
         </node>
       </node>
