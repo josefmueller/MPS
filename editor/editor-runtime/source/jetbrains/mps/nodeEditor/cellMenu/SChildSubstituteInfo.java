@@ -44,6 +44,8 @@ import java.util.HashMap;
  * @author simon
  */
 public class SChildSubstituteInfo extends TransformationMenuSubstituteInfo implements DefaultSubstituteInfo {
+  InequalitySystemFactory myInequalitySystemFactory = new InequalitySystemFactory();
+
 
   public SChildSubstituteInfo(EditorCell editorCell) {
     super(editorCell);
@@ -74,37 +76,6 @@ public class SChildSubstituteInfo extends TransformationMenuSubstituteInfo imple
 
   @Override
   protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
-    SNodeLocation nodeLocation = getEditorCell().getCellContext().getNodeLocation();
-
-    if (nodeLocation == null) {
-      return null;
-    }
-    SNode myParentNode = nodeLocation.getParent();
-    SContainmentLink myLink = nodeLocation.getContainmentLink();
-    if (myParentNode == null || myLink == null) {
-      return null;
-    }
-    //todo merge with DefaultSChildSubstituteInfo
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    final SNode copy = CopyUtil.copy(Collections.singletonList(myParentNode.getContainingRoot()), mapping).get(0);
-    getModelForTypechecking().addRootNode(copy);
-
-    final SAbstractConcept concept = myLink.getTargetConcept();
-    boolean holeIsAType = concept.isSubConceptOf(SNodeUtil.concept_IType);
-
-
-    SNode myCurrentChild = nodeLocation.getChild();
-    SNode parent = mapping.get(myParentNode);
-    SNode hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
-    if (myCurrentChild != null) {
-      SNode child = mapping.get(myCurrentChild);
-      parent.insertChildBefore(myLink, hole, child);
-      parent.removeChild(child);
-    } else {
-      parent.addChild(myLink, hole);
-    }
-    InequalitySystem inequationsForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, holeIsAType);
-    inequationsForHole.replaceRefs(mapping);
-    return inequationsForHole;
+    return myInequalitySystemFactory.getInequalitiesSystem(getEditorCell(), getModelForTypechecking());
   }
 }
