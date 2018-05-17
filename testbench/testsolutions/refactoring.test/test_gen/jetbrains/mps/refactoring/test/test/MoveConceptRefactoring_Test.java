@@ -22,7 +22,12 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import java.util.Objects;
+import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import java.util.Collection;
 import jetbrains.mps.errors.item.ReportItem;
 import java.util.ArrayList;
@@ -55,7 +60,6 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -170,18 +174,16 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        // do nothing 
-        // do nothing 
+        ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(MetaAdapterByDeclaration.getConcept(getConcept_PropertyContainer()));
+        assert conceptDescriptor instanceof IllegalConceptDescriptor;
       }
     }, new _FunctionTypes._void_P1_E0<List<SNode>>() {
       public void invoke(List<SNode> nodesToMove) {
         ListSequence.fromList(nodesToMove).addElement(getProperty_MovedProperty());
-
       }
     }, new _FunctionTypes._return_P0_E0<MoveNodesUtil.NodeCreatingProcessor>() {
       public MoveNodesUtil.NodeCreatingProcessor invoke() {
         return new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(getConcept_PropertySupercontainer(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration")), project);
-
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -219,18 +221,16 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        // do nothing 
-        // do nothing 
+        ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(MetaAdapterByDeclaration.getConcept(getConcept_PropertyContainer()));
+        assert conceptDescriptor instanceof CompiledConceptDescriptor;
       }
     }, new _FunctionTypes._void_P1_E0<List<SNode>>() {
       public void invoke(List<SNode> nodesToMove) {
         ListSequence.fromList(nodesToMove).addElement(getProperty_MovedProperty());
-
       }
     }, new _FunctionTypes._return_P0_E0<MoveNodesUtil.NodeCreatingProcessor>() {
       public MoveNodesUtil.NodeCreatingProcessor invoke() {
         return new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(getConcept_PropertySupercontainer(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration")), project);
-
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -433,6 +433,7 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
     if (LOG.isInfoEnabled()) {
       LOG.info("Migrating...");
     }
+
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         try {
