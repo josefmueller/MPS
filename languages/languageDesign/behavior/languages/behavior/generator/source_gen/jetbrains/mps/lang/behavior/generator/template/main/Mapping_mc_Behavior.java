@@ -122,7 +122,8 @@ public class Mapping_mc_Behavior extends MapConfigBase implements TemplateMappin
       return QueriesGenerated.createRootRule_Condition_4881419546810727153(new CreateRootRuleContext(context, getRuleNode()));
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
-      Collection<SNode> result = new Template_BehaviorAspectDescriptor().apply(environment, new DefaultTemplateContext(environment, null, null));
+      DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);
+      Collection<SNode> result = new Template_BehaviorAspectDescriptor().apply(environment, context);
       return result;
     }
   }

@@ -61,8 +61,9 @@
       <node id="1225195370950" at="112,95,113,20" concept="9" />
       <node id="1225195370950" at="117,30,118,158" concept="13" />
       <node id="1225195370950" at="121,94,122,126" concept="9" />
-      <node id="1225195370950" at="124,105,125,145" concept="8" />
-      <node id="1225195370950" at="125,145,126,20" concept="9" />
+      <node id="1225195370950" at="124,105,125,91" concept="8" />
+      <node id="1225195370950" at="125,91,126,101" concept="8" />
+      <node id="1225195370950" at="126,101,127,20" concept="9" />
       <node id="1225195370950" at="51,0,54,0" concept="1" trace="ReductionRule0#()V" />
       <node id="1225195370950" at="62,0,65,0" concept="1" trace="ReductionRule1#()V" />
       <node id="1225195370950" at="73,0,76,0" concept="1" trace="ReductionRule2#()V" />
@@ -74,7 +75,7 @@
       <node id="1225195370950" at="42,0,46,0" concept="7" trace="getCreateRules#()Ljava/util/Collection;" />
       <node id="1225195370950" at="46,0,50,0" concept="7" trace="getRootRules#()Ljava/util/Collection;" />
       <node id="1225195370950" at="120,0,124,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-      <node id="1225195370950" at="124,0,128,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;)Ljava/util/Collection;" />
+      <node id="1225195370950" at="124,0,129,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;)Ljava/util/Collection;" />
       <node id="1225195370950" at="32,0,38,0" concept="1" trace="Mapping_mc_Behavior#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="1225195370950" at="54,0,60,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="1225195370950" at="65,0,71,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -93,9 +94,6 @@
       <scope id="1225195370950" at="106,31,107,312" />
       <scope id="1225195370950" at="117,30,118,158" />
       <scope id="1225195370950" at="121,94,122,126" />
-      <scope id="1225195370950" at="124,105,126,20">
-        <var name="result" id="1225195370950" />
-      </scope>
       <scope id="1225195370950" at="51,0,54,0" />
       <scope id="1225195370950" at="55,103,58,20">
         <var name="environment" id="1225195370950" />
@@ -127,6 +125,10 @@
         <var name="result" id="1225195370950" />
       </scope>
       <scope id="1225195370950" at="117,0,120,0" />
+      <scope id="1225195370950" at="124,105,127,20">
+        <var name="context" id="1225195370950" />
+        <var name="result" id="1225195370950" />
+      </scope>
       <scope id="1225195370950" at="32,60,36,111" />
       <scope id="1225195370950" at="38,0,42,0" />
       <scope id="1225195370950" at="42,0,46,0" />
@@ -134,7 +136,7 @@
       <scope id="1225195370950" at="120,0,124,0">
         <var name="context" id="1225195370950" />
       </scope>
-      <scope id="1225195370950" at="124,0,128,0">
+      <scope id="1225195370950" at="124,0,129,0">
         <var name="environment" id="1225195370950" />
       </scope>
       <scope id="1225195370950" at="32,0,38,0">
@@ -164,8 +166,8 @@
       <unit id="1225195370950" at="83,0,94,0" name="jetbrains.mps.lang.behavior.generator.template.main.Mapping_mc_Behavior$ReductionRule3" />
       <unit id="1225195370950" at="94,0,105,0" name="jetbrains.mps.lang.behavior.generator.template.main.Mapping_mc_Behavior$ReductionRule4" />
       <unit id="1225195370950" at="105,0,116,0" name="jetbrains.mps.lang.behavior.generator.template.main.Mapping_mc_Behavior$RootMappingRule0" />
-      <unit id="1225195370950" at="116,0,129,0" name="jetbrains.mps.lang.behavior.generator.template.main.Mapping_mc_Behavior$CreateRootRule0" />
-      <unit id="1225195370950" at="27,0,130,0" name="jetbrains.mps.lang.behavior.generator.template.main.Mapping_mc_Behavior" />
+      <unit id="1225195370950" at="116,0,130,0" name="jetbrains.mps.lang.behavior.generator.template.main.Mapping_mc_Behavior$CreateRootRule0" />
+      <unit id="1225195370950" at="27,0,131,0" name="jetbrains.mps.lang.behavior.generator.template.main.Mapping_mc_Behavior" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="7228083082548051838" at="41,108,42,21" concept="10" />

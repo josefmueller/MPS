@@ -135,7 +135,8 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       return QueriesGenerated.createRootRule_Condition_1202245164352(new CreateRootRuleContext(context, getRuleNode()));
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
-      Collection<SNode> result = new Template_OutputRoot_By_RootRule().apply(environment, new DefaultTemplateContext(environment, null, null));
+      DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);
+      Collection<SNode> result = new Template_OutputRoot_By_RootRule().apply(environment, context);
       return result;
     }
   }
