@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateContainer;
@@ -76,8 +75,8 @@ public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
       // fall-though
     }
 
-    TemplateContext applyContext = new DefaultTemplateContext(context.getEnvironment(), context.getInput(), null);
-    applyContext = myCallSite.prepareCallContext(applyContext);
+    // context may keep a mapping label (e.g. from outer $INCLUDE$ label template)
+    TemplateContext applyContext = myCallSite.prepareCallContext(context);
 
     if (myIsTemplateDeclNode) {
       final TemplateContainer tc = getTemplates();
