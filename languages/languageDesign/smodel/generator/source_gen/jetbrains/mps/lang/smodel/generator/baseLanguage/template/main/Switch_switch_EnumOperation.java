@@ -66,7 +66,6 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
           TemplateContext context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
             tlist2 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(environment, context2);
-
           }
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -126,7 +125,6 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
           TemplateContext context2 = context1.subContext(null, callInputNode2);
           if (callInputNode2 != null) {
             tlist2 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(environment, context2);
-
           }
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
@@ -165,7 +163,6 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
           TemplateContext context2 = context1.subContext(null, callInputNode4);
           if (callInputNode4 != null) {
             tlist4 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(environment, context2);
-
           }
           for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
@@ -233,7 +230,6 @@ public class Switch_switch_EnumOperation extends TemplateSwitchBase implements T
           TemplateContext context3 = context1.subContext(null, callInputNode9);
           if (callInputNode9 != null) {
             tlist9 = new Template_reduce_EnumDeclaration_indentityValueSequence().apply(environment, context3);
-
           }
           for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child10);

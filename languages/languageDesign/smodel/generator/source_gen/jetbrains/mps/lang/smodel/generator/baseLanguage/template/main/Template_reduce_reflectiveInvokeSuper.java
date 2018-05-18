@@ -59,7 +59,6 @@ public class Template_reduce_reflectiveInvokeSuper extends TemplateDeclarationBa
         TemplateContext context3 = context2.subContext(null, callInputNode3);
         if (callInputNode3 != null) {
           tlist3 = new Template_NodeOrConcept().apply(environment, context3);
-
         }
         for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
           tnode2.addChild(myAggregationLinks[0], child4);

@@ -3226,29 +3226,28 @@
       <node id="263208052639692929" at="28,36,29,153" concept="8" />
       <node id="263208052639692929" at="29,153,30,72" concept="8" />
       <node id="263208052639692929" at="31,33,32,76" concept="3" />
-      <node id="263208052639692929" at="32,76,33,0" concept="11" />
-      <node id="263208052639692929" at="34,5,35,18" concept="9" />
-      <node id="263208052639692929" at="38,0,39,0" concept="12" trace="template_in8ni3_a0a3" />
-      <node id="263208052639692929" at="39,0,40,0" concept="12" trace="callMacro_in8ni3_b0a0a1a4" />
+      <node id="263208052639692929" at="33,5,34,18" concept="9" />
+      <node id="263208052639692929" at="37,0,38,0" concept="12" trace="template_in8ni3_a0a3" />
+      <node id="263208052639692929" at="38,0,39,0" concept="12" trace="callMacro_in8ni3_b0a0a1a4" />
       <node id="263208052639692929" at="21,0,23,0" concept="1" trace="Template_GDClass#()V" />
       <node id="263208052639692929" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="263208052639692929" at="30,72,34,5" concept="6" />
-      <node id="263208052639692929" at="27,0,37,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="263208052639692929" at="30,72,33,5" concept="6" />
+      <node id="263208052639692929" at="27,0,36,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="263208052639692929" at="21,29,21,29" />
       <scope id="263208052639692929" at="24,43,25,32" />
+      <scope id="263208052639692929" at="31,33,32,76" />
       <scope id="263208052639692929" at="21,0,23,0" />
-      <scope id="263208052639692929" at="31,33,33,0" />
       <scope id="263208052639692929" at="24,0,27,0" />
-      <scope id="263208052639692929" at="27,158,35,18">
+      <scope id="263208052639692929" at="27,158,34,18">
         <var name="callInputNode1" id="263208052639692929" />
         <var name="context1" id="263208052639692929" />
         <var name="tlist1" id="263208052639692929" />
       </scope>
-      <scope id="263208052639692929" at="27,0,37,0">
+      <scope id="263208052639692929" at="27,0,36,0">
         <var name="context" id="263208052639692929" />
         <var name="environment" id="263208052639692929" />
       </scope>
-      <unit id="263208052639692929" at="18,0,41,0" name="jetbrains.mps.lang.descriptor.generator.template.main.Template_GDClass" />
+      <unit id="263208052639692929" at="18,0,40,0" name="jetbrains.mps.lang.descriptor.generator.template.main.Template_GDClass" />
     </file>
   </root>
   <root nodeRef="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)/263208052639697475">

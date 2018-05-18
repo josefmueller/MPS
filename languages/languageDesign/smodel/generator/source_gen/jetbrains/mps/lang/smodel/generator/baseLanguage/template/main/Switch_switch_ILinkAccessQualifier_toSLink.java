@@ -64,22 +64,14 @@ public class Switch_switch_ILinkAccessQualifier_toSLink extends TemplateSwitchBa
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      try {
-        SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_3902354333653114307(new SourceSubstituteMacroNodeContext(context, includeMacro_xmgu17_b0a0a0a2a1i));
-        TemplateContext context1 = context.subContext(null, callInputNode1);
-        if (callInputNode1 != null) {
-          try {
-            tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context1);
-          } finally {
-          }
-
-        }
-
-      } finally {
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_3902354333653114307(new SourceSubstituteMacroNodeContext(context, includeMacro_xmgu17_b0a0a2a1i));
+      TemplateContext context1 = context.subContext(null, callInputNode1);
+      if (callInputNode1 != null) {
+        tlist1 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context1);
       }
       return tlist1;
     }
   }
   private static SNodePointer copySrcMacro_xmgu17_b0a0d0b7 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653082207");
-  private static SNodePointer includeMacro_xmgu17_b0a0a0a2a1i = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653094589");
+  private static SNodePointer includeMacro_xmgu17_b0a0a2a1i = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653094589");
 }

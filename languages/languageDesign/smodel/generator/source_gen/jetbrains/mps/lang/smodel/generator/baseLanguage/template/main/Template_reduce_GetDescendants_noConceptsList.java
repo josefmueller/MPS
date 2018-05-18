@@ -96,18 +96,10 @@ public class Template_reduce_GetDescendants_noConceptsList extends TemplateDecla
                   }
                   TemplateContext context4 = context3.subContext(itnode10);
                   Collection<SNode> tlist11 = null;
-                  try {
-                    SNode callInputNode11 = QueriesGenerated.sourceNodeQuery_3902354333654091554(new SourceSubstituteMacroNodeContext(context4, includeMacro_btzevu_b0a0a0a3a2a2a1a1a1a6a2a4));
-                    TemplateContext context5 = context4.subContext(null, callInputNode11);
-                    if (callInputNode11 != null) {
-                      try {
-                        tlist11 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context5);
-                      } finally {
-                      }
-
-                    }
-
-                  } finally {
+                  SNode callInputNode11 = QueriesGenerated.sourceNodeQuery_3902354333654091554(new SourceSubstituteMacroNodeContext(context4, includeMacro_btzevu_b0a0a3a2a2a1a1a1a6a2a4));
+                  TemplateContext context5 = context4.subContext(null, callInputNode11);
+                  if (callInputNode11 != null) {
+                    tlist11 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context5);
                   }
                   if (tlist11 != null) {
                     tlist10.addAll(tlist11);
@@ -180,5 +172,5 @@ public class Template_reduce_GetDescendants_noConceptsList extends TemplateDecla
   private static SNodePointer copySrcMacro_btzevu_b0a0c0d0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1171307696667");
   private static SNodePointer propertyMacro_btzevu_c0a0c0a0b0f0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1176946951444");
   private static SNodePointer loopMacroRef_btzevu_b0a0a1a2a1a1a1a6a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333654091547");
-  private static SNodePointer includeMacro_btzevu_b0a0a0a3a2a2a1a1a1a6a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333654091553");
+  private static SNodePointer includeMacro_btzevu_b0a0a3a2a2a1a1a1a6a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333654091553");
 }

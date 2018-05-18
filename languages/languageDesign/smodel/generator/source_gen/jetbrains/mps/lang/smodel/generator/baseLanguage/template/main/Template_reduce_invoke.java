@@ -47,14 +47,7 @@ public class Template_reduce_invoke extends TemplateDeclarationBase {
           TemplateContext context2 = context1.subContext();
           {
             Collection<SNode> tlist3 = null;
-            try {
-              try {
-                tlist3 = new Template_NodeOrConceptCommon().apply(environment, context2);
-              } finally {
-              }
-
-            } finally {
-            }
+            tlist3 = new Template_NodeOrConceptCommon().apply(environment, context2);
             for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
               tnode2.addChild(myAggregationLinks[0], child4);
             }

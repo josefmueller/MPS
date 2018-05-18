@@ -79,22 +79,14 @@ public class Switch_switch_toSAbstractConcept extends TemplateSwitchBase impleme
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      try {
-        SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_3902354333653359379(new SourceSubstituteMacroNodeContext(context, includeMacro_594pev_b0a0a0a2a1i));
-        TemplateContext context1 = context.subContext(null, callInputNode1);
-        if (callInputNode1 != null) {
-          try {
-            tlist1 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context1);
-          } finally {
-          }
-
-        }
-
-      } finally {
+      SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_3902354333653359379(new SourceSubstituteMacroNodeContext(context, includeMacro_594pev_b0a0a2a1i));
+      TemplateContext context1 = context.subContext(null, callInputNode1);
+      if (callInputNode1 != null) {
+        tlist1 = new Template_reduce_ConceptDeclaration2SAbstractConcept().apply(environment, context1);
       }
       return tlist1;
     }
   }
   private static SNodePointer copySrcMacro_594pev_b0a0c0d0c0b7 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6677504323281106684");
-  private static SNodePointer includeMacro_594pev_b0a0a0a2a1i = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653359370");
+  private static SNodePointer includeMacro_594pev_b0a0a2a1i = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653359370");
 }

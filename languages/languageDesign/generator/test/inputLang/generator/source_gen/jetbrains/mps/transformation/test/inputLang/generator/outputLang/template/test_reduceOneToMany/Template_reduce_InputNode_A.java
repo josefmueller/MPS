@@ -63,14 +63,7 @@ public class Template_reduce_InputNode_A extends TemplateDeclarationBase {
   protected Collection<SNode> applyPart2(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    try {
-      try {
-        tlist1 = new Template_reduce_InputNode_A_included().apply(environment, context);
-      } finally {
-      }
-
-    } finally {
-    }
+    tlist1 = new Template_reduce_InputNode_A_included().apply(environment, context);
     return tlist1;
   }
   protected Collection<SNode> applyPart3(@NotNull final TemplateContext context) throws GenerationException {

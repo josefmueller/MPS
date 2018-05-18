@@ -49,18 +49,10 @@ public class Template_reduce_Property_HasValue_Simple extends TemplateDeclaratio
       }
       {
         Collection<SNode> tlist4 = null;
-        try {
-          SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_6506750610319583884(new SourceSubstituteMacroNodeContext(context1, includeMacro_29qvky_b0a0a0a1a4a2a4));
-          TemplateContext context2 = context1.subContext(null, callInputNode4);
-          if (callInputNode4 != null) {
-            try {
-              tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
-            } finally {
-            }
-
-          }
-
-        } finally {
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_6506750610319583884(new SourceSubstituteMacroNodeContext(context1, includeMacro_29qvky_b0a0a1a4a2a4));
+        TemplateContext context2 = context1.subContext(null, callInputNode4);
+        if (callInputNode4 != null) {
+          tlist4 = new Template_reduce_PropertyDeclaration_SProperty().apply(environment, context2);
         }
         for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
           tnode1.addChild(myAggregationLinks[0], child5);
@@ -112,6 +104,6 @@ public class Template_reduce_Property_HasValue_Simple extends TemplateDeclaratio
     return rv;
   }
   private static SNodePointer copySrcMacro_29qvky_b0a0c0d0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146256190200");
-  private static SNodePointer includeMacro_29qvky_b0a0a0a1a4a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319583599");
+  private static SNodePointer includeMacro_29qvky_b0a0a1a4a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6506750610319583599");
   private static SNodePointer copySrcMacro_29qvky_b0a0c0f0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1146256190204");
 }

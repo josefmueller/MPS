@@ -47,14 +47,7 @@ public class Template_reduce_ConceptMethodCallCommon extends TemplateDeclaration
         }
         {
           Collection<SNode> tlist5 = null;
-          try {
-            try {
-              tlist5 = new Template_reduce_invoke().apply(environment, context1);
-            } finally {
-            }
-
-          } finally {
-          }
+          tlist5 = new Template_reduce_invoke().apply(environment, context1);
           for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
             tnode2.addChild(myAggregationLinks[1], child6);
           }

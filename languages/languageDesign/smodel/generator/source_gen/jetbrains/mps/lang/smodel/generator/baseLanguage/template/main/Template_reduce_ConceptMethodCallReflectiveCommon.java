@@ -38,14 +38,7 @@ public class Template_reduce_ConceptMethodCallReflectiveCommon extends TemplateD
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist3 = null;
-          try {
-            try {
-              tlist3 = new Template_reduce_reflectiveInvoke().apply(environment, context1);
-            } finally {
-            }
-
-          } finally {
-          }
+          tlist3 = new Template_reduce_reflectiveInvoke().apply(environment, context1);
           for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
             tnode2.addChild(myAggregationLinks[0], child4);
           }
@@ -65,14 +58,7 @@ public class Template_reduce_ConceptMethodCallReflectiveCommon extends TemplateD
       tlist1 = TemplateUtil.singletonList(tnode2);
     } else {
       Collection<SNode> tlist7 = null;
-      try {
-        try {
-          tlist7 = new Template_reduce_reflectiveInvoke().apply(environment, context);
-        } finally {
-        }
-
-      } finally {
-      }
+      tlist7 = new Template_reduce_reflectiveInvoke().apply(environment, context);
       tlist1 = tlist7;
     }
     return tlist1;

@@ -30,7 +30,6 @@ public class Template_GDClass extends TemplateDeclarationBase implements Templat
     TemplateContext context1 = context.subContext(null, callInputNode1);
     if (callInputNode1 != null) {
       tlist1 = new Template_GeneratorRuntime().apply(environment, context1);
-
     }
     return tlist1;
   }

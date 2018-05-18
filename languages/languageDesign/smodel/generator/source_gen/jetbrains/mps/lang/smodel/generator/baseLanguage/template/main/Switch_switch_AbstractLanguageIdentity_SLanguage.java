@@ -68,7 +68,6 @@ public class Switch_switch_AbstractLanguageIdentity_SLanguage extends TemplateSw
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ModuleIdentity_SLanguage().apply(environment, context1);
-
       }
       return tlist1;
     }

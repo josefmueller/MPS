@@ -42,14 +42,7 @@ public class Template_reduce_ConceptMethodCallWithThis extends TemplateDeclarati
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist4 = null;
-              try {
-                try {
-                  tlist4 = new Template_reduce_invokeWithThis().apply(environment, context2);
-                } finally {
-                }
-
-              } finally {
-              }
+              tlist4 = new Template_reduce_invokeWithThis().apply(environment, context2);
               for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                 tnode3.addChild(myAggregationLinks[0], child5);
               }

@@ -75,7 +75,6 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
             TemplateContext context2 = context1.subContext(null, callInputNode5);
             if (callInputNode5 != null) {
               tlist5 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context2);
-
             }
             for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child6);
@@ -106,7 +105,6 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
             TemplateContext context4 = context3.subContext(null, callInputNode10);
             if (callInputNode10 != null) {
               tlist10 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context4);
-
             }
             for (SNode child11 : TemplateUtil.asNotNull(tlist10)) {
               tnode7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child11);
@@ -137,7 +135,6 @@ public class Mapping_mc_implicitSelect extends MapConfigBase implements Template
             TemplateContext context6 = context5.subContext(null, callInputNode15);
             if (callInputNode15 != null) {
               tlist15 = new Template_reduce_LinkDeclaration_SLink().apply(environment, context6);
-
             }
             for (SNode child16 : TemplateUtil.asNotNull(tlist15)) {
               tnode12.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child16);

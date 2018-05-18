@@ -40,7 +40,6 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
     TemplateContext context1 = context.subContext(null, callInputNode1);
     if (callInputNode1 != null) {
       tlist1 = new Template_reduce_ConceptMethodCallCommon().apply(environment, context1);
-
     }
     return tlist1;
   }
@@ -58,7 +57,6 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ConceptMethodCallWithThis().apply(environment, context1);
-
       }
       return tlist1;
     }
@@ -75,7 +73,6 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ConceptMethodCallWithThis().apply(environment, context1);
-
       }
       return tlist1;
     }
@@ -92,7 +89,6 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ConceptMethodCallWithSuper().apply(environment, context1);
-
       }
       return tlist1;
     }
@@ -109,7 +105,6 @@ public class Switch_switch_ConceptMethodCall extends TemplateSwitchBase implemen
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_ConceptMethodCallWithSuper().apply(environment, context1);
-
       }
       return tlist1;
     }

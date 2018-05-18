@@ -68,7 +68,6 @@ public class Switch_switch_INodePointerArg extends TemplateSwitchBase implements
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
         tlist1 = new Template_reduce_NodeIdentity_SNodeReference().apply(environment, context1);
-
       }
       return tlist1;
     }
