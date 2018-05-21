@@ -536,6 +536,7 @@
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
       <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
+      <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -708,6 +709,9 @@
       </concept>
       <concept id="1227022210526" name="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation" flags="nn" index="2Kehj3" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1205679737078" name="jetbrains.mps.baseLanguage.collections.structure.SortOperation" flags="nn" index="2S7cBI">
+        <child id="1205679832066" name="ascending" index="2S7zOq" />
+      </concept>
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1171391069720" name="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" flags="nn" index="2WmjW8" />
@@ -717,6 +721,7 @@
         <child id="5232196642625575056" name="fromIndex" index="1eb2uK" />
       </concept>
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
+      <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
       <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
         <child id="1197683466920" name="keyType" index="3rvQeY" />
         <child id="1197683475734" name="valueType" index="3rvSg0" />
@@ -737,7 +742,9 @@
         <child id="1197932525128" name="key" index="3ElVtu" />
       </concept>
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
+      <concept id="31378964227347002" name="jetbrains.mps.baseLanguage.collections.structure.SelectNotNullOperation" flags="ng" index="1KnU$U" />
       <concept id="1178894719932" name="jetbrains.mps.baseLanguage.collections.structure.DistinctOperation" flags="nn" index="1VAtEI" />
+      <concept id="599357942184015200" name="jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation" flags="nn" index="1XvEQZ" />
     </language>
   </registry>
   <node concept="312cEu" id="gZ0modb">
@@ -788,79 +795,138 @@
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v539up" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v539uq" role="2VODD2">
-            <node concept="3clFbF" id="5piO3v53fRo" role="3cqZAp">
-              <node concept="2OqwBi" id="7InApEnkSN5" role="3clFbG">
-                <node concept="2OqwBi" id="50GoLNOMnMe" role="2Oq$k0">
-                  <node concept="2OqwBi" id="5piO3v53fRv" role="2Oq$k0">
-                    <node concept="2SmgA7" id="5piO3v53fRz" role="2OqNvi">
-                      <node concept="chp4Y" id="1jixkkC_WLb" role="1dBWTz">
-                        <ref role="cht4Q" to="tpf8:gYVPola" resolve="CreateRootRule" />
+            <node concept="3cpWs8" id="56K44f1MNrJ" role="3cqZAp">
+              <node concept="3cpWsn" id="56K44f1MNrK" role="3cpWs9">
+                <property role="TrG5h" value="sortedRootRules" />
+                <node concept="A3Dl8" id="56K44f1MNrF" role="1tU5fm">
+                  <node concept="3Tqbb2" id="56K44f1MNrI" role="A3Ik2">
+                    <ref role="ehGHo" to="tpf8:gYVPola" resolve="CreateRootRule" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="56K44f1N83C" role="33vP2m">
+                  <node concept="2OqwBi" id="56K44f1N01A" role="2Oq$k0">
+                    <node concept="2OqwBi" id="56K44f1MNrM" role="2Oq$k0">
+                      <node concept="2OqwBi" id="56K44f1MNrN" role="2Oq$k0">
+                        <node concept="2SmgA7" id="56K44f1MNrO" role="2OqNvi">
+                          <node concept="chp4Y" id="56K44f1MNrP" role="1dBWTz">
+                            <ref role="cht4Q" to="tpf8:gYVPola" resolve="CreateRootRule" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="56K44f1MNrQ" role="2Oq$k0">
+                          <node concept="1r8y6K" id="56K44f1MNrR" role="2OqNvi" />
+                          <node concept="1iwH7S" id="56K44f1MNrS" role="2Oq$k0" />
+                        </node>
+                      </node>
+                      <node concept="3zZkjj" id="56K44f1MNrT" role="2OqNvi">
+                        <node concept="1bVj0M" id="56K44f1MNrU" role="23t8la">
+                          <node concept="3clFbS" id="56K44f1MNrV" role="1bW5cS">
+                            <node concept="3clFbF" id="56K44f1MNrW" role="3cqZAp">
+                              <node concept="2OqwBi" id="56K44f1MNrX" role="3clFbG">
+                                <node concept="2OqwBi" id="56K44f1MNrY" role="2Oq$k0">
+                                  <node concept="37vLTw" id="56K44f1MNrZ" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="56K44f1MNs3" resolve="it" />
+                                  </node>
+                                  <node concept="1mfA1w" id="56K44f1MNs0" role="2OqNvi" />
+                                </node>
+                                <node concept="1mIQ4w" id="56K44f1MNs1" role="2OqNvi">
+                                  <node concept="chp4Y" id="56K44f1MNs2" role="cj9EA">
+                                    <ref role="cht4Q" to="tpf8:fWbUwhP" resolve="MappingConfiguration" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="56K44f1MNs3" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="56K44f1MNs4" role="1tU5fm" />
+                          </node>
+                        </node>
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="5piO3v53fRq" role="2Oq$k0">
-                      <node concept="1r8y6K" id="5piO3v53fRu" role="2OqNvi" />
-                      <node concept="1iwH7S" id="5piO3v53fRp" role="2Oq$k0" />
-                    </node>
-                  </node>
-                  <node concept="3zZkjj" id="50GoLNOMpu7" role="2OqNvi">
-                    <node concept="1bVj0M" id="50GoLNOMpu9" role="23t8la">
-                      <node concept="3clFbS" id="50GoLNOMpua" role="1bW5cS">
-                        <node concept="3clFbF" id="50GoLNOMq16" role="3cqZAp">
-                          <node concept="1Wc70l" id="5wRxPnnc5od" role="3clFbG">
-                            <node concept="2OqwBi" id="50GoLNOMsm7" role="3uHU7w">
-                              <node concept="2OqwBi" id="50GoLNOMqea" role="2Oq$k0">
-                                <node concept="37vLTw" id="50GoLNOMq15" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="50GoLNOMpub" resolve="it" />
-                                </node>
-                                <node concept="3TrEf2" id="50GoLNOMroy" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tpf8:gYVPolc" resolve="conditionFunction" />
-                                </node>
-                              </node>
-                              <node concept="3x8VRR" id="50GoLNOMtqt" role="2OqNvi" />
-                            </node>
-                            <node concept="2OqwBi" id="5wRxPnnc5Wn" role="3uHU7B">
-                              <node concept="2OqwBi" id="5wRxPnnc5Wo" role="2Oq$k0">
-                                <node concept="37vLTw" id="5wRxPnnc5Wp" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="50GoLNOMpub" resolve="it" />
-                                </node>
-                                <node concept="1mfA1w" id="5wRxPnnc5Wq" role="2OqNvi" />
-                              </node>
-                              <node concept="1mIQ4w" id="5wRxPnnc5Wr" role="2OqNvi">
-                                <node concept="chp4Y" id="5wRxPnnc5Ws" role="cj9EA">
+                    <node concept="2S7cBI" id="56K44f1N15h" role="2OqNvi">
+                      <node concept="1bVj0M" id="56K44f1N15j" role="23t8la">
+                        <node concept="3clFbS" id="56K44f1N15k" role="1bW5cS">
+                          <node concept="3clFbF" id="56K44f1N1_W" role="3cqZAp">
+                            <node concept="2OqwBi" id="56K44f1N60F" role="3clFbG">
+                              <node concept="1PxgMI" id="56K44f1N4lm" role="2Oq$k0">
+                                <node concept="chp4Y" id="56K44f1N4Tq" role="3oSUPX">
                                   <ref role="cht4Q" to="tpf8:fWbUwhP" resolve="MappingConfiguration" />
                                 </node>
+                                <node concept="2OqwBi" id="56K44f1N25z" role="1m5AlR">
+                                  <node concept="37vLTw" id="56K44f1N1_V" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="56K44f1N15l" resolve="it" />
+                                  </node>
+                                  <node concept="1mfA1w" id="56K44f1N390" role="2OqNvi" />
+                                </node>
+                              </node>
+                              <node concept="3TrcHB" id="56K44f1N6M6" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                               </node>
                             </node>
                           </node>
                         </node>
+                        <node concept="Rh6nW" id="56K44f1N15l" role="1bW2Oz">
+                          <property role="TrG5h" value="it" />
+                          <node concept="2jxLKc" id="56K44f1N15m" role="1tU5fm" />
+                        </node>
                       </node>
-                      <node concept="Rh6nW" id="50GoLNOMpub" role="1bW2Oz">
-                        <property role="TrG5h" value="it" />
-                        <node concept="2jxLKc" id="50GoLNOMpuc" role="1tU5fm" />
+                      <node concept="1nlBCl" id="56K44f1N15n" role="2S7zOq">
+                        <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3$u5V9" id="7InApEnkUjm" role="2OqNvi">
-                  <node concept="1bVj0M" id="7InApEnkUjo" role="23t8la">
-                    <node concept="3clFbS" id="7InApEnkUjp" role="1bW5cS">
-                      <node concept="3clFbF" id="7InApEnkWmR" role="3cqZAp">
-                        <node concept="2OqwBi" id="7InApEnkWPu" role="3clFbG">
-                          <node concept="37vLTw" id="7InApEnkWmQ" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7InApEnkUjq" resolve="it" />
-                          </node>
-                          <node concept="3TrEf2" id="7InApEnkYpf" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpf8:gYVPolc" resolve="conditionFunction" />
+                  <node concept="1XvEQZ" id="56K44f1N9ro" role="2OqNvi">
+                    <node concept="1bVj0M" id="56K44f1N9rq" role="23t8la">
+                      <node concept="3clFbS" id="56K44f1N9rr" role="1bW5cS">
+                        <node concept="3clFbF" id="56K44f1N9YO" role="3cqZAp">
+                          <node concept="2OqwBi" id="56K44f1NazT" role="3clFbG">
+                            <node concept="37vLTw" id="56K44f1N9YN" role="2Oq$k0">
+                              <ref role="3cqZAo" node="56K44f1N9rs" resolve="it" />
+                            </node>
+                            <node concept="2bSWHS" id="56K44f1Nb_i" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
+                      <node concept="Rh6nW" id="56K44f1N9rs" role="1bW2Oz">
+                        <property role="TrG5h" value="it" />
+                        <node concept="2jxLKc" id="56K44f1N9rt" role="1tU5fm" />
+                      </node>
                     </node>
-                    <node concept="Rh6nW" id="7InApEnkUjq" role="1bW2Oz">
-                      <property role="TrG5h" value="it" />
-                      <node concept="2jxLKc" id="7InApEnkUjr" role="1tU5fm" />
+                    <node concept="1nlBCl" id="56K44f1N9ru" role="2S7zOq">
+                      <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5piO3v53fRo" role="3cqZAp">
+              <node concept="2OqwBi" id="56K44f1MRnM" role="3clFbG">
+                <node concept="2OqwBi" id="7InApEnkSN5" role="2Oq$k0">
+                  <node concept="37vLTw" id="56K44f1MNsd" role="2Oq$k0">
+                    <ref role="3cqZAo" node="56K44f1MNrK" resolve="sortedRootRules" />
+                  </node>
+                  <node concept="3$u5V9" id="7InApEnkUjm" role="2OqNvi">
+                    <node concept="1bVj0M" id="7InApEnkUjo" role="23t8la">
+                      <node concept="3clFbS" id="7InApEnkUjp" role="1bW5cS">
+                        <node concept="3clFbF" id="7InApEnkWmR" role="3cqZAp">
+                          <node concept="2OqwBi" id="7InApEnkWPu" role="3clFbG">
+                            <node concept="37vLTw" id="7InApEnkWmQ" role="2Oq$k0">
+                              <ref role="3cqZAo" node="7InApEnkUjq" resolve="it" />
+                            </node>
+                            <node concept="3TrEf2" id="56K44f1LE5R" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpf8:gYVPolc" resolve="conditionFunction" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Rh6nW" id="7InApEnkUjq" role="1bW2Oz">
+                        <property role="TrG5h" value="it" />
+                        <node concept="2jxLKc" id="7InApEnkUjr" role="1tU5fm" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1KnU$U" id="56K44f1MSxw" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -872,11 +938,14 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9Mqej" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9Mqek" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9Mqrf" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9Mqrg" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.createRootRule_Condition(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="createRootRule_Condition" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="Vt8Qt9Mqrh" role="37wK5m" />
+            <node concept="3clFbF" id="56K44f1KgZR" role="3cqZAp">
+              <node concept="2OqwBi" id="56K44f1KhjY" role="3clFbG">
+                <node concept="1iwH7S" id="56K44f1KgZP" role="2Oq$k0" />
+                <node concept="2piZGk" id="56K44f1KkyX" role="2OqNvi">
+                  <node concept="Xl_RD" id="2LNusvxJ1C0" role="2piZGb">
+                    <property role="Xl_RC" value="createRootRule_Condition_" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -906,6 +975,7 @@
       <property role="TrG5h" value="dropRootRule" />
       <node concept="10P_77" id="3kaL0UoTuS" role="3clF45" />
       <node concept="1WS0z7" id="5piO3v540Iu" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v540Iv" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v540Iw" role="2VODD2">
@@ -1000,11 +1070,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9NpLk" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9NpLl" role="2VODD2">
-            <node concept="3clFbF" id="Vt8Qt9NpWU" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9NpWV" role="3clFbG">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.dropRootRule_Condition(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="dropRootRule_Condition" />
-                <node concept="30H73N" id="Vt8Qt9NpWW" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJ67U" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJ6Nl" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJ7gs" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJ6Wx" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJ7NV" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJ67T" role="3uHU7B">
+                  <property role="Xl_RC" value="dropRootRule_Condition_" />
+                </node>
               </node>
             </node>
           </node>
@@ -1068,6 +1144,7 @@
         </node>
       </node>
       <node concept="1WS0z7" id="3K84YJACzJb" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="3K84YJACzJd" role="3Jn$fo">
           <node concept="3clFbS" id="3K84YJACzJf" role="2VODD2">
@@ -1154,11 +1231,17 @@
         <property role="2qtEX9" value="name" />
         <node concept="3zFVjK" id="3K84YJAC$Ve" role="3zH0cK">
           <node concept="3clFbS" id="3K84YJAC$Vf" role="2VODD2">
-            <node concept="3cpWs6" id="3K84YJAC_0R" role="3cqZAp">
-              <node concept="2YIFZM" id="1k7MCQBWD3E" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.dropAttributeRule_Condition(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="dropAttributeRule_Condition" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="1k7MCQBWD3G" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJ81g" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJ81i" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJ81j" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJ81k" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJ9sf" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJ81m" role="3uHU7B">
+                  <property role="Xl_RC" value="dropAttr_Condition_" />
+                </node>
               </node>
             </node>
           </node>
@@ -1168,6 +1251,7 @@
     <node concept="2YIFZL" id="5piO3v54xr0" role="jymVt">
       <property role="TrG5h" value="baseMappingRuleCondition" />
       <node concept="1WS0z7" id="5piO3v54xF3" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v54xF4" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v54xF5" role="2VODD2">
@@ -1268,11 +1352,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9Nzxo" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9Nzxp" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9NzGY" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9NzGZ" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.baseMappingRule_Condition(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="baseMappingRule_Condition" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="Vt8Qt9NzH0" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJaf5" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJaf7" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJaf8" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJaf9" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJafa" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJafb" role="3uHU7B">
+                  <property role="Xl_RC" value="baseMappingRule_Condition_" />
+                </node>
               </node>
             </node>
           </node>
@@ -1301,6 +1391,7 @@
     <node concept="2YIFZL" id="5piO3v5526f" role="jymVt">
       <property role="TrG5h" value="propertyMacro" />
       <node concept="1WS0z7" id="5piO3v5526k" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v5526l" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v5526m" role="2VODD2">
@@ -1394,10 +1485,16 @@
         <node concept="3zFVjK" id="Vt8Qt9NL_G" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9NL_H" role="2VODD2">
             <node concept="3clFbF" id="Vt8Qt9NLLi" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9NLLj" role="3clFbG">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.propertyMacro_GetPropertyValue(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="propertyMacro_GetPropertyValue" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="Vt8Qt9NLLk" role="37wK5m" />
+              <node concept="3cpWs3" id="2LNusvxJj3l" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJk5P" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJjLU" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJkj9" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJhXc" role="3uHU7B">
+                  <property role="Xl_RC" value="propertyMacro_GetPropertyValue_" />
+                </node>
               </node>
             </node>
           </node>
@@ -1437,6 +1534,7 @@
       </node>
       <node concept="3Tm1VV" id="5piO3v55zdH" role="1B3o_S" />
       <node concept="1WS0z7" id="5piO3v55zdK" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v55zdL" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v55zdM" role="2VODD2">
@@ -1508,11 +1606,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9NVht" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9NVhu" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9NVt3" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9NVt4" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.referenceMacro_GetReferent(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="referenceMacro_GetReferent" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="Vt8Qt9NVt5" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJkww" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJkwy" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJkwz" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJkw$" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJkw_" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJkwA" role="3uHU7B">
+                  <property role="Xl_RC" value="referenceMacro_GetReferent_" />
+                </node>
               </node>
             </node>
           </node>
@@ -1552,6 +1656,7 @@
       </node>
       <node concept="3Tm1VV" id="4b23ZKQa2vH" role="1B3o_S" />
       <node concept="1WS0z7" id="4b23ZKQa2vI" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="4b23ZKQa2vJ" role="3Jn$fo">
           <node concept="3clFbS" id="4b23ZKQa2vK" role="2VODD2">
@@ -1598,11 +1703,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="4b23ZKQa2vT" role="3zH0cK">
           <node concept="3clFbS" id="4b23ZKQa2vU" role="2VODD2">
-            <node concept="3cpWs6" id="4b23ZKQa2vV" role="3cqZAp">
-              <node concept="2YIFZM" id="4b23ZKQa2vW" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.referenceMacro_GetReferent(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="referenceMacro_GetReferent" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="4b23ZKQa2vY" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJmX8" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJmX9" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJmXa" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJmXb" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJmXc" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJmXd" role="3uHU7B">
+                  <property role="Xl_RC" value="referenceReduction_GetReferent_" />
+                </node>
               </node>
             </node>
           </node>
@@ -1632,6 +1743,7 @@
       <property role="TrG5h" value="ifMacro" />
       <node concept="10P_77" id="7Lt2PIeOu$g" role="3clF45" />
       <node concept="1WS0z7" id="5piO3v56yuO" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v56yuP" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v56yuQ" role="2VODD2">
@@ -1711,11 +1823,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9O9PU" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9O9PV" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9Oa2Q" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9Oa2R" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.ifMacro_Condition(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="ifMacro_Condition" />
-                <node concept="30H73N" id="Vt8Qt9Oa2S" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJnp2" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJnWG" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJoAy" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJo5S" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJoNQ" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJnp1" role="3uHU7B">
+                  <property role="Xl_RC" value="ifMacro_Condition_" />
+                </node>
               </node>
             </node>
           </node>
@@ -1752,6 +1870,7 @@
         </node>
       </node>
       <node concept="1WS0z7" id="5piO3v56URd" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v56URe" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v56URf" role="2VODD2">
@@ -1805,11 +1924,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9OfeD" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9OfeE" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9Ofqf" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9Ofqg" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="sourceSubstituteMacro_SourceNodeQuery" />
-                <node concept="30H73N" id="Vt8Qt9Ofqh" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJpe2" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJpe3" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJpe4" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJpe5" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJpe6" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJpe7" role="3uHU7B">
+                  <property role="Xl_RC" value="sourceNodeQuery_" />
+                </node>
               </node>
             </node>
           </node>
@@ -1842,6 +1967,7 @@
         <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
       </node>
       <node concept="1WS0z7" id="70z$SoMIUNM" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="2qkl5xR4lhW" resolve="QG.argumentQuery" />
         <node concept="3JmXsc" id="70z$SoMIUNN" role="3Jn$fo">
           <node concept="3clFbS" id="70z$SoMIUNO" role="2VODD2">
@@ -2023,6 +2149,7 @@
     <node concept="2YIFZL" id="5piO3v57jfO" role="jymVt">
       <property role="TrG5h" value="sourceSubstsMacro" />
       <node concept="1WS0z7" id="5piO3v57jfT" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v57jfU" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v57jfV" role="2VODD2">
@@ -2104,11 +2231,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9OOGA" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9OOGB" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9OOSc" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9OOSd" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="sourceSubstituteMacro_SourceNodesQuery" />
-                <node concept="30H73N" id="Vt8Qt9OOSe" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJqyT" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJr5P" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJryW" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJrf1" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJrFV" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJqyS" role="3uHU7B">
+                  <property role="Xl_RC" value="sourceNodesQuery_" />
+                </node>
               </node>
             </node>
           </node>
@@ -2138,6 +2271,7 @@
       <property role="TrG5h" value="mapSrc" />
       <node concept="3Tm1VV" id="5piO3v57FCN" role="1B3o_S" />
       <node concept="1WS0z7" id="5piO3v57FCQ" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v57FCR" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v57FCS" role="2VODD2">
@@ -2198,11 +2332,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9Qz1u" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9Qz1v" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9Qzhv" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9Qzyk" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.mapSrcMacro_MapperFunction(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="mapSrcMacro_MapperFunction" />
-                <node concept="30H73N" id="Vt8Qt9Qzyl" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJs6$" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJs6_" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJs6A" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJs6B" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJs6C" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJs6D" role="3uHU7B">
+                  <property role="Xl_RC" value="mapSrcMacro_mapper_" />
+                </node>
               </node>
             </node>
           </node>
@@ -2240,6 +2380,7 @@
       <node concept="3cqZAl" id="5piO3v58425" role="3clF45" />
       <node concept="3Tm1VV" id="5piO3v58426" role="1B3o_S" />
       <node concept="1WS0z7" id="5piO3v58429" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v5842a" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v5842b" role="2VODD2">
@@ -2292,11 +2433,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9QJjT" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9QJjU" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9QKcc" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9QKyt" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="mapSrcMacro_PostMapperFunction" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="Vt8Qt9QKyu" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJsVw" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJsVx" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJsVy" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJsVz" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJsV$" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJsV_" role="3uHU7B">
+                  <property role="Xl_RC" value="mapSrcMacro_post_mapper_" />
+                </node>
               </node>
             </node>
           </node>
@@ -2325,6 +2472,7 @@
     <node concept="2YIFZL" id="5piO3v58WSw" role="jymVt">
       <property role="TrG5h" value="weavingContext" />
       <node concept="1WS0z7" id="5piO3v58WS_" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v58WSA" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v58WSB" role="2VODD2">
@@ -2407,11 +2555,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9QXpU" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9QXpV" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9QXE4" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9QXE5" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="weaving_MappingRule_ContextNodeQuery" />
-                <node concept="30H73N" id="Vt8Qt9QXE6" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJuax" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJuay" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJuaz" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJua$" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJua_" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJuaA" role="3uHU7B">
+                  <property role="Xl_RC" value="weaving_MappingRule_ContextNodeQuery_" />
+                </node>
               </node>
             </node>
           </node>
@@ -2440,6 +2594,7 @@
     <node concept="2YIFZL" id="SFyHGUIUDp" role="jymVt">
       <property role="TrG5h" value="weavingAnchor" />
       <node concept="1WS0z7" id="SFyHGUIUDq" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="SFyHGUIUDr" role="3Jn$fo">
           <node concept="3clFbS" id="SFyHGUIUDs" role="2VODD2">
@@ -2516,11 +2671,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="SFyHGUIUDD" role="3zH0cK">
           <node concept="3clFbS" id="SFyHGUIUDE" role="2VODD2">
-            <node concept="3cpWs6" id="SFyHGUIUDF" role="3cqZAp">
-              <node concept="2YIFZM" id="SFyHGUJ3Ax" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.weaving_AnchorQuery(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="weaving_AnchorQuery" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="SFyHGUJ3Az" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJuZ4" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJuZ5" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJuZ6" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJuZ7" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJuZ8" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJuZ9" role="3uHU7B">
+                  <property role="Xl_RC" value="weaving_AnchorQuery_" />
+                </node>
               </node>
             </node>
           </node>
@@ -2558,6 +2719,7 @@
       <node concept="3cqZAl" id="5piO3v59kXB" role="3clF45" />
       <node concept="3Tm1VV" id="5piO3v59kXC" role="1B3o_S" />
       <node concept="1WS0z7" id="5piO3v59kXF" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="5piO3v59kXG" role="3Jn$fo">
           <node concept="3clFbS" id="5piO3v59kXH" role="2VODD2">
@@ -2629,11 +2791,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9R479" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9R47a" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9R4i_" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9R4iA" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.mappingScript_CodeBlock(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="mappingScript_CodeBlock" />
-                <node concept="30H73N" id="Vt8Qt9R4iB" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJwdN" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJwdO" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJwdP" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJwdQ" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJwdR" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJwdS" role="3uHU7B">
+                  <property role="Xl_RC" value="mappingScript_CodeBlock_" />
+                </node>
               </node>
             </node>
           </node>
@@ -2808,6 +2976,7 @@
       </node>
       <node concept="3Tm1VV" id="1fAUI_JnBKw" role="1B3o_S" />
       <node concept="1WS0z7" id="1fAUI_JnBKz" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="2qkl5xR1fUE" resolve="QG.checkPattern" />
         <node concept="3JmXsc" id="1fAUI_JnBK$" role="3Jn$fo">
           <node concept="3clFbS" id="1fAUI_JnBK_" role="2VODD2">
@@ -2869,11 +3038,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9S0AV" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9S0AW" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9S0QW" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9S1da" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.patternRule_Condition(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="patternRule_Condition" />
-                <node concept="30H73N" id="Vt8Qt9S1db" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJx3b" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJxA7" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJy3e" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJxJj" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJygy" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJx3a" role="3uHU7B">
+                  <property role="Xl_RC" value="patternRule_Condition_" />
+                </node>
               </node>
             </node>
           </node>
@@ -2884,6 +3059,7 @@
       <property role="TrG5h" value="isApplicableMappingConfiguration" />
       <node concept="3Tm1VV" id="7oPo2WIYyYg" role="1B3o_S" />
       <node concept="1WS0z7" id="7oPo2WIYyYj" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="7oPo2WIYyYk" role="3Jn$fo">
           <node concept="3clFbS" id="7oPo2WIYyYl" role="2VODD2">
@@ -2976,11 +3152,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9REDD" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9REDE" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9RETN" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9RETO" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.mappingConfiguration_Condition(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="mappingConfiguration_Condition" />
-                <node concept="30H73N" id="Vt8Qt9RETP" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJyF9" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJyFa" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJyFb" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJyFc" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJyFd" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJyFe" role="3uHU7B">
+                  <property role="Xl_RC" value="mappingConfiguration_Condition_" />
+                </node>
               </node>
             </node>
           </node>
@@ -3012,6 +3194,7 @@
       <property role="TrG5h" value="insertMacro_Query" />
       <node concept="3Tqbb2" id="FIgV7YeaKG" role="3clF45" />
       <node concept="1WS0z7" id="FIgV7YeaKe" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="FIgV7YeaKf" role="3Jn$fo">
           <node concept="3clFbS" id="FIgV7YeaKg" role="2VODD2">
@@ -3091,11 +3274,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9RLzA" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9RLzB" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9RLNK" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9RLNL" role="3cqZAk">
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.insertMacro_Query(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="insertMacro_Query" />
-                <node concept="30H73N" id="Vt8Qt9RLNM" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJzw3" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJzw4" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJzw5" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJzw6" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJzw7" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJzw8" role="3uHU7B">
+                  <property role="Xl_RC" value="insertMacro_Query_" />
+                </node>
               </node>
             </node>
           </node>
@@ -3128,6 +3317,7 @@
       </node>
       <node concept="3Tm1VV" id="4mp7qFmECF_" role="1B3o_S" />
       <node concept="1WS0z7" id="4mp7qFmECFC" role="lGtFl">
+        <property role="1qytDF" value="i" />
         <ref role="2rW$FS" node="7InApEnjzOK" resolve="QG.templateQuery" />
         <node concept="3JmXsc" id="4mp7qFmECFD" role="3Jn$fo">
           <node concept="3clFbS" id="4mp7qFmECFE" role="2VODD2">
@@ -3206,11 +3396,17 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="Vt8Qt9RS$Q" role="3zH0cK">
           <node concept="3clFbS" id="Vt8Qt9RS$R" role="2VODD2">
-            <node concept="3cpWs6" id="Vt8Qt9RSOR" role="3cqZAp">
-              <node concept="2YIFZM" id="Vt8Qt9RTb5" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.varValue_Query(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="varValue_Query" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="30H73N" id="Vt8Qt9RTb6" role="37wK5m" />
+            <node concept="3clFbF" id="2LNusvxJ$xI" role="3cqZAp">
+              <node concept="3cpWs3" id="2LNusvxJ$xJ" role="3clFbG">
+                <node concept="2OqwBi" id="2LNusvxJ$xK" role="3uHU7w">
+                  <node concept="1iwH7S" id="2LNusvxJ$xL" role="2Oq$k0" />
+                  <node concept="1qCSth" id="2LNusvxJ$xM" role="2OqNvi">
+                    <property role="1qCSqd" value="i" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="2LNusvxJ$xN" role="3uHU7B">
+                  <property role="Xl_RC" value="insertMacro_varValue_" />
+                </node>
               </node>
             </node>
           </node>
