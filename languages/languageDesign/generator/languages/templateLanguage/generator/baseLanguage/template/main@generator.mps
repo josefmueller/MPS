@@ -2259,31 +2259,12 @@
         <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
         <node concept="3zFVjK" id="70z$SoMIUO0" role="3zH0cK">
           <node concept="3clFbS" id="70z$SoMIUO1" role="2VODD2">
-            <node concept="3cpWs6" id="70z$SoMIUO2" role="3cqZAp">
-              <node concept="2YIFZM" id="70z$SoMIUO3" role="3cqZAk">
-                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.templateArgumentQuery(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="templateArgumentQuery" />
-                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
-                <node concept="3K4zz7" id="6GfKRVcPsB8" role="37wK5m">
-                  <node concept="2OqwBi" id="6GfKRVcPxJb" role="3K4E3e">
-                    <node concept="1PxgMI" id="6GfKRVcPx3l" role="2Oq$k0">
-                      <property role="1BlNFB" value="true" />
-                      <node concept="30H73N" id="6GfKRVcPsZV" role="1m5AlR" />
-                      <node concept="chp4Y" id="714IaVdGYvP" role="3oSUPX">
-                        <ref role="cht4Q" to="tpf8:3w1cHt2UcMK" resolve="TemplateArgumentQueryExpression" />
-                      </node>
-                    </node>
-                    <node concept="3TrEf2" id="6GfKRVcPy8y" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpf8:3w1cHt2UkU2" resolve="query" />
-                    </node>
-                  </node>
-                  <node concept="30H73N" id="6GfKRVcPzhv" role="3K4GZi" />
-                  <node concept="2OqwBi" id="6GfKRVcPrbt" role="3K4Cdx">
-                    <node concept="30H73N" id="70z$SoMIUO4" role="2Oq$k0" />
-                    <node concept="1mIQ4w" id="6GfKRVcPr$q" role="2OqNvi">
-                      <node concept="chp4Y" id="6GfKRVcPrR5" role="cj9EA">
-                        <ref role="cht4Q" to="tpf8:3w1cHt2UcMK" resolve="TemplateArgumentQueryExpression" />
-                      </node>
-                    </node>
+            <node concept="3clFbF" id="56K44f1TpIy" role="3cqZAp">
+              <node concept="2OqwBi" id="56K44f1Tqhs" role="3clFbG">
+                <node concept="1iwH7S" id="56K44f1TpIw" role="2Oq$k0" />
+                <node concept="2piZGk" id="56K44f1Tr5n" role="2OqNvi">
+                  <node concept="Xl_RD" id="56K44f1Trxs" role="2piZGb">
+                    <property role="Xl_RC" value="templateArgumentQuery_" />
                   </node>
                 </node>
               </node>
