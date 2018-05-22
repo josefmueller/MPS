@@ -41,6 +41,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.MatchIntentionById" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.MatchIntentionByIdAndParameter" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeEditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
