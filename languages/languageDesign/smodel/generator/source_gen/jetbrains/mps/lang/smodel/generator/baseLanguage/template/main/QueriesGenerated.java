@@ -56,6 +56,7 @@ import jetbrains.mps.lang.smodel.behavior.DevkitIdentity__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.behavior.generator.template.util.Constants;
 import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.baseLanguage.behavior.ExpressionStatement__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -977,10 +978,29 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10965697d7aL, 0x109656cb789L, "concept"));
   }
   public static Object referenceMacro_GetReferent_a0a(final ReferenceMacroContext _context) {
-    return QueriesUtil.get_SPropertyAccess_enum_getterMethod(_context.getNode());
+    SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, 0x108f9727bcdL, "property")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
+    SNode primitiveDatatype = SLinkOperations.getTarget((SNodeOperations.cast(datatype, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType"));
+    if ((boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(primitiveDatatype)) {
+      return new SNodePointer("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298759");
+    } else if ((boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(primitiveDatatype)) {
+      return new SNodePointer("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298806");
+    }
+    return new SNodePointer("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298719");
+
   }
   public static Object referenceMacro_GetReferent_a0a_0(final ReferenceMacroContext _context) {
-    return QueriesUtil.get_SPropertyAccess_simple_getterMethod(_context.getNode());
+    // shall return pointer to a method with 2 arguments 
+    SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, 0x108f9727bcdL, "property")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
+    if (SNodeOperations.isInstanceOf(datatype, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
+      SNode primitiveDatatype = SNodeOperations.cast(datatype, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"));
+      if ((boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(primitiveDatatype)) {
+        return new SNodePointer("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298601");
+      } else if ((boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(primitiveDatatype)) {
+        return new SNodePointer("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298643");
+      }
+    }
+    return new SNodePointer("r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)", "6599163591527298558");
+
   }
   public static Object referenceMacro_GetReferent_a0a0a0a(final ReferenceMacroContext _context) {
     return ((ConceptMethodSuperCall.InvokationTarget) _context.getVariable("var:invocationTarget")).type.toString();

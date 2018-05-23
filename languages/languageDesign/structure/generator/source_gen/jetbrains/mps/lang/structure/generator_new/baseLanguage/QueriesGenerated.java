@@ -13,7 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.structure.util.SmartRefAttributeUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,14 +31,11 @@ import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration__Behav
 import jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
@@ -106,7 +106,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return (boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
   }
   public static boolean baseMappingRule_Condition_a0_1(final BaseMappingRuleContext _context) {
-    return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(_context.getNode(), ((boolean) true))).contains(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1169194658468"));
+    return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(_context.getNode(), ((boolean) true))).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.is(it, new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1169194658468"));
+      }
+    });
   }
   public static boolean baseMappingRule_Condition_a1_0(final BaseMappingRuleContext _context) {
     return SmartRefAttributeUtil.isAttributed(_context.getNode());

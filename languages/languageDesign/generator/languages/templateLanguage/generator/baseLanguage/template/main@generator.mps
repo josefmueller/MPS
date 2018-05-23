@@ -26843,45 +26843,13 @@
                           <node concept="3w_OXm" id="7gHSFcXs6jG" role="2OqNvi" />
                         </node>
                       </node>
-                      <node concept="3cpWs8" id="7gHSFcXsn_o" role="3cqZAp">
-                        <node concept="3cpWsn" id="7gHSFcXsn_p" role="3cpWs9">
-                          <property role="TrG5h" value="res" />
-                          <node concept="3Tqbb2" id="7gHSFcXsn_q" role="1tU5fm">
-                            <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
+                      <node concept="3cpWs6" id="3EEhNT1zZMe" role="3cqZAp">
+                        <node concept="2YIFZM" id="3EEhNT1$31Q" role="3cqZAk">
+                          <ref role="1Pybhc" to="tp2b:53CRRPogNTW" resolve="PatternVarsUtil" />
+                          <ref role="37wK5l" to="tp2b:53CRRPoi1hp" resolve="getFieldTypeReference" />
+                          <node concept="37vLTw" id="3EEhNT1$31R" role="37wK5m">
+                            <ref role="3cqZAo" node="7gHSFcXs6iQ" resolve="vardecl" />
                           </node>
-                          <node concept="2ShNRf" id="7gHSFcXsn_r" role="33vP2m">
-                            <node concept="3zrR0B" id="7gHSFcXsn_s" role="2ShVmc">
-                              <node concept="3Tqbb2" id="7gHSFcXsn_t" role="3zrR0E">
-                                <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="7gHSFcXsn_u" role="3cqZAp">
-                        <node concept="2OqwBi" id="7gHSFcXsn_v" role="3clFbG">
-                          <node concept="2OqwBi" id="7gHSFcXsn_w" role="2Oq$k0">
-                            <node concept="37vLTw" id="3GM_nagTx$t" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7gHSFcXsn_p" resolve="res" />
-                            </node>
-                            <node concept="3TrEf2" id="7gHSFcXsn_y" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
-                            </node>
-                          </node>
-                          <node concept="2oxUTD" id="7gHSFcXsn_z" role="2OqNvi">
-                            <node concept="2YIFZM" id="7gHSFcXsnA0" role="2oxUTC">
-                              <ref role="1Pybhc" to="tp2b:53CRRPogNTW" resolve="PatternVarsUtil" />
-                              <ref role="37wK5l" to="tp2b:53CRRPoi1hp" resolve="getFieldTypeReference" />
-                              <node concept="37vLTw" id="3GM_nagTwEO" role="37wK5m">
-                                <ref role="3cqZAo" node="7gHSFcXs6iQ" resolve="vardecl" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="7gHSFcXsnAt" role="3cqZAp">
-                        <node concept="37vLTw" id="3GM_nagTuWU" role="3clFbG">
-                          <ref role="3cqZAo" node="7gHSFcXsn_p" resolve="res" />
                         </node>
                       </node>
                     </node>

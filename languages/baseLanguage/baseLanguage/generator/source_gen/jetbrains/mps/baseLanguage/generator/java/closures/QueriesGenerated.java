@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
@@ -137,7 +138,13 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_a0a1a(final ReferenceMacroContext _context) {
     //  alternatively, could have used MAP-SRC to findEnclosingClosureContextOwner and template reference 
     SNode generatedClass = _context.getOutputNodeByInputNodeAndMappingLabel(ClosuresUtil.findEnclosingClosureContextOwner(_context.getNode()), "contextOwner_closureContext_class");
-    return (generatedClass != null ? generatedClass : SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"));
+    if (generatedClass == null) {
+      return new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object");
+    } else {
+      // for whatever reason, can't mix node-ptr<Classifier> and node<Classifier> for join return type, 
+      // return generatedClass; complains with "type j.l.Object is not subtype of node<Classifier>", hence .pointer 
+      return SNodeOperations.getPointer(generatedClass);
+    }
   }
   public static Object referenceMacro_GetReferent_a0a0c0(final ReferenceMacroContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
@@ -145,7 +152,12 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_a0a0a1a2a(final ReferenceMacroContext _context) {
     // XXX Why not type of argument but cast? 
     SNode generatedClass = _context.getOutputNodeByInputNodeAndMappingLabel(ClosuresUtil.findEnclosingClosureContextOwner(_context.getNode()), "contextOwner_closureContext_class");
-    return (generatedClass != null ? generatedClass : SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"));
+    if (generatedClass != null) {
+      //  see field declaration for reasons we resort to .pointer here 
+      return SNodeOperations.getPointer(generatedClass);
+    } else {
+      return new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object");
+    }
   }
   public static Object referenceMacro_GetReferent_a0a0d0(final ReferenceMacroContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);

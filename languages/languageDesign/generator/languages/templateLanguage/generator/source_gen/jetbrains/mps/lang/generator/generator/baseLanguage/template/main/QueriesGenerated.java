@@ -2648,9 +2648,7 @@ public class QueriesGenerated extends QueryProviderBase {
     if ((vardecl == null)) {
       _context.showErrorMessage(_context.getNode(), "unknown pattern reference");
     }
-    SNode res = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
-    SLinkOperations.setTarget(res, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), PatternVarsUtil.getFieldTypeReference(vardecl));
-    return res;
+    return PatternVarsUtil.getFieldTypeReference(vardecl);
   }
   public static SNode sourceNodeQuery_a0a0a0a0_2(final SourceSubstituteMacroNodeContext _context) {
     SNode typeNode = ConceptFunction__BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, 0x380132d742e94e82L, "query")));
