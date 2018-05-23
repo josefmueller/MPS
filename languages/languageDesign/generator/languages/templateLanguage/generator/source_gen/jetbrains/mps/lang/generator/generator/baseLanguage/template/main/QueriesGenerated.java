@@ -119,32 +119,31 @@ public class QueriesGenerated extends QueryProviderBase {
     return GeneratorUtilEx.shallGenerateFunctionToEvaluate(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_a1b(final PropertyMacroContext _context) {
-    return _context.createUniqueName("createRootRule_Condition_", null);
+    return _context.createUniqueName("createRootRule_Condition_", SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
   }
   public static Object propertyMacro_GetPropertyValue_a1c(final PropertyMacroContext _context) {
     return _context.createUniqueName("dropRootRule_Condition_", null);
-
   }
   public static Object propertyMacro_GetPropertyValue_a1d(final PropertyMacroContext _context) {
-    return _context.createUniqueName("dropAttr_Condition_", null);
+    return _context.createUniqueName("dropAttr_Condition_", SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
   }
   public static Object propertyMacro_GetPropertyValue_a1e(final PropertyMacroContext _context) {
     return _context.createUniqueName("baseMappingRule_Condition_", null);
   }
   public static Object propertyMacro_GetPropertyValue_a1f(final PropertyMacroContext _context) {
-    return _context.createUniqueName("propertyMacro_GetPropertyValue_", null);
+    return _context.createIndexedName("propertyMacro_GetPropertyValue_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a1g(final PropertyMacroContext _context) {
-    return _context.createUniqueName("referenceMacro_GetReferent_", null);
+    return _context.createIndexedName("referenceMacro_GetReferent_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a1h(final PropertyMacroContext _context) {
-    return _context.createUniqueName("referenceReduction_GetReferent_", null);
+    return _context.createUniqueName("referenceReduction_GetReferent_", SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
   }
   public static Object propertyMacro_GetPropertyValue_a1i(final PropertyMacroContext _context) {
-    return _context.createUniqueName("ifMacro_Condition_", null);
+    return _context.createIndexedName("ifMacro_Condition_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a1j(final PropertyMacroContext _context) {
-    return _context.createUniqueName("sourceNodeQuery_", null);
+    return _context.createIndexedName("ifMacro_Condition_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a1k(final PropertyMacroContext _context) {
     return _context.createUniqueName("templateArgumentQuery_", null);
@@ -153,31 +152,31 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.createUniqueName("sourceNodesQuery_", null);
   }
   public static Object propertyMacro_GetPropertyValue_a1m(final PropertyMacroContext _context) {
-    return _context.createUniqueName("mapSrcMacro_mapper_", null);
+    return _context.createIndexedName("mapSrcMacro_mapper_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a1n(final PropertyMacroContext _context) {
-    return _context.createUniqueName("mapSrcMacro_post_mapper_", null);
+    return _context.createIndexedName("mapSrcMacro_post_mapper_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a1o(final PropertyMacroContext _context) {
-    return _context.createUniqueName("weaving_MappingRule_ContextNodeQuery_", null);
+    return _context.createUniqueName("weaving_MappingRule_ContextNodeQuery_", SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
   }
   public static Object propertyMacro_GetPropertyValue_a1p(final PropertyMacroContext _context) {
-    return _context.createUniqueName("weaving_AnchorQuery_", null);
+    return _context.createIndexedName("weaving_AnchorQuery_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a1q(final PropertyMacroContext _context) {
     return _context.createUniqueName("mappingScript_CodeBlock_", null);
   }
   public static Object propertyMacro_GetPropertyValue_a1r(final PropertyMacroContext _context) {
-    return _context.createUniqueName("patternRule_Condition_", null);
+    return _context.createUniqueName("patternRule_Condition_", SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
   }
   public static Object propertyMacro_GetPropertyValue_a1s(final PropertyMacroContext _context) {
-    return _context.createUniqueName("mappingConfiguration_Condition_", null);
+    return _context.createUniqueName("mappingConfiguration_Condition_", SNodeOperations.getParent(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_a1t(final PropertyMacroContext _context) {
-    return _context.createUniqueName("insertMacro_Query_", null);
+    return _context.createIndexedName("insertMacro_Query_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a1u(final PropertyMacroContext _context) {
-    return _context.createUniqueName("insertMacro_varValue_", null);
+    return _context.createIndexedName("insertMacro_varValue_" + SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())).getNodeId(), SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), false);
   }
   public static Object propertyMacro_GetPropertyValue_a0a0a0d0d(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();
