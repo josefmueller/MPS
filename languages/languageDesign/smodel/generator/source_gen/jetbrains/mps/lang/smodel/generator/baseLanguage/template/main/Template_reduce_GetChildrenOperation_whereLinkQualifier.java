@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_GetChildrenOperation_whereLinkQualifier extends TemplateDeclarationBase {
 
+
   public Template_reduce_GetChildrenOperation_whereLinkQualifier() {
   }
 
@@ -41,8 +42,8 @@ public class Template_reduce_GetChildrenOperation_whereLinkQualifier extends Tem
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_12(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_hixxyp_b0a0c0d0c0e));
-        tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_hixxyp_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/6138621529960423805", context1);
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_12(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_hixxyp_b0a0c0d0c0f));
+        tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_hixxyp_b0a0c0d0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/6138621529960423805", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
         }
@@ -51,13 +52,13 @@ public class Template_reduce_GetChildrenOperation_whereLinkQualifier extends Tem
       {
         Collection<SNode> tlist4 = null;
         {
-          final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_a0b0_0(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_hixxyp_b0a0a0a1a4a2a4));
+          final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_a0b0_0(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_hixxyp_b0a0a0a1a4a2a5));
           if (switchInput4 == null) {
             tlist4 = Collections.emptyList();
           } else {
             TemplateContext switchContext4;
             switchContext4 = context1.subContext(null, switchInput4);
-            tlist4 = environment.trySwitch(templateSwitchNode_hixxyp_a0a0c0a1a1a4a2a4, switchContext4);
+            tlist4 = environment.trySwitch(templateSwitchNode_hixxyp_a0a0c0a1a1a4a2a5, switchContext4);
             if (tlist4 == null) {
               final SNode tnode5 = environment.createOutputNode(myConcepts[1]);
               try {
@@ -81,6 +82,10 @@ public class Template_reduce_GetChildrenOperation_whereLinkQualifier extends Tem
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -110,7 +115,7 @@ public class Template_reduce_GetChildrenOperation_whereLinkQualifier extends Tem
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument");
     return rv;
   }
-  private static SNodePointer copySrcMacro_hixxyp_b0a0c0d0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6138621529960423806");
-  private static SNodePointer switchMacroRef_hixxyp_b0a0a0a1a4a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653165790");
-  private static SNodePointer templateSwitchNode_hixxyp_a0a0c0a1a1a4a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653082203");
+  private static SNodePointer copySrcMacro_hixxyp_b0a0c0d0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6138621529960423806");
+  private static SNodePointer switchMacroRef_hixxyp_b0a0a0a1a4a2a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653165790");
+  private static SNodePointer templateSwitchNode_hixxyp_a0a0c0a1a1a4a2a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3902354333653082203");
 }

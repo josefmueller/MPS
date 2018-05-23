@@ -29,6 +29,9 @@ public class Template_aaaaa extends TemplateDeclarationBase {
     this.myNnnn = nnnn;
   }
 
+  public Template_aaaaa() {
+  }
+
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154466320524");
   }
@@ -58,6 +61,11 @@ public class Template_aaaaa extends TemplateDeclarationBase {
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     return TemplateUtil.singletonList(applyPart0(contextWithParams));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context, SNode nnnn) throws GenerationException {
+    this.myNnnn = nnnn;
+    return apply(context.getEnvironment(), context);
   }
 
   @Override

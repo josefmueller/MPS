@@ -39,7 +39,7 @@ public class Switch_switch_ConceptMethodReflectiveCall extends TemplateSwitchBas
     SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0_48(new SourceSubstituteMacroNodeContext(context, callMacro_dxinld_b0a0a1a5));
     TemplateContext context1 = context.subContext(null, callInputNode1);
     if (callInputNode1 != null) {
-      tlist1 = new Template_reduce_ConceptMethodCallReflectiveCommon().apply(environment, context1);
+      tlist1 = new Template_reduce_ConceptMethodCallReflectiveCommon().apply(context1);
     }
     return tlist1;
   }
@@ -56,7 +56,7 @@ public class Switch_switch_ConceptMethodReflectiveCall extends TemplateSwitchBas
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0a_7(new SourceSubstituteMacroNodeContext(context, callMacro_dxinld_b0a0a2a1h));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_ConceptMethodCallReflectiveWithThis().apply(environment, context1);
+        tlist1 = new Template_reduce_ConceptMethodCallReflectiveWithThis().apply(context1);
       }
       return tlist1;
     }
@@ -72,7 +72,7 @@ public class Switch_switch_ConceptMethodReflectiveCall extends TemplateSwitchBas
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0b_2(new SourceSubstituteMacroNodeContext(context, callMacro_dxinld_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_ConceptMethodCallReflectiveWithThis().apply(environment, context1);
+        tlist1 = new Template_reduce_ConceptMethodCallReflectiveWithThis().apply(context1);
       }
       return tlist1;
     }
@@ -88,7 +88,7 @@ public class Switch_switch_ConceptMethodReflectiveCall extends TemplateSwitchBas
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0c_0(new SourceSubstituteMacroNodeContext(context, callMacro_dxinld_b0a0a2a1j));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_ConceptMethodCallReflectiveWithSuper().apply(environment, context1);
+        tlist1 = new Template_reduce_ConceptMethodCallReflectiveWithSuper().apply(context1);
       }
       return tlist1;
     }
@@ -104,7 +104,7 @@ public class Switch_switch_ConceptMethodReflectiveCall extends TemplateSwitchBas
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0d_0(new SourceSubstituteMacroNodeContext(context, callMacro_dxinld_b0a0a2a1k));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_ConceptMethodCallReflectiveWithSuper().apply(environment, context1);
+        tlist1 = new Template_reduce_ConceptMethodCallReflectiveWithSuper().apply(context1);
       }
       return tlist1;
     }

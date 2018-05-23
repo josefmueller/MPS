@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_ThisNodeExpression extends TemplateDeclarationBase {
 
+
   public Template_reduce_ThisNodeExpression() {
   }
 
@@ -35,7 +36,7 @@ public class Template_reduce_ThisNodeExpression extends TemplateDeclarationBase 
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_a1a0a0a0_0(new IfMacroContext(context, ifMacroRef_pajot2_b0a0c0e))) {
+    if (QueriesGenerated.ifMacro_Condition_a1a0a0a0_0(new IfMacroContext(context, ifMacroRef_pajot2_b0a0c0f))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         TemplateContext context1 = context.subContext();
@@ -85,6 +86,10 @@ public class Template_reduce_ThisNodeExpression extends TemplateDeclarationBase 
     return applyPart0(context);
   }
 
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
+  }
+
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
@@ -116,5 +121,5 @@ public class Template_reduce_ThisNodeExpression extends TemplateDeclarationBase 
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation");
     return rv;
   }
-  private static SNodePointer ifMacroRef_pajot2_b0a0c0e = new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "5722502787474197942");
+  private static SNodePointer ifMacroRef_pajot2_b0a0c0f = new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "5722502787474197942");
 }

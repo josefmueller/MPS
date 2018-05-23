@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_weave_StmtToCons extends TemplateDeclarationBase {
 
+
   public Template_weave_StmtToCons() {
   }
 
@@ -38,7 +39,7 @@ public class Template_weave_StmtToCons extends TemplateDeclarationBase {
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a(new PropertyMacroContext(context1, "to ctor ", propertyMacro_aa0u9n_c0a0c0a0b0b0c0e))));
+          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a(new PropertyMacroContext(context1, "to ctor ", propertyMacro_aa0u9n_c0a0c0a0b0b0c0f))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode2);
@@ -51,6 +52,10 @@ public class Template_weave_StmtToCons extends TemplateDeclarationBase {
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -79,5 +84,5 @@ public class Template_weave_StmtToCons extends TemplateDeclarationBase {
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, 0x57d533a7af16ff73L, "commentPart");
     return rv;
   }
-  private static SNodePointer propertyMacro_aa0u9n_c0a0c0a0b0b0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6458924870076077871");
+  private static SNodePointer propertyMacro_aa0u9n_c0a0c0a0b0b0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6458924870076077871");
 }

@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDeclarationBase {
 
+
   public Template_reduce_LocalBehaviorMethodCallWithCast() {
   }
 
@@ -32,7 +33,7 @@ public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDec
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_a1a0a0a(new IfMacroContext(context, ifMacroRef_6pcqdy_b0a0c0e))) {
+    if (QueriesGenerated.ifMacro_Condition_a1a0a0a(new IfMacroContext(context, ifMacroRef_6pcqdy_b0a0c0f))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         TemplateContext context1 = context.subContext();
@@ -42,7 +43,7 @@ public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDec
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist4 = null;
-              tlist4 = new Template_reduce_LocalBehaviorMethodCall().apply(environment, context2);
+              tlist4 = new Template_reduce_LocalBehaviorMethodCall().apply(context2);
               for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                 tnode3.addChild(myAggregationLinks[0], child5);
               }
@@ -50,8 +51,8 @@ public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDec
             }
             {
               Collection<SNode> tlist6 = null;
-              final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_a0a0a0a0a(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0e));
-              tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0e, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/4598718932037174208", context2);
+              final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_a0a0a0a0a(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0f));
+              tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0f, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/4598718932037174208", context2);
               for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
                 tnode3.addChild(myAggregationLinks[1], child7);
               }
@@ -67,7 +68,7 @@ public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDec
       tlist1 = TemplateUtil.singletonList(tnode2);
     } else {
       Collection<SNode> tlist8 = null;
-      tlist8 = new Template_reduce_LocalBehaviorMethodCall().apply(environment, context);
+      tlist8 = new Template_reduce_LocalBehaviorMethodCall().apply(context);
       tlist1 = tlist8;
     }
     return tlist1;
@@ -75,6 +76,10 @@ public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDec
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return applyPart0(context);
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -101,6 +106,6 @@ public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDec
     rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression");
     return rv;
   }
-  private static SNodePointer copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0e = new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "4598718932037176834");
-  private static SNodePointer ifMacroRef_6pcqdy_b0a0c0e = new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "4598718932037160739");
+  private static SNodePointer copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0f = new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "4598718932037176834");
+  private static SNodePointer ifMacroRef_6pcqdy_b0a0c0f = new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "4598718932037160739");
 }

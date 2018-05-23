@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 @Generated
 public class Template_reduce_ModuleRefExpression extends TemplateDeclarationBase {
 
+
   public Template_reduce_ModuleRefExpression() {
   }
 
@@ -33,19 +34,19 @@ public class Template_reduce_ModuleRefExpression extends TemplateDeclarationBase
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
     {
-      final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_a1a_2(new SourceSubstituteMacroNodeContext(context, switchMacroRef_vqpu91_b0a0a0a2a4));
+      final SNode switchInput1 = QueriesGenerated.sourceNodeQuery_a1a_2(new SourceSubstituteMacroNodeContext(context, switchMacroRef_vqpu91_b0a0a0a2a5));
       if (switchInput1 == null) {
         {
-          TemplateSwitchMapping switch1 = environment.getGenerator().getSwitch(templateSwitchNode_vqpu91_a0a0c0a1a2a4);
+          TemplateSwitchMapping switch1 = environment.getGenerator().getSwitch(templateSwitchNode_vqpu91_a0a0c0a1a2a5);
           if (switch1 != null) {
-            switch1.processNull(environment, templateSwitchNode_vqpu91_a0a0c0a1a2a4, context);
+            switch1.processNull(environment, templateSwitchNode_vqpu91_a0a0c0a1a2a5, context);
           }
         }
         tlist1 = Collections.emptyList();
       } else {
         TemplateContext switchContext1;
         switchContext1 = context.subContext(null, switchInput1);
-        tlist1 = environment.trySwitch(templateSwitchNode_vqpu91_a0a0c0a1a2a4, switchContext1);
+        tlist1 = environment.trySwitch(templateSwitchNode_vqpu91_a0a0c0a1a2a5, switchContext1);
         if (tlist1 == null) {
           final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
           try {
@@ -64,6 +65,10 @@ public class Template_reduce_ModuleRefExpression extends TemplateDeclarationBase
     return applyPart0(context);
   }
 
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
+  }
+
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
@@ -79,6 +84,6 @@ public class Template_reduce_ModuleRefExpression extends TemplateDeclarationBase
     rv[0] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core"), 0x10802efe25aL, "BaseConcept");
     return rv;
   }
-  private static SNodePointer switchMacroRef_vqpu91_b0a0a0a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1678062499343218964");
-  private static SNodePointer templateSwitchNode_vqpu91_a0a0c0a1a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1678062499342605304");
+  private static SNodePointer switchMacroRef_vqpu91_b0a0a0a2a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1678062499343218964");
+  private static SNodePointer templateSwitchNode_vqpu91_a0a0c0a1a2a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1678062499342605304");
 }

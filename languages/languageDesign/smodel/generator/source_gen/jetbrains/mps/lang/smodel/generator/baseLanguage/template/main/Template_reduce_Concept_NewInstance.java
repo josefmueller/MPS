@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_Concept_NewInstance extends TemplateDeclarationBase {
 
+
   public Template_reduce_Concept_NewInstance() {
   }
 
@@ -46,8 +47,8 @@ public class Template_reduce_Concept_NewInstance extends TemplateDeclarationBase
           TemplateContext context2 = context1.subContext();
           {
             Collection<SNode> tlist3 = null;
-            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_a0a0a_3(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_bwenx1_b0a0c0d0b0d0c0e));
-            tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_bwenx1_b0a0c0d0b0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/742658975218956044", context2);
+            final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_a0a0a_3(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_bwenx1_b0a0c0d0b0d0c0f));
+            tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_bwenx1_b0a0c0d0b0d0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/742658975218956044", context2);
             for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
               tnode2.addChild(myAggregationLinks[0], child4);
             }
@@ -65,6 +66,10 @@ public class Template_reduce_Concept_NewInstance extends TemplateDeclarationBase
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -93,5 +98,5 @@ public class Template_reduce_Concept_NewInstance extends TemplateDeclarationBase
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument");
     return rv;
   }
-  private static SNodePointer copySrcMacro_bwenx1_b0a0c0d0b0d0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "742658975218956045");
+  private static SNodePointer copySrcMacro_bwenx1_b0a0c0d0b0d0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "742658975218956045");
 }

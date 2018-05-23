@@ -82,6 +82,10 @@ public class Template_map_RootConcept extends TemplateDeclarationBase implements
     return TemplateUtil.singletonList(tnode1);
   }
 
+  public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
+  }
+
   @Override
   protected SConcept[] initConcepts() {
     SConcept[] rv = new SConcept[5];

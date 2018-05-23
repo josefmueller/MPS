@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 @Generated
 public class Template_reduce_EnumMemberReference_null_internalValue extends TemplateDeclarationBase {
 
+
   public Template_reduce_EnumMemberReference_null_internalValue() {
   }
 
@@ -37,6 +38,10 @@ public class Template_reduce_EnumMemberReference_null_internalValue extends Temp
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override

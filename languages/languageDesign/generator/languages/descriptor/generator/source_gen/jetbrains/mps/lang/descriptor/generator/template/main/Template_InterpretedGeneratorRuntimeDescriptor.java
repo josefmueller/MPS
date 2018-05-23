@@ -2048,6 +2048,10 @@ public class Template_InterpretedGeneratorRuntimeDescriptor extends TemplateDecl
     return tlist1;
   }
 
+  public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
+  }
+
   @Override
   protected SConcept[] initConcepts() {
     SConcept[] rv = new SConcept[31];

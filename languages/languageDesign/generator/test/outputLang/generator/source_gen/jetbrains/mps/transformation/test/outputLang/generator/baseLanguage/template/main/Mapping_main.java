@@ -263,7 +263,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       }
       final TemplateExecutionEnvironment environment = templateContext.getEnvironment();
       final TemplateContext context = templateContext.subContext(pattern);
-      Collection<SNode> tlist1 = new Template_convertMult(((SNode) context.getPatternVariable("patternVar_yy")), ((SNode) context.getPatternVariable("patternVar_right"))).apply(environment, context);
+      Collection<SNode> tlist1 = new Template_convertMult().apply(context, ((SNode) context.getPatternVariable("patternVar_yy")), ((SNode) context.getPatternVariable("patternVar_right")));
       return tlist1;
     }
   }
@@ -391,7 +391,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       }
       final TemplateExecutionEnvironment environment = templateContext.getEnvironment();
       final TemplateContext context = templateContext.subContext(pattern);
-      Collection<SNode> tlist1 = new Template_processStatement(((String) QueriesGenerated.templateArgumentQuery_a0d(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0e0b51))), ((String) context.getPatternVariable("patternVar_jobName")), ((SNode) context.getPatternVariable("patternVar_myExpr")), 12, true).apply(environment, context);
+      Collection<SNode> tlist1 = new Template_processStatement().apply(context, ((String) QueriesGenerated.templateArgumentQuery_a0d(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a1a0a4a1p))), ((String) context.getPatternVariable("patternVar_jobName")), ((SNode) context.getPatternVariable("patternVar_myExpr")), 12, true);
       return tlist1;
     }
   }
@@ -472,7 +472,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       }
       final TemplateExecutionEnvironment environment = templateContext.getEnvironment();
       final TemplateContext context = templateContext.subContext(pattern);
-      Collection<SNode> tlist1 = new Template_process42(((SNode) context.getPatternVariable("patternVar_ref"))).apply(environment, context);
+      Collection<SNode> tlist1 = new Template_process42().apply(context, ((SNode) context.getPatternVariable("patternVar_ref")));
       return tlist1;
     }
   }
@@ -506,7 +506,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
             }
             {
               Collection<SNode> tlist4 = null;
-              tlist4 = new Template_process42(((SNode) context2.getPatternVariable("patternVar_ref"))).apply(environment, context2);
+              tlist4 = new Template_process42().apply(context2, ((SNode) context2.getPatternVariable("patternVar_ref")));
               for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                 tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), child5);
               }
@@ -560,7 +560,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_RootCustom().apply(environment, context);
+      Collection<SNode> result = new Template_RootCustom().apply(context);
       environment.registerLabel(context.getInput(), result, "rootcustom");
       return result;
     }
@@ -637,7 +637,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   private static SNodePointer copySrcMacro_ief6mt_b0a0c0b0b0c0b0b0b0b0f0b31 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288283497");
   private static SNodePointer copySrcMacro_ief6mt_b0a0c0b0f0b41 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288387823");
   private static SNodePointer copySrcMacro_ief6mt_b0a0c0c0f0b41 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288387820");
-  private static SNodePointer templArgCall_ief6mt_b0a0a0a0a0e0b51 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4816349095291000367");
+  private static SNodePointer templArgCall_ief6mt_b0a0a1a0a4a1p = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4816349095291000367");
   private static SNodePointer propertyMacro_ief6mt_c0a0c0a0b0b0b0c0b0b0f0b61 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913945866");
   private static SNodePointer templateSwitchNodeNoInput_ief6mt_a0a0c0f0b91 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
 }

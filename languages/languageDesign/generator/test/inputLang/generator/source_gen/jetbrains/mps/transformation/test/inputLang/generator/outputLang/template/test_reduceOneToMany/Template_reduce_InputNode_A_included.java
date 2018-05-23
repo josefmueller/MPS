@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 @Generated
 public class Template_reduce_InputNode_A_included extends TemplateDeclarationBase {
 
+
   public Template_reduce_InputNode_A_included() {
   }
 
@@ -49,6 +50,10 @@ public class Template_reduce_InputNode_A_included extends TemplateDeclarationBas
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.asList(applyPart0(context), applyPart1(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override

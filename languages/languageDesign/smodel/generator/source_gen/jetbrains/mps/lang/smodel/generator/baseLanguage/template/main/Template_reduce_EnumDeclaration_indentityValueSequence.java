@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 @Generated
 public class Template_reduce_EnumDeclaration_indentityValueSequence extends TemplateDeclarationBase {
 
+
   public Template_reduce_EnumDeclaration_indentityValueSequence() {
   }
 
@@ -33,7 +34,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a0(new PropertyMacroContext(context, "1L", propertyMacro_snxsfp_c0a0c0a0c0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a0(new PropertyMacroContext(context, "1L", propertyMacro_snxsfp_c0a0c0a0c0f))));
     } finally {
     }
     return tnode1;
@@ -42,7 +43,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1b0(new PropertyMacroContext(context, "2L", propertyMacro_snxsfp_c0a0c0a0c0f))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1b0(new PropertyMacroContext(context, "2L", propertyMacro_snxsfp_c0a0c0a0c0g))));
     } finally {
     }
     return tnode1;
@@ -51,7 +52,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[1]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1c0(new PropertyMacroContext(context, "language", propertyMacro_snxsfp_c0a0c0a0c0g))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1c0(new PropertyMacroContext(context, "language", propertyMacro_snxsfp_c0a0c0a0c0h))));
     } finally {
     }
     return tnode1;
@@ -60,7 +61,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1d0(new PropertyMacroContext(context, "3L", propertyMacro_snxsfp_c0a0c0a0c0h))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1d0(new PropertyMacroContext(context, "3L", propertyMacro_snxsfp_c0a0c0a0c0i))));
     } finally {
     }
     return tnode1;
@@ -69,7 +70,7 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[1]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1e0(new PropertyMacroContext(context, "enum", propertyMacro_snxsfp_c0a0c0a0c0i))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1e0(new PropertyMacroContext(context, "enum", propertyMacro_snxsfp_c0a0c0a0c0j))));
     } finally {
     }
     return tnode1;
@@ -77,6 +78,10 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.asList(applyPart0(context), applyPart1(context), applyPart2(context), applyPart3(context), applyPart4(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -108,9 +113,9 @@ public class Template_reduce_EnumDeclaration_indentityValueSequence extends Temp
     rv[1] = MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value");
     return rv;
   }
-  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553079430");
-  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553097766");
-  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553048691");
-  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0h = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553103724");
-  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0i = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553049722");
+  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553079430");
+  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553097766");
+  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0h = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553048691");
+  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0i = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553103724");
+  private static SNodePointer propertyMacro_snxsfp_c0a0c0a0c0j = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "2733396919553049722");
 }

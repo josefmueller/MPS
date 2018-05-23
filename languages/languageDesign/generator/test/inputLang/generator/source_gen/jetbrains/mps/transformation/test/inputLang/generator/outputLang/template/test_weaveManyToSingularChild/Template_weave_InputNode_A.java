@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 @Generated
 public class Template_weave_InputNode_A extends TemplateDeclarationBase {
 
+
   public Template_weave_InputNode_A() {
   }
 
@@ -33,7 +34,7 @@ public class Template_weave_InputNode_A extends TemplateDeclarationBase {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a0(new PropertyMacroContext(context, "_text_", propertyMacro_ymqu3a_c0a0c0a0c0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a0(new PropertyMacroContext(context, "_text_", propertyMacro_ymqu3a_c0a0c0a0c0f))));
     } finally {
     }
     return tnode1;
@@ -41,6 +42,10 @@ public class Template_weave_InputNode_A extends TemplateDeclarationBase {
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -62,5 +67,5 @@ public class Template_weave_InputNode_A extends TemplateDeclarationBase {
     rv[0] = MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text");
     return rv;
   }
-  private static SNodePointer propertyMacro_ymqu3a_c0a0c0a0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
+  private static SNodePointer propertyMacro_ymqu3a_c0a0c0a0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
 }

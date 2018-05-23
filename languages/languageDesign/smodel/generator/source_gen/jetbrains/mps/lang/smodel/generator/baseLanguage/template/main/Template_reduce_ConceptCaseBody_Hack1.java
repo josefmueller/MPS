@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_ConceptCaseBody_Hack1 extends TemplateDeclarationBase {
 
+
   public Template_reduce_ConceptCaseBody_Hack1() {
   }
 
@@ -50,8 +51,8 @@ public class Template_reduce_ConceptCaseBody_Hack1 extends TemplateDeclarationBa
           TemplateContext context2 = context1.subContext();
           {
             Collection<SNode> tlist4 = null;
-            final Iterable<SNode> copyListInput4 = QueriesGenerated.sourceNodesQuery_a0a0a0a0a(new SourceSubstituteMacroNodesContext(context2, copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a4));
-            tlist4 = environment.copyNodes(copyListInput4, copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a4, "tpl/r:00000000-0000-4000-0000-011c89590303/7723526804946053432", context2);
+            final Iterable<SNode> copyListInput4 = QueriesGenerated.sourceNodesQuery_a0a0a0a0a(new SourceSubstituteMacroNodesContext(context2, copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a5));
+            tlist4 = environment.copyNodes(copyListInput4, copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a5, "tpl/r:00000000-0000-4000-0000-011c89590303/7723526804946053432", context2);
             for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
               tnode3.addChild(myAggregationLinks[1], child5);
             }
@@ -77,6 +78,10 @@ public class Template_reduce_ConceptCaseBody_Hack1 extends TemplateDeclarationBa
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.asList(applyPart0(context), applyPart1(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -111,5 +116,5 @@ public class Template_reduce_ConceptCaseBody_Hack1 extends TemplateDeclarationBa
     rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue");
     return rv;
   }
-  private static SNodePointer copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "7723526804946055157");
+  private static SNodePointer copySrcListMacro_rlzbfv_b0a0a1a1a1a2a2a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "7723526804946055157");
 }

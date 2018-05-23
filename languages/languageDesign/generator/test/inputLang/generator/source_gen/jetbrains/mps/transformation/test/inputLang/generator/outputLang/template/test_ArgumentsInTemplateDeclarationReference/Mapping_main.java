@@ -56,7 +56,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduceWithArgs("constant").apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduceWithArgs().apply(context, "constant");
       return tlist1;
     }
   }
@@ -67,7 +67,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_a0b(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0b0b7)))).apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduceWithArgs().apply(context, ((String) QueriesGenerated.templateArgumentQuery_a0b(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a1a0a1a1h))));
       return tlist1;
     }
   }
@@ -84,7 +84,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.baseMappingRule_Condition_a0a2(new BaseMappingRuleContext(context, rule_ief6mt_b0a0c0c8))) {
-        Collection<SNode> tlist2 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_a0a0c(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0c0c8)))).apply(environment, context);
+        Collection<SNode> tlist2 = new Template_reduceWithArgs().apply(context, ((String) QueriesGenerated.templateArgumentQuery_a0a0c(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a1a0a0a2a2i))));
         tlist1 = tlist2;
       } else {
         DismissTopMappingRuleException ex_zu1o_a0c = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "shall not hit here");
@@ -114,7 +114,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
-        Collection<SNode> tlist3 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_a0a0a3(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0a2a2j)))).apply(environment, context);
+        Collection<SNode> tlist3 = new Template_reduceWithArgs().apply(context, ((String) QueriesGenerated.templateArgumentQuery_a0a0a3(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a1a0a0a0c0c9))));
         tlist1 = tlist3;
       }
       return tlist1;
@@ -139,7 +139,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else {
-        Collection<SNode> tlist3 = new Template_reduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_a0a4(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a0a0a0a0a2a2k)))).apply(environment, context);
+        Collection<SNode> tlist3 = new Template_reduceWithArgs().apply(context, ((String) QueriesGenerated.templateArgumentQuery_a0a4(new TemplateArgumentContext(context, templArgCall_ief6mt_b0a0a1a0a0a0c0c01))));
         tlist1 = tlist3;
       }
       return tlist1;
@@ -152,15 +152,15 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> result = new Template_MyOutputRoot1().apply(environment, context);
+      Collection<SNode> result = new Template_MyOutputRoot1().apply(context);
       return result;
     }
   }
-  private static SNodePointer templArgCall_ief6mt_b0a0a0a0a0b0b7 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599916821");
+  private static SNodePointer templArgCall_ief6mt_b0a0a1a0a1a1h = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599916821");
   private static SNodePointer rule_ief6mt_b0a0c0c8 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599926144");
-  private static SNodePointer templArgCall_ief6mt_b0a0a0a0a0a0c0c8 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599937590");
+  private static SNodePointer templArgCall_ief6mt_b0a0a1a0a0a2a2i = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599937590");
   private static SNodePointer ifMacroRef_ief6mt_b0a0c0c9 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "4929591503636643304");
-  private static SNodePointer templArgCall_ief6mt_b0a0a0a0a0a0a2a2j = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "4929591503636646078");
+  private static SNodePointer templArgCall_ief6mt_b0a0a1a0a0a0c0c9 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "4929591503636646078");
   private static SNodePointer rule_ief6mt_b0a0c0c01 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "4929591503636612447");
-  private static SNodePointer templArgCall_ief6mt_b0a0a0a0a0a0a2a2k = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "4929591503636680080");
+  private static SNodePointer templArgCall_ief6mt_b0a0a1a0a0a0c0c01 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "4929591503636680080");
 }

@@ -67,7 +67,7 @@ public class Switch_switch_INodePointerArg extends TemplateSwitchBase implements
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_a0a0b_5(new SourceSubstituteMacroNodeContext(context, callMacro_230kvm_b0a0a2a1i));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new Template_reduce_NodeIdentity_SNodeReference().apply(environment, context1);
+        tlist1 = new Template_reduce_NodeIdentity_SNodeReference().apply(context1);
       }
       return tlist1;
     }

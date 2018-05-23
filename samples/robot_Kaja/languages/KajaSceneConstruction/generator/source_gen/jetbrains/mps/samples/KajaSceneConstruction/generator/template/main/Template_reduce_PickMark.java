@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_PickMark extends TemplateDeclarationBase {
 
+
   public Template_reduce_PickMark() {
   }
 
@@ -62,7 +63,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                           {
                             final SNode tnode7 = environment.createOutputNode(myConcepts[4]);
                             try {
-                              SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a0b0_1(new PropertyMacroContext(context6, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0b0b0b0b0b0c0e))));
+                              SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a0b0_1(new PropertyMacroContext(context6, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0b0b0b0b0b0c0f))));
                             } finally {
                             }
                             tnode6.addChild(myAggregationLinks[0], tnode7);
@@ -71,7 +72,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                           {
                             final SNode tnode8 = environment.createOutputNode(myConcepts[4]);
                             try {
-                              SNodeAccessUtil.setProperty(tnode8, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0a0a0a0b0_1(new PropertyMacroContext(context6, "0", propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0b0b0b0b0b0c0e))));
+                              SNodeAccessUtil.setProperty(tnode8, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0a0a0a0b0_1(new PropertyMacroContext(context6, "0", propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0b0b0b0b0b0c0f))));
                             } finally {
                             }
                             tnode6.addChild(myAggregationLinks[0], tnode8);
@@ -98,7 +99,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                                   {
                                     final SNode tnode12 = environment.createOutputNode(myConcepts[4]);
                                     try {
-                                      SNodeAccessUtil.setProperty(tnode12, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a0a0b0_0(new PropertyMacroContext(context9, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0e))));
+                                      SNodeAccessUtil.setProperty(tnode12, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a0a0b0_0(new PropertyMacroContext(context9, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0f))));
                                     } finally {
                                     }
                                     tnode11.addChild(myAggregationLinks[0], tnode12);
@@ -107,7 +108,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                                   {
                                     final SNode tnode13 = environment.createOutputNode(myConcepts[4]);
                                     try {
-                                      SNodeAccessUtil.setProperty(tnode13, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0a0a0a0a0b0_0(new PropertyMacroContext(context9, "0", propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0e))));
+                                      SNodeAccessUtil.setProperty(tnode13, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0b0a0a0a0a0b0_0(new PropertyMacroContext(context9, "0", propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0f))));
                                     } finally {
                                     }
                                     tnode11.addChild(myAggregationLinks[0], tnode13);
@@ -222,7 +223,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                       {
                         final SNode tnode24 = environment.createOutputNode(myConcepts[4]);
                         try {
-                          SNodeAccessUtil.setProperty(tnode24, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a1a_5(new PropertyMacroContext(context16, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0c0b0b0b0b0c0e))));
+                          SNodeAccessUtil.setProperty(tnode24, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a1a_5(new PropertyMacroContext(context16, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0c0b0b0b0b0c0f))));
                         } finally {
                         }
                         tnode23.addChild(myAggregationLinks[0], tnode24);
@@ -241,7 +242,7 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
                       {
                         final SNode tnode26 = environment.createOutputNode(myConcepts[4]);
                         try {
-                          SNodeAccessUtil.setProperty(tnode26, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a1a_6(new PropertyMacroContext(context17, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0c0b0c0b0b0b0b0c0e))));
+                          SNodeAccessUtil.setProperty(tnode26, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a1a_6(new PropertyMacroContext(context17, "0", propertyMacro_mi0eld_c0a0c0a0b0c0b0c0b0c0b0b0b0b0c0f))));
                         } finally {
                         }
                         tnode25.addChild(myAggregationLinks[0], tnode26);
@@ -330,6 +331,10 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
     return TemplateUtil.singletonList(applyPart0(context));
   }
 
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
+  }
+
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
@@ -379,10 +384,10 @@ public class Template_reduce_PickMark extends TemplateDeclarationBase {
     rv[8] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression");
     return rv;
   }
-  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0b0b0b0b0b0c0e = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273614490");
-  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0b0b0b0b0b0c0e = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273614499");
-  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0e = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273614510");
-  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0e = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273614521");
-  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0c0b0b0b0b0c0e = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273648469");
-  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0c0b0c0b0c0b0b0b0b0c0e = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273648478");
+  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0b0b0b0b0b0c0f = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273614490");
+  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0b0b0b0b0b0c0f = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273614499");
+  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0f = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273614510");
+  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0f = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273614521");
+  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0c0b0b0b0c0b0b0b0b0c0f = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273648469");
+  private static SNodePointer propertyMacro_mi0eld_c0a0c0a0b0c0b0c0b0c0b0b0b0b0c0f = new SNodePointer("r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)", "3210697320273648478");
 }

@@ -33,6 +33,9 @@ public class Template_reduce_InputNode extends TemplateDeclarationBase {
     this.myElement = element;
   }
 
+  public Template_reduce_InputNode() {
+  }
+
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948461339");
   }
@@ -56,7 +59,7 @@ public class Template_reduce_InputNode extends TemplateDeclarationBase {
         switchContext1 = context.subContext(args1);
         switchContext1 = switchContext1.subContext(null, context.getInput());
       }
-      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_dc4xlo_a0a0c0c0i, switchContext1);
+      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_dc4xlo_a0a0c0c0k, switchContext1);
       if (tlist1 == null) {
         final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
         try {
@@ -76,6 +79,13 @@ public class Template_reduce_InputNode extends TemplateDeclarationBase {
     return applyPart0(contextWithParams);
   }
 
+  public Collection<SNode> apply(@NotNull TemplateContext context, String text, int value, SNode element) throws GenerationException {
+    this.myText = text;
+    this.myValue = value;
+    this.myElement = element;
+    return apply(context.getEnvironment(), context);
+  }
+
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext().subContext(getParametersAsMap());
@@ -91,5 +101,5 @@ public class Template_reduce_InputNode extends TemplateDeclarationBase {
     rv[0] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b215L, "Statement");
     return rv;
   }
-  private static SNodePointer templateSwitchNodeNoInput_dc4xlo_a0a0c0c0i = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948523705");
+  private static SNodePointer templateSwitchNodeNoInput_dc4xlo_a0a0c0c0k = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948523705");
 }

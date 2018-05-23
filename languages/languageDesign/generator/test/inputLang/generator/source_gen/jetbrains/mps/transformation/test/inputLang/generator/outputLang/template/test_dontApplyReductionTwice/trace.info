@@ -28,8 +28,8 @@
       <node id="1209604518979" at="34,31,35,373" concept="9" />
       <node id="1209604518979" at="38,94,39,107" concept="6" />
       <node id="1209604518979" at="42,103,43,80" concept="5" />
-      <node id="1209604518979" at="43,80,44,87" concept="5" />
-      <node id="1209604518979" at="44,87,45,20" concept="6" />
+      <node id="1209604518979" at="43,80,44,74" concept="5" />
+      <node id="1209604518979" at="44,74,45,20" concept="6" />
       <node id="1209604518979" at="34,0,37,0" concept="1" trace="RootMappingRule0#()V" />
       <node id="1209604518979" at="25,0,29,0" concept="1" trace="Mapping_main#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="1209604518979" at="29,0,33,0" concept="4" trace="getRootRules#()Ljava/util/Collection;" />
@@ -75,25 +75,27 @@
       <node id="1209605205934" at="44,9,45,55" concept="2" />
       <node id="1209605205934" at="45,55,46,31" concept="7" />
       <node id="1209605205934" at="49,5,50,46" concept="6" />
-      <node id="1209605205934" at="54,39,55,36" concept="5" />
-      <node id="1209605205934" at="55,36,56,194" concept="2" />
-      <node id="1209605205934" at="56,194,57,226" concept="2" />
-      <node id="1209605205934" at="57,226,58,14" concept="6" />
-      <node id="1209605205934" at="61,42,62,38" concept="5" />
-      <node id="1209605205934" at="62,38,63,125" concept="2" />
-      <node id="1209605205934" at="63,125,64,125" concept="2" />
-      <node id="1209605205934" at="64,125,65,125" concept="2" />
-      <node id="1209605205934" at="65,125,66,14" concept="6" />
-      <node id="1209605205934" at="69,55,70,52" concept="5" />
-      <node id="1209605205934" at="70,52,71,139" concept="2" />
-      <node id="1209605205934" at="71,139,72,14" concept="6" />
-      <node id="1209605205934" at="74,0,75,0" concept="8" trace="template_ma3vac_a0a3" />
+      <node id="1209605205934" at="53,101,54,52" concept="6" />
+      <node id="1209605205934" at="58,39,59,36" concept="5" />
+      <node id="1209605205934" at="59,36,60,194" concept="2" />
+      <node id="1209605205934" at="60,194,61,226" concept="2" />
+      <node id="1209605205934" at="61,226,62,14" concept="6" />
+      <node id="1209605205934" at="65,42,66,38" concept="5" />
+      <node id="1209605205934" at="66,38,67,125" concept="2" />
+      <node id="1209605205934" at="67,125,68,125" concept="2" />
+      <node id="1209605205934" at="68,125,69,125" concept="2" />
+      <node id="1209605205934" at="69,125,70,14" concept="6" />
+      <node id="1209605205934" at="73,55,74,52" concept="5" />
+      <node id="1209605205934" at="74,52,75,139" concept="2" />
+      <node id="1209605205934" at="75,139,76,14" concept="6" />
+      <node id="1209605205934" at="78,0,79,0" concept="8" trace="template_ma3vac_a0a3" />
       <node id="1209605205934" at="26,0,28,0" concept="1" trace="Template_outputRoot#()V" />
       <node id="1209605205934" at="29,0,32,0" concept="4" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1209605205934" at="53,0,56,0" concept="4" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="1209605205934" at="40,73,44,9" concept="10" />
-      <node id="1209605205934" at="68,0,74,0" concept="4" trace="initAggregationLinks#()[Lorg/jetbrains/mps/openapi/language/SContainmentLink;" />
-      <node id="1209605205934" at="53,0,60,0" concept="4" trace="initConcepts#()[Lorg/jetbrains/mps/openapi/language/SConcept;" />
-      <node id="1209605205934" at="60,0,68,0" concept="4" trace="initProperties#()[Lorg/jetbrains/mps/openapi/language/SProperty;" />
+      <node id="1209605205934" at="72,0,78,0" concept="4" trace="initAggregationLinks#()[Lorg/jetbrains/mps/openapi/language/SContainmentLink;" />
+      <node id="1209605205934" at="57,0,64,0" concept="4" trace="initConcepts#()[Lorg/jetbrains/mps/openapi/language/SConcept;" />
+      <node id="1209605205934" at="64,0,72,0" concept="4" trace="initProperties#()[Lorg/jetbrains/mps/openapi/language/SProperty;" />
       <node id="1209605205934" at="38,54,47,7" concept="0" />
       <node id="1209605205934" at="33,69,49,5" concept="10" />
       <node id="1209605205934" at="32,0,52,0" concept="4" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -102,23 +104,27 @@
       <scope id="1209605205934" at="48,15,48,15" />
       <scope id="1209605205934" at="29,43,30,32" />
       <scope id="1209605205934" at="41,13,42,126" />
+      <scope id="1209605205934" at="53,101,54,52" />
       <scope id="1209605205934" at="26,0,28,0" />
       <scope id="1209605205934" at="29,0,32,0" />
-      <scope id="1209605205934" at="69,55,72,14">
+      <scope id="1209605205934" at="53,0,56,0">
+        <var name="context" id="1209605205934" />
+      </scope>
+      <scope id="1209605205934" at="73,55,76,14">
         <var name="rv" id="1209605205934" />
       </scope>
-      <scope id="1209605205934" at="54,39,58,14">
+      <scope id="1209605205934" at="58,39,62,14">
         <var name="rv" id="1209605205934" />
       </scope>
-      <scope id="1209605205934" at="61,42,66,14">
+      <scope id="1209605205934" at="65,42,70,14">
         <var name="rv" id="1209605205934" />
       </scope>
-      <scope id="1209605205934" at="68,0,74,0" />
+      <scope id="1209605205934" at="72,0,78,0" />
       <scope id="1209605205934" at="39,7,46,31">
         <var name="tnode2" id="1209605205934" />
       </scope>
-      <scope id="1209605205934" at="53,0,60,0" />
-      <scope id="1209605205934" at="60,0,68,0" />
+      <scope id="1209605205934" at="57,0,64,0" />
+      <scope id="1209605205934" at="64,0,72,0" />
       <scope id="1209605205934" at="34,9,47,7">
         <var name="context1" id="1209605205934" />
       </scope>
@@ -129,7 +135,7 @@
         <var name="context" id="1209605205934" />
         <var name="environment" id="1209605205934" />
       </scope>
-      <unit id="1209605205934" at="23,0,76,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Template_outputRoot" />
+      <unit id="1209605205934" at="23,0,80,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.Template_outputRoot" />
     </file>
   </root>
 </debug-info>

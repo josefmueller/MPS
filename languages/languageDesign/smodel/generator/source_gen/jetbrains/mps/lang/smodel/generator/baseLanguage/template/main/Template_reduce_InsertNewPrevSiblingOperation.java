@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_InsertNewPrevSiblingOperation extends TemplateDeclarationBase {
 
+
   public Template_reduce_InsertNewPrevSiblingOperation() {
   }
 
@@ -40,8 +41,8 @@ public class Template_reduce_InsertNewPrevSiblingOperation extends TemplateDecla
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_25(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_v0mmj9_b0a0c0d0c0e));
-        tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_v0mmj9_b0a0c0d0c0e, "tpl/r:00000000-0000-4000-0000-011c89590303/9116031298986685822", context1);
+        final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_a0a0_25(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_v0mmj9_b0a0c0d0c0f));
+        tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_v0mmj9_b0a0c0d0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/9116031298986685822", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
         }
@@ -49,10 +50,10 @@ public class Template_reduce_InsertNewPrevSiblingOperation extends TemplateDecla
       }
       {
         Collection<SNode> tlist4 = null;
-        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_a0b0_2(new SourceSubstituteMacroNodeContext(context1, includeMacro_v0mmj9_b0a0a1a4a2a4));
+        SNode callInputNode4 = QueriesGenerated.sourceNodeQuery_a0b0_2(new SourceSubstituteMacroNodeContext(context1, includeMacro_v0mmj9_b0a0a1a4a2a5));
         TemplateContext context2 = context1.subContext(null, callInputNode4);
         if (callInputNode4 != null) {
-          tlist4 = new Template_reduce_ConceptDeclaration2SConcept().apply(environment, context2);
+          tlist4 = new Template_reduce_ConceptDeclaration2SConcept().apply(context2);
         }
         for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
           tnode1.addChild(myAggregationLinks[0], child5);
@@ -66,6 +67,10 @@ public class Template_reduce_InsertNewPrevSiblingOperation extends TemplateDecla
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -94,6 +99,6 @@ public class Template_reduce_InsertNewPrevSiblingOperation extends TemplateDecla
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument");
     return rv;
   }
-  private static SNodePointer copySrcMacro_v0mmj9_b0a0c0d0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "9116031298986685823");
-  private static SNodePointer includeMacro_v0mmj9_b0a0a1a4a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "9116031298986685831");
+  private static SNodePointer copySrcMacro_v0mmj9_b0a0c0d0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "9116031298986685823");
+  private static SNodePointer includeMacro_v0mmj9_b0a0a1a4a2a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "9116031298986685831");
 }

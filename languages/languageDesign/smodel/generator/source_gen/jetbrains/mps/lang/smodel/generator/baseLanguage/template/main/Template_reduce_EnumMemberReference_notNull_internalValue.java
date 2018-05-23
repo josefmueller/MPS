@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 @Generated
 public class Template_reduce_EnumMemberReference_notNull_internalValue extends TemplateDeclarationBase {
 
+
   public Template_reduce_EnumMemberReference_notNull_internalValue() {
   }
 
@@ -33,7 +34,7 @@ public class Template_reduce_EnumMemberReference_notNull_internalValue extends T
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a(new PropertyMacroContext(context, "_internal_value_", propertyMacro_gvjlvq_c0a0c0a0c0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a(new PropertyMacroContext(context, "_internal_value_", propertyMacro_gvjlvq_c0a0c0a0c0f))));
     } finally {
     }
     return tnode1;
@@ -41,6 +42,10 @@ public class Template_reduce_EnumMemberReference_notNull_internalValue extends T
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -62,5 +67,5 @@ public class Template_reduce_EnumMemberReference_notNull_internalValue extends T
     rv[0] = MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value");
     return rv;
   }
-  private static SNodePointer propertyMacro_gvjlvq_c0a0c0a0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337213373");
+  private static SNodePointer propertyMacro_gvjlvq_c0a0c0a0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139337213373");
 }

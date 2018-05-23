@@ -31,6 +31,9 @@ public class Template_produce_OutputNode extends TemplateDeclarationBase {
     this.myText = text;
   }
 
+  public Template_produce_OutputNode() {
+  }
+
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948578754");
   }
@@ -43,7 +46,7 @@ public class Template_produce_OutputNode extends TemplateDeclarationBase {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a(new PropertyMacroContext(context, "x", propertyMacro_i0lcpv_c0a0c0a0c0g))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a(new PropertyMacroContext(context, "x", propertyMacro_i0lcpv_c0a0c0a0c0i))));
     } finally {
     }
     return tnode1;
@@ -52,6 +55,11 @@ public class Template_produce_OutputNode extends TemplateDeclarationBase {
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     return TemplateUtil.singletonList(applyPart0(contextWithParams));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context, String text) throws GenerationException {
+    this.myText = text;
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -73,5 +81,5 @@ public class Template_produce_OutputNode extends TemplateDeclarationBase {
     rv[0] = MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text");
     return rv;
   }
-  private static SNodePointer propertyMacro_i0lcpv_c0a0c0a0c0g = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948578788");
+  private static SNodePointer propertyMacro_i0lcpv_c0a0c0a0c0i = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948578788");
 }

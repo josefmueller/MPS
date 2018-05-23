@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_LanguageReferenceExpression extends TemplateDeclarationBase {
 
+
   public Template_reduce_LanguageReferenceExpression() {
   }
 
@@ -52,7 +53,7 @@ public class Template_reduce_LanguageReferenceExpression extends TemplateDeclara
           TemplateContext context2 = context1.subContext();
           {
             Collection<SNode> tlist4 = null;
-            tlist4 = new Template_reduce_ModuleReferenceFromString().apply(environment, context2);
+            tlist4 = new Template_reduce_ModuleReferenceFromString().apply(context2);
             for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
               tnode3.addChild(myAggregationLinks[1], child5);
             }
@@ -79,6 +80,10 @@ public class Template_reduce_LanguageReferenceExpression extends TemplateDeclara
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override

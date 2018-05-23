@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Generated
 public class Template_reduce_CommandList extends TemplateDeclarationBase {
 
+
   public Template_reduce_CommandList() {
   }
 
@@ -29,13 +30,17 @@ public class Template_reduce_CommandList extends TemplateDeclarationBase {
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    final Iterable<SNode> copyListInput1 = QueriesGenerated.sourceNodesQuery_a1a0a(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_n3juy2_b0a0a2a4));
-    tlist1 = environment.copyNodes(copyListInput1, copySrcListMacro_n3juy2_b0a0a2a4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039928814", context);
+    final Iterable<SNode> copyListInput1 = QueriesGenerated.sourceNodesQuery_a1a0a(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_n3juy2_b0a0a2a5));
+    tlist1 = environment.copyNodes(copyListInput1, copySrcListMacro_n3juy2_b0a0a2a5, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039928814", context);
     return tlist1;
   }
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return applyPart0(context);
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -47,5 +52,5 @@ public class Template_reduce_CommandList extends TemplateDeclarationBase {
     }
     return tlistpart0;
   }
-  private static SNodePointer copySrcListMacro_n3juy2_b0a0a2a4 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039928822");
+  private static SNodePointer copySrcListMacro_n3juy2_b0a0a2a5 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039928822");
 }

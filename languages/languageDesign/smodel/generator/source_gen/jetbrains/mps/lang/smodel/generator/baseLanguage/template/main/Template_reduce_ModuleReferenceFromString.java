@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_ModuleReferenceFromString extends TemplateDeclarationBase {
 
+
   public Template_reduce_ModuleReferenceFromString() {
   }
 
@@ -56,7 +57,7 @@ public class Template_reduce_ModuleReferenceFromString extends TemplateDeclarati
           {
             final SNode tnode4 = environment.createOutputNode(myConcepts[3]);
             try {
-              SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a_1(new PropertyMacroContext(context2, "module.uid", propertyMacro_xsf8gz_c0a0c0a0b0c0b0c0c0e))));
+              SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a_1(new PropertyMacroContext(context2, "module.uid", propertyMacro_xsf8gz_c0a0c0a0b0c0b0c0c0f))));
             } finally {
             }
             tnode3.addChild(myAggregationLinks[1], tnode4);
@@ -74,6 +75,10 @@ public class Template_reduce_ModuleReferenceFromString extends TemplateDeclarati
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -113,5 +118,5 @@ public class Template_reduce_ModuleReferenceFromString extends TemplateDeclarati
     rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation");
     return rv;
   }
-  private static SNodePointer propertyMacro_xsf8gz_c0a0c0a0b0c0b0c0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5802093636975087568");
+  private static SNodePointer propertyMacro_xsf8gz_c0a0c0a0b0c0b0c0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5802093636975087568");
 }

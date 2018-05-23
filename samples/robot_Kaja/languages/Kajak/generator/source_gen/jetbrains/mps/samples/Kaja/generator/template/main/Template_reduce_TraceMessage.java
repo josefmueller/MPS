@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 @Generated
 public class Template_reduce_TraceMessage extends TemplateDeclarationBase {
 
+
   public Template_reduce_TraceMessage() {
   }
 
@@ -46,7 +47,7 @@ public class Template_reduce_TraceMessage extends TemplateDeclarationBase {
           {
             final SNode tnode3 = environment.createOutputNode(myConcepts[2]);
             try {
-              SNodeAccessUtil.setProperty(tnode3, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0b0(new PropertyMacroContext(context2, "message", propertyMacro_zb4n4r_c0a0c0a0b0c0b0b0c0e))));
+              SNodeAccessUtil.setProperty(tnode3, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0b0(new PropertyMacroContext(context2, "message", propertyMacro_zb4n4r_c0a0c0a0b0c0b0b0c0f))));
             } finally {
             }
             tnode2.addChild(myAggregationLinks[0], tnode3);
@@ -64,6 +65,10 @@ public class Template_reduce_TraceMessage extends TemplateDeclarationBase {
   @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(context));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -100,5 +105,5 @@ public class Template_reduce_TraceMessage extends TemplateDeclarationBase {
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression");
     return rv;
   }
-  private static SNodePointer propertyMacro_zb4n4r_c0a0c0a0b0c0b0b0c0e = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3210697320273781183");
+  private static SNodePointer propertyMacro_zb4n4r_c0a0c0a0b0c0b0b0c0f = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3210697320273781183");
 }

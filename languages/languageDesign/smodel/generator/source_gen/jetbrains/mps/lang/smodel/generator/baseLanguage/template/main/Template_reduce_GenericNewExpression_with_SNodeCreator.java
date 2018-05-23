@@ -33,6 +33,9 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
     this.myConcept = concept;
   }
 
+  public Template_reduce_GenericNewExpression_with_SNodeCreator() {
+  }
+
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1181945881357");
   }
@@ -50,10 +53,10 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_a0a0_2(new SourceSubstituteMacroNodeContext(context1, includeMacro_8mair_b0a0a1a3a2a6));
+        SNode callInputNode2 = QueriesGenerated.sourceNodeQuery_a0a0_2(new SourceSubstituteMacroNodeContext(context1, includeMacro_8mair_b0a0a1a3a2a8));
         TemplateContext context2 = context1.subContext(null, callInputNode2);
         if (callInputNode2 != null) {
-          tlist2 = new Template_reduce_ConceptDeclaration2SConcept().apply(environment, context2);
+          tlist2 = new Template_reduce_ConceptDeclaration2SConcept().apply(context2);
         }
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(myAggregationLinks[0], child3);
@@ -68,6 +71,11 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     return TemplateUtil.singletonList(applyPart0(contextWithParams));
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateContext context, SNode concept) throws GenerationException {
+    this.myConcept = concept;
+    return apply(context.getEnvironment(), context);
   }
 
   @Override
@@ -96,5 +104,5 @@ public class Template_reduce_GenericNewExpression_with_SNodeCreator extends Temp
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument");
     return rv;
   }
-  private static SNodePointer includeMacro_8mair_b0a0a1a3a2a6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5091528797226417730");
+  private static SNodePointer includeMacro_8mair_b0a0a1a3a2a8 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "5091528797226417730");
 }

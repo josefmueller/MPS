@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 @Generated
 public class Template_NodeOrConcept extends TemplateDeclarationBase {
 
+
   public Template_NodeOrConcept() {
   }
 
@@ -32,7 +33,7 @@ public class Template_NodeOrConcept extends TemplateDeclarationBase {
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_a1a0a0a0(new IfMacroContext(context, ifMacroRef_uearkf_b0a0c0e))) {
+    if (QueriesGenerated.ifMacro_Condition_a1a0a0a0(new IfMacroContext(context, ifMacroRef_uearkf_b0a0c0f))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         environment.resolve(new RefResolver(tnode2, myAssociationLinks[0], context, new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6862765979525447835"), "thisConcept") {
@@ -64,6 +65,10 @@ public class Template_NodeOrConcept extends TemplateDeclarationBase {
     return applyPart0(context);
   }
 
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    return apply(context.getEnvironment(), context);
+  }
+
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
     final TemplateContext templateContext = weaveSupport.getTemplateContext();
@@ -85,5 +90,5 @@ public class Template_NodeOrConcept extends TemplateDeclarationBase {
     rv[0] = MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration");
     return rv;
   }
-  private static SNodePointer ifMacroRef_uearkf_b0a0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8560627202335350385");
+  private static SNodePointer ifMacroRef_uearkf_b0a0c0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8560627202335350385");
 }
