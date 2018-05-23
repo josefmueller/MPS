@@ -20,7 +20,7 @@ import jetbrains.mps.generator.template.TemplateVarContext;
 
 @Generated
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_a1a(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_67360620189485787590(final PropertyMacroContext _context) {
     // here we demonstrate use of TemplateArgumentParameterExpression instead of GenerationContextOp_ParameterRef 
     return ((String) _context.getVariable("text"));
   }
@@ -45,14 +45,14 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x11645abf534L, "inputChild"));
   }
-  public static boolean mappingConfiguration_Condition_a(final TemplateQueryContext _context) {
+  public static boolean mappingConfiguration_Condition_zu1o_a(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "argsInTemplateCall", "none");
       }
     }).isNotEmpty();
   }
-  public static Object insertMacro_varValue_a0a0b(final TemplateVarContext _context) {
+  public static Object insertMacro_varValue_67360620189485837950(final TemplateVarContext _context) {
     return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(((SNode) _context.getVariable("element"))) + "- as VarMacro";
   }
 }

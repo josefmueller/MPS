@@ -70,8 +70,8 @@ public class Template_reduce_invoke extends TemplateDeclarationBase {
       {
         final SNode tnode7 = environment.createOutputNode(myConcepts[2]);
         try {
-          SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a(new PropertyMacroContext(context1, "A_BehaviorDescriptor", propertyMacro_eur96u_c0a0c0a0b0c0c0f))));
-          SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a0a0a(new PropertyMacroContext(context1, "fooMethod", propertyMacro_eur96u_c0a0c0b0b0c0c0f))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_38667893537990669400(new PropertyMacroContext(context1, "A_BehaviorDescriptor", propertyMacro_eur96u_c0a0c0a0b0c0c0f))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_38667893537990669401(new PropertyMacroContext(context1, "fooMethod", propertyMacro_eur96u_c0a0c0b0b0c0c0f))));
           TemplateContext context3 = context1.subContext();
           {
             final SNode tnode8 = environment.createOutputNode(myConcepts[3]);
@@ -80,7 +80,7 @@ public class Template_reduce_invoke extends TemplateDeclarationBase {
               TemplateContext context4 = context3.subContext();
               {
                 Collection<SNode> tlist9 = null;
-                final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_a0a0a0a0a_0(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0f));
+                final SNode copySrcInput9 = QueriesGenerated.ifMacro_Condition_38667893537990669420(new SourceSubstituteMacroNodeContext(context4, copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0f));
                 tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_eur96u_b0a0c0c0b0d0b0c0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/3866789353799066942", context4);
                 for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
                   tnode8.addChild(myAggregationLinks[2], child10);

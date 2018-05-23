@@ -33,7 +33,7 @@ public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDec
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    if (QueriesGenerated.ifMacro_Condition_a1a0a0a(new IfMacroContext(context, ifMacroRef_6pcqdy_b0a0c0f))) {
+    if (QueriesGenerated.ifMacro_Condition_45987189320371543380(new IfMacroContext(context, ifMacroRef_6pcqdy_b0a0c0f))) {
       final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
       try {
         TemplateContext context1 = context.subContext();
@@ -51,7 +51,7 @@ public class Template_reduce_LocalBehaviorMethodCallWithCast extends TemplateDec
             }
             {
               Collection<SNode> tlist6 = null;
-              final SNode copySrcInput6 = QueriesGenerated.sourceNodeQuery_a0a0a0a0a(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0f));
+              final SNode copySrcInput6 = QueriesGenerated.ifMacro_Condition_45987189320371742080(new SourceSubstituteMacroNodeContext(context2, copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0f));
               tlist6 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput6), copySrcMacro_6pcqdy_b0a0c0c0b0b0b0c0f, "tpl/r:229ce18d-2bb0-4d5b-a7cd-cec65841e459/4598718932037174208", context2);
               for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
                 tnode3.addChild(myAggregationLinks[1], child7);

@@ -132,7 +132,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     }
     @Override
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-      return QueriesGenerated.createRootRule_Condition_a0(new CreateRootRuleContext(context, getRuleNode()));
+      return QueriesGenerated.createRootRule_Condition_zu1o_a0(new CreateRootRuleContext(context, getRuleNode()));
     }
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
       DefaultTemplateContext context = new DefaultTemplateContext(environment, null, null);

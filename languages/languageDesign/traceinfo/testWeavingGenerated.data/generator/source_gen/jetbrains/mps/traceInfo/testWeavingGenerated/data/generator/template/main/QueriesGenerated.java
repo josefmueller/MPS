@@ -15,31 +15,31 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 @Generated
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_a1(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420084903210(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0b0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420085263140(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_a1b0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420085225490(final PropertyMacroContext _context) {
     return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), null);
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0a1a(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420085334060(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_a1b0_0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420085333970(final PropertyMacroContext _context) {
     return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), null);
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0a2a(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420085334470(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_a1c0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420085334380(final PropertyMacroContext _context) {
     return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), null);
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0a3a(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420085334800(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_a1d0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_61864323420085334710(final PropertyMacroContext _context) {
     return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), null);
   }
   public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {
@@ -54,16 +54,16 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_a0d(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, 0x55da9f701c68116fL, "weaveEachMany"));
   }
-  public static SNode weaving_MappingRule_ContextNodeQuery_a0(final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_zu1o_a0(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept")), "map_RootConcept");
   }
-  public static SNode weaving_MappingRule_ContextNodeQuery_a1(final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_zu1o_a1(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_RootConcept");
   }
-  public static SNode weaving_MappingRule_ContextNodeQuery_a2(final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_zu1o_a2(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept")), "map_RootConcept");
   }
-  public static SNode weaving_MappingRule_ContextNodeQuery_a3(final WeavingMappingRuleContext _context) {
+  public static SNode weaving_MappingRule_ContextNodeQuery_zu1o_a3(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_RootConcept");
   }
 }

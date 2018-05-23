@@ -36,7 +36,7 @@ public class Mapping_mc_concept_switch extends MapConfigBase implements Template
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_a_1(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mappingConfiguration_Condition_b2ynve_a(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -68,7 +68,7 @@ public class Mapping_mc_concept_switch extends MapConfigBase implements Template
     @NotNull
     @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_a0(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_b2ynve_a0(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {

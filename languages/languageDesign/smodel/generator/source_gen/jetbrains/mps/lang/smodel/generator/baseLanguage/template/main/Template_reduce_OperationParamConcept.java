@@ -34,13 +34,13 @@ public class Template_reduce_OperationParamConcept extends TemplateDeclarationBa
   protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
-    final Object varValue1 = QueriesGenerated.insertMacro_varValue_a1a_3(new TemplateVarContext(context, varMacroRef_t65l13_b0a0a2a5));
+    final Object varValue1 = QueriesGenerated.insertMacro_varValue_28370221169601116870(new TemplateVarContext(context, varMacroRef_t65l13_b0a0a2a5));
     TemplateContext context1 = context.withVariable("var:conceptArg", varValue1);
     Collection<SNode> tlist2 = null;
-    if (QueriesGenerated.ifMacro_Condition_a2a(new IfMacroContext(context1, ifMacroRef_t65l13_b0a0f0f))) {
+    if (QueriesGenerated.ifMacro_Condition_28370221169601116870(new IfMacroContext(context1, ifMacroRef_t65l13_b0a0f0f))) {
       Collection<SNode> tlist3 = null;
       {
-        final SNode switchInput3 = QueriesGenerated.sourceNodeQuery_a3a(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_t65l13_b0a0a0a1a5a5));
+        final SNode switchInput3 = QueriesGenerated.ifMacro_Condition_28370221169601116871(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_t65l13_b0a0a0a1a5a5));
         if (switchInput3 == null) {
           tlist3 = Collections.emptyList();
         } else {

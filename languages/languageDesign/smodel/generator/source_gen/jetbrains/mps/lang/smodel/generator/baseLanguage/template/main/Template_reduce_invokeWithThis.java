@@ -48,7 +48,7 @@ public class Template_reduce_invokeWithThis extends TemplateDeclarationBase {
           TemplateContext context2 = context1.subContext();
           {
             Collection<SNode> tlist3 = null;
-            SNode callInputNode3 = QueriesGenerated.sourceNodeQuery_a0a0a0a0_8(new SourceSubstituteMacroNodeContext(context2, callMacro_peulco_b0a0a1a2a1a1a2a5));
+            SNode callInputNode3 = QueriesGenerated.ifMacro_Condition_30993917508921522440(new SourceSubstituteMacroNodeContext(context2, callMacro_peulco_b0a0a1a2a1a1a2a5));
             TemplateContext context3 = context2.subContext(null, callInputNode3);
             if (callInputNode3 != null) {
               tlist3 = new Template_NodeOrConcept().apply(context3);
@@ -74,8 +74,8 @@ public class Template_reduce_invokeWithThis extends TemplateDeclarationBase {
       {
         final SNode tnode7 = environment.createOutputNode(myConcepts[2]);
         try {
-          SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a_1(new PropertyMacroContext(context1, "A_BehaviorDescriptor", propertyMacro_peulco_c0a0c0a0b0c0c0f))));
-          SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a0a0a_1(new PropertyMacroContext(context1, "fooMethod", propertyMacro_peulco_c0a0c0b0b0c0c0f))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_30993917508921522810(new PropertyMacroContext(context1, "A_BehaviorDescriptor", propertyMacro_peulco_c0a0c0a0b0c0c0f))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_30993917508921522811(new PropertyMacroContext(context1, "fooMethod", propertyMacro_peulco_c0a0c0b0b0c0c0f))));
           TemplateContext context4 = context1.subContext();
           {
             final SNode tnode8 = environment.createOutputNode(myConcepts[3]);
@@ -84,7 +84,7 @@ public class Template_reduce_invokeWithThis extends TemplateDeclarationBase {
               TemplateContext context5 = context4.subContext();
               {
                 Collection<SNode> tlist9 = null;
-                final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_a0a0a0a0a_2(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_peulco_b0a0c0c0b0d0b0c0c0f));
+                final SNode copySrcInput9 = QueriesGenerated.ifMacro_Condition_30993917508921522830(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_peulco_b0a0c0c0b0d0b0c0c0f));
                 tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_peulco_b0a0c0c0b0d0b0c0c0f, "tpl/r:00000000-0000-4000-0000-011c89590303/3099391750892152283", context5);
                 for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
                   tnode8.addChild(myAggregationLinks[2], child10);

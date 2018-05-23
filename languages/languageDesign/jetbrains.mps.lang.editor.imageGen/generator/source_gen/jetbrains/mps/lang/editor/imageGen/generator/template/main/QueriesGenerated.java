@@ -28,16 +28,16 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean baseMappingRule_Condition_a0(final BaseMappingRuleContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad25283902716L, "node")) != null;
   }
-  public static Object propertyMacro_GetPropertyValue_a1(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32456377333103157500(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x20c051df23a9da87L, "fileName"));
   }
-  public static Object propertyMacro_GetPropertyValue_a2(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32456377333103157501(final PropertyMacroContext _context) {
     return _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad25283902716L, "node"))).getNodeId().toString();
   }
-  public static Object propertyMacro_GetPropertyValue_a3(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32456377333103157502(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11572e9L, "scale"));
   }
-  public static Object propertyMacro_GetPropertyValue_a4(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_32456377333103157503(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11568fbL, "imageFormat"));
   }
   private final Map<String, MapRootRuleCondition> mrrcMethods = new HashMap<String, MapRootRuleCondition>();
@@ -96,13 +96,13 @@ public class QueriesGenerated extends QueryProviderBase {
     public Object evaluate(@NotNull PropertyMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a1(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_32456377333103157500(ctx);
         case 1:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a2(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_32456377333103157501(ctx);
         case 2:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a3(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_32456377333103157502(ctx);
         case 3:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a4(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_32456377333103157503(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

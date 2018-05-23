@@ -47,7 +47,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
         try {
           // XXX is innerContext in use during reduce_Node? 
           SNode tnode3 = null;
-          final SNode insertInput3 = QueriesGenerated.insertMacro_Query_a1a(new InsertMacroContext(context1, insertMacro_38z9ys_b0a0a2a1a4a1a4));
+          final SNode insertInput3 = QueriesGenerated.insertMacro_Query_76124401280922821460(new InsertMacroContext(context1, insertMacro_38z9ys_b0a0a2a1a4a1a4));
           if (insertInput3 != null) {
             tnode3 = environment.insertNode(insertInput3, insertMacro_38z9ys_b0a0a2a1a4a1a4, context1);
             environment.registerLabel(context1.getInput(), tnode3, "testLabel1");
@@ -88,7 +88,7 @@ public class Template_OutputRoot extends TemplateDeclarationBase implements Temp
       {
         final SNode tnode7 = environment.createOutputNode(myConcepts[1]);
         try {
-          SNodeAccessUtil.setProperty(tnode7, myProperties[2], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0c(new PropertyMacroContext(context1, "foobar", propertyMacro_38z9ys_c0a0c0a0b0g0b0e))));
+          SNodeAccessUtil.setProperty(tnode7, myProperties[2], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_80148139794217772970(new PropertyMacroContext(context1, "foobar", propertyMacro_38z9ys_c0a0c0a0b0g0b0e))));
         } finally {
         }
         tnode1.addChild(myAggregationLinks[0], tnode7);

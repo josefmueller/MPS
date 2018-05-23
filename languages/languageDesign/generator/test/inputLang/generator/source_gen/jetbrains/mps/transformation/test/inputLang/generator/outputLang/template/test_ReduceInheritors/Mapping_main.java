@@ -37,7 +37,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_a(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mappingConfiguration_Condition_zu1o_a(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {

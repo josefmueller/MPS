@@ -75,7 +75,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @NotNull
     @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_a0(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_zu1o_a0(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
@@ -102,7 +102,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @NotNull
     @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_a1(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_zu1o_a1(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
@@ -129,7 +129,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @NotNull
     @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_a2(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_zu1o_a2(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
@@ -156,7 +156,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     @NotNull
     @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_a3(new WeavingMappingRuleContext(context, getRuleNode()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_zu1o_a3(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {

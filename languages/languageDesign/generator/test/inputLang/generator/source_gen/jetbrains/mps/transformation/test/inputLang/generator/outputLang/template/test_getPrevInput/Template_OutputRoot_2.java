@@ -68,7 +68,7 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
               TemplateContext context4 = context3.subContext(itnode4);
               final SNode tnode5 = environment.createOutputNode(myConcepts[1]);
               try {
-                SNodeAccessUtil.setProperty(tnode5, myProperties[2], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a3a_0(new PropertyMacroContext(context4, "_text_", propertyMacro_wvaolp_c0a0c0a0d0e0e0c0e0b0e))));
+                SNodeAccessUtil.setProperty(tnode5, myProperties[2], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_12023384670410(new PropertyMacroContext(context4, "_text_", propertyMacro_wvaolp_c0a0c0a0d0e0e0c0e0b0e))));
                 TemplateContext context5 = context4.subContext();
                 {
                   final List<SNode> tlist6 = new ArrayList<SNode>();
@@ -79,12 +79,12 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                       @NotNull
                       @Override
                       public SNode substitute() throws GenerationFailureException {
-                        return QueriesGenerated.mapSrcMacro_mapper_a0a0(new MapSrcMacroContext(this));
+                        return QueriesGenerated.mapSrcMacro_mapper_12023384670420(new MapSrcMacroContext(this));
                       }
 
                       @Override
                       public void postProcess(@NotNull SNode outputNode) throws GenerationFailureException {
-                        QueriesGenerated.mapSrcMacro_post_mapper_a0a0(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
+                        QueriesGenerated.mapSrcMacro_post_mapper_12023384670420(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
                       }
                     });
                   }
@@ -102,7 +102,7 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                       @NotNull
                       @Override
                       public SNode substitute() throws GenerationFailureException {
-                        return QueriesGenerated.mapSrcMacro_mapper_a0b0(new MapSrcMacroContext(this));
+                        return QueriesGenerated.mapSrcMacro_mapper_12023384670610(new MapSrcMacroContext(this));
                       }
 
                     });
@@ -121,12 +121,12 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                       @NotNull
                       @Override
                       public SNode substitute() throws GenerationFailureException {
-                        return QueriesGenerated.mapSrcMacro_mapper_a0c0(new MapSrcMacroContext(this));
+                        return QueriesGenerated.mapSrcMacro_mapper_12023384670850(new MapSrcMacroContext(this));
                       }
 
                       @Override
                       public void postProcess(@NotNull SNode outputNode) throws GenerationFailureException {
-                        QueriesGenerated.mapSrcMacro_post_mapper_a0c0(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
+                        QueriesGenerated.mapSrcMacro_post_mapper_12023384670850(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
                       }
                     });
                   }

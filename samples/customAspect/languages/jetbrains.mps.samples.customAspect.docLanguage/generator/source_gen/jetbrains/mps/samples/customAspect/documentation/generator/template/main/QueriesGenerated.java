@@ -44,21 +44,21 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
-  public static boolean createRootRule_Condition_a0(final CreateRootRuleContext _context) {
+  public static boolean createRootRule_Condition_zu1o_a0(final CreateRootRuleContext _context) {
     return SModuleOperations.isAspect(_context.getOriginalInputModel(), "documentation");
   }
   public static boolean baseMappingRule_Condition_a0(final BaseMappingRuleContext _context) {
     // see MPS-24613 
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "documentation");
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0a(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_28975195686685911820(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L, "jetbrains.mps.samples.customAspect.documentation.structure.ConceptDocumentation"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L, 0x28360eb22c3ad436L, "cncpt")) == _context.getNode();
       }
     }), MetaAdapterFactory.getProperty(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L, 0x28360eb22c3acdf0L, "text"));
   }
-  public static Object referenceMacro_GetReferent_a0a0a0a(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_28975195686685907640(final ReferenceMacroContext _context) {
     return _context.getNode();
   }
   public static Object templateArgumentQuery_a0a(final TemplateArgumentContext _context) {
@@ -126,7 +126,7 @@ public class QueriesGenerated extends QueryProviderBase {
     public boolean check(@NotNull CreateRootRuleContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.createRootRule_Condition_a0(ctx);
+          return QueriesGenerated.createRootRule_Condition_zu1o_a0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -185,7 +185,7 @@ public class QueriesGenerated extends QueryProviderBase {
     public Object evaluate(@NotNull PropertyMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0a(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_28975195686685911820(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -214,7 +214,7 @@ public class QueriesGenerated extends QueryProviderBase {
     public Object evaluate(@NotNull ReferenceMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.referenceMacro_GetReferent_a0a0a0a(ctx);
+          return QueriesGenerated.referenceMacro_GetReferent_28975195686685907640(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

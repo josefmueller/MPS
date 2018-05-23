@@ -34,10 +34,10 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_a4(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e6cad46aL, 0x44696d5abe089ec8L, "key")) == 3;
   }
-  public static Object propertyMacro_GetPropertyValue_a1a(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_74967268765998730340(final PropertyMacroContext _context) {
     return "text from argument:" + ((String) _context.getVariable("p1"));
   }
-  public static boolean ifMacro_Condition_a0a0d(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_49295915036366404100(final IfMacroContext _context) {
     return false;
   }
   public static Object templateArgumentQuery_a0b(final TemplateArgumentContext _context) {
@@ -55,7 +55,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x11645abf534L, "inputChild"));
   }
-  public static boolean mappingConfiguration_Condition_a(final TemplateQueryContext _context) {
+  public static boolean mappingConfiguration_Condition_zu1o_a(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, 0x117eb48fdf5L, "useInTest"), "argsInTemplDeclRef", "none");

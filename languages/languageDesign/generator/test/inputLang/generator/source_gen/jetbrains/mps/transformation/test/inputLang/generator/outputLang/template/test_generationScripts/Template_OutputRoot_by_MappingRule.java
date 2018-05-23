@@ -36,7 +36,7 @@ public class Template_OutputRoot_by_MappingRule extends TemplateDeclarationBase 
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195168984336");
       SNodeAccessUtil.setProperty(tnode1, myProperties[0], "OutputRoot_by_MappingRule");
-      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1(new PropertyMacroContext(context, "OutputRoot by MappingRule", propertyMacro_5ou570_c0a0c0c0b0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[1], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_11951689843360(new PropertyMacroContext(context, "OutputRoot by MappingRule", propertyMacro_5ou570_c0a0c0c0b0e))));
       TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;

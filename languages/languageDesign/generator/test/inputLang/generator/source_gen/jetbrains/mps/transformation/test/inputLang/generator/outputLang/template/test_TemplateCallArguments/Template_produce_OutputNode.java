@@ -46,7 +46,7 @@ public class Template_produce_OutputNode extends TemplateDeclarationBase {
     final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a(new PropertyMacroContext(context, "x", propertyMacro_i0lcpv_c0a0c0a0c0i))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_67360620189485787590(new PropertyMacroContext(context, "x", propertyMacro_i0lcpv_c0a0c0a0c0i))));
     } finally {
     }
     return tnode1;

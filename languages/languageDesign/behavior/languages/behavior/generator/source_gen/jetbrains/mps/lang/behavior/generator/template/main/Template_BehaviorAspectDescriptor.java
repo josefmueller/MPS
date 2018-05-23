@@ -40,7 +40,7 @@ public class Template_BehaviorAspectDescriptor extends TemplateDeclarationBase i
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
-    final Object varValue1 = QueriesGenerated.insertMacro_varValue_a1(new TemplateVarContext(context, varMacroRef_v965vj_b0a0a1a4));
+    final Object varValue1 = QueriesGenerated.insertMacro_varValue_20565294302018909350(new TemplateVarContext(context, varMacroRef_v965vj_b0a0a1a4));
     TemplateContext context1 = context.withVariable("var:ConceptBehaviors", varValue1);
     final SNode tnode2 = environment.createOutputNode(myConcepts[0]);
     try {
@@ -64,7 +64,7 @@ public class Template_BehaviorAspectDescriptor extends TemplateDeclarationBase i
             SNodeAccessUtil.setProperty(tnode4, myProperties[2], "false");
             SNodeAccessUtil.setProperty(tnode4, myProperties[3], "false");
             SNodeAccessUtil.setProperty(tnode4, myProperties[4], "true");
-            SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a1a(new PropertyMacroContext(context3, "myBHDescriptor", propertyMacro_v965vj_c0a0c0e0e0d0e0e0e))));
+            SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_56306879947926873750(new PropertyMacroContext(context3, "myBHDescriptor", propertyMacro_v965vj_c0a0c0e0e0d0e0e0e))));
             TemplateContext context4 = context3.subContext();
             {
               final SNode tnode5 = environment.createOutputNode(myConcepts[2]);
@@ -93,7 +93,7 @@ public class Template_BehaviorAspectDescriptor extends TemplateDeclarationBase i
                     environment.resolve(new RefResolver(tnode8, myAssociationLinks[1], context5, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "8560627202334867185"), "BaseBHDescriptor") {
                       @Override
                       public Object resolve() {
-                        return QueriesGenerated.referenceMacro_GetReferent_a0a0a(createQueryContext());
+                        return QueriesGenerated.referenceMacro_GetReferent_85606272023343220340(createQueryContext());
                       }
                     });
                   } finally {
@@ -281,7 +281,7 @@ public class Template_BehaviorAspectDescriptor extends TemplateDeclarationBase i
                                     environment.resolve(new RefResolver(tnode31, myAssociationLinks[3], context14, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "7600007869448722163"), "myBHDescriptor") {
                                       @Override
                                       public Object resolve() {
-                                        return QueriesGenerated.referenceMacro_GetReferent_a0a0a0a0e(createQueryContext());
+                                        return QueriesGenerated.referenceMacro_GetReferent_76000078694487221570(createQueryContext());
                                       }
                                     });
                                   } finally {
@@ -305,7 +305,7 @@ public class Template_BehaviorAspectDescriptor extends TemplateDeclarationBase i
                             environment.resolve(new RefResolver(tnode32, myAssociationLinks[4], context12, new SNodePointer("r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)", "6551427688186219814"), "BaseConcept") {
                               @Override
                               public Object resolve() {
-                                return QueriesGenerated.referenceMacro_GetReferent_a0a0a0e(createQueryContext());
+                                return QueriesGenerated.referenceMacro_GetReferent_18897940432601130090(createQueryContext());
                               }
                             });
                           } finally {

@@ -39,7 +39,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
-    return QueriesGenerated.mappingConfiguration_Condition_a(new TemplateQueryContext(getMappingNode(), generator));
+    return QueriesGenerated.mappingConfiguration_Condition_zu1o_a(new TemplateQueryContext(getMappingNode(), generator));
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -107,7 +107,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      if (QueriesGenerated.ifMacro_Condition_a0a0d(new IfMacroContext(context, ifMacroRef_ief6mt_b0a0c0c9))) {
+      if (QueriesGenerated.ifMacro_Condition_49295915036366404100(new IfMacroContext(context, ifMacroRef_ief6mt_b0a0c0c9))) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core"), 0x10802efe25aL, "BaseConcept"));
         try {
         } finally {

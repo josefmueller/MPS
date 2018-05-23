@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 @Generated
 public class QueriesGenerated {
-  public static boolean createRootRule_Condition_a0(final CreateRootRuleContext _context) {
+  public static boolean createRootRule_Condition_zu1o_a0(final CreateRootRuleContext _context) {
     return QueriesUtil.isTest1(_context.getInputModel());
   }
   public static boolean baseMappingRule_Condition_a0a0(final BaseMappingRuleContext _context) {
@@ -39,7 +39,7 @@ public class QueriesGenerated {
     }
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, 0x11645bf6873L, "option"), "drop_it", "option_default");
   }
-  public static Object propertyMacro_GetPropertyValue_a1(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_11951689843360(final PropertyMacroContext _context) {
     return "OutputRoot by MappingRule from input name: " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Iterable<SNode> sourceNodesQuery_a0a(final SourceSubstituteMacroNodesContext _context) {

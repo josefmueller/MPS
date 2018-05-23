@@ -29,16 +29,16 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
-  public static Object propertyMacro_GetPropertyValue_a1(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_34097522883621539790(final PropertyMacroContext _context) {
     return ("EvaluatorInstance");
   }
-  public static Object propertyMacro_GetPropertyValue_a1_0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_16209554345322199680(final PropertyMacroContext _context) {
     return ("EvaluatorInstance");
   }
-  public static SNode sourceNodeQuery_a0a0a1(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode ifMacro_Condition_34097522883621675060(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, 0xbbe5b47d7cc6080L, "code"));
   }
-  public static SNode sourceNodeQuery_a0a1a1(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode ifMacro_Condition_62930056177060160710(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, 0x10093bb8b0669700L, "evaluatedStatements"));
   }
   public static Iterable<SNode> sourceNodesQuery_a0a0b(final SourceSubstituteMacroNodesContext _context) {
@@ -68,9 +68,9 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.sourceNodeQuery_a0a1a1(ctx);
+          return QueriesGenerated.ifMacro_Condition_62930056177060160710(ctx);
         case 1:
-          return QueriesGenerated.sourceNodeQuery_a0a0a1(ctx);
+          return QueriesGenerated.ifMacro_Condition_34097522883621675060(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -130,9 +130,9 @@ public class QueriesGenerated extends QueryProviderBase {
     public Object evaluate(@NotNull PropertyMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a1_0(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_16209554345322199680(ctx);
         case 1:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a1(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_34097522883621539790(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

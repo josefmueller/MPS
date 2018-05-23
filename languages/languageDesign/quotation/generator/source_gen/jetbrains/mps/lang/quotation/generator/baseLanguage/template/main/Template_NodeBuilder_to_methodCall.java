@@ -49,7 +49,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
         try {
           environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709245");
-          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0(new PropertyMacroContext(context1, "createNode", propertyMacro_synbg_c0a0c0b0b0b0c0f))));
+          SNodeAccessUtil.setProperty(tnode2, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4296010796767092450(new PropertyMacroContext(context1, "createNode", propertyMacro_synbg_c0a0c0b0b0b0c0f))));
           TemplateContext context2 = context1.subContext();
           {
             final List<SNode> tlist3 = new ArrayList<SNode>();
@@ -63,7 +63,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
               context3 = context3.withVariable("cv:c", loopIndex_c_3++);
               final SNode tnode4 = environment.createOutputNode(myConcepts[2]);
               try {
-                SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a(new PropertyMacroContext(context3, "a", propertyMacro_synbg_c0a0c0a0e0d0d0b0b0c0f))));
+                SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4296010796767092600(new PropertyMacroContext(context3, "a", propertyMacro_synbg_c0a0c0a0e0d0d0b0b0c0f))));
                 TemplateContext context4 = context3.subContext();
                 {
                   final SNode tnode5 = environment.createOutputNode(myConcepts[3]);
@@ -108,7 +108,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
               TemplateContext context5 = context2.subContext();
               {
                 Collection<SNode> tlist10 = null;
-                if (QueriesGenerated.ifMacro_Condition_a0a0a0(new IfMacroContext(context5, ifMacroRef_synbg_b0a0b0b0b0g0b0b0c0f))) {
+                if (QueriesGenerated.ifMacro_Condition_4296010796768824840(new IfMacroContext(context5, ifMacroRef_synbg_b0a0b0b0b0g0b0b0c0f))) {
                   final SNode tnode11 = environment.createOutputNode(myConcepts[7]);
                   try {
                     TemplateContext context6 = context5.subContext();
@@ -188,7 +188,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
               }
               {
                 Collection<SNode> tlist20 = null;
-                final SNode copySrcInput20 = QueriesGenerated.sourceNodeQuery_a0c0a0(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0f));
+                final SNode copySrcInput20 = QueriesGenerated.ifMacro_Condition_4296010796768825150(new SourceSubstituteMacroNodeContext(context5, copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0f));
                 tlist20 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput20), copySrcMacro_synbg_b0a0c0d0b0g0b0b0c0f, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676882515", context5);
                 for (SNode child21 : TemplateUtil.asNotNull(tlist20)) {
                   tnode9.addChild(myAggregationLinks[6], child21);
@@ -205,7 +205,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
                       environment.resolve(new RefResolver(tnode23, myAssociationLinks[3], context10, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7091594365016609327"), "result") {
                         @Override
                         public Object resolve() {
-                          return QueriesGenerated.referenceMacro_GetReferent_a0a3a0a(createQueryContext());
+                          return QueriesGenerated.referenceMacro_GetReferent_70915943650166093260(createQueryContext());
                         }
                       });
                     } finally {

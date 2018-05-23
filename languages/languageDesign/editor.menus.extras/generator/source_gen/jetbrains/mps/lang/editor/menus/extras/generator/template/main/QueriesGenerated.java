@@ -33,25 +33,25 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_72911014786217410140(final PropertyMacroContext _context) {
     return (String) BaseIntentionDeclaration__BehaviorDescriptor.getGeneratedId_id2ytFvC$HDcE.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L, 0x289dadfa24b57a52L, "intention")));
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_72911014786217410080(final PropertyMacroContext _context) {
     return _context.createUniqueName("TMP_Intention", _context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0b0c0a(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_86487664377362572760(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L, 0x289dadfa24b57a52L, "intention")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0_0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_23191562310544893110(final PropertyMacroContext _context) {
     return (isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x202f4c4e02a0918cL, 0x202f4c4e02a09194L, "action")), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x374ac263e13f4abeL, "ID"))) ? SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x202f4c4e02a0918cL, 0x202f4c4e02a09194L, "action")), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x374ac263e13f4abeL, "ID")) : ActionDeclaration__BehaviorDescriptor.getGeneratedClassFQName_idhEwIGgK.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x202f4c4e02a0918cL, 0x202f4c4e02a09194L, "action"))));
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0_0(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_23191562310544893050(final PropertyMacroContext _context) {
     return _context.createUniqueName("TMP_PluginAction", _context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0a0a0_1(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_47366961585957004310(final PropertyMacroContext _context) {
     return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x41bc200f660dc377L, 0x41bc200f660dc37aL, "refactoring")));
   }
-  public static Object propertyMacro_GetPropertyValue_a0a0_1(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_47366961585957004250(final PropertyMacroContext _context) {
     return _context.createUniqueName("TMP_Refactoring", _context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_a0a4a0(final SourceSubstituteMacroNodesContext _context) {
@@ -146,19 +146,19 @@ public class QueriesGenerated extends QueryProviderBase {
     public Object evaluate(@NotNull PropertyMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_72911014786217410140(ctx);
         case 1:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0b0c0a(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_86487664377362572760(ctx);
         case 2:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_72911014786217410080(ctx);
         case 3:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0_1(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_47366961585957004310(ctx);
         case 4:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0_1(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_47366961585957004250(ctx);
         case 5:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0a0a0_0(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_23191562310544893110(ctx);
         case 6:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_a0a0_0(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_23191562310544893050(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

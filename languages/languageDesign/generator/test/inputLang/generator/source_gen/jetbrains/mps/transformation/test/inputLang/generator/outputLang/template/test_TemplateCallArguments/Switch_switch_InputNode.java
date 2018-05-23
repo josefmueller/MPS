@@ -59,7 +59,7 @@ public class Switch_switch_InputNode extends TemplateSwitchBase implements Templ
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
-      final Object varValue1 = QueriesGenerated.insertMacro_varValue_a0a0b(new TemplateVarContext(context, varMacroRef_tlt8xy_b0a0a2a1i));
+      final Object varValue1 = QueriesGenerated.insertMacro_varValue_67360620189485837950(new TemplateVarContext(context, varMacroRef_tlt8xy_b0a0a2a1i));
       TemplateContext context1 = context.withVariable("var:xxx", varValue1);
       Collection<SNode> tlist2 = null;
       tlist2 = new Template_produce_OutputNode().apply(context1, ((String) context1.getVariable("var:xxx")));
