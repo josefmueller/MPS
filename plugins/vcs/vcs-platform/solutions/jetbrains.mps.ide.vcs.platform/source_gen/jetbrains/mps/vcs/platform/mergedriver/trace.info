@@ -984,7 +984,7 @@
       <unit id="1400826623542832160" at="68,59,72,5" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$4" />
       <unit id="1400826623542832182" at="72,17,76,5" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$5" />
       <unit id="1400826623542832129" at="80,73,84,5" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$6" />
-      <unit id="6331978077868607849" at="118,55,122,7" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$7" />
+      <unit id="6331978077868607849" at="118,68,122,7" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$7" />
       <unit id="8704175735092973567" at="142,54,146,11" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$9$1" />
       <unit id="8704175735092973541" at="150,54,154,11" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$8$1" />
       <unit id="8704175735092973561" at="140,78,148,7" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$9" />

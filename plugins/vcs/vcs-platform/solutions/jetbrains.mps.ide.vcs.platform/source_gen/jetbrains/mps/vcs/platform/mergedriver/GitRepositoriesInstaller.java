@@ -15,8 +15,8 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.vcs.core.mergedriver.FileType;
 import java.io.IOException;
@@ -115,7 +115,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
     if (dryRun) {
       return installForRoot(vcsRootPath, dryRun);
     } else {
-      return ModelAccess.instance().runWriteAction(new Computable<AbstractInstaller.State>() {
+      return ApplicationManager.getApplication().runWriteAction(new Computable<AbstractInstaller.State>() {
         public AbstractInstaller.State compute() {
           return installForRoot(vcsRootPath, dryRun);
         }

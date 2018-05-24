@@ -19,7 +19,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.diff.contents.FileContent;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.MPSExtentions;
@@ -27,7 +26,7 @@ import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -73,14 +72,16 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
       final VirtualFile file = ((FileContent) textRequest.getOutputContent()).getFile();
       final File backupFile = MergeBackupUtil.zipModel(byteContents, file);
 
-      final Wrappers._T<String> ext = new Wrappers._T<String>(file.getExtension());
+      final String ext;
       if (FilePerRootDataSource.isPerRootPersistenceFile(FileSystem.getInstance().getFileByPath(file.getPath()))) {
         // load model partially from per-root persistence with "normal" persistence loading 
-        ext.value = MPSExtentions.MODEL;
+        ext = MPSExtentions.MODEL;
+      } else {
+        ext = file.getExtension();
       }
-      final SModel baseModel = VCSPersistenceUtil.loadModel(byteContents[MergeConstants.ORIGINAL], ext.value);
-      SModel mineModel = loadModel(byteContents[MergeConstants.CURRENT], ext.value);
-      SModel newModel = loadModel(byteContents[MergeConstants.LAST_REVISION], ext.value);
+      final SModel baseModel = VCSPersistenceUtil.loadModel(byteContents[MergeConstants.ORIGINAL], ext);
+      SModel mineModel = loadModel(byteContents[MergeConstants.CURRENT], ext);
+      SModel newModel = loadModel(byteContents[MergeConstants.LAST_REVISION], ext);
       if (baseModel != null && mineModel != null && newModel != null) {
         final ModelMergeViewer viewer = new ModelMergeViewer(context, textRequest, baseModel, mineModel, newModel);
 
@@ -88,41 +89,36 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
           public boolean save(MergeModelsPanel parent, final SModel resultModel) {
             ApplicationManager.getApplication().assertIsDispatchThread();
 
-            final Wrappers._boolean closeDialog = new Wrappers._boolean(true);
+            boolean closeDialog = true;
             final Wrappers._T<String> resultContent = new Wrappers._T<String>(null);
 
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                try {
-                  resultContent.value = ModelMergeViewer.saveModel(resultModel, file, ext.value);
-                } catch (Throwable error) {
-                  // this can be when saving in 9 persistence after merge with 8 persistence => trying to save in 8th 
-                  if (baseModel instanceof PersistenceVersionAware && resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) baseModel).getPersistenceVersion() == 8 && ((PersistenceVersionAware) resultModel).getPersistenceVersion() == 9) {
-                    String message = "The merged model cannot be saved using the new 9th persistence." + " The most-likely reason: one of the languages used in this model has not yet been generated." + " You can revert the changes, merge and generate the used languages first and only then merge this model again." + " Alternatively, you can save the model in old 8th persistence version and then migrate it to the latest persistence, after all used languages will have been merged manually.";
-                    int result = Messages.showYesNoCancelDialog(viewer.getComponent(), message, "Save model " + SModelOperations.getModelName(resultModel), "Save in 8th persistence", "Revert changes", "Return to merge", Messages.getWarningIcon());
-                    switch (result) {
-                      case Messages.YES:
-                        ((PersistenceVersionAware) resultModel).setPersistenceVersion(8);
-                        resultContent.value = ModelMergeViewer.saveModel(resultModel, file, ext.value);
-                        break;
-                      case Messages.NO:
-                        resultContent.value = null;
-                        break;
-                      default:
-                        closeDialog.value = false;
-                        break;
-                    }
-                  } else {
-                    if (LOG_276369528.isEnabledFor(Level.ERROR)) {
-                      LOG_276369528.error("Cannot save merge resulting model " + SModelOperations.getModelName(resultModel), error);
-                    }
-                  }
+            try {
+              resultContent.value = ModelMergeViewer.saveModel(resultModel, file, ext);
+            } catch (Throwable error) {
+              // this can be when saving in 9 persistence after merge with 8 persistence => trying to save in 8th 
+              if (baseModel instanceof PersistenceVersionAware && resultModel instanceof PersistenceVersionAware && ((PersistenceVersionAware) baseModel).getPersistenceVersion() == 8 && ((PersistenceVersionAware) resultModel).getPersistenceVersion() == 9) {
+                String message = "The merged model cannot be saved using the new 9th persistence." + " The most-likely reason: one of the languages used in this model has not yet been generated." + " You can revert the changes, merge and generate the used languages first and only then merge this model again." + " Alternatively, you can save the model in old 8th persistence version and then migrate it to the latest persistence, after all used languages will have been merged manually.";
+                int result = Messages.showYesNoCancelDialog(viewer.getComponent(), message, "Save model " + SModelOperations.getModelName(resultModel), "Save in 8th persistence", "Revert changes", "Return to merge", Messages.getWarningIcon());
+                switch (result) {
+                  case Messages.YES:
+                    ((PersistenceVersionAware) resultModel).setPersistenceVersion(8);
+                    resultContent.value = ModelMergeViewer.saveModel(resultModel, file, ext);
+                    break;
+                  case Messages.NO:
+                    resultContent.value = null;
+                    break;
+                  default:
+                    closeDialog = false;
+                    break;
                 }
-
+              } else {
+                if (LOG_276369528.isEnabledFor(Level.ERROR)) {
+                  LOG_276369528.error("Cannot save merge resulting model " + SModelOperations.getModelName(resultModel), error);
+                }
               }
-            });
+            }
             if (resultContent.value != null) {
-              ModelAccess.instance().runWriteAction(new Runnable() {
+              ApplicationManager.getApplication().runWriteAction(new Runnable() {
                 public void run() {
                   try {
                     file.setBinaryContent(resultContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
@@ -136,7 +132,7 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
               MergeBackupUtil.packMergeResult(backupFile, file.getName(), resultContent.value);
             }
 
-            return closeDialog.value;
+            return closeDialog;
           }
         };
         viewer.myPanel.setSaver(saver);

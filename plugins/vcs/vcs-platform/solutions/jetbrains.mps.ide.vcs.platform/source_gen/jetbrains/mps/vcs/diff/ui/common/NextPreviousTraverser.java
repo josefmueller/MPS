@@ -29,8 +29,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -218,12 +216,9 @@ public class NextPreviousTraverser {
         ((WithCaret) editorCell).setCaretVisible(false);
       }
     } else {
+      String qualifiedName = check_mf966z_a0a0a1a12(check_mf966z_a0a0a0b0v(myLastEditor.getEditedNode()));
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
-          public String compute() {
-            return check_mf966z_a0a0a2a0a0b0v(check_mf966z_a0a0a0c0a0a1a12(myLastEditor.getEditedNode()));
-          }
-        })));
+        LOG.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, qualifiedName));
       }
     }
   }
@@ -251,13 +246,13 @@ public class NextPreviousTraverser {
     }
     return null;
   }
-  private static String check_mf966z_a0a0a2a0a0b0v(SConcept checkedDotOperand) {
+  private static String check_mf966z_a0a0a1a12(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQualifiedName();
     }
     return null;
   }
-  private static SConcept check_mf966z_a0a0a0c0a0a1a12(SNode checkedDotOperand) {
+  private static SConcept check_mf966z_a0a0a0b0v(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConcept();
     }
