@@ -38,7 +38,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -199,7 +198,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
     });
     // wait while statuses update 
     myWaitHelper.waitForChangesManager();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ourProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ListSequence.fromList(SModelOperations.roots(model, null)).visitAll(new IVisitor<SNode>() {
           public void visit(final SNode r) {
