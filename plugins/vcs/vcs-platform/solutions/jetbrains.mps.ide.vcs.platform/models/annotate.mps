@@ -3417,14 +3417,33 @@
         </node>
         <node concept="3clFbF" id="1KUoCipvxdV" role="3cqZAp">
           <node concept="2OqwBi" id="1KUoCipvxdW" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCipvxdX" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+            <node concept="2OqwBi" id="5QVAbkkcIDd" role="2Oq$k0">
+              <node concept="2OqwBi" id="5QVAbkkcHGu" role="2Oq$k0">
+                <node concept="2OqwBi" id="5QVAbkkcFS3" role="2Oq$k0">
+                  <node concept="37vLTw" id="5QVAbkkcF3R" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6K89LO3mcZ1" resolve="editor" />
+                  </node>
+                  <node concept="liA8E" id="5QVAbkkcHfb" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="5QVAbkkcIcA" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5QVAbkkcJb6" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
             <node concept="liA8E" id="1KUoCipvxdY" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
               <node concept="1bVj0M" id="1KUoCipvxdZ" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCipvxe0" role="1bW5cS">
+                  <node concept="3SKdUt" id="5QVAbkkcKAA" role="3cqZAp">
+                    <node concept="3SKdUq" id="5QVAbkkcKAC" role="3SKWNk">
+                      <property role="3SKdUp" value="It seems the reason for model read is getPseudoLinedForContent-&gt;findCellForContent that deals with model of edited node" />
+                    </node>
+                  </node>
                   <node concept="1Dw8fO" id="1KUoCipvxe1" role="3cqZAp">
                     <node concept="3clFbS" id="1KUoCipvxe2" role="2LFqv$">
                       <node concept="2Gpval" id="1KUoCipvxe3" role="3cqZAp">

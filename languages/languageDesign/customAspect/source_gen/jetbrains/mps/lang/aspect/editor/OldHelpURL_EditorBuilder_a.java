@@ -32,9 +32,10 @@ import javax.swing.JComponent;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.ide.BrowserUtil;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import com.intellij.ide.BrowserUtil;
 
 /*package*/ class OldHelpURL_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -101,11 +102,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     button.setAction(new AbstractAction("Test") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            BrowserUtil.browse(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")));
+        String url = new ModelAccessHelper(getEditorContext().getRepository()).runReadAction(new Computable<String>() {
+          public String compute() {
+            return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url"));
           }
         });
+        BrowserUtil.browse(url);
       }
     });
     button.setOpaque(false);

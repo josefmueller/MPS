@@ -1250,6 +1250,17 @@
               </node>
             </node>
           </node>
+          <node concept="2OqwBi" id="7bnM4mNB4G0" role="ukAjM">
+            <node concept="2OqwBi" id="7bnM4mNB39f" role="2Oq$k0">
+              <node concept="2WthIp" id="7bnM4mNB39i" role="2Oq$k0" />
+              <node concept="1DTwFV" id="7bnM4mNB39k" role="2OqNvi">
+                <ref role="2WH_rO" node="_5aXW7KLUx" resolve="mpsProject" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7bnM4mNB6i9" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
         </node>
         <node concept="3cpWs8" id="4KDfkUwM98e" role="3cqZAp">
           <node concept="3cpWsn" id="4KDfkUwM98f" role="3cpWs9">

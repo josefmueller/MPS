@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,12 +46,9 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
 import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
@@ -71,7 +68,6 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
 
@@ -492,10 +488,6 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myEditorContext;
   }
 
-  public IOperationContext getOperationContext() {
-    return getContext().getOperationContext();
-  }
-
   @Override
   public final boolean processKeyPressed(KeyEvent e, boolean allowErrors) {
     if (e.isConsumed()) {
@@ -521,7 +513,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
       return false;
     }
 
-    if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    if (new ModelAccessHelper(getContext().getRepository()).runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         return getSNode().getModel() != null && getSNode().getParent() == null;

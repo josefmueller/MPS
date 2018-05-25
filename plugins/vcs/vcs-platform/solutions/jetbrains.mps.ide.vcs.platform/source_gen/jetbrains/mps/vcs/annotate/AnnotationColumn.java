@@ -436,8 +436,9 @@ __switch__:
         ListSequence.fromList(myPseudoLinesToFileLines).addElement(-1);
       }
     });
-    ModelAccess.instance().runReadAction(new Runnable() {
+    editor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
+        // It seems the reason for model read is getPseudoLinedForContent->findCellForContent that deals with model of edited node 
         for (int fileLine = 0; fileLine < ListSequence.fromList(myFileLineToContent).count(); fileLine++) {
           for (int pseudoLine : getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine))) {
             int currentFileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);

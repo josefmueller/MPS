@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
@@ -215,7 +214,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   public void restoreEditorComponentState(EditorComponentState state) {
     if (state instanceof Memento) {
       Memento memento = (Memento) state;
-      ModelAccess.instance().runReadAction(() -> {
+      myRepository.getModelAccess().runReadAction(() -> {
         myNodeEditorComponent.relayout();
         memento.restore(myNodeEditorComponent);
       });

@@ -6,7 +6,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -43,14 +43,16 @@ public class DiffEditorsGroup {
     final EditorComponent thisEditor = thisDiffEditor.getMainEditor();
     final EditorComponent otherEditor = otherDiffEditor.getMainEditor();
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final SRepository editorRepo = thisEditor.getEditorContext().getRepository();
+    assert editorRepo == otherEditor.getEditorContext().getRepository();
+    editorRepo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         int viewY = thisEditor.getViewport().getViewPosition().y;
         SNode visibleNode = thisEditor.getEditedNode();
         if (viewY > thisEditor.getRootCell().getY()) {
-          visibleNode = check_s6qw4f_a0a0c0a0a4a5(thisEditor.findCellWeak(1, viewY));
+          visibleNode = check_s6qw4f_a0a0c0a0a6a5(thisEditor.findCellWeak(1, viewY));
         }
-        SModel otherModel = check_s6qw4f_a0d0a0a4a5(otherEditor.getEditedNode());
+        SModel otherModel = check_s6qw4f_a0d0a0a6a5(otherEditor.getEditedNode());
         if (otherModel == null) {
           return;
         }
@@ -93,7 +95,7 @@ public class DiffEditorsGroup {
     }
     @Override
     protected void selectionChangedTo(final jetbrains.mps.openapi.editor.EditorComponent component, final SingularSelection newSelection) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      component.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           SNodeId selectionId = check_s6qw4f_a0a0a0a0a1g(check_s6qw4f_a0a0a0a0a0b6(newSelection.getEditorCell()));
           if (selectionId != null) {
@@ -141,13 +143,13 @@ public class DiffEditorsGroup {
       }
     });
   }
-  private static SNode check_s6qw4f_a0a0c0a0a4a5(EditorCell checkedDotOperand) {
+  private static SNode check_s6qw4f_a0a0c0a0a6a5(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
-  private static SModel check_s6qw4f_a0d0a0a4a5(SNode checkedDotOperand) {
+  private static SModel check_s6qw4f_a0d0a0a6a5(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

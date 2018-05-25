@@ -227,6 +227,7 @@
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
       <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="1423104411234567454" name="repo" index="ukAjM" />
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
@@ -246,6 +247,18 @@
       </concept>
       <concept id="1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" flags="nn" index="1Bd96e">
         <child id="1225797361612" name="parameter" index="1BdPVh" />
+      </concept>
+    </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -274,6 +287,9 @@
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -3027,6 +3043,11 @@
                 <property role="3SKdUp" value="todo should pass concept here, not concept node" />
               </node>
             </node>
+            <node concept="3SKdUt" id="1ogZZHUVijV" role="3cqZAp">
+              <node concept="3SKdUq" id="1ogZZHUVijX" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME the moment there's SConcept, not SNode, #init() down here doesn't need model read any more" />
+              </node>
+            </node>
             <node concept="3cpWs8" id="7eHFHBMjIaH" role="3cqZAp">
               <node concept="3cpWsn" id="7eHFHBMjIaD" role="3cpWs9">
                 <property role="TrG5h" value="concept" />
@@ -3155,10 +3176,30 @@
               </node>
             </node>
           </node>
+          <node concept="2OqwBi" id="1ogZZHUVgq2" role="ukAjM">
+            <node concept="2OqwBi" id="1ogZZHUVeU1" role="2Oq$k0">
+              <node concept="37vLTw" id="1ogZZHUV9jc" role="2Oq$k0">
+                <ref role="3cqZAo" node="5nQpa4sTUL1" resolve="myDiagramCell" />
+              </node>
+              <node concept="liA8E" id="1ogZZHUVgf2" role="2OqNvi">
+                <ref role="37wK5l" to="g51k:~EditorCell_Basic.getContext():jetbrains.mps.openapi.editor.EditorContext" resolve="getContext" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1ogZZHUVhKl" role="2OqNvi">
+              <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3Tmbuc" id="5nQpa4sUAsX" role="1B3o_S" />
       <node concept="3cqZAl" id="5nQpa4sUB1_" role="3clF45" />
+      <node concept="P$JXv" id="1ogZZHUV9$1" role="lGtFl">
+        <node concept="TZ5HA" id="1ogZZHUV9$2" role="TZ5H$">
+          <node concept="1dT_AC" id="1ogZZHUV9$3" role="1dT_Ay">
+            <property role="1dT_AB" value="FIXME protected method invoked from a cons is a bad pattern (e.g. subclasses may face uninitilized final fields if overide this method), please redesign!" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="3NXJmdrwqyn" role="jymVt">
       <property role="1EzhhJ" value="false" />

@@ -1164,6 +1164,47 @@
     <property role="1teQrl" value="false" />
     <node concept="tnohg" id="47QEcUfsm30" role="tncku">
       <node concept="3clFbS" id="47QEcUfsm31" role="2VODD2">
+        <node concept="3cpWs8" id="7bnM4mNCC54" role="3cqZAp">
+          <node concept="3cpWsn" id="7bnM4mNCC55" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="7bnM4mNCC52" role="1tU5fm">
+              <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+            </node>
+            <node concept="2YIFZM" id="7bnM4mNCC56" role="33vP2m">
+              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <node concept="2OqwBi" id="7bnM4mNCC57" role="37wK5m">
+                <node concept="2WthIp" id="7bnM4mNCC58" role="2Oq$k0" />
+                <node concept="1DTwFV" id="7bnM4mNCC59" role="2OqNvi">
+                  <ref role="2WH_rO" node="47QEcUfsm3Z" resolve="project" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7bnM4mNCCYV" role="3cqZAp">
+          <node concept="3cpWsn" id="7bnM4mNCCYW" role="3cpWs9">
+            <property role="TrG5h" value="moduleSet" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="7bnM4mNCCYO" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+              <node concept="3uibUv" id="7bnM4mNCCYR" role="11_B2D">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="7bnM4mNCCYX" role="33vP2m">
+              <ref role="37wK5l" to="18ew:~CollectionUtil.set(java.lang.Object...):java.util.Set" resolve="set" />
+              <ref role="1Pybhc" to="18ew:~CollectionUtil" resolve="CollectionUtil" />
+              <node concept="2OqwBi" id="7bnM4mNCCYY" role="37wK5m">
+                <node concept="2WthIp" id="7bnM4mNCCYZ" role="2Oq$k0" />
+                <node concept="1DTwFV" id="7bnM4mNCCZ0" role="2OqNvi">
+                  <ref role="2WH_rO" node="65lOwkWEhYm" resolve="module" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="47QEcUfsm3a" role="3cqZAp">
           <node concept="2OqwBi" id="47QEcUfsm3b" role="3clFbG">
             <node concept="2YIFZM" id="47QEcUfsm3c" role="2Oq$k0">
@@ -1193,12 +1234,16 @@
                       <node concept="3clFbS" id="47QEcUfsm3o" role="3clF47">
                         <node concept="3clFbF" id="1KUoCipvxp7" role="3cqZAp">
                           <node concept="2OqwBi" id="1KUoCipvxp8" role="3clFbG">
-                            <node concept="2YIFZM" id="1KUoCipvxp9" role="2Oq$k0">
-                              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+                            <node concept="2OqwBi" id="7bnM4mNCGnv" role="2Oq$k0">
+                              <node concept="37vLTw" id="7bnM4mNCFul" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7bnM4mNCC55" resolve="mpsProject" />
+                              </node>
+                              <node concept="liA8E" id="7bnM4mNCHFW" role="2OqNvi">
+                                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                              </node>
                             </node>
                             <node concept="liA8E" id="1KUoCipvxpa" role="2OqNvi">
-                              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                               <node concept="1bVj0M" id="1KUoCipvxpb" role="37wK5m">
                                 <node concept="3clFbS" id="1KUoCipvxpc" role="1bW5cS">
                                   <node concept="3cpWs8" id="1KUoCipvxpd" role="3cqZAp">
@@ -1218,17 +1263,8 @@
                                     <node concept="2OqwBi" id="1KUoCipvxpj" role="3clFbG">
                                       <node concept="liA8E" id="1KUoCipvxpk" role="2OqNvi">
                                         <ref role="37wK5l" to="vqh0:~ModuleMaker.clean(java.util.Set,org.jetbrains.mps.openapi.util.ProgressMonitor):void" resolve="clean" />
-                                        <node concept="2YIFZM" id="1KUoCipvxpl" role="37wK5m">
-                                          <ref role="37wK5l" to="18ew:~CollectionUtil.set(java.lang.Object...):java.util.Set" resolve="set" />
-                                          <ref role="1Pybhc" to="18ew:~CollectionUtil" resolve="CollectionUtil" />
-                                          <node concept="2OqwBi" id="1KUoCipvxpm" role="37wK5m">
-                                            <node concept="2WthIp" id="1KUoCipvxpn" role="2Oq$k0">
-                                              <ref role="32nkFo" node="47QEcUfsm2Z" resolve="CleanModule" />
-                                            </node>
-                                            <node concept="1DTwFV" id="1KUoCipvxpo" role="2OqNvi">
-                                              <ref role="2WH_rO" node="65lOwkWEhYm" resolve="module" />
-                                            </node>
-                                          </node>
+                                        <node concept="37vLTw" id="7bnM4mNCCZ1" role="37wK5m">
+                                          <ref role="3cqZAo" node="7bnM4mNCCYW" resolve="moduleSet" />
                                         </node>
                                         <node concept="2ShNRf" id="1KUoCipvxpp" role="37wK5m">
                                           <node concept="1pGfFk" id="1KUoCipvxpq" role="2ShVmc">
