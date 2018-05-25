@@ -51,6 +51,7 @@ import jetbrains.mps.ide.ThreadUtils;
 public class Refactoring_Test extends AbstractRefactoringTest {
   private static final String PROJECT_PATH = "testbench/modules/testRefactoring/";
   public void test_moveConceptOptions() throws Exception {
+    doMake(project.getProjectModulesWithGenerators(), true);
     runCommand(new Runnable() {
       public void run() {
         SModel targetModel = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "structure");
