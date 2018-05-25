@@ -9,7 +9,6 @@ import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
-import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -38,7 +37,7 @@ public class SelectAllNonSelectableRootThroughNonSelectable_Test extends BaseTra
     public void testMethodImpl() throws Exception {
       initEditorComponent("3756708898179594225", "3756708898179594401");
       invokeAction("jetbrains.mps.ide.editor.actions.SelectAll_Action");
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           Assert.assertEquals(SNodeOperations.cast(getNodeById("3756708898179594226"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, "jetbrains.mps.lang.editor.editorTest"), 0x6c1b61fd2cd1eefdL, "SelectableContainer"))), getEditorComponent().getSelectedNode());
         }

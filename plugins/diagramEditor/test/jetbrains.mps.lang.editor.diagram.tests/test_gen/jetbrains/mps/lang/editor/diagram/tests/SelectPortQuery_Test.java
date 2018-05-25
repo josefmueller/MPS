@@ -13,7 +13,6 @@ import java.awt.Component;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.jetpad.mapper.Mapper;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
@@ -54,7 +53,7 @@ public class SelectPortQuery_Test extends BaseTransformationTest {
         processSecondaryMouseEvent(eventTargetComponent_vw537p_a0, x_vw537p_a0, y_vw537p_a0, MouseEvent.MOUSE_CLICKED);
       }
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           EditorCell selectedCell = getEditorComponent().getSelectedCell();
           Assert.assertTrue(selectedCell != null);

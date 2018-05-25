@@ -44,13 +44,15 @@ public class CreatePort_Test extends BaseTransformationTest {
           SNodeFactoryOperations.addNewChild(SNodeOperations.cast(getNodeById("2278461409093572746"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf41f71d1L, "NodeWithPorts"))), MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71d1L, 0x4ce40ecaf41f7252L, "outputs"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")));
         }
       });
+      // FIXME flushEventQueue seems useless here, press mouse would post its own events to EDT, so that by the time events are processed, the command  
+      //       to add a new node is over for sure. 
       ModelAccess.instance().flushEventQueue();
       {
-        int x_rszpwe_c0 = 87;
-        int y_rszpwe_c0 = 42;
-        Component eventTargetComponent_rszpwe_c0 = processMouseEvent(x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_PRESSED);
-        processSecondaryMouseEvent(eventTargetComponent_rszpwe_c0, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_RELEASED);
-        processSecondaryMouseEvent(eventTargetComponent_rszpwe_c0, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_CLICKED);
+        int x_rszpwe_e0 = 87;
+        int y_rszpwe_e0 = 42;
+        Component eventTargetComponent_rszpwe_e0 = processMouseEvent(x_rszpwe_e0, y_rszpwe_e0, MouseEvent.MOUSE_PRESSED);
+        processSecondaryMouseEvent(eventTargetComponent_rszpwe_e0, x_rszpwe_e0, y_rszpwe_e0, MouseEvent.MOUSE_RELEASED);
+        processSecondaryMouseEvent(eventTargetComponent_rszpwe_e0, x_rszpwe_e0, y_rszpwe_e0, MouseEvent.MOUSE_CLICKED);
       }
 
     }

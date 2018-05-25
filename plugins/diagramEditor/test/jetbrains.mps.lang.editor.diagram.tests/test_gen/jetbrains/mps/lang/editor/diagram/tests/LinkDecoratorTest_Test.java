@@ -11,7 +11,6 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.jetpad.mapper.Mapper;
@@ -48,7 +47,7 @@ public class LinkDecoratorTest_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("1638882350373488135", "1560508619093517333");
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           node.value = SNodeOperations.cast(getNodeById("1638882350373488142"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf4106a9bL, "OutputToInputPortConnector")));
         }

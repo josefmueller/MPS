@@ -20,7 +20,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -42,7 +41,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.ClassRule" />
@@ -274,7 +272,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -296,7 +293,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.ClassRule" />
@@ -393,7 +389,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.PortCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -415,7 +410,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.ClassRule" />
@@ -551,7 +545,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -664,7 +657,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.ClassRule" />

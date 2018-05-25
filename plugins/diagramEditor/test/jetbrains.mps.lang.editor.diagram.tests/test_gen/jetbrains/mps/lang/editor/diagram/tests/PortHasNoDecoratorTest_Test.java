@@ -11,7 +11,6 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.jetpad.mapper.Mapper;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import junit.framework.Assert;
@@ -41,7 +40,7 @@ public class PortHasNoDecoratorTest_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("1560508619094462935", "1560508619094462940");
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(getNodeById("1560508619094462938"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf41f71f2L, "InputPort"))), getEditorComponent());
         }

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
@@ -49,7 +48,7 @@ public class BlockDecoratorTest_Test extends BaseTransformationTest {
       initEditorComponent("141381309807688262", "141381309807688282");
       Mapper descendantMapper;
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           node.value = SNodeOperations.cast(getNodeById("141381309807688263"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0xb6a495df3833bdeL, "NodeWithName")));
         }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -41,7 +40,7 @@ public class StyleAttributeInheritanceTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4078300376848433553", "");
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           SNode root = SNodeOperations.cast(getEditorComponent().getEditedNode(), MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"));
           SNode leaf = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, 0x74e28664f05605aeL, "node"))).getElement(0);
