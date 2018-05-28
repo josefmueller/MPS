@@ -2295,6 +2295,9 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     });
   }
+  public static Iterable<SNode> sourceNodesQuery_a0a0a0a0a0a0c(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
+  }
   public static Iterable<SNode> sourceNodesQuery_a0a0a4(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
   }
@@ -3954,6 +3957,7 @@ public class QueriesGenerated extends QueryProviderBase {
     snsqMethods.put("5008999823682210460", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("4314010248456452401", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("4314010248456483648", new QueriesGenerated.SNsQ(i++));
+    snsqMethods.put("87164511931788815", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("7001216437968776075", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("2857237956452413154", new QueriesGenerated.SNsQ(i++));
     snsqMethods.put("2857237956452627703", new QueriesGenerated.SNsQ(i++));
@@ -4119,124 +4123,126 @@ public class QueriesGenerated extends QueryProviderBase {
         case 42:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0c0(ctx));
         case 43:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a4(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a0a0a0c(ctx));
         case 44:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a2a0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a4(ctx));
         case 45:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a_0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a2a0(ctx));
         case 46:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0_0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a_0(ctx));
         case 47:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0_1(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0_0(ctx));
         case 48:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0b0a0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0_1(ctx));
         case 49:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0c0a0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0b0a0(ctx));
         case 50:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a_1(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0c0a0(ctx));
         case 51:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a_2(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a_1(ctx));
         case 52:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0_1(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a_2(ctx));
         case 53:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a_3(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0_1(ctx));
         case 54:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a_4(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a_3(ctx));
         case 55:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0b(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a0a0a_4(ctx));
         case 56:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b0b(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0b(ctx));
         case 57:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b0b(ctx));
         case 58:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a1(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b(ctx));
         case 59:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b1(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0a1(ctx));
         case 60:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b1(ctx));
         case 61:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1(ctx));
         case 62:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1b(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1(ctx));
         case 63:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1b(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1b(ctx));
         case 64:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2b(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1b(ctx));
         case 65:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0a0a0a2b(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2b(ctx));
         case 66:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2b_0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0a0a0a2b(ctx));
         case 67:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b0c(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2b_0(ctx));
         case 68:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0c(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b0c(ctx));
         case 69:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0c(ctx));
         case 70:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0b2(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c(ctx));
         case 71:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c2(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0b2(ctx));
         case 72:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a2(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c2(ctx));
         case 73:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a2(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a2(ctx));
         case 74:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1c(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a2(ctx));
         case 75:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1c(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1c(ctx));
         case 76:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2c(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1c(ctx));
         case 77:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0a0a0a2c(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2c(ctx));
         case 78:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2c_0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0a0a0a2c(ctx));
         case 79:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b0d(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2c_0(ctx));
         case 80:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0d(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1b0d(ctx));
         case 81:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0d(ctx));
         case 82:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0b3(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d(ctx));
         case 83:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c3(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0b3(ctx));
         case 84:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a3(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c3(ctx));
         case 85:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a3(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a3(ctx));
         case 86:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1d(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a3(ctx));
         case 87:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1d(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1d(ctx));
         case 88:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2d(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1d(ctx));
         case 89:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0a0a0a2d(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2d(ctx));
         case 90:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2d_0(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0a0a0a2d(ctx));
         case 91:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0e(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2d_0(ctx));
         case 92:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0e(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0e(ctx));
         case 93:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1e(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0e(ctx));
         case 94:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0c4(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1e(ctx));
         case 95:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d4(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a0c4(ctx));
         case 96:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a4(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d4(ctx));
         case 97:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a4(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a4(ctx));
         case 98:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1e(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a4(ctx));
         case 99:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1e(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1c0a1e(ctx));
         case 100:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2e(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1d0a1e(ctx));
         case 101:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0a0a0a2e(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2e(ctx));
         case 102:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a0a0a0a2e(ctx));
+        case 103:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_a1a2e_0(ctx));
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
@@ -4914,7 +4920,7 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("5008999823682209924", new QueriesGenerated.RTQ(38, "T"));
     rtqMethods.put("608109309169759724", new QueriesGenerated.RTQ(39, "_yield"));
     rtqMethods.put("6344340345427365080", new QueriesGenerated.RTQ(40, "F"));
-    rtqMethods.put("4407367782446017548", new QueriesGenerated.RTQ(41, "toString"));
+    rtqMethods.put("4407367782446017548", new QueriesGenerated.RTQ(41, "equals"));
     rtqMethods.put("7001216437968760494", new QueriesGenerated.RTQ(42, "Context"));
     rtqMethods.put("2857237956452412442", new QueriesGenerated.RTQ(43, "Object"));
     rtqMethods.put("349397194808798635", new QueriesGenerated.RTQ(44, "Object"));
