@@ -16,13 +16,13 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
 
   @Override
   public ConstraintsDescriptor getConstraints(SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0c = concept;
-    switch (index_2qnle6_a0c.index(cncpt_a0c)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         return new OfAspectOperation_Constraints();
       default:
     }
     return new BaseConstraintsDescriptor(concept);
   }
-  private static final ConceptSwitchIndex index_2qnle6_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, 0x5252d9021b8b45a8L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, 0x5252d9021b8b45a8L)).seal();
 }

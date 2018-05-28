@@ -175,21 +175,21 @@ public class Migrate_EditorCellModelConditionsConsideringChildAttributes extends
     if (!(isZero)) {
       return false;
     }
-    SAbstractConcept cncpt_l0k = SNodeOperations.getConcept(grandParent);
-    boolean noneMatched_l0k = true;
-    if (noneMatched_l0k && SConceptOperations.isSubConceptOf(cncpt_l0k, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"))) {
-      noneMatched_l0k = false;
+    SAbstractConcept cncpt = SNodeOperations.getConcept(grandParent);
+    boolean noneMatched = true;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced38fcfL, "jetbrains.mps.baseLanguage.structure.GreaterThanExpression"))) {
+      noneMatched = false;
       return isLeft;
     }
-    if (noneMatched_l0k && SConceptOperations.isSubConceptOf(cncpt_l0k, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"))) {
-      noneMatched_l0k = false;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbced3b82aL, "jetbrains.mps.baseLanguage.structure.LessThanExpression"))) {
+      noneMatched = false;
       return !(isLeft);
     }
-    if (noneMatched_l0k && SConceptOperations.isSubConceptOf(cncpt_l0k, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
-      noneMatched_l0k = false;
+    if (noneMatched && SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression"))) {
+      noneMatched = false;
       return true;
     }
-    if (noneMatched_l0k) {
+    if (noneMatched) {
     }
     return false;
   }

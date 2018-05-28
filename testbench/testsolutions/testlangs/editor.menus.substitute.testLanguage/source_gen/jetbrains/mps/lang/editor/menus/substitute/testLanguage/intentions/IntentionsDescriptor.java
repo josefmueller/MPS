@@ -29,8 +29,8 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    SAbstractConcept cncpt_d0f = concept;
-    switch (index_hphjzv_d0f.index(cncpt_d0f)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         if (true) {
           // Concept: TestSubstituteChildWithAttibute 
@@ -55,5 +55,5 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[2] = new AddOrRemoveReferenceAttribute_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x446b8c93949517d4L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x446b8c93949517d4L)).seal();
 }
