@@ -1173,14 +1173,14 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/TargetLanguage/generator/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/generator/classes_gen" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.SourceLanguage/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.SourceLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.TargetLanguage/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.TargetLanguage/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.SourceLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.SourceLanguage/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.TargetLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.TargetLanguage/generator/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" isTestSource="false" />
