@@ -44,9 +44,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.actions.AnnotationColors;
 import com.intellij.ui.ColorUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
@@ -56,8 +56,8 @@ import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
-import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import java.awt.FontMetrics;
@@ -214,13 +214,14 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myVirtualFile = virtualFile;
     myModel = (EditableSModel) model;
     myVcs = vcs;
+    final SRepository editorRepo = getEditorComponent().getEditorContext().getRepository();
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {
       public void run() {
         final CurrentDifference currentDifference = registry.getCurrentDifference(myModel);
-        ModelAccess.instance().runReadAction(new Runnable() {
+        editorRepo.getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            ListSequence.fromList(check_5mnya_a0a0a0a1a0a0v0v(currentDifference.getChangeSet())).visitAll(new IVisitor<ModelChange>() {
+            ListSequence.fromList(check_5mnya_a0a0a0a1a0a0w0v(currentDifference.getChangeSet())).visitAll(new IVisitor<ModelChange>() {
               public void visit(ModelChange ch) {
                 saveChange(ch);
               }
@@ -236,10 +237,10 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private void saveChange(ModelChange ch) {
     if (ch instanceof SetPropertyChange) {
       SetPropertyChange spc = (SetPropertyChange) ch;
-      MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new PropertyLineContent(spc.getAffectedNodeId(), spc.getPropertyName())});
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new PropertyLineContent(spc.getAffectedNodeId(), spc.getProperty())});
     } else if (ch instanceof SetReferenceChange) {
       SetReferenceChange src = (SetReferenceChange) ch;
-      MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new ReferenceLineContent(src.getAffectedNodeId(), src.getRole())});
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new ReferenceLineContent(src.getAffectedNodeId(), src.getRoleLink())});
     } else if (ch instanceof NodeGroupChange) {
       NodeGroupChange ngc = (NodeGroupChange) ch;
       Iterable<SNode> newChildren = AttributeOperations.getChildNodesAndAttributes(((SNode) myModel.getNode(ngc.getParentNodeId())), ngc.getRoleLink());
@@ -251,7 +252,11 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
   }
   private void calculateCurrentPseudoLinesLater() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    EditorComponent ec = getEditorComponent();
+    if (ec == null || ec.isDisposed()) {
+      return;
+    }
+    ec.getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
         myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
         for (LineContent[] lineContents : MapSequence.fromMap(myChangesToLineContents).values()) {
@@ -733,7 +738,7 @@ __switch__:
     }
     return null;
   }
-  private static List<ModelChange> check_5mnya_a0a0a0a1a0a0v0v(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_5mnya_a0a0a0a1a0a0w0v(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
