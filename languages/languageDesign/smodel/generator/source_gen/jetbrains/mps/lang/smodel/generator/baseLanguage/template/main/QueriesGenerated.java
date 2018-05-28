@@ -498,13 +498,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, 0x5fea1eb9fefb73d7L, "conceptName"));
   }
   public static Object propertyMacro_GetPropertyValue_60392682293642477090(final PropertyMacroContext _context) {
-    return _context.createUniqueName("cncpt", null);
+    return _context.createIndexedName("cncpt", SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false), true);
   }
   public static Object propertyMacro_GetPropertyValue_77235268049459529050(final PropertyMacroContext _context) {
     return ((Integer) _context.getVariable("cv:i"));
   }
   public static Object propertyMacro_GetPropertyValue_33281757813492719830(final PropertyMacroContext _context) {
-    return _context.createUniqueName("noneMatched", null);
+    return _context.createIndexedName("noneMatched", SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"), false, false), true);
   }
   public static Object propertyMacro_GetPropertyValue_84158413540325182570(final PropertyMacroContext _context) {
     UUID langId = ((SConceptId) _context.getVariable("var:conceptId")).getLanguageId().getIdValue();
@@ -924,7 +924,7 @@ public class QueriesGenerated {
     return "0x" + Long.toHexString(((SConceptId) _context.getVariable("var:cid")).getIdValue()) + 'L';
   }
   public static Object propertyMacro_GetPropertyValue_58092173712827153640(final PropertyMacroContext _context) {
-    return _context.createUniqueName("index", SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
+    return _context.createIndexedName("conceptIndex", SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false), true);
   }
   public static Object referenceMacro_GetReferent_85606272023353526170(final ReferenceMacroContext _context) {
     return Constants.THIS_NODE_VARIABLE_NAME;
