@@ -304,13 +304,13 @@
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingA/testSubtypingA.mpl" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingB/testSubtypingB.mpl" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/testSubtypingTest.msd" folder="tests.subtyping" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/jetbrains.mps.devkit.aspect.vcs/jetbrains.mps.devkit.aspect.vcs.devkit" folder="platform.vcs" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" folder="platform.vcs" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs/solutions/jetbrains.mps.ide.vcs/jetbrains.mps.ide.vcs.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/jetbrains.mps.ide.vcs.core.msd" folder="platform.vcs.core" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-core/modules/mergehints.runtime/jetbrains.mps.vcs.mergehints.runtime.msd" folder="platform.vcs.core" />
-      <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-platform/solutions/jetbrains.mps.ide.vcs.platform/jetbrains.mps.ide.vcs.platform.msd" folder="platform.vcs.platform" />
-      <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/jetbrains.mps.devkit.aspect.vcs/jetbrains.mps.devkit.aspect.vcs.devkit" folder="platform.vcs" />
-      <modulePath path="$PROJECT_DIR$/plugins/vcs/solutions/jetbrains.mps.ide.vcs/jetbrains.mps.ide.vcs.msd" folder="platform.vcs" />
-      <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-platform/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" folder="platform.vcs" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs/vcs-platform/solutions/jetbrains.mps.ide.vcs.platform/jetbrains.mps.ide.vcs.platform.msd" folder="platform.vcs.platform" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/agreementLanguage/jetbrains.mps.samples.agreementLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/framework/jetbrains.mps.samples.agreement.framework.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/sandbox/jetbrains.mps.samples.agreementLanguage.sandbox.msd" folder="samples" />
@@ -472,9 +472,9 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRead/jetbrains.mps.testRead.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/SourceLanguage/SourceLanguage.mpl" folder="tests.testRefactoring.material" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/TargetLanguage/TargetLanguage.mpl" folder="tests.testRefactoring.material" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.msd" folder="tests.testRefactoring.material.moveConcept" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.InstanceSolution/testmaterial.moveConcept.InstanceSolution.msd" folder="tests.testRefactoring.material.moveConcept" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.SourceLanguage/testmaterial.moveConcept.SourceLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/testmaterial.moveConcept.TargetLanguage/testmaterial.moveConcept.TargetLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/testSpaceCompletion.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/xmodel.build/jetbrains.mps.generator.xmodel.build.test.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/testbench/solution/jetbrains.mps.testbench.msd" folder="tests" />
