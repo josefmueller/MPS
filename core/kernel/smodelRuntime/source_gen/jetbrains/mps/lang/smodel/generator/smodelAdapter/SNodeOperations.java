@@ -274,7 +274,7 @@ public class SNodeOperations {
     if (concept == null) {
       return false;
     }
-    return SNodeUtil.isInstanceOf(node, concept);
+    return node.isInstanceOfConcept(concept);
   }
   public static SNode getNextSibling(SNode node) {
     if (node == null) {
