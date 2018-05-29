@@ -27,7 +27,6 @@ import jetbrains.mps.ide.platform.refactoring.UsagesModelTracker;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.Messages;
 
 public class DefaultRefactoringUI implements RefactoringUI {
@@ -87,11 +86,11 @@ public class DefaultRefactoringUI implements RefactoringUI {
     final UsagesModelTracker usagesModelTracker = new UsagesModelTracker(myRepository);
     RefactoringAccessEx.getInstance().showRefactoringView(myProject, new RefactoringViewAction() {
       public void performAction(final RefactoringViewItem refactoringViewItem) {
-        final Wrappers._boolean changed = new Wrappers._boolean();
         myRepository.getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            changed.value = usagesModelTracker.isChanged();
-            if (!(changed.value)) {
+            if (usagesModelTracker.isChanged()) {
+              Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
+            } else {
               try {
                 performRefactoringTask.run();
               } catch (RuntimeException exception) {
@@ -103,9 +102,6 @@ public class DefaultRefactoringUI implements RefactoringUI {
             }
           }
         });
-        if (changed.value) {
-          Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
-        }
       }
     }, new Runnable() {
       public void run() {
