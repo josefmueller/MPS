@@ -30,6 +30,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
+import jetbrains.mps.ide.platform.actions.core.DefaultRefactoringUI;
 
 public class MoveModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -152,6 +153,6 @@ public class MoveModel_Action extends BaseAction {
       }
     };
 
-    RefactoringProcessor.performRefactoringInProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), refactoringBody);
+    RefactoringProcessor.performRefactoringInProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), new DefaultRefactoringUI(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))), refactoringBody);
   }
 }

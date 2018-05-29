@@ -18,6 +18,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.refactoring.participant.RefactoringUI;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -83,6 +84,10 @@ public class MoveNodesUtil {
   }
 
   public static void moveTo(final MPSProject project, final String refactoringName, final Map<MoveNodesUtil.NodeProcessor, List<SNode>> processorToMoveRoots) {
+    moveTo(project, refactoringName, processorToMoveRoots, new DefaultRefactoringUI(project));
+  }
+
+  public static void moveTo(final Project project, final String refactoringName, final Map<MoveNodesUtil.NodeProcessor, List<SNode>> processorToMoveRoots, RefactoringUI refactoringUI) {
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -119,7 +124,7 @@ public class MoveNodesUtil {
     }).toListSequence());
 
     final Map<SNode, RefactoringParticipant.KeepOldNodes> removeOldRoots = MapSequence.fromMap(new HashMap<SNode, RefactoringParticipant.KeepOldNodes>());
-    RefactoringProcessor.RefactoringBody usagesUpdate = new RefactoringProcessor.RefactoringBody<SNode, SNode>() {
+    RefactoringProcessor.RefactoringBody<SNode, SNode> usagesUpdate = new RefactoringProcessor.RefactoringBody<SNode, SNode>() {
       private RefactoringSession myRefactoringSession = null;
       @Override
       public String getRefactoringName() {
@@ -180,7 +185,7 @@ public class MoveNodesUtil {
         });
       }
     };
-    RefactoringProcessor.performRefactoringInProject(project, usagesUpdate);
+    RefactoringProcessor.performRefactoringInProject(project, refactoringUI, usagesUpdate);
   }
 
   public static abstract class NodeProcessor {
