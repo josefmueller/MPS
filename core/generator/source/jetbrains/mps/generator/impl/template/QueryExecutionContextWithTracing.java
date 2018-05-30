@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,18 +70,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     this.tracer = tracer;
   }
 
-  private static String getRulePackage(SNode ruleNode) {
-    return ruleNode.getModel().getName().getLongName();
-  }
-
-  private static String taskName(@NotNull String name, SNode ruleNode) {
-    if (ruleNode == null || ruleNode.getModel() == null) {
-      return name;
-    }
-    return name + ':' + getRulePackage(ruleNode); //name;
-  }
-
-  private static String taskName(@NotNull String name, SNodeReference ruleNode) {
+  private static String taskName(String name, SNodeReference ruleNode) {
     if (ruleNode == null) {
       return name;
     }
@@ -275,10 +264,5 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     } finally {
       tracer.pop();
     }
-  }
-
-  @Override
-  public boolean isMultithreaded() {
-    return false;
   }
 }
