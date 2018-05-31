@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,22 @@ package jetbrains.mps.util.performance;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Evgeny Gryaznov, Feb 23, 2010
  */
 public class PerformanceTracer implements IPerformanceTracer {
-  public static final boolean IS_TRACING = true;
-
   private int top = 0;
-  private StackElement[] myStack = new StackElement[4096];
+  private StackElement[] myStack = new StackElement[30];
   private String traceName;
   private List<String> externalText;
 
@@ -35,12 +41,9 @@ public class PerformanceTracer implements IPerformanceTracer {
     for (int i = 0; i < myStack.length; i++) {
       myStack[i] = new StackElement();
     }
-    for (int i = 0; i < precreated.length; i++) {
-      precreated[i] = new Task("default");
-    }
     myStack[0].name = "Zero [" + name + "]";
     myStack[0].task = new Task(myStack[0].name);
-    externalText = new ArrayList<String>();
+    externalText = new ArrayList<>();
   }
 
   @Override
@@ -54,7 +57,8 @@ public class PerformanceTracer implements IPerformanceTracer {
 
   @Override
   public void pop() {
-    long len = System.nanoTime() - myStack[top].startTime;
+    final long end = System.nanoTime();
+    final long len = end - myStack[top].startTime;
     long correction = myStack[top].correction;
     if (myStack[top].isMajor) {
       for (int i = 0; i < top; i++) {
@@ -64,17 +68,14 @@ public class PerformanceTracer implements IPerformanceTracer {
     String name = myStack[top].name;
     Task wasTask = myStack[top].task;
 
-    // propagate leaves
-    if (!myStack[top].children.isEmpty()) {
-      if (wasTask == null) {
-        wasTask = getTask(top);
-      }
-      wasTask.tasks.addAll(myStack[top].children.values());
-      myStack[top].children.clear();
-    }
     if (wasTask == null) {
-      myStack[top - 1].addLeaf(name, len, correction);
+      // there were no nested StackElements/completed task during push/pop of the actual SE,
+      // tell parent that the task of actual SE is over
+      getTask(top - 1).addLeaf(name, len, correction);
     } else {
+      // there were child SE of this SE that added some tasks to actual SE
+      // (iow, SE.task becomes initialized from child SE only, with addLeaf call above)
+      // assignment would suffice
       wasTask.executionTime += len;
       wasTask.correction += correction;
     }
@@ -85,14 +86,17 @@ public class PerformanceTracer implements IPerformanceTracer {
   private Task getTask(int i) {
     Task t = myStack[i].task;
     if (t == null) {
-      t = createFast(myStack[i].name);
+      t = new Task(myStack[i].name);
       myStack[i].task = t;
       Task parent = getTask(i - 1);
+      // there's no need to create tasks for each stack element ancestor if we manage to add
+      // existing tasks to parent when StackElement pops. At the moment, however, it's the only
+      // place we establish a parent-child relation b/w tasks
       parent.addTask(t);
     }
     return t;
   }
-  
+
   @Override
   public void addText(String s) {
     externalText.add(s);
@@ -101,7 +105,6 @@ public class PerformanceTracer implements IPerformanceTracer {
   @Override
   public String report(String... separate) {
     if (top == 0) {
-      myStack[0].task.tasks.addAll(myStack[0].children.values());
       myStack[0].task.merge(new HashSet<>(Arrays.asList(separate)));
       StringBuilder sb = new StringBuilder();
       sb.append('[');
@@ -118,47 +121,55 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
   }
 
-  private class StackElement {
+  private static class StackElement {
     String name;
     long startTime;
     long correction;
-    Task task;
     boolean isMajor;
-    Map<String, Task> children = new HashMap<String, Task>();
-
-    private Task addLeaf(String name, long time, long correction) {
-      Task t = children.get(name);
-      if (t == null) {
-        t = createFast(name);
-        children.put(name, t);
-      } else {
-        t.invocationCount++;
-      }
-      t.executionTime += time;
-      t.correction += correction;
-      return t;
-    }
+    // field is initialized the moment child stack element pops and adds its stats as a new task to
+    // a task of its parent StackElement.
+    Task task;
   }
 
   private static class Task implements Comparable<Task> {
-    String name;
+    final String name;
     long executionTime;
     long correction;
     int invocationCount;
-    List<Task> tasks = new LinkedList<Task>();
+    final List<Task> tasks = new ArrayList<>(5);
 
-    private Task(String name) {
+    /*package*/ Task(String name) {
       this.name = name;
       this.executionTime = 0;
       this.invocationCount = 1;
     }
 
-    private void addTask(Task task) {
+    /*package*/ void addLeaf(String name, long time, long correction) {
+      // XXX not apparent if there's solid reason to look tasks up instead of simply
+      //     creating a lot of them and then merge at report time
+      Task t = null;
+      for (Task ts : tasks) {
+        if (name.equals(ts.name)) {
+          t = ts;
+          break;
+        }
+      }
+      if (t == null) {
+        t = new Task(name);
+        tasks.add(t);
+      } else {
+        t.invocationCount++;
+      }
+      t.executionTime += time;
+      t.correction += correction;
+    }
+
+    /*package*/ void addTask(Task task) {
       tasks.add(task);
     }
 
     public void merge(Set<String> keepUnmerged) {
-      Map<String, Task> map = new HashMap<String, Task>();
+      Map<String, Task> map = new HashMap<>();
       Iterator<Task> it = tasks.iterator();
       while (it.hasNext()) {
         Task n = it.next();
@@ -194,11 +205,11 @@ public class PerformanceTracer implements IPerformanceTracer {
         sb.append(':');
         sb.append(invocationCount);
         sb.append(": ");
-        sb.append(executionTime / 1000000.);
+        sb.append(executionTime / 100000 / 10.);
         sb.append(" ms");
         if (correction != 0) {
           sb.append("  (real: ");
-          sb.append((executionTime - correction) / 1000000.);
+          sb.append((executionTime - correction) / 100000 / 10.);
           sb.append(" ms)");
         }
         sb.append('\n');
@@ -210,21 +221,13 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
 
     @Override
+    public String toString() {
+      return String.format("PT-Task(%s)", name);
+    }
+
+    @Override
     public int compareTo(@NotNull Task task) {
-      return Long.valueOf(task.executionTime).compareTo(executionTime);
+      return Long.compare(task.executionTime, executionTime);
     }
   }
-
-  private Task createFast(String name) {
-    if (precreatedIndex < precreated.length) {
-      Task t = precreated[precreatedIndex++];
-      t.name = name;
-      return t;
-    } else {
-      return new Task(name);
-    }
-  }
-
-  private Task[] precreated = new Task[4096]; // todo: AP what is that?
-  int precreatedIndex = 0;
 }
