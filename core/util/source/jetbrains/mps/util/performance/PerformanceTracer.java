@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.util.performance;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -30,9 +28,12 @@ import java.util.Set;
 /**
  * Evgeny Gryaznov, Feb 23, 2010
  */
-public class PerformanceTracer implements IPerformanceTracer {
+public final class PerformanceTracer implements IPerformanceTracer {
+  private static final int MAX_TRACE_DEPTH = 30;
   private int top = 0;
-  private StackElement[] myStack = new StackElement[30];
+  // stack elements are re-used as we push and pop tasks. Assumption it's unlikely for anyone to get interested in
+  // traces deeper than a dozen of nested steps.
+  private StackElement[] myStack = new StackElement[MAX_TRACE_DEPTH];
   private String traceName;
   private List<String> externalText;
 
@@ -41,17 +42,22 @@ public class PerformanceTracer implements IPerformanceTracer {
     for (int i = 0; i < myStack.length; i++) {
       myStack[i] = new StackElement();
     }
-    myStack[0].name = "Zero [" + name + "]";
-    myStack[0].task = new Task(myStack[0].name);
+    // technical element, never pop'ed, serves to hold topmost task
+    myStack[0].name = null;
+    myStack[0].task = new Task(null); // there's an assumption in toString down here, not to print such a task
     externalText = new ArrayList<>();
   }
 
   @Override
   public void push(String taskName, boolean isMajor) {
+    // name depending on isMajor is just a tribute to legacy code
+    push(isMajor ? "[" + taskName + "]" : taskName);
+  }
+
+  @Override
+  public void push(String taskName) {
     top++;
-    myStack[top].isMajor = isMajor;
-    myStack[top].name = isMajor ? "[" + taskName + "]" : taskName;
-    myStack[top].correction = 0;
+    myStack[top].name = taskName;
     myStack[top].startTime = System.nanoTime();
   }
 
@@ -59,25 +65,20 @@ public class PerformanceTracer implements IPerformanceTracer {
   public void pop() {
     final long end = System.nanoTime();
     final long len = end - myStack[top].startTime;
-    long correction = myStack[top].correction;
-    if (myStack[top].isMajor) {
-      for (int i = 0; i < top; i++) {
-        myStack[i].correction += len - correction;
-      }
-    }
     String name = myStack[top].name;
     Task wasTask = myStack[top].task;
 
     if (wasTask == null) {
       // there were no nested StackElements/completed task during push/pop of the actual SE,
       // tell parent that the task of actual SE is over
-      getTask(top - 1).addLeaf(name, len, correction);
+      getTask(top - 1).addLeaf(name, len);
     } else {
       // there were child SE of this SE that added some tasks to actual SE
       // (iow, SE.task becomes initialized from child SE only, with addLeaf call above)
-      // assignment would suffice
-      wasTask.executionTime += len;
-      wasTask.correction += correction;
+      wasTask.executionTime = len;
+      // assignment, not += would suffice as we never get an SE.task with execution time != 0 on SE.pop (it's a child SE's addLeaf
+      // that may introduce an association of SE with Task, but it doesn't change executionTime, which is completely up to SE's
+      // startTime and pop()'s end time.
     }
     myStack[top].task = null;
     top--;
@@ -123,18 +124,16 @@ public class PerformanceTracer implements IPerformanceTracer {
 
   private static class StackElement {
     String name;
+    // we keep nanosecond values though it's unlikely we need such precision
     long startTime;
-    long correction;
-    boolean isMajor;
     // field is initialized the moment child stack element pops and adds its stats as a new task to
     // a task of its parent StackElement.
     Task task;
   }
 
-  private static class Task implements Comparable<Task> {
+  private static class Task {
     final String name;
-    long executionTime;
-    long correction;
+    long executionTime; // in nanoseconds
     int invocationCount;
     final List<Task> tasks = new ArrayList<>(5);
 
@@ -144,7 +143,9 @@ public class PerformanceTracer implements IPerformanceTracer {
       this.invocationCount = 1;
     }
 
-    /*package*/ void addLeaf(String name, long time, long correction) {
+    // XXX it's not apparent whether it's reasonable to merge tasks the moment leaf is added, or to add
+    //     new tasks into a list and merge them at parent's SE pop() call.
+    /*package*/ void addLeaf(String name, long time) {
       // XXX not apparent if there's solid reason to look tasks up instead of simply
       //     creating a lot of them and then merge at report time
       Task t = null;
@@ -161,7 +162,6 @@ public class PerformanceTracer implements IPerformanceTracer {
         t.invocationCount++;
       }
       t.executionTime += time;
-      t.correction += correction;
     }
 
     /*package*/ void addTask(Task task) {
@@ -192,7 +192,6 @@ public class PerformanceTracer implements IPerformanceTracer {
     private void mergeWith(Task n) {
       executionTime += n.executionTime;
       invocationCount += n.invocationCount;
-      correction += n.correction;
       tasks.addAll(n.tasks);
     }
 
@@ -207,14 +206,23 @@ public class PerformanceTracer implements IPerformanceTracer {
         sb.append(": ");
         sb.append(executionTime / 100000 / 10.);
         sb.append(" ms");
-        if (correction != 0) {
-          sb.append("  (real: ");
-          sb.append((executionTime - correction) / 100000 / 10.);
-          sb.append(" ms)");
+        // time spent in sub-tasks
+        if (!tasks.isEmpty()) {
+          long correction = 0;
+          for (Task subt : tasks) {
+            correction += subt.executionTime;
+          }
+          long taskOwnTime = executionTime - correction;
+          if (taskOwnTime > executionTime / 10) {
+            // spent more than 10% of total task time in activities other than that of nested tasks
+            sb.append("  (own: ");
+            sb.append(taskOwnTime / 100000 / 10.);
+            sb.append(" ms)");
+          }
         }
         sb.append('\n');
       }
-      Collections.sort(tasks);
+      tasks.sort(Comparator.comparingLong(o -> o.executionTime));
       for (Task t : tasks) {
         t.toString(sb, name == null ? indent : indent + 2);
       }
@@ -223,11 +231,6 @@ public class PerformanceTracer implements IPerformanceTracer {
     @Override
     public String toString() {
       return String.format("PT-Task(%s)", name);
-    }
-
-    @Override
-    public int compareTo(@NotNull Task task) {
-      return Long.compare(task.executionTime, executionTime);
     }
   }
 }
