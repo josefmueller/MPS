@@ -35,6 +35,14 @@ public interface IPerformanceTracer {
     push(taskName, false);
   };
 
+  /**
+   * Include trace information from another instance as part of active task.
+   * Might come handy to overcome limitations of single-threaded implementation (e.g. generator's main thread with a
+   * 'global' tracer, and individual transformation threads reporting into own trace, with results merged).
+   * @param other not null
+   */
+  void push(IPerformanceTracer other);
+
   void pop();
 
   /**
@@ -56,6 +64,10 @@ public interface IPerformanceTracer {
 
     @Override
     public void push(String taskName) {
+    }
+
+    @Override
+    public void push(IPerformanceTracer other) {
     }
 
     @Override

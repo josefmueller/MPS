@@ -173,9 +173,10 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     public void registerRootTrace(IPerformanceTracer sessionTrace) {
       // by design, sessionTrace is never null.
       if (myPerfTrace != null) {
-        // FIXME shall merge myPerfTrace into sessionTrace to get nice perf report.
-        sessionTrace.addText(myPerfTrace.report());
+        sessionTrace.push(myPerfTrace);
       }
+      // == Optional.of(myPerfTrace).ifPresent(sessionTrace::push);
+      //    hmm, which one I like most?
     }
   }
 

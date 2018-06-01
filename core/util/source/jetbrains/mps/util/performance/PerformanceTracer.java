@@ -26,7 +26,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Evgeny Gryaznov, Feb 23, 2010
+ * Not thread-safe!
+ * @author Evgeny Gryaznov
+ * @author Artem Tikhomirov
  */
 public final class PerformanceTracer implements IPerformanceTracer {
   private static final int MAX_TRACE_DEPTH = 30;
@@ -46,6 +48,22 @@ public final class PerformanceTracer implements IPerformanceTracer {
     myStack[0].name = null;
     myStack[0].task = new Task(null); // there's an assumption in toString down here, not to print such a task
     externalText = new ArrayList<>();
+  }
+
+  public void push(IPerformanceTracer other) {
+    assert other != null;
+    if (!(other instanceof PerformanceTracer)) {
+      addText(other.report());
+      return;
+    }
+    assert other != this;
+    PerformanceTracer ptOther = (PerformanceTracer) other;
+    if (ptOther.top != 0) {
+      throw new IllegalArgumentException("Another tracer is in incomplete state (still in use?)");
+    }
+    // tasks of another PT are registered as children of active StackTrace element (we associate it with a task
+    // in case there's none yet, e.g. when no completed child SE)
+    getTask(top).tasks.addAll(ptOther.myStack[0].task.tasks);
   }
 
   @Override
