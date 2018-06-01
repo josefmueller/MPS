@@ -88,7 +88,7 @@ public class PerfTracerTest {
 
     Thread.sleep(100);
     // SE1 once again, without children this time
-    pt.push("SE1", false);
+    pt.push("SE1");
     Thread.sleep(100);
     pt.pop(); // pop SE1
 

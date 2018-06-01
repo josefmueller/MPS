@@ -325,11 +325,11 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myPerformanceTracer != null;
   }
 
-  public void pushTracerTask(String message, boolean isMajor) {
+  void pushTracerTask(String message) {
     if (myPerformanceTracer == null) {
       return;
     }
-    myPerformanceTracer.push(message, isMajor);
+    myPerformanceTracer.push(message);
   }
 
   public void popTracerTask() {

@@ -177,13 +177,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myTemplateProcessor = new TemplateProcessor(this);
 
     // prepare weaving
-    ttrace.push("weavings", false);
+    ttrace.push("weavings");
     myWeavingProcessor = new WeavingProcessor(this);
     myWeavingProcessor.prepareWeavingRules(getInputModel());
     ttrace.pop();
 
 
-    ttrace.push("reductions", false);
+    ttrace.push("reductions");
     applyReductions(isPrimary);
     ttrace.pop();
     myInplaceModelChange = myDeltaBuilder != null;
@@ -199,7 +199,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     if (myWeavingProcessor.hasWeavingRulesToApply()) {
       checkMonitorCanceled();
-      ttrace.push("weavings", false);
+      ttrace.push("weavings");
       myWeavingProcessor.apply();
       myWeavingProcessor = null;
       ttrace.pop();
@@ -208,7 +208,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (!myDelayedChanges.isEmpty()) {
       checkMonitorCanceled();
       // execute mapper in all $MAP_SRC$/$MAP_SRCL$
-      ttrace.push("delayed mappings", false);
+      ttrace.push("delayed mappings");
       myDelayedChanges.doAllChanges(this);
       ttrace.pop();
     }
@@ -216,7 +216,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     //////////////////////////////////////////////////////////////
     // replace references with PostponedReference to respect model changes up to this point
     if (myDeltaBuilder != null && myDeltaBuilder.hasChanges()) {
-      ttrace.push("apply delta changes", false);
+      ttrace.push("apply delta changes");
 //      myDeltaBuilder.dump();
       myDeltaBuilder.prepareReferences(getInputModel(), this);
       ttrace.pop();
@@ -225,14 +225,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // resolve PostponedReferences, but do not replace them in the model yet
     if (!myPostponedRefs.isEmpty()) {
       // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
-      ttrace.push("restoring references", false);
+      ttrace.push("restoring references");
       myPostponedRefs.prepare();
       ttrace.pop();
     }
 
     // apply structural change delta onto input model
     if (myDeltaBuilder != null && myDeltaBuilder.hasChanges()) {
-      ttrace.push("apply delta changes", false);
+      ttrace.push("apply delta changes");
       myDeltaBuilder.applyInplace(getInputModel());
       ttrace.pop();
     }
@@ -248,7 +248,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // replace reference placeholders (PostponedReference) with resolved
     // replace DynamicReference with StaticReference, if needed
     if (!myPostponedRefs.isEmpty() || !myDynamicRefs.isEmpty()) {
-      ttrace.push("restoring references", false);
+      ttrace.push("restoring references");
       myPostponedRefs.replace();
       myDynamicRefs.replace();
       ttrace.pop();
@@ -282,7 +282,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
     // create all roots
     if (isPrimary) {
-      ttrace.push("create roots", false);
+      ttrace.push("create roots");
 
       for (TemplateCreateRootRule rule : getRuleManager().getCreateRootRules()) {
         applyCreateRoot(rule);
@@ -292,7 +292,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // root mapping rules
-    ttrace.push("root mappings", false);
+    ttrace.push("root mappings");
     ArrayList<SNode> rootsConsumed = new ArrayList<SNode>();
     for (TemplateRootMappingRule rule : getRuleManager().getRoot_MappingRules()) {
       checkMonitorCanceled();
@@ -301,7 +301,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     // copy roots
-    ttrace.push("copy roots", false);
+    ttrace.push("copy roots");
     getGeneratorSessionContext().clearCopiedRootsSet();
     for (SNode rootToCopy : myInputModel.getRootNodes()) {
       if (rootsConsumed.contains(rootToCopy)) {

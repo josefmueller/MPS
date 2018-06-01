@@ -80,7 +80,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("check condition(with context)", context.getTemplateReference()), true);
+      tracer.push(taskName("check condition(with context)", context.getTemplateReference()));
       return wrapped.evaluate(condition, context);
     } finally {
       tracer.pop();
@@ -90,7 +90,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("check if condition", context.getTemplateReference()), true);
+      tracer.push(taskName("check if condition", context.getTemplateReference()));
       return wrapped.evaluate(condition, context);
     } finally {
       tracer.pop();
@@ -101,7 +101,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public SNode evaluate(@NotNull MapNodeQuery query, @NotNull MapSrcMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("map-src node macro", context.getTemplateReference()), true);
+      tracer.push(taskName("map-src node macro", context.getTemplateReference()));
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -111,7 +111,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public void execute(@NotNull MapPostProcessor codeBlock, @NotNull MapSrcMacroPostProcContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("map-src postproc", context.getTemplateReference()), true);
+      tracer.push(taskName("map-src postproc", context.getTemplateReference()));
       wrapped.execute(codeBlock, context);
     } finally {
       tracer.pop();
@@ -122,7 +122,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName(String.format("property macro(name: %s)", query.getProperty()), (SNodeReference) null), true);
+      tracer.push(taskName(String.format("property macro(name: %s)", query.getProperty()), null));
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -133,7 +133,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate source node", context.getTemplateReference()), true);
+      tracer.push(taskName("evaluate source node", context.getTemplateReference()));
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -144,7 +144,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> evaluate(@NotNull SourceNodesQuery query, @NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate source nodes", context.getTemplateReference()), true);
+      tracer.push(taskName("evaluate source nodes", context.getTemplateReference()));
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -155,7 +155,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public SNode evaluate(@NotNull InsertMacroQuery query, @NotNull InsertMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("insert node query", context.getTemplateReference()), true);
+      tracer.push(taskName("insert node query", context.getTemplateReference()));
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -166,7 +166,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Object evaluate(@NotNull ReferenceTargetQuery query, @NotNull ReferenceMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("referent target", context.getTemplateReference()), true);
+      tracer.push(taskName("referent target", context.getTemplateReference()));
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -177,7 +177,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Object evaluate(@NotNull CallArgumentQuery query, @NotNull TemplateArgumentContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate template argument query", context.getTemplateReference()), true);
+      tracer.push(taskName("evaluate template argument query", context.getTemplateReference()));
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -188,7 +188,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Object evaluate(@NotNull VariableValueQuery query, @NotNull TemplateVarContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate variable value query", context.getTemplateReference()), true);
+      tracer.push(taskName("evaluate variable value query", context.getTemplateReference()));
       return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
@@ -199,7 +199,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   public Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       String taskName = taskName(String.format("trying to apply rule(%s)", rule.getApplicableConcept()), rule.getRuleNode());
-      tracer.push(taskName, true);
+      tracer.push(taskName);
       return wrapped.applyRule(rule, context);
     } finally {
       tracer.pop();
@@ -209,7 +209,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("check condition", rule.getRuleNode()), true);
+      tracer.push(taskName("check condition", rule.getRuleNode()));
       return wrapped.isApplicable(rule, context);
     } finally {
       tracer.pop();
@@ -219,7 +219,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateContext context) throws GenerationException {
     try {
-      tracer.push(taskName(String.format("root mapping rule(%s)", rule.getApplicableConcept()), rule.getRuleNode()), true);
+      tracer.push(taskName(String.format("root mapping rule(%s)", rule.getApplicableConcept()), rule.getRuleNode()));
       return wrapped.applyRule(rule, context);
     } finally {
       tracer.pop();
@@ -229,7 +229,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
     try {
-      tracer.push(taskName("create root rule", rule.getRuleNode()), true);
+      tracer.push(taskName("create root rule", rule.getRuleNode()));
       return wrapped.applyRule(rule, environment);
     } finally {
       tracer.pop();
@@ -239,7 +239,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public boolean applyRule(TemplateWeavingRule rule, TemplateContext context, SNode outputContextNode) throws GenerationException {
     try {
-      tracer.push(taskName("weave rule", rule.getRuleNode()), true);
+      tracer.push(taskName("weave rule", rule.getRuleNode()));
       return wrapped.applyRule(rule, context, outputContextNode);
     } finally {
       tracer.pop();
@@ -249,7 +249,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public SNode getContextNode(TemplateWeavingRule rule, TemplateContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("context for weaving", rule.getRuleNode()), true);
+      tracer.push(taskName("context for weaving", rule.getRuleNode()));
       return wrapped.getContextNode(rule, context);
     } finally {
       tracer.pop();
@@ -259,7 +259,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public void executeScript(TemplateMappingScript mappingScript, SModel model) throws GenerationFailureException {
     try {
-      tracer.push(taskName(String.format("mapping script (%s)", mappingScript.getLongName()), mappingScript.getScriptNode()), true);
+      tracer.push(taskName(String.format("mapping script (%s)", mappingScript.getLongName()), mappingScript.getScriptNode()));
       wrapped.executeScript(mappingScript, model);
     } finally {
       tracer.pop();
