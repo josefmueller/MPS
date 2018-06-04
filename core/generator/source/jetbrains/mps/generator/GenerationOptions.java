@@ -95,9 +95,6 @@ public class GenerationOptions {
   }
 
   public int getTracingMode() {
-    if (isGenerateInParallel() && myTracingMode > TRACE_STEPS) {
-      return TRACE_STEPS;
-    }
     return myTracingMode;
   }
 

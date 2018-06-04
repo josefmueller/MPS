@@ -124,7 +124,7 @@ class GenerationSession {
 
     // create a plan
     GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
-    ttrace.push("analyzing dependencies", false);
+    ttrace.push("analyzing dependencies");
     myGenerationPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
     if (myGenerationPlan == null) {
       Collection<String> additionalLanguages =
@@ -168,7 +168,7 @@ class GenerationSession {
         new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
         SModel currOutput = null;
 
-        ttrace.push("steps", false);
+        ttrace.push("steps");
 
 
         ModelTransitions transitionTrace = new ModelTransitions(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
@@ -381,7 +381,7 @@ class GenerationSession {
     // -----------------------
     // run pre-processing scripts
     // -----------------------
-    ttrace.push("pre-processing", false);
+    ttrace.push("pre-processing");
     currentInputModel = preProcessModel(currentInputModel);
     ttrace.pop();
 
@@ -479,7 +479,7 @@ class GenerationSession {
     // -----------------------
     // run post-processing scripts
     // -----------------------
-    ttrace.push("post-processing", false);
+    ttrace.push("post-processing");
     currentOutputModel = postProcessModel(currentOutputModel);
     ttrace.pop();
 
@@ -502,7 +502,7 @@ class GenerationSession {
       throws GenerationFailureException, GenerationCanceledException {
 
     final SModel originalOutputModel = tg.getOutputModel();
-    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
+    ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep));
     final boolean hasChanges = tg.apply(progress, isPrimary);
     ttrace.pop();
 
@@ -536,7 +536,7 @@ class GenerationSession {
     final boolean needToCloneInputModel = modifiesModel && myGenerationOptions.isSaveTransientModels();
     SModel toRecycle = null;
     if (needToCloneInputModel) {
-      ttrace.push("model clone", false);
+      ttrace.push("model clone");
       SModel currentInputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
         myLogger.info(String.format("clone model '%s' --> '%s'", currentInputModel.getName(), currentInputModel_clone.getName()));
@@ -576,7 +576,7 @@ class GenerationSession {
     final boolean needToCloneModel = myGenerationOptions.isSaveTransientModels();
     SModel toRecycle = null;
     if (needToCloneModel) {
-      ttrace.push("model clone", false);
+      ttrace.push("model clone");
       SModel currentOutputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
         myLogger.info(String.format("clone model '%s' --> '%s'", currentModel.getName(), currentOutputModel_clone.getName()));

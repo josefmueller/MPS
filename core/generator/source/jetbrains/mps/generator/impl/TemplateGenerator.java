@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -157,7 +157,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
     myDelayedChanges = new DelayedChanges();
-    myOutputRoots = new ArrayList<SNode>();
+    myOutputRoots = new ArrayList<>();
     DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this);
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
@@ -173,15 +173,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     checkMonitorCanceled();
     final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
     myAreMappingsReady = false;
+    // WeavingProcessor.prepareWeavingRules needs myTemplateProcessor to be initialized. Guess, we could have had it as a final field?
+    myTemplateProcessor = new TemplateProcessor(this);
+
     // prepare weaving
-    ttrace.push("weavings", false);
+    ttrace.push("weavings");
     myWeavingProcessor = new WeavingProcessor(this);
     myWeavingProcessor.prepareWeavingRules(getInputModel());
     ttrace.pop();
 
-    myTemplateProcessor = new TemplateProcessor(this);
 
-    ttrace.push("reductions", false);
+    ttrace.push("reductions");
     applyReductions(isPrimary);
     ttrace.pop();
     myInplaceModelChange = myDeltaBuilder != null;
@@ -197,7 +199,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     if (myWeavingProcessor.hasWeavingRulesToApply()) {
       checkMonitorCanceled();
-      ttrace.push("weavings", false);
+      ttrace.push("weavings");
       myWeavingProcessor.apply();
       myWeavingProcessor = null;
       ttrace.pop();
@@ -206,7 +208,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (!myDelayedChanges.isEmpty()) {
       checkMonitorCanceled();
       // execute mapper in all $MAP_SRC$/$MAP_SRCL$
-      ttrace.push("delayed mappings", false);
+      ttrace.push("delayed mappings");
       myDelayedChanges.doAllChanges(this);
       ttrace.pop();
     }
@@ -214,7 +216,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     //////////////////////////////////////////////////////////////
     // replace references with PostponedReference to respect model changes up to this point
     if (myDeltaBuilder != null && myDeltaBuilder.hasChanges()) {
-      ttrace.push("apply delta changes", false);
+      ttrace.push("apply delta changes");
 //      myDeltaBuilder.dump();
       myDeltaBuilder.prepareReferences(getInputModel(), this);
       ttrace.pop();
@@ -223,14 +225,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // resolve PostponedReferences, but do not replace them in the model yet
     if (!myPostponedRefs.isEmpty()) {
       // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
-      ttrace.push("restoring references", false);
+      ttrace.push("restoring references");
       myPostponedRefs.prepare();
       ttrace.pop();
     }
 
     // apply structural change delta onto input model
     if (myDeltaBuilder != null && myDeltaBuilder.hasChanges()) {
-      ttrace.push("apply delta changes", false);
+      ttrace.push("apply delta changes");
       myDeltaBuilder.applyInplace(getInputModel());
       ttrace.pop();
     }
@@ -246,7 +248,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // replace reference placeholders (PostponedReference) with resolved
     // replace DynamicReference with StaticReference, if needed
     if (!myPostponedRefs.isEmpty() || !myDynamicRefs.isEmpty()) {
-      ttrace.push("restoring references", false);
+      ttrace.push("restoring references");
       myPostponedRefs.replace();
       myDynamicRefs.replace();
       ttrace.pop();
@@ -265,7 +267,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   public void executeScript(TemplateMappingScript script) throws GenerationFailureException {
-    getDefaultExecutionContext(null).executeScript(script, myInputModel);
+    getDefaultExecutionContext().executeScript(script, myInputModel);
   }
 
   protected void applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
@@ -280,21 +282,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     final IPerformanceTracer ttrace = getGeneratorSessionContext().getPerformanceTracer();
     // create all roots
     if (isPrimary) {
-      ttrace.push("create roots", false);
+      ttrace.push("create roots");
 
-      final QueryExecutionContext executionContext = getExecutionContext(null);
-      if (executionContext != null) {
-        for (TemplateCreateRootRule rule : getRuleManager().getCreateRootRules()) {
-          TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext, new ReductionTrack(getBlockedReductionsData()));
-          applyCreateRoot(rule, environment);
-        }
-        checkMonitorCanceled();
+      for (TemplateCreateRootRule rule : getRuleManager().getCreateRootRules()) {
+        applyCreateRoot(rule);
       }
+      checkMonitorCanceled();
       ttrace.pop();
     }
 
     // root mapping rules
-    ttrace.push("root mappings", false);
+    ttrace.push("root mappings");
     ArrayList<SNode> rootsConsumed = new ArrayList<SNode>();
     for (TemplateRootMappingRule rule : getRuleManager().getRoot_MappingRules()) {
       checkMonitorCanceled();
@@ -303,21 +301,24 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     // copy roots
+    ttrace.push("copy roots");
     getGeneratorSessionContext().clearCopiedRootsSet();
     for (SNode rootToCopy : myInputModel.getRootNodes()) {
       if (rootsConsumed.contains(rootToCopy)) {
         continue;
       }
-      QueryExecutionContext context = getExecutionContext(rootToCopy);
-      if (context != null) {
-        TemplateExecutionEnvironmentImpl rootenv = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, context, new ReductionTrack(getBlockedReductionsData()));
-        copyRootInputNode(rootToCopy, rootenv);
-        checkMonitorCanceled();
-      }
+      copyRootInputNode(rootToCopy);
+      checkMonitorCanceled();
     }
+    ttrace.pop();
   }
 
-  protected void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
+  protected void applyCreateRoot(TemplateCreateRootRule rule) throws GenerationFailureException, GenerationCanceledException {
+    applyCreateRoot(rule, newExecutionEnvironment(getDefaultExecutionContext()));
+  }
+
+  // PARALLEL: create root rules are checked for applicability from the thread they would generate from.
+  protected final void applyCreateRoot(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     if (!environment.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(environment, null, null))) {
       return;
     }
@@ -337,9 +338,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       reportDismissRuleException(ex, rule);
     } catch (TemplateProcessingFailureException ex) {
       getLogger().error(rule.getRuleNode(), String.format("couldn't create root node: %s", ex.getMessage()), ex.asProblemDescription());
-    } catch (GenerationCanceledException ex) {
-      throw ex;
-    } catch (GenerationFailureException ex) {
+    } catch (GenerationCanceledException | GenerationFailureException ex) {
       throw ex;
     } catch (GenerationException e) {
       getLogger().error(rule.getRuleNode(), "internal error: " + e.toString());
@@ -348,6 +347,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsConsumed) throws GenerationFailureException, GenerationCanceledException {
     Iterable<SNode> inputNodes = FastNodeFinderManager.get(myInputModel).getNodes(rule.getApplicableConcept(), rule.applyToInheritors());
+    final TemplateExecutionEnvironmentImpl env = newExecutionEnvironment(getDefaultExecutionContext());
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
@@ -355,25 +355,26 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         continue;
       }
 
-      final QueryExecutionContext executionContext = getExecutionContext(inputNode);
-      if (executionContext != null) {
-        TemplateExecutionEnvironmentImpl environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext, new ReductionTrack(getBlockedReductionsData()));
-        final DefaultTemplateContext templateContext = new DefaultTemplateContext(environment, inputNode, null);
-        if (!executionContext.isApplicable(rule, templateContext)) {
-          continue;
-        }
-        boolean copyRootOnFailure = false;
-        if (inputNode.getModel() != null && inputNode.getParent() == null && !rule.keepSourceRoot()) {
-          rootsConsumed.add(inputNode);
-          copyRootOnFailure = true;
-        }
-        createRootNodeByRule(rule, inputNode, environment, copyRootOnFailure);
+      final DefaultTemplateContext templateContext = new DefaultTemplateContext(env, inputNode, null);
+      if (!env.getQueryExecutor().isApplicable(rule, templateContext)) {
+        continue;
       }
+      boolean copyRootOnFailure = false;
+      if (inputNode.getModel() != null && inputNode.getParent() == null && !rule.keepSourceRoot()) {
+        rootsConsumed.add(inputNode);
+        copyRootOnFailure = true;
+      }
+      applyRootRule(rule, inputNode, copyRootOnFailure);
     }
   }
 
-  protected void createRootNodeByRule(TemplateRootMappingRule rule, SNode inputNode, TemplateExecutionEnvironmentImpl env, boolean copyRootOnFailure)
-    throws GenerationCanceledException, GenerationFailureException {
+  protected void applyRootRule(TemplateRootMappingRule rule, SNode inputNode, boolean copyRootOnFailure) throws GenerationCanceledException, GenerationFailureException {
+    createRootNodeByRule(rule, inputNode, newExecutionEnvironment(getDefaultExecutionContext()), copyRootOnFailure);
+  }
+
+  // PARALLEL: transformation rules that crate root nodes check their conditions from the main thread (we need to know in advance which
+  //           roots would left to get copied.
+  protected final void createRootNodeByRule(TemplateRootMappingRule rule, SNode inputNode, TemplateExecutionEnvironmentImpl env, boolean copyRootOnFailure) throws GenerationCanceledException, GenerationFailureException {
     try {
       final DefaultTemplateContext templateContext = new DefaultTemplateContext(env, inputNode, null);
       Collection<SNode> outputNodes = env.getQueryExecutor().applyRule(rule, templateContext);
@@ -424,7 +425,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void copyRootInputNode(@NotNull SNode inputRootNode, @NotNull TemplateExecutionEnvironmentImpl env) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootInputNode(@NotNull SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+    copyRootInputNode(inputRootNode, newExecutionEnvironment(getDefaultExecutionContext()));
+  }
+
+  // PARALLEL: each input node copied in a separate thread. Check against drop rules happens in the same thread as copy does.
+  protected final void copyRootInputNode(@NotNull SNode inputRootNode, @NotNull TemplateExecutionEnvironmentImpl env) throws GenerationFailureException, GenerationCanceledException {
     NodeCopyFacility copyProcessor;
     if (myDeltaBuilder == null) {
       copyProcessor = new FullCopyFacility(env);
@@ -456,16 +462,30 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return super.getOutputModel();
   }
 
-  /*
-     * Unsynchronized
-     */
-  @Nullable
-  protected QueryExecutionContext getExecutionContext(SNode inputNode) {
-    return getDefaultExecutionContext(inputNode);
+  /**
+   * Executor for queries from primary/main thread. If there's only one thread, this is the only query executor out there.
+   * For parallel execution, {@link ParallelTemplateGenerator subclass} shall provide an appropriate wrapper as needed and when needed
+   * (i.e. when a transformation task is executed in a distinct thread).
+   * Main thread is responsible for any transformation that expects sequential execution, like pre- and post- processing scripts,
+   * weaving rules (need complete output model, although likely we can apply weaving rules in parallel once reduction rules are over, i.e. need a sort of barrier),
+   * reference post-processing (macro queries are executed during transformation, but actual references are set from main thread), delayed changes (MAP-SRC
+   * postprocessing) and conditions for root mapping rules (there's reason to do so, see #createRootNodeByRule, above)
+   * @return never {@code null}
+   */
+  protected final QueryExecutionContext getDefaultExecutionContext() {
+    return myExecutionContext;
   }
 
-  protected QueryExecutionContext getDefaultExecutionContext(SNode inputNode) {
-    return myExecutionContext;
+  /**
+   * distinct context for a reduction path/track/trail.
+   * So far, we may need PerformanceTrace in QueryExecutionContext only. If, however, some day we would like to access
+   * performance tracer from another code (e.g. from generated templates), we would need to pass per-thread PerformanceTracer
+   * here as well (and make sure the tracer for QEC and the one available from TEEI match).
+   * @param queryExecutor not null
+   * @return never null
+   */
+  protected final TemplateExecutionEnvironmentImpl newExecutionEnvironment(QueryExecutionContext queryExecutor) {
+    return new TemplateExecutionEnvironmentImpl(myTemplateProcessor, queryExecutor, new ReductionTrack(getBlockedReductionsData()));
   }
 
   protected DeltaBuilder createDeltaBuilder() {
