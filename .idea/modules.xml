@@ -52,7 +52,6 @@
       <module fileurl="file://$PROJECT_DIR$/mps.iml" filepath="$PROJECT_DIR$/mps.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/mps-annotations/mps-annotations.iml" filepath="$PROJECT_DIR$/core/mps-annotations/mps-annotations.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/tool/builder/mps-ant.iml" filepath="$PROJECT_DIR$/core/tool/builder/mps-ant.iml" group="ant" />
-      <module fileurl="file://$PROJECT_DIR$/core/mps-core/mps-core.iml" filepath="$PROJECT_DIR$/core/mps-core/mps-core.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-debugger/mps-debugger.iml" filepath="$PROJECT_DIR$/workbench/mps-debugger/mps-debugger.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsdevkit/mps-devkit.iml" filepath="$PROJECT_DIR$/plugins/mpsdevkit/mps-devkit.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" filepath="$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" group="workbench" />
